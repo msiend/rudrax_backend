@@ -7,9 +7,6 @@ const port = 3000;
 require('dotenv').config({path: '.env.development'})
 require('@/config/dbConfig')
 
-const xx = require('@/controllers/entityControllers')
-
-console.log(xx);
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
