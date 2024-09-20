@@ -1,6 +1,4 @@
 const mysql = require('mysql')
-const x = ''
-
 let con = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 10,
