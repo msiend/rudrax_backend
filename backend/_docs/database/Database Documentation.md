@@ -6,11 +6,11 @@
 - **Last Updated**: `18/09/24`
 - **Description**: A brief description of the database's purpose, e.g., "This database is designed for managing customer information for the XYZ platform."
 
-------
+---
 
 ## **Database Structure Overview**
 
-------
+---
 
 ## **Tables and Fields**
 
@@ -29,7 +29,7 @@ A brief description of the table's purpose, e.g., "Stores customer information, 
 
 Repeat the table format for each table in the database.
 
-------
+---
 
 ##### **Relationships**
 
@@ -42,7 +42,7 @@ Describe the relationships between tables, using clear references to the columns
   - **Table1.column -> Table2.column**
   - **Table2.column -> Table3.column**
 
-------
+---
 
 ##### Indexes
 
@@ -78,7 +78,7 @@ A brief description of the table's purpose, e.g., "Stores customer information, 
 
 Repeat the table format for each table in the database.
 
-------
+---
 
 ##### Relationships
 
@@ -90,8 +90,6 @@ Describe the relationships between tables, using clear references to the columns
 
   - **Table1.column -> Table2.column**
   - **Table2.column -> Table3.column**
-
-
 
 ### Table: `clients`
 
@@ -107,7 +105,7 @@ Describe the relationships between tables, using clear references to the columns
 | `address`       | VARCHAR(300) |                             | NULL          | Client's address                    |
 | `email`         | VARCHAR(80)  |                             | NULL          | Client's email address              |
 
-------
+---
 
 ### Table: `contractors`
 
@@ -122,7 +120,7 @@ Describe the relationships between tables, using clear references to the columns
 | `con_address`     | VARCHAR(300) |                             | NULL          | Contractor's address                    |
 | `con_email`       | VARCHAR(80)  |                             | NULL          | Contractor's email address              |
 
-------
+---
 
 ### Table: `labours`
 
@@ -137,7 +135,7 @@ Describe the relationships between tables, using clear references to the columns
 | `lab_address`     | VARCHAR(300) |                             | NULL          | Labourer's address                    |
 | `lab_email`       | VARCHAR(80)  |                             | NULL          | Labourer's email address              |
 
-------
+---
 
 ### Table: `particles`
 
@@ -149,7 +147,7 @@ Describe the relationships between tables, using clear references to the columns
 | `particle_name`  | VARCHAR(200) |                             | NULL          | Name of the particle                |
 | `particle_price` | VARCHAR(50)  |                             | NULL          | Price of the particle               |
 
-------
+---
 
 ### Table: `phases`
 
@@ -160,7 +158,7 @@ Describe the relationships between tables, using clear references to the columns
 | `phase_id`   | INT(20)      | PRIMARY KEY, AUTO_INCREMENT | NULL          | Unique identifier for each phase |
 | `phase_name` | VARCHAR(100) |                             | NULL          | Name of the phase                |
 
-------
+---
 
 ### Table: `sub_phases`
 
@@ -171,7 +169,7 @@ Describe the relationships between tables, using clear references to the columns
 | `sub_phase_id`   | INT(20)      | PRIMARY KEY, AUTO_INCREMENT | NULL          | Unique identifier for each sub-phase |
 | `sub_phase_name` | VARCHAR(100) |                             | NULL          | Name of the sub-phase                |
 
-------
+---
 
 ### Table: `vendors`
 
@@ -187,23 +185,22 @@ Describe the relationships between tables, using clear references to the columns
 | `vendor_email`       | VARCHAR(80)  |                             | NULL          | Vendor's email address              |
 | `vendor_status`      | VARCHAR(80)  |                             | 'open'        | Vendor's status (open or closed)    |
 
-------
+---
 
 ### Table: `projects`
 
 **Description**: Stores information about projects, their associated clients, and financial details.
 
-| Column Name      | Data Type    | Constraints                                                  | Default Value | Description                        |
-| ---------------- | ------------ | ------------------------------------------------------------ | ------------- | ---------------------------------- |
-| `pro_id`         | BIGINT       | PRIMARY KEY, AUTO_INCREMENT                                  | NULL          | Unique identifier for each project |
+| Column Name      | Data Type    | Constraints                                                     | Default Value | Description                        |
+| ---------------- | ------------ | --------------------------------------------------------------- | ------------- | ---------------------------------- |
+| `pro_id`         | BIGINT       | PRIMARY KEY, AUTO_INCREMENT                                     | NULL          | Unique identifier for each project |
 | `client_id`      | BIGINT(20)   | FOREIGN KEY (REFERENCES `clients(client_id)` ON DELETE CASCADE) | NULL          | Client associated with the project |
-| `project_name`   | VARCHAR(200) |                                                              | NULL          | Name of the project                |
-| `pro_ref_no`     | INT          |                                                              | NULL          | Project reference number           |
-| `total_price`    | INT          |                                                              | NULL          | Total price of the project         |
-| `amount_split`   | VARCHAR(50)  |                                                              | NULL          | Payment split details              |
-| `advance_amount` | INT          |                                                              | NULL          | Advance amount paid by the client  |
+| `project_name`   | VARCHAR(200) |                                                                 | NULL          | Name of the project                |
+| `pro_ref_no`     | INT          |                                                                 | NULL          | Project reference number           |
+| `total_price`    | INT          |                                                                 | NULL          | Total price of the project         |
+| `amount_split`   | VARCHAR(50)  |                                                                 | NULL          | Payment split details              |
+| `advance_amount` | INT          |                                                                 | NULL          | Advance amount paid by the client  |
 
-------
+---
 
 This documentation provides an organized overview of the database structure and its tables for your construction firm management system.
-
