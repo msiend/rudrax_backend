@@ -1,5 +1,6 @@
-const mysql = require("mysql");
-let con = mysql.createPool({
+const mysql = require('mysql');
+
+const con = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   idleTimeout: 60000,
@@ -11,10 +12,10 @@ let con = mysql.createPool({
   multipleStatements: true,
 });
 con.getConnection((error) => {
-  if (!!error) {
-    console.log("there is an error bro!" + error);
+  if (error) {
+    console.log(`there is an error bro!${error}`);
   } else {
-    console.log("connected to database 🖥️");
+    console.log('connected to database 🖥️');
   }
 });
 

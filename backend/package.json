@@ -34,9 +34,10 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
-    "husky": "^9.1.6",
     "prettier": "3.3.3"
   }
 }

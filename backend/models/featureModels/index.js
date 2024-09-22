@@ -1,16 +1,16 @@
-const { globSync } = require("glob");
-const path = require("path");
+const { globSync } = require('glob');
+const path = require('path');
 
 function createModels() {
   const modelItems = globSync(`./models/featureModels/*`, {
-    ignore: ["index.js"],
+    ignore: ['index.js'],
   });
   const models = {};
   modelItems.forEach((modelItem) => {
     const modelName = path.basename(modelItem);
-    if (modelName != "index.js") {
+    if (modelName !== 'index.js') {
       const model = require(`@/models/featureModels/${modelName}/`);
-      models[modelName.split("M")[0]] = model;
+      models[modelName.split('M')[0]] = model;
     }
   });
 

@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.57.1",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
   },
   "lint-staged": {
-    "*.js": "npx prettier --write"
+    "*.js": [
+      "npx prettier --write",
+      "npx eslint backend/ --fix"
+    ]
   }
 }
