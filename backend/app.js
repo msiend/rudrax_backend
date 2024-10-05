@@ -1,5 +1,6 @@
 require('module-alias/register');
 const express = require('express');
+const requestLogger = require('@/utils/req_logger')
 
 const app = express();
 const path = require('path');
@@ -13,10 +14,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
+app.use(requestLogger);
 
 // const appRoutes = require('@/routers/applicationApi')
 
 // app.use('/api', appRoutes)
+
+
+app.get('/',(req,res)=>{
+
+  res.send('dgwer')
+})
+
 
 app.listen(port, () => {
   console.log(`server running at port ${port} 🚀`);
