@@ -1,4 +1,3 @@
-require('module-alias/register');
 const winston = require('winston');
 const path =require('path')
 const logger = winston.createLogger({

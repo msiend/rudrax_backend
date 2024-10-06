@@ -21,10 +21,6 @@ app.use(requestLogger);
 // app.use('/api', appRoutes)
 
 
-app.get('/',(req,res)=>{
-
-  res.send('dgwer')
-})
 
 
 app.listen(port, () => {
