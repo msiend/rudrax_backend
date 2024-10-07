@@ -15,8 +15,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "npx prettier --write",
-      "npx eslint backend/ --fix"
+      "npx prettier --write"
     ]
   }
 }

@@ -1,24 +1,20 @@
-/* eslint-disable */
-
 require('module-alias/register');
+
 const express = require('express');
 
 const router = express.Router();
-const entityControllers = require('@/controllers/entityControllers/'); /* eslint-disable-line import/extensions */
+
+const entityControllers = require('@/controllers/entityControllers/index');
 
 function createRoutes(controllerBox, prefix) {
-  for (const controller in controllerBox) {
-    controllerBox[controller].read &&
-      router.get(`/${prefix}/${controller.split('C')[0]}/read-data`, controllerBox[controller].read);
-    controllerBox[controller].create &&
-      router.post(`/${prefix}/${controller.split('C')[0]}/create-data`, controllerBox[controller].create);
-    controllerBox[controller].update &&
-      router.get(`/${prefix}/${controller.split('C')[0]}/update-data`, controllerBox[controller].update);
-    controllerBox[controller].remove &&
-      router.get(`/${prefix}/${controller.split('C')[0]}/remove-data`, controllerBox[controller].remove);
-    controllerBox[controller].paginate &&
-      router.get(`/${prefix}/${controller.split('C')[0]}/paginate-data`, controllerBox[controller].paginate);
-  }
+  Object.keys(controllerBox).forEach((key) => {
+    const { read, create, update, remove, paginate } = controllerBox[key];
+    if (read) router.get(`/${prefix}/${key.split('C')[0]}/read-data`, read);
+    if (create) router.post(`/${prefix}/${key.split('C')[0]}/create-data`, create);
+    if (update) router.get(`/${prefix}/${key.split('C')[0]}/update-data`, update);
+    if (remove) router.get(`/${prefix}/${key.split('C')[0]}/remove-data`, remove);
+    if (paginate) router.get(`/${prefix}/${key.split('C')[0]}/paginate-data`, paginate);
+  });
 }
 
 createRoutes(entityControllers, 'entity');
