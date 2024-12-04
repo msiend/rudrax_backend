@@ -19,8 +19,9 @@ app.use(cookieParser());
 app.use(requestLogger);
 
 // const appRoutes = require('@/routers/applicationApi')
+const authRoutes = require('@/routers/authApi')
 
-// app.use('/api', appRoutes)
+app.use('/api', authRoutes)
 
 app.listen(port, () => {
   console.log(`server running at port ${port} 🚀`);

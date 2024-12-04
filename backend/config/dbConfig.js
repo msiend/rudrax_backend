@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2/promise');
 
 const con = mysql.createPool({
   waitForConnections: true,
@@ -7,10 +7,11 @@ const con = mysql.createPool({
   host: process.env.MySQL_host,
   user: process.env.MySQL_user,
   password: process.env.MySQL_pass,
-  // port: 3306,
+  port: process.env.MySQL_port,
   database: process.env.MySQL_db,
   multipleStatements: true,
 });
+
 con.getConnection((error) => {
   if (error) {
     console.log(`there is an error bro!${error}`);

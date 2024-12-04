@@ -1,3 +1,25 @@
+-- Auth tables
+
+CREATE TABLE `super_admin` (
+  `su_id` int NOT NULL PRIMARY KEY auto_increment,
+  `su_name` varchar(200) DEFAULT NULL,
+  `su_contact` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `super_admin_auth` (
+  `su_a_id` int NOT NULL PRIMARY KEY auto_increment,
+  `su_r_id` int NOT NULL,
+  `su_email` varchar(80) DEFAULT NULL,
+  `su_password` varchar(300) DEFAULT NULL,
+  `su_token` varchar(400) DEFAULT NULL,
+  `su_isactive` BOOLEAN DEFAULT TRUE,
+  FOREIGN KEY (su_r_id) REFERENCES super_admin(su_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+-- main tables 
+
 CREATE TABLE `clients` (
   `client_id` bigint(20) NOT NULL PRIMARY KEY auto_increment,
   `client_name` varchar(200) DEFAULT NULL,
