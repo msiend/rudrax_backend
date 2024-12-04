@@ -88,3 +88,42 @@ CREATE TABLE `projects` (
  FOREIGN KEY(client_ind_id) REFERENCES clients(client_id) ON DELETE CASCADE
 );
 ALTER TABLE `projects` ADD `branch_id` INT NULL DEFAULT NULL AFTER `client_id`;
+
+
+-- superviser workflows tables
+
+CREATE TABLE `superviser` (
+  `sup_id` int NOT NULL PRIMARY KEY auto_increment,
+  `sup_name` varchar(100) NOT NULL,
+  `sup_contact` varchar(13) NOT NULL,
+  `sup_alt_contact` varchar(13) DEFAULT NULL,
+  `sup_address` varchar(300) DEFAULT NULL,
+  `sup_email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `material_requests` (
+  `mr_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `mr_project_r_id` int NOT NULL,
+  `mr_sup_r_id` int NOT NULL,
+  `mh_approval` BOOLEAN DEFAULT FALSE,
+  `fd_approval` BOOLEAN DEFAULT FALSE,
+  `mr_delivered_status` BOOLEAN DEFAULT FALSE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `material_list` (
+  `mat_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `mr_r_id` bigint NOT NULL,
+  `mat_name` varchar(200) NOT NULL,
+  `mat_unit` varchar(60) NOT NULL,
+  `mat_sup_qnt` int NOT NULL,
+  `mat_mh_qnt` int DEFAULT NULL,
+  `mat_fd_qnt` int DEFAULT NULL,
+  `mat_price` int DEFAULT NULL,
+  `mat_delivered_status` BOOLEAN DEFAULT FALSE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+

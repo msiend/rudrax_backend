@@ -10,6 +10,8 @@ const port = 3000;
 require('dotenv').config({ path: '.env.development' });
 require('@/config/dbConfig');
 
+console.log(process.env.MySQL_pass);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
