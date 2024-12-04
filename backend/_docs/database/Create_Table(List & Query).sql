@@ -92,6 +92,15 @@ ALTER TABLE `projects` ADD `branch_id` INT NULL DEFAULT NULL AFTER `client_id`;
 
 -- superviser workflows tables
 
+CREATE TABLE `finance_dep` (
+  `fd_id` int NOT NULL PRIMARY KEY auto_increment,
+  `fd_name` varchar(100) NOT NULL,
+  `fd_contact` varchar(13) NOT NULL,
+  `fd_alt_contact` varchar(13) DEFAULT NULL,
+  `fd_address` varchar(300) DEFAULT NULL,
+  `fd_email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `superviser` (
   `sup_id` int NOT NULL PRIMARY KEY auto_increment,
   `sup_name` varchar(100) NOT NULL,
@@ -108,7 +117,11 @@ CREATE TABLE `material_requests` (
   `mr_sup_r_id` int NOT NULL,
   `mh_approval` BOOLEAN DEFAULT FALSE,
   `fd_approval` BOOLEAN DEFAULT FALSE,
-  `mr_delivered_status` BOOLEAN DEFAULT FALSE
+  `mr_fd_r_id` int NOT NULL,
+  `mr_delivered_status` BOOLEAN DEFAULT FALSE,
+  FOREIGN KEY(mr_project_r_id) REFERENCES projects(pro_id) ON DELETE CASCADE,
+  FOREIGN KEY(mr_sup_r_id) REFERENCES superviser(sup_id) ON DELETE CASCADE,
+  FOREIGN KEY(mr_fd_r_id) REFERENCES finance_dep(fd_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -121,7 +134,8 @@ CREATE TABLE `material_list` (
   `mat_mh_qnt` int DEFAULT NULL,
   `mat_fd_qnt` int DEFAULT NULL,
   `mat_price` int DEFAULT NULL,
-  `mat_delivered_status` BOOLEAN DEFAULT FALSE
+  `mat_delivered_status` BOOLEAN DEFAULT FALSE,
+  FOREIGN KEY(mr_r_id) REFERENCES material_requests(mr_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
