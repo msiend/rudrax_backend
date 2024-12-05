@@ -1,31 +1,39 @@
-const pool = require('@/config/dbConfig')
-
+const pool = require('@/config/dbConfig');
 
 class SuperAdminAuthModel {
-    constructor(id, firstName, lastName, email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    constructor(name, contact, email, hashpassword) {
+        this.name = name;
+        this.contact = contact;
         this.email = email;
+        this.hashpassword = hashpassword;
     }
 
     // Insert a new uer
-    static async create(firstName, lastName, email) {
+    static async create(
+        name,
+        email,
+        contact,
+        hashpassword
+    ) {
         const connPool = await pool.getConnection();
         try {
-            console.log('Worked till here');
             const queryOne = `INSERT INTO super_admin (su_name, su_contact) VALUES(?, ?)`;
             await connPool.beginTransaction();
-            const [result1] = await connPool.query(queryOne, ['value10', 'value2']);
-            console.log('Transaction committed:', result1);
-            if (result1) {
+            const [dbresponseOne] = await connPool.query(queryOne, [name, contact]);
+
+            if (dbresponseOne) {
                 const queryTwo = `INSERT INTO super_admin_auth (su_r_id, su_email, su_password) VALUES(?, ?, ?)`;
-                const [result2] = await connPool.query(queryTwo, [result1.insertId, 'value4', 'value3']);
-                await connPool.commit();               
-                return result2;
+                const [dbresponseTwo] = await connPool.query(queryTwo, [dbresponseOne.insertId, email, hashpassword]);
+
+                if (dbresponseTwo?.affectedRows) {
+                    await connPool.commit();
+                    return { status: true, dbresponseTwo, msg: 'Successfully inserted!' };
+                } else {
+                    await connPool.rollback();
+                    return { status: false, msg: 'Something went wrong!' };
+                }
+
             }
-
-
         } catch (error) {
             await connPool.rollback();
             console.error('Transaction rolled back due to error:', error);
