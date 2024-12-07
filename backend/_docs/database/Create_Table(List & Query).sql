@@ -20,40 +20,73 @@ CREATE TABLE `super_admin_auth` (
 
 -- main tables 
 
-CREATE TABLE `clients` (
-  `client_id` bigint(20) NOT NULL PRIMARY KEY auto_increment,
-  `client_name` varchar(200) DEFAULT NULL,
-  `client_ref_no` int(11) DEFAULT NULL,
-  `client_contact` int(11) DEFAULT NULL,
-  `client_alt_contact` int(11) DEFAULT NULL,
-  `client_address` varchar(300) DEFAULT NULL,
-  `client_email` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 CREATE TABLE `branch_data` (
-  `b_id` bigint(20) NOT NULL PRIMARY KEY auto_increment,
+  `b_id` int NOT NULL PRIMARY KEY auto_increment,
   `b_name` varchar(200) DEFAULT NULL,
-  `b_location` int(11) DEFAULT NULL,
-  `b_head` int(11) DEFAULT NULL,
-  `b_contact_number` int(11) DEFAULT NULL,
-  `b_alt_number` varchar(300) DEFAULT NULL,
+  `b_location` varchar(300) DEFAULT NULL,
+  `b_head` varchar(100) DEFAULT NULL,
+  `b_contact_number` varchar(15) DEFAULT NULL,
+  `b_alt_number` varchar(15) DEFAULT NULL,
   `b_email` varchar(80) DEFAULT NULL,
-  `b_commision` int NOT NULL DEFAULT 1,
+  `b_commision` int NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `branch_clients` (
-  `b_client_id` bigint(20) NOT NULL PRIMARY KEY auto_increment,
-  `b_ind_id` bigint(20) NOT NULL,
+  `b_client_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `b_r_id` int NOT NULL,
   `b_client_name` varchar(200) DEFAULT NULL,
-  `b_client_ref_no` int(11) DEFAULT NULL,
-  `b_client_contact` int(11) DEFAULT NULL,
-  `b_client_alt_contact` int(11) DEFAULT NULL,
+  `b_client_ref_no` varchar(200) NOT NULL,
+  `b_client_contact` varchar(15) DEFAULT NULL,
+  `b_client_alt_contact` varchar(15) DEFAULT NULL,
   `b_client_address` varchar(300) DEFAULT NULL,
   `b_client_email` varchar(80) DEFAULT NULL,
+  `b_client_housetype` varchar(100) DEFAULT NULL,
+  `b_client_rcctype` varchar(100) DEFAULT NULL,
+  `b_client_totalcost` bigint DEFAULT NULL,
+  `b_client_advancepayment` int DEFAULT NULL,
+  `b_client_sitedesc` varchar(300) DEFAULT NULL,
+  `b_client_duration` varchar(100) DEFAULT NULL,
   `b_client_commision` int NOT NULL DEFAULT 1,
-  `b_client_status` varchar(50) DEFAULT 'true'
-  FOREIGN KEY(b_ind_id) REFERENCES branch_data(b_id) ON DELETE CASCADE
+  `b_admin_approval` BOOLEAN DEFAULT FALSE,
+  CONSTRAINT un_client_refno UNIQUE (b_client_ref_no),
+  FOREIGN KEY (b_r_id) REFERENCES branch_data(b_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `clients` (
+  `client_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `client_name` varchar(200) DEFAULT NULL,
+  `client_ref_no` varchar(200) NOT NULL,
+  `client_contact` varchar(15) DEFAULT NULL,
+  `client_alt_contact` varchar(15) DEFAULT NULL,
+  `client_address` varchar(300) DEFAULT NULL,
+  `client_email` varchar(80) DEFAULT NULL,
+  CONSTRAINT un_client UNIQUE (client_ref_no)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `clients_docs` (
+  `cl_doc_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `cl_r_id` bigint NOT NULL,
+  `cl_doc_url` varchar(200) NOT NULL,
+ FOREIGN KEY (`cl_r_id`) REFERENCES clients(client_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `projects` (
+  `pro_id` bigint NOT NULL PRIMARY KEY auto_increment,
+  `pro_client_r_id` bigint NOT NULL,
+  `pro_name` varchar(200) DEFAULT NULL,
+  `pro_ref_no` varchar(200) NOT NULL,
+  `pro_housetype` varchar(100) DEFAULT NULL,
+  `pro_rcctype` varchar(100) DEFAULT NULL,
+  `pro_sitedesc` varchar(300) DEFAULT NULL,
+  `pro_duration` varchar(100) DEFAULT NULL,
+  `pro_totalcost` bigint DEFAULT NULL,
+  `pro_advancepayment` int DEFAULT NULL,
+ CONSTRAINT un_project UNIQUE(pro_ref_no),
+ FOREIGN KEY(pro_client_r_id) REFERENCES clients(client_id) ON DELETE CASCADE
+);
 
 CREATE TABLE `contractors` (
   `con_id` int(20) NOT NULL PRIMARY KEY auto_increment,
@@ -80,13 +113,15 @@ CREATE TABLE `particles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `phases` (
-  `phase_id` int(20) NOT NULL PRIMARY KEY auto_increment,
-  `phase_name` varchar(100) DEFAULT NULL
+  `phase_id` int NOT NULL PRIMARY KEY auto_increment,
+  `phase_name` varchar(100) DEFAULT NULL,
+  `phase_alt_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `sub_phases` (
-  `sub_phase_id` int(20) NOT NULL PRIMARY KEY auto_increment,
-  `sub_phase_name` varchar(100) DEFAULT NULL
+  `sub_phase_id` int NOT NULL PRIMARY KEY auto_increment,
+  `sub_phase_name` varchar(100) DEFAULT NULL,
+  `sub_phase_alt_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `vendors` (
@@ -99,17 +134,6 @@ CREATE TABLE `vendors` (
   `vendor_status` varchar(80) DEFAULT 'open'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `projects` (
- `pro_id` bigint NOT NULL PRIMARY KEY auto_increment,
- `client_ind_id` bigint(20) NOT NULL,
- `project_name` varchar(200) DEFAULT NULL,
- `pro_ref_no` int DEFAULT NULL,
- `total_price` int DEFAULT NULL,
- `amount_split` varchar(50) DEFAULT NULL,
- `advance_amount` int DEFAULT NULL,
- FOREIGN KEY(client_ind_id) REFERENCES clients(client_id) ON DELETE CASCADE
-);
-ALTER TABLE `projects` ADD `branch_id` INT NULL DEFAULT NULL AFTER `client_id`;
 
 
 -- superviser workflows tables

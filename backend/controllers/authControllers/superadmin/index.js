@@ -50,9 +50,14 @@ exports.create = async (req, res) => {
 
         return res.status(200).json({ status: true, msg: "Inserted Successfully!" })
     }
-    catch (err) {
+    catch (error) {
         console.log(err);
-        return res.status(500).json(err)
+        return res.status(500).json({
+            status: false,
+            errMsg: err.message,
+            error: error,
+            msg:  'Something Went Wrong!'
+        })
     }
 
 
