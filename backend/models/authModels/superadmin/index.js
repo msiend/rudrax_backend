@@ -15,8 +15,8 @@ class SuperAdminAuthModel {
         contact,
         hashpassword
     ) {
-        const connPool = await pool.getConnection();
         try {
+            const connPool = await pool.getConnection();
             const queryOne = `INSERT INTO super_admin (su_name, su_contact) VALUES(?, ?)`;
             await connPool.beginTransaction();
             const [dbresponseOne] = await connPool.query(queryOne, [name, contact]);
