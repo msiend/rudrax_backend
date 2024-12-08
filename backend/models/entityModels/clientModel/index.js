@@ -19,23 +19,41 @@ class ClientModel {
         clientAddress,
         clientEmail
     ) {
-        try {
-            const connPool = await pool.getConnection()
+        const connPool = await pool.getConnection()
+        try {           
             const query = `INSERT INTO clients (client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email) VALUES(?, ?, ?, ?, ?, ?)`;
-            await connPool.beginTransaction();
             const [dbresponse] = await connPool.query(query, [clientName, clientRef, clientContact, clientAltContact,  clientAddress, clientEmail]);
 
             if (dbresponse?.affectedRows) {
-                await connPool.commit();
                 return { status: true, dbresponse, msg: 'Successfully inserted!' };
             } 
 
-            await connPool.rollback();
             return { status: false, msg: 'Something went wrong!' };
 
         } catch (error) {
-            await connPool.rollback();
             console.error('Transaction rolled back due to error:', error);
+            return { status: false, msg: 'Something went wrong!', errMsg: error.message };
+        } finally {
+            connPool.release();
+        }
+
+    }
+
+    static async findAll() {
+        const connPool = await pool.getConnection()
+        try {           
+            const query = `SELECT * FROM client`;
+            const [dbresponse] = await connPool.query(query);
+
+            // if (dbresponse?.affectedRows) {
+                return { status: true, data: dbresponse, msg: 'Successfully inserted!' };
+            // } 
+
+            // return { status: false, msg: 'Something went wrong!' };
+
+        } catch (error) {
+            console.error('Transaction rolled back due to error:', error);
+            return { status: false, msg: 'Something went wrong!', errMsg: error.message };
         } finally {
             connPool.release();
         }

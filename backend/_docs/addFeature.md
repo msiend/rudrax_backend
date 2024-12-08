@@ -16,5 +16,5 @@
 - _entityName_ should be small letter _entityType_ should be either _entity_ or _feature_ exactly.
 - based on above mentioned criteria choose _entityType_.
 - this will create a new folder named `entityNameModel` inside the model folder inside _entitytype_ folder you have choosed and `entityNameControllers` inside controllers folder.
-- And the same time it will create a routes with _entityName_. of type `/api/entityType/entityName/methodName`.
+- And the same time it will create a routes with _entityName_. of type `/api/v1/entityType/entityName/methodName`.
 - Avoid using same _entityName_ for diffrent _entityType_.

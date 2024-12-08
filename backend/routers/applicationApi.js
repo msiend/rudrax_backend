@@ -8,8 +8,8 @@ const entityControllers = require('@/controllers/entityControllers/index');
 
 function createRoutes(controllerBox, prefix) {
   Object.keys(controllerBox).forEach((key) => {
-    const { read, create, update, remove, paginate } = controllerBox[key];
-    if (read) router.get(`/${prefix}/${key.split('C')[0]}/read-data`, read);
+    const { findAll, create, update, remove, paginate } = controllerBox[key];
+    if (findAll) router.get(`/${prefix}/${key.split('C')[0]}/read-data`, findAll);
     if (create) router.post(`/${prefix}/${key.split('C')[0]}/create-data`, create);
     if (update) router.get(`/${prefix}/${key.split('C')[0]}/update-data`, update);
     if (remove) router.get(`/${prefix}/${key.split('C')[0]}/remove-data`, remove);
