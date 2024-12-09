@@ -1,28 +1,27 @@
-// Hello, this is a Model for client!
-const pool = require('@/config/dbConfig');
+//Hello, this is a Model for project!
 
-class ClientModel {
-    constructor(clientName, clientRef, clientContact, clientAltContact, clientAddress, clientEmail) {
-        this.clientName = clientName;
-        this.clientContact = clientContact;
-        this.clientRef = clientRef;
-        this.clientAltContact = clientAltContact;
-        this.clientAddress = clientAddress;
-        this.clientEmail = clientEmail;
+const pool = require('@/config/dbConfig')
+
+class ProjectModel {
+    constructor() {
+
     }
 
     static async create(
-        clientName,
-        clientRef,
-        clientContact,
-        clientAltContact,
-        clientAddress,
-        clientEmail
+        projectClientRef,
+        projectName,
+        projectRef,
+        projectHousetype,
+        projectRcctype,
+        projectSiteDesc,
+        projectDuration,
+        projectTotalcost,
+        projectAdvPayment
     ) {
         const connPool = await pool.getConnection()
         try {           
-            const query = `INSERT INTO clients (client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email) VALUES(?, ?, ?, ?, ?, ?)`;
-            const [dbresponse] = await connPool.query(query, [clientName, clientRef, clientContact, clientAltContact,  clientAddress, clientEmail]);
+            const query = `INSERT INTO projects (pro_client_r_id, pro_name, pro_ref_no, pro_housetype, pro_rcctype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+            const [dbresponse] = await connPool.query(query, [projectClientRef, projectName, projectRef, projectHousetype, projectRcctype, projectSiteDesc, projectDuration, projectTotalcost, projectAdvPayment]);
 
             if (dbresponse?.affectedRows) {
                 return { status: true, dbresponse, msg: 'Successfully inserted!' };
@@ -39,11 +38,11 @@ class ClientModel {
 
     }
 
-    static async findAll() {
+    static async findAll(skip, total) {
         const connPool = await pool.getConnection()
         try {           
-            const query = `SELECT * FROM client`;
-            const [dbresponse] = await connPool.query(query);
+            const query = `SELECT * FROM projects ORDER BY pro_id DESC LIMIT ?, ?`;
+            const [dbresponse] = await connPool.query(query, [parseInt(skip), parseInt(total)]);
 
             // if (dbresponse?.affectedRows) {
                 return { status: true, data: dbresponse, msg: 'Successfully retrived!' };
@@ -61,5 +60,4 @@ class ClientModel {
     }
 }
 
-
-module.exports = ClientModel;
+module.exports = ProjectModel;

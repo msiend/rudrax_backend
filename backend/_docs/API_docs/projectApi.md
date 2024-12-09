@@ -1,21 +1,24 @@
-### client API
+### projects API
 
 #### api prefix - `/api/v1/`
 
 
 #### 1. Create One 
 
-**Title:** create one client
-**Endpoint:** `POST /entity/client/create-data`
+**Title:** create project for existing client
+**Endpoint:** `POST /entity/project/create-data`
 **Request Body:** 
 ```json
 {
-  "clientName" : "Panchanan Deka",
-  "clientRef" : "112",
-  "clientContact" : "9999999934",
-  "clientAltContact" : "998866",
-  "clientAddress" : "Nagaon",
-  "clientEmail" : "email@gmail.com"
+  "projectClientRef": 1,
+  "projectName": "Residential Complex",
+  "projectRef": "AS-101",
+  "projectHousetype": "AssamType",
+  "projectRcctype": null,
+  "projectSiteDesc": "Construction of a modern residential building",
+  "projectDuration": "24 months",
+  "projectTotalcost": 5000000,
+  "projectAdvPayment": 1000000
 }
 ```
 
