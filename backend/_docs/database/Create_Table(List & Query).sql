@@ -147,19 +147,37 @@ CREATE TABLE `finance_dep` (
   `fd_email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+CREATE TABLE `finance_dep_auth` (
+  `fd_a_id` int NOT NULL PRIMARY KEY auto_increment,
+  `fd_r_id` int NOT NULL,
+  `fd_email` varchar(100) DEFAULT NULL,
+  CONSTRAINT un_fd_mail UNIQUE(fd_email),
+  FOREIGN KEY (fd_r_id) REFERENCES finance_dep(fd_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 CREATE TABLE `superviser` (
   `sup_id` int NOT NULL PRIMARY KEY auto_increment,
   `sup_name` varchar(100) NOT NULL,
   `sup_contact` varchar(13) NOT NULL,
   `sup_alt_contact` varchar(13) DEFAULT NULL,
-  `sup_address` varchar(300) DEFAULT NULL,
-  `sup_email` varchar(100) DEFAULT NULL
+  `sup_address` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `superviser_auth` (
+  `sup_a_id` int NOT NULL PRIMARY KEY auto_increment,
+  `sup_r_id` int NOT NULL,
+  `sup_email` varchar(100) NOT NULL,
+  `sup_password` varchar(300) NOT NULL,
+  `sup_token` varchar(300) DEFAULT NULL,
+  FOREIGN KEY (sup_r_id) REFERENCES superviser(sup_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE `material_requests` (
   `mr_id` bigint NOT NULL PRIMARY KEY auto_increment,
-  `mr_project_r_id` int NOT NULL,
+  `mr_project_r_id` bigint NOT NULL,
   `mr_sup_r_id` int NOT NULL,
   `mh_approval` BOOLEAN DEFAULT FALSE,
   `fd_approval` BOOLEAN DEFAULT FALSE,
