@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 const entityControllers = require('@/controllers/entityControllers/index');
+const featureControllers = require('@/controllers/featureControllers/index');
 
 function createRoutes(controllerBox, prefix) {
   Object.keys(controllerBox).forEach((key) => {
@@ -18,5 +19,6 @@ function createRoutes(controllerBox, prefix) {
 }
 
 createRoutes(entityControllers, 'entity');
+createRoutes(featureControllers, 'feature');
 
 module.exports = router;

@@ -181,11 +181,10 @@ CREATE TABLE `material_requests` (
   `mr_sup_r_id` int NOT NULL,
   `mh_approval` BOOLEAN DEFAULT FALSE,
   `fd_approval` BOOLEAN DEFAULT FALSE,
-  `mr_fd_r_id` int NOT NULL,
+  `mr_fd_r_id` int DEFAULT NULL,
   `mr_delivered_status` BOOLEAN DEFAULT FALSE,
   FOREIGN KEY(mr_project_r_id) REFERENCES projects(pro_id) ON DELETE CASCADE,
   FOREIGN KEY(mr_sup_r_id) REFERENCES superviser(sup_id) ON DELETE CASCADE,
-  FOREIGN KEY(mr_fd_r_id) REFERENCES finance_dep(fd_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
