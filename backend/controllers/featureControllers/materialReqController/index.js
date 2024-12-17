@@ -50,7 +50,14 @@ const { materialReq } = require('@/models/featureModels/')
 exports.findAll = async (req, res) => {
     try {
         const {from, to} =  req.query
-        const { data, status } = await project.findAll(from, to)
+        const reqQuery = {
+            marks: ['??'],
+            columns: ['*'],
+            orderBy: 'mr_id',
+            limits: [parseInt(from), parseInt(to)]
+        }
+
+        const { data, status, error } = await materialReq.findAll(reqQuery);
 
         if (status) {
             return res.status(200).json({

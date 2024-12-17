@@ -8,7 +8,7 @@ class QueryModel {
   // Insert a new uer
   async create(marks, columns, values) {
     const connPool = await pool.getConnection()
-    const query = `INSERT INTO ?? (${marks.join(', ')}) VALUES (${marks.join(', ')});`;
+    const query = `INSERT INTO ?? (${marks.map((el) => '??').join(', ')}) VALUES (${marks.join(', ')});`;
     try {
       const [dbresponse] = await connPool.query(query, [this.tableName, ...columns, ...values]);
 
@@ -39,13 +39,26 @@ class QueryModel {
   }
 
   // Retrieve all users
-  async findAll() {
-    const selectUsersSQL = 'SELECT * FROM users';
+  async findAll(marks, columns, orderBy, limits) {
+    const connPool = await pool.getConnection()
+    const query = `SELECT ${marks.map((el) => '??').join(', ')} FROM ?? ORDER BY ?? DESC LIMIT ?, ?`;
     try {
-      const [rows] = await connPool.query(selectUsersSQL);
-      return rows.map((row) => new User(row.id, row.first_name, row.last_name, row.email));
+      const [rows, fields] = await connPool.query(query, [...columns, this.tableName, orderBy, ...limits]);
+      return {
+        status: true,
+        data: rows,
+        msg: 'Successfully retrived!'
+      };
     } catch (error) {
       console.error('Error retrieving users:', error);
+      return {
+        status: false,
+        msg: 'Something went wrong!',
+        errMsg: error.message,
+        error: error
+      };
+    } finally {
+      connPool.release();
     }
   }
 

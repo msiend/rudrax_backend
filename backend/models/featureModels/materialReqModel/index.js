@@ -12,15 +12,32 @@ class MaterialReqModel {
         for (let key in insertData) {
             if (insertData.hasOwnProperty(key)) {
                 columns.push(key);
-                marks.push('?');
+                marks.push(`?`);
                 values.push(insertData[key]);
             }
         }
 
         const dbRequest = await queries.create(
+            marks,
             columns,
-            values,
-            marks
+            values
+        )
+
+        return dbRequest;
+    }
+
+    static async findAll(dataQuery) {
+        const {
+            marks, 
+            columns, 
+            orderBy, 
+            limits
+        } = dataQuery;  
+        const dbRequest = await queries.findAll(
+            marks,
+            columns,
+            orderBy,
+            limits
         )
 
         return dbRequest;
