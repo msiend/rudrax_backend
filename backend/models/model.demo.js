@@ -1,31 +1,48 @@
-class AuthModel {
-  constructor(id, firstName, lastName, email) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
+const pool = require('@/config/dbConfig')
+
+class QueryModel {
+  constructor(tableName) {
+    this.tableName = tableName;
   }
 
   // Insert a new uer
-  static async create(firstName, lastName, email) {
-    const insertUserSQL = `
-        INSERT INTO users (first_name, last_name, email) 
-        VALUES (?, ?, ?);
-      `;
+  async create(marks, columns, values) {
+    const connPool = await pool.getConnection()
+    const query = `INSERT INTO ?? (${marks.join(', ')}) VALUES (${marks.join(', ')});`;
     try {
-      const [result] = await promisePool.query(insertUserSQL, [firstName, lastName, email]);
-      console.log(`User inserted with ID: ${result.insertId}`);
-      return new User(result.insertId, firstName, lastName, email);
+      const [dbresponse] = await connPool.query(query, [this.tableName, ...columns, ...values]);
+
+      if (dbresponse?.affectedRows) {
+        return {
+          status: true,
+          dbresponse,
+          msg: 'Successfully inserted!'
+        };
+      }
+
+      return {
+        status: false,
+        msg: 'Something went wrong!'
+      };
+
     } catch (error) {
-      console.error('Error inserting user:', error);
+      console.error('Transaction rolled back due to error:', error);
+      return {
+        status: false,
+        msg: 'Something went wrong!',
+        errMsg: error.message
+      };
+
+    } finally {
+      connPool.release();
     }
   }
 
   // Retrieve all users
-  static async findAll() {
+  async findAll() {
     const selectUsersSQL = 'SELECT * FROM users';
     try {
-      const [rows] = await promisePool.query(selectUsersSQL);
+      const [rows] = await connPool.query(selectUsersSQL);
       return rows.map((row) => new User(row.id, row.first_name, row.last_name, row.email));
     } catch (error) {
       console.error('Error retrieving users:', error);
@@ -36,7 +53,7 @@ class AuthModel {
   static async findById(id) {
     const selectUserSQL = 'SELECT * FROM users WHERE id = ?';
     try {
-      const [rows] = await promisePool.query(selectUserSQL, [id]);
+      const [rows] = await connPool.query(selectUserSQL, [id]);
       if (rows.length > 0) {
         const { firstName, lastName, email } = rows[0];
         return new User(id, firstName, lastName, email);
@@ -55,7 +72,7 @@ class AuthModel {
         WHERE id = ?;
       `;
     try {
-      await promisePool.query(updateUserSQL, [this.firstName, this.lastName, this.email, this.id]);
+      await connPool.query(updateUserSQL, [this.firstName, this.lastName, this.email, this.id]);
       console.log(`User with ID ${this.id} updated successfully.`);
     } catch (error) {
       console.error(`Error updating user with ID ${this.id}:`, error);
@@ -66,7 +83,7 @@ class AuthModel {
   static async deleteById(id) {
     const deleteUserSQL = 'DELETE FROM users WHERE id = ?';
     try {
-      await promisePool.query(deleteUserSQL, [id]);
+      await connPool.query(deleteUserSQL, [id]);
       console.log(`User with ID ${id} deleted successfully.`);
     } catch (error) {
       console.error(`Error deleting user with ID ${id}:`, error);
@@ -83,3 +100,5 @@ async function fn(id) {
     console.log('not found');
   }
 }
+
+module.exports = QueryModel

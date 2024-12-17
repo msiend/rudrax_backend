@@ -3,7 +3,7 @@
 const {finance} = require('@/models/entityModels/')
 
 exports.create = async (req, res) => {
-    try {
+    try {  
         const {
             fdName,
             fdContact,

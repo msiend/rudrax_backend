@@ -20,9 +20,10 @@ const { materialReq } = require('@/models/featureModels/')
         // }
 
         const result = await materialReq.create(
-            "material_requests",
-            ['mr_project_r_id', 'mr_sup_r_id'],
-            [projectId, superViserId]
+            {
+              mr_project_r_id: projectId,
+              mr_sup_r_id: superViserId  
+            }
         )
 
         if (!result.status) {
