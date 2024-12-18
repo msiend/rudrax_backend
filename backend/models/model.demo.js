@@ -39,11 +39,11 @@ class QueryModel {
   }
 
   // Retrieve all users
-  async findAll(marks, columns, orderBy, limits) {
+  async findAll(orderBy, limits) {
     const connPool = await pool.getConnection()
-    const query = `SELECT ${marks.map((el) => '??').join(', ')} FROM ?? ORDER BY ?? DESC LIMIT ?, ?`;
+    const query = `SELECT * FROM ?? ORDER BY ?? DESC LIMIT ?, ?`;
     try {
-      const [rows, fields] = await connPool.query(query, [...columns, this.tableName, orderBy, ...limits]);
+      const [rows, fields] = await connPool.query(query, [this.tableName, orderBy, ...limits]);
       return {
         status: true,
         data: rows,
@@ -63,32 +63,55 @@ class QueryModel {
   }
 
   // Retrieve a user by ID
-  static async findById(id) {
-    const selectUserSQL = 'SELECT * FROM users WHERE id = ?';
+  async findOne(columns, values) {
+    const connPool = await pool.getConnection()
+    const condition = columns.map((el, index) => el + '= ?' + `${index === columns.length - 1 ? ';' : ' AND'}`)
+    const query = 'SELECT * FROM ?? WHERE ' + condition.join(' ');
+
     try {
-      const [rows] = await connPool.query(selectUserSQL, [id]);
-      if (rows.length > 0) {
-        const { firstName, lastName, email } = rows[0];
-        return new User(id, firstName, lastName, email);
-      }
-      return null;
+      const [rows] = await connPool.query(query, [this.tableName, ...values]);
+      return {
+        status: true,
+        data: rows,
+        msg: 'Successfully retrived!'
+      };
     } catch (error) {
-      console.error(`Error retrieving user with ID ${id}:`, error);
+      console.error(`Error retrieving user with ID :`, error);
+      return {
+        status: false,
+        msg: 'Something went wrong!',
+        errMsg: error.message,
+        error: error
+      };
+    } finally {
+      connPool.release();
     }
   }
 
   // Update a user's details
-  async update() {
-    const updateUserSQL = `
-        UPDATE users 
-        SET first_name = ?, last_name = ?, email = ?
-        WHERE id = ?;
-      `;
+  async update(columns, values, conditionFields, conditionData) {
+    const connPool = await pool.getConnection()
+    const fields = columns.map((el, index) => 'SET ' + el + ' = ?' + `${index === columns.length - 1 ? '' : ','}`)
+    const condition = conditionFields.map((el, index) => el + ' = ?' + `${index === conditionFields.length - 1 ? ';' : ' AND'}`)
+    const query = `UPDATE ?? ` + fields.join(' ') + ' WHERE ' + condition.join(' ')
+
     try {
-      await connPool.query(updateUserSQL, [this.firstName, this.lastName, this.email, this.id]);
-      console.log(`User with ID ${this.id} updated successfully.`);
+      await connPool.query(query, [this.tableName, ...values, ...conditionData]);
+      return {
+        status: true,
+        msg: 'Successfully inserted!'
+      };
+
     } catch (error) {
-      console.error(`Error updating user with ID ${this.id}:`, error);
+      console.error(`Error retrieving user with ID :`, error);
+      return {
+        status: false,
+        msg: 'Something went wrong!',
+        errMsg: error.message,
+        error: error
+      };
+    } finally {
+      connPool.release();
     }
   }
 

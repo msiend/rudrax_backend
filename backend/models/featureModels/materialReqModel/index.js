@@ -28,18 +28,55 @@ class MaterialReqModel {
 
     static async findAll(dataQuery) {
         const {
-            marks, 
-            columns, 
             orderBy, 
             limits
         } = dataQuery;  
         const dbRequest = await queries.findAll(
-            marks,
-            columns,
+
             orderBy,
             limits
         )
 
+        return dbRequest;
+    }
+
+    static async findOne(dataQuery) { 
+        const columns = [];
+        const values = [];
+
+        for (let key in dataQuery) {
+            if (dataQuery.hasOwnProperty(key)) {
+                columns.push(key);
+                values.push(dataQuery[key]);
+            }
+        }
+        const dbRequest = await queries.findOne(columns, values)
+        return dbRequest;
+    }
+
+    static async update(setData, conditionData) { 
+        const columns = [];
+        const values = [];
+        const columnFields = [];
+        const columnData = [];
+
+        for (let key in setData) {
+            if (setData.hasOwnProperty(key)) {
+                columns.push(key);
+                values.push(setData[key]);
+            }
+        }
+
+        for (let key in conditionData) {
+            if (conditionData.hasOwnProperty(key)) {
+                columnFields.push(key);
+                columnData.push(conditionData[key]);
+            }
+        }
+
+
+
+        const dbRequest = await queries.update(columns, values, columnFields, columnData)
         return dbRequest;
     }
 }
