@@ -6,7 +6,6 @@ const authorize = (requiredPermission) => {
     if (!userPermissions || !userPermissions.includes(requiredPermission)) {
       return res.status(403).json({ message: 'Access Denied' });
     }
-
     next();
   };
 };
