@@ -1,84 +1,91 @@
-// Hello, this is a Controller for client!
+const ClientsModel = require('@/models/entityModels/clientModel');
 
-const { client } = require('@/models/entityModels/')
-
-exports.create = async (req, res) => {
+class ClientsController {
+  // Get all clients
+  static async findAll(req, res) {
     try {
-        const {
-            clientName,
-            clientRef,
-            clientContact,
-            clientAltContact,
-            clientAddress,
-            clientEmail
-        } = req.body
-
-        // const { error } = schema.validate({ clientName, clientRef, clientContact, clientAltContact, clientAddress, clientEmail });
-        // if (error) {
-        //     return res.status(400).json({
-        //         err: error,
-        //         status: false,
-        //         msg: error.message
-        //     })
-        // }
-
-        const result = await client.create(
-            clientName,
-            clientRef,
-            clientContact,
-            clientAltContact,
-            clientAddress,
-            clientEmail
-        )
-
-        if (!result.status) {
-            return res.status(500).json({
-                status: false,
-                msg: 'Something Went Wrong!',
-                errMsg: result?.errMsg
-            })
-        }
-
-        return res.status(200).json({ status: true, msg: "Inserted Successfully!" })
-    }
-    catch (error) {
-        console.log(error);
-        return res.status(500).json({
-            status: false,
-            errMsg: error.message,
-            error: error,
-            msg: 'Something Went Wrong!'
-        })
-    }
-}
-
-
-exports.findAll = async (req, res) => {
-    try {
-        const { data, status } = await client.findAll()
-
-        if (status) {
-            return res.status(200).json({
-                status: true,
-                msg: 'Sucessfully retrived data!',
-                data: data
-            })
-        }
-
-        return res.status(500).json({
-            status: false,
-            errMsg: error.message,
-            error: error,
-            msg: 'Error in fetching data!'
-        })
-
+      const data = await ClientsModel.findAll();
+      return res.status(200).send({ status: true, msg: 'Clients retrieved successfully', data });
     } catch (error) {
-        console.log(error);
-        return res.status(500).json({
-            status: false,
-            errMsg: error.message,
-            error: error,
-            msg: 'Error in fetching data!'
-        })
+      console.error('Error fetching clients:', error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
+  }
+
+  // Get a single client by ID
+  static async findOne(req, res) {
+    try {
+      const { id } = req.params;
+      const data = await ClientsModel.findOne(id);
+      if (!data) {
+        return res.status(404).send({ status: false, msg: 'Client not found' });
+      }
+      return res.status(200).send({ status: true, msg: 'Client retrieved successfully', data });
+    } catch (error) {
+      console.error(`Error fetching client with ID ${req.params.id}:`, error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
+    }
+  }
+
+  // Create a new client
+  static async create(req, res) {
+    try {
+      const { client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email } = req.body;
+      if (!client_name || !client_ref_no || !client_contact) {
+        return res.status(400).send({ status: false, msg: 'Missing required fields' });
+      }
+
+      const clientId = await ClientsModel.create(client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
+      return res.status(201).send({ status: true, msg: 'Client created successfully', data: { client_id: clientId } });
+    } catch (error) {
+      console.error('Error creating client:', error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
+    }
+  }
+
+  // Update an existing client
+  static async update(req, res) {
+    try {
+      const { id } = req.params;
+      const { client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email } = req.body;
+      const updated = await ClientsModel.update(id, client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
+
+      if (!updated) {
+        return res.status(404).send({ status: false, msg: 'Client not found or no changes made' });
+      }
+      return res.status(200).send({ status: true, msg: 'Client updated successfully' });
+    } catch (error) {
+      console.error(`Error updating client with ID ${req.params.id}:`, error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
+    }
+  }
+
+  // Delete a client
+  static async remove(req, res) {
+    try {
+      const { id } = req.params;
+      const deleted = await ClientsModel.remove(id);
+      if (!deleted) {
+        return res.status(404).send({ status: false, msg: 'Client not found' });
+      }
+      return res.status(200).send({ status: true, msg: 'Client deleted successfully' });
+    } catch (error) {
+      console.error(`Error deleting client with ID ${req.params.id}:`, error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
+    }
+  }
+
+  // Paginate clients
+  static async paginate(req, res) {
+    try {
+      const { page = 1, limit = 10 } = req.query;
+    //   const data = await ClientsModel.paginate(parseInt(page), parseInt(limit));
+      return res.status(200).send({ status: true, msg: 'Clients retrieved successfully', data });
+    } catch (error) {
+      console.error('Error paginating clients:', error);
+      return res.status(500).send({ status: false, msg: 'Internal Server Error' });
+    }
+  }
 }
+
+module.exports = ClientsController;

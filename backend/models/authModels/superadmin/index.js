@@ -10,8 +10,8 @@ class SuperAdminAuthModel {
 
   // Insert a new uer
   static async create(name, email, contact, hashpassword) {
+    const connPool = await pool.getConnection();
     try {
-      const connPool = await pool.getConnection();
       const queryOne = `INSERT INTO super_admin (su_name, su_contact) VALUES(?, ?)`;
       await connPool.beginTransaction();
       const [dbresponseOne] = await connPool.query(queryOne, [name, contact]);
@@ -40,7 +40,7 @@ class SuperAdminAuthModel {
   static async findAll() {
     const selectUsersSQL = 'SELECT * FROM users';
     try {
-      const [rows] = await promisePool.query(selectUsersSQL);
+      const [rows] = await connPool.query(selectUsersSQL);
       return rows.map((row) => new User(row.id, row.first_name, row.last_name, row.email));
     } catch (error) {
       console.error('Error retrieving users:', error);
@@ -87,6 +87,59 @@ class SuperAdminAuthModel {
       console.error(`Error deleting user with ID ${id}:`, error);
     }
   }
+  static async findByLoginInfo(email) {
+    const promisePool = await pool.getConnection();
+    const selectUserSQL =
+      'SELECT su_a_id as id, su_email as email, su_password as password FROM super_admin_auth WHERE su_email = ? LIMIT 0,1';
+    try {
+      const [rows] = await promisePool.query(selectUserSQL, [email]);
+      if (rows.length > 0) {
+        const { id, password, email } = rows[0];
+        return { id, password, email };
+      }
+      return null;
+    } catch (error) {
+      console.error(`Error Finding Info  su_admin with email: ${email}:`, error);
+    }
+  }
+  static async updateRefreshToken(id, refreshToken) {
+    const promisePool = await pool.getConnection();
+    const updateSQL = 'UPDATE super_admin_auth SET su_token =? WHERE su_a_id = ?';
+    try {
+      const [rows] = await promisePool.query(updateSQL, [refreshToken, id]);
+      if (rows.length > 0) {
+        return { status: true, msg: 'refresh token added!' };
+      }
+      return null;
+    } catch (error) {
+      console.error(`Error Updating refreshToken su_admin with ID ${id}:`, error);
+    }
+  }
+  static async getUserByToken(refreshToken) {
+    const promisePool = await pool.getConnection();
+    const updateSQL = 'SELECT su_a_id as id, su_email as email FROM super_admin_auth WHERE su_token = ?';
+    try {
+      const [rows] = await promisePool.query(updateSQL, [refreshToken]);
+      if (rows.length > 0) {
+        return rows[0];
+      }
+      return null;
+    } catch (error) {
+      console.error(`Error retrieve userInfo su_admin ln:128:`, error);
+    }
+  }
+  static async   DeleteToken(refreshToken) {
+    const promisePool = await pool.getConnection();
+    const updateSQL = `UPDATE super_admin_auth SET su_token ='' WHERE su_token = ?`;
+    try {
+      const [rows] = await promisePool.query(updateSQL, [refreshToken]);
+      if (rows.length > 0) {
+        return { status: true, msg: 'refresh token added!' };
+      }
+      return null;
+    } catch (error) {
+      console.error(`Error Updating refreshToken su_admin with ID:`, error);
+    }
+  }
 }
-
 module.exports = SuperAdminAuthModel;

@@ -26,7 +26,6 @@ class ProjectModel {
             if (dbresponse?.affectedRows) {
                 return { status: true, dbresponse, msg: 'Successfully inserted!' };
             } 
-
             return { status: false, msg: 'Something went wrong!' };
 
         } catch (error) {

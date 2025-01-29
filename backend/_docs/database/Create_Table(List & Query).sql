@@ -184,7 +184,7 @@ CREATE TABLE `material_requests` (
   `mr_fd_r_id` int DEFAULT NULL,
   `mr_delivered_status` BOOLEAN DEFAULT FALSE,
   FOREIGN KEY(mr_project_r_id) REFERENCES projects(pro_id) ON DELETE CASCADE,
-  FOREIGN KEY(mr_sup_r_id) REFERENCES superviser(sup_id) ON DELETE CASCADE,
+  FOREIGN KEY(mr_sup_r_id) REFERENCES superviser(sup_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -201,6 +201,21 @@ CREATE TABLE `material_list` (
   FOREIGN KEY(mr_r_id) REFERENCES material_requests(mr_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- New Table Added
+CREATE TABLE branch_auth (
+    br_a_id INT AUTO_INCREMENT PRIMARY KEY,
+    br_r_id INT NOT NULL,
+    br_email VARCHAR(255) UNIQUE NOT NULL,
+    br_password VARCHAR(255) NOT NULL,
+    br_token VARCHAR(255),
+    br_isactive INT(2) NOT null DEFAULT '1'
+);
 
+
+-- Updates Table structure 
+
+ALTER TABLE `super_admin` ADD `role` VARCHAR(20) NOT NULL AFTER `su_contact`, ADD `refreshToken` VARCHAR(255) NOT NULL AFTER `role`;
+ALTER TABLE `finance_dep_auth` ADD `fd_password` VARCHAR(255) NOT NULL AFTER `fd_email`, ADD `fd_token` VARCHAR(455) NOT NULL AFTER `fd_password`, ADD `fd_isactive` INT(2) NOT NULL DEFAULT '1' AFTER `fd_token`;
+ALTER TABLE `superviser_auth` ADD `sup_isactive` INT(2) NOT NULL DEFAULT '1' AFTER `sup_token`;
 
 

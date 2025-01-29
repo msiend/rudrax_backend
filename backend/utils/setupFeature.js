@@ -4,7 +4,7 @@ const path = require('path');
 const args = process.argv.slice(2);
 
 function SetupNow(folderName, type, featureType) {
-  const subtype = featureType === 'entity' ? `entity${type}s` : `feature${type}s`;
+  const subtype = featureType === 'entity' ? `entity${type}s` : `coreEntity${type}s`;
   const baseDir = path.join(__dirname, `../${type === 'Model' ? 'models' : 'controllers'}/${subtype}`);
   const newFolder = path.join(baseDir, `${folderName}${type}`);
   if (!fs.existsSync(newFolder)) {

@@ -1,4 +1,4 @@
 /node_modules
 .husky/
-
+./jagya_const_frontend
 .env.development

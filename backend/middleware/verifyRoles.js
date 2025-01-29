@@ -1,9 +1,11 @@
 const verifyRoles = (...allowedRoles) => {
   return (req, res, next) => {
-    if (!req?.roles) return res.sendStatus(401);
-    const rolesArray = [...allowedRoles];
-    const result = req.roles.map((role) => rolesArray.includes(role)).find((val) => val === true);
-    if (!result) return res.sendStatus(401);
+    if (!req.roles) return res.sendStatus(401);
+    const rolesArray = allowedRoles;
+    const result = Array.isArray(req.roles)
+      ? req.roles.some((role) => rolesArray.includes(role))
+      : rolesArray.includes(req.roles);
+    if (!result) return res.status(401).send({ status: false, msg: `Role ${req.roles} is invalid or Unauthorized!` });
     next();
   };
 };

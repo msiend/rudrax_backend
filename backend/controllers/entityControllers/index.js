@@ -2,7 +2,7 @@ const { globSync } = require('glob');
 const path = require('path');
 require('module-alias/register');
 
-function entityControllers() {
+function coreEntityControllers() {
   const controllerItems = globSync(`./controllers/entityControllers/*`, {
     ignore: ['index.js'],
   });
@@ -18,4 +18,4 @@ function entityControllers() {
   return controllers;
 }
 
-module.exports = entityControllers();
+module.exports = coreEntityControllers();

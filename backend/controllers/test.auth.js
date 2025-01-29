@@ -3,8 +3,6 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const mysql = require('mysql2/promise');
 
-
-
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
   if (!user || !pwd) return res.status(400).json({ message: 'Username and password are required.' });
@@ -31,11 +29,9 @@ const handleLogin = async (req, res) => {
         { expiresIn: '30s' }
       );
 
-      const refreshToken = jwt.sign(
-        { username: foundUser.username },
-        process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: '1d' }
-      );
+      const refreshToken = jwt.sign({ username: foundUser.username }, process.env.REFRESH_TOKEN_SECRET, {
+        expiresIn: '1d',
+      });
 
       await pool.execute('UPDATE users SET refresh_token = ? WHERE id = ?', [refreshToken, foundUser.id]);
 
@@ -43,11 +39,11 @@ const handleLogin = async (req, res) => {
         httpOnly: true,
         sameSite: 'None',
         secure: true,
-        maxAge: 24 * 60 * 60 * 1000, 
+        maxAge: 24 * 60 * 60 * 1000,
       });
       res.json({ accessToken });
     } else {
-      res.sendStatus(401); 
+      res.sendStatus(401);
     }
   } catch (error) {
     console.error(error);

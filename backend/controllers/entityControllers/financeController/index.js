@@ -1,6 +1,6 @@
 //Hello, this is a Controller for finance!
 
-const {finance} = require('@/models/entityModels/')
+const {finance} = require('@/models/coreEntityModels/')
 
 exports.create = async (req, res) => {
     try {  

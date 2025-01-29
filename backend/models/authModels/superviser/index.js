@@ -1,0 +1,158 @@
+const pool = require('@/config/dbConfig');
+
+class SuperviserAuthModel {
+   constructor(sup_a_id, sup_r_id, sup_email, sup_password, sup_token) {
+      this.sup_a_id = sup_a_id;
+      this.sup_r_id = sup_r_id;
+      this.sup_email = sup_email;
+      this.sup_password = sup_password;
+      this.sup_token = sup_token;
+   }
+
+   static async findAll() {
+      const query = 'SELECT sup_a_id, sup_r_id, sup_email, sup_password FROM superviser_auth';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving superviser auth records:', error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async findOne(id) {
+      const query = 'SELECT sup_a_id, sup_r_id, sup_email, sup_password FROM superviser_auth WHERE sup_a_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query, [id]);
+         return rows.length > 0 ? rows[0] : null;
+      } catch (error) {
+         console.error(`Error retrieving superviser auth record with ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async create(sup_r_id, sup_email, sup_password) {
+      const query = 'INSERT INTO superviser_auth (sup_r_id, sup_email, sup_password) VALUES (?, ?, ?)';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [sup_r_id, sup_email, sup_password]);
+         return result.insertId;
+      } catch (error) {
+         console.error('Error creating superviser auth record:', error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async update(id, sup_r_id, sup_email) {
+      const query = 'UPDATE superviser_auth SET sup_r_id = ?, sup_email = ? WHERE sup_a_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [sup_r_id, sup_email, id]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error updating superviser auth record with ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async findByLoginInfo(email) {
+      const promisePool = await pool.getConnection();
+      const selectUserSQL =
+         'SELECT sup_a_id as id, sup_email as email, sup_password as password FROM superviser_auth WHERE sup_email = ? LIMIT 0,1';
+      try {
+         const [rows] = await promisePool.query(selectUserSQL, [email]);
+         if (rows.length > 0) {
+            const { id, password, email } = rows[0];
+            return { id, password, email };
+         }
+         return null;
+      } catch (error) {
+         console.error(`Error Finding Info  sup_admin with email: ${email}:`, error);
+      }
+   }
+
+   static async updatePassword(id, sup_password) {
+      const query = 'UPDATE superviser_auth SET sup_password = ? WHERE sup_a_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [sup_password, id]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error updating password for superviser auth record with ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async updateToken(id, sup_token) {
+      const query = 'UPDATE superviser_auth SET sup_token = ? WHERE sup_a_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [sup_token, id]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error updating token for superviser auth record with ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async deleteOne(id) {
+      const query = 'DELETE FROM superviser_auth WHERE sup_a_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         await connPool.query(query, [id]);
+         console.log(`Superviser auth record with ID ${id} deleted successfully.`);
+      } catch (error) {
+         console.error(`Error deleting superviser auth record with ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+   static async updateIsActive(id, isActive) {
+      const query = `UPDATE superviser_auth SET sup_isactive = ? WHERE a_id = ?`;
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [isActive, id]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error updating isActive status in table ${tableName} for ID ${id}:`, error);
+      } finally {
+         connPool.release();
+      }
+   }
+   static async getUserByToken(refreshToken) {
+      const promisePool = await pool.getConnection();
+      const updateSQL = 'SELECT sup_a_id as id, sup_email as email FROM superviser_auth WHERE sup_token = ?';
+      try {
+         const [rows] = await promisePool.query(updateSQL, [refreshToken]);
+         if (rows.length > 0) {
+            return rows[0];
+         }
+         return null;
+      } catch (error) {
+         console.error(`Error retrieve userInfo superviser_auth ln:128:`, error);
+      }
+   }
+   static async DeleteToken(refreshToken) {
+      const promisePool = await pool.getConnection();
+      const updateSQL = `UPDATE superviser_auth SET sup_token ='' WHERE sup_token = ?`;
+      try {
+         const [rows] = await promisePool.query(updateSQL, [refreshToken]);
+         if (rows.length > 0) {
+            return { status: true, msg: 'refresh token added!' };
+         }
+         return null;
+      } catch (error) {
+         console.error(`Error Updating refreshToken superviser_auth with ID:`, error);
+      }
+   }
+}
+
+module.exports = SuperviserAuthModel;

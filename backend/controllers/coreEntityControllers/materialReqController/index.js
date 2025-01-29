@@ -1,7 +1,7 @@
 //Hello, this is a Controller for materialReq!
 
 
-const { materialReq } = require('@/models/featureModels/')
+const { materialReq } = require('@/models/coreEntityModels')
 
  exports.create = async (req, res) => {
     try {

@@ -12,7 +12,6 @@ const logger = winston.createLogger({
     }),
   ],
 });
-
 const requestLogger = (req, res, next) => {
   const { method, url, headers, body } = req;
   logger.info({
