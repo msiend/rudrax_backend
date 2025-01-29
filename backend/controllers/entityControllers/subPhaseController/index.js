@@ -55,20 +55,6 @@ class SubPhasesController {
     }
   }
 
-  static async paginate(req, res) {
-    try {
-      const { page = 1, limit = 10 } = req.query;
-      const offset = (page - 1) * limit;
-      const subPhases = await SubPhasesModel.findAll();
-      res.status(200).send({ 
-        status: true, 
-        msg: 'Sub-phases retrieved successfully', 
-        data: { page, limit, records: subPhases.slice(offset, offset + parseInt(limit)) } 
-      });
-    } catch (error) {
-      res.status(500).send({ status: false, msg: 'Failed to paginate sub-phases', data: null });
-    }
-  }
 }
 
 module.exports = SubPhasesController;

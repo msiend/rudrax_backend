@@ -1,7 +1,17 @@
-//Hello, this is a Model for vendor!const pool = require('@/config/dbConfig');
+//Hello, this is a Model for vendor!
+const pool = require('@/config/dbConfig');
+const sqlErrorHandler = require('@/utils/sqlErrorHandler');
 
 class VendorsModel {
-    constructor(vendor_id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
+   constructor(
+      vendor_id,
+      vendor_name,
+      vendor_contact,
+      vendor_alt_contact,
+      vendor_address,
+      vendor_email,
+      vendor_status
+   ) {
       this.vendor_id = vendor_id;
       this.vendor_name = vendor_name;
       this.vendor_contact = vendor_contact;
@@ -9,78 +19,103 @@ class VendorsModel {
       this.vendor_address = vendor_address;
       this.vendor_email = vendor_email;
       this.vendor_status = vendor_status;
-    }
-  
-    static async findAll() {
-      const query = 'SELECT * FROM vendors';
+   }
+
+   static async findAll() {
+      const query = 'SELECT * FROM vendodrs';
       const connPool = await pool.getConnection();
       try {
-        const [rows] = await connPool.query(query);
-        return rows;
+         const [rows] = await connPool.query(query);
+         return rows;
       } catch (error) {
-        console.error('Error retrieving all vendors:', error);
-        throw error;
+         sqlErrorHandler(error)
+         console.error('Error retrieving all vendors:', error);
+         throw error;
       } finally {
-        connPool.release();
+         connPool.release();
       }
-    }
-  
-    static async findOne(vendor_id) {
+   }
+
+   static async findOne(vendor_id) {
       const query = 'SELECT * FROM vendors WHERE vendor_id = ?';
       const connPool = await pool.getConnection();
       try {
-        const [rows] = await connPool.query(query, [vendor_id]);
-        return rows.length > 0 ? rows[0] : null;
+         const [rows] = await connPool.query(query, [vendor_id]);
+         return rows.length > 0 ? rows[0] : null;
       } catch (error) {
-        console.error(`Error retrieving vendor with ID ${vendor_id}:`, error);
-        throw error;
+         console.error(`Error retrieving vendor with ID ${vendor_id}:`, error);
+         throw error;
       } finally {
-        connPool.release();
+         connPool.release();
       }
-    }
-  
-    static async create(vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
-      const query = 'INSERT INTO vendors (vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) VALUES (?, ?, ?, ?, ?, ?)';
+   }
+
+   static async create(vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
+      const query =
+         'INSERT INTO vendors (vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) VALUES (?, ?, ?, ?, ?, ?)';
       const connPool = await pool.getConnection();
       try {
-        const [result] = await connPool.query(query, [vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status]);
-        return result.insertId;
+         const [result] = await connPool.query(query, [
+            vendor_name,
+            vendor_contact,
+            vendor_alt_contact,
+            vendor_address,
+            vendor_email,
+            vendor_status,
+         ]);
+         return result.insertId;
       } catch (error) {
-        console.error('Error creating vendor:', error);
-        throw error;
+         console.error('Error creating vendor:', error);
+         throw error;
       } finally {
-        connPool.release();
+         connPool.release();
       }
-    }
-  
-    static async update(vendor_id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
-      const query = 'UPDATE vendors SET vendor_name = ?, vendor_contact = ?, vendor_alt_contact = ?, vendor_address = ?, vendor_email = ?, vendor_status = ? WHERE vendor_id = ?';
+   }
+
+   static async update(
+      vendor_id,
+      vendor_name,
+      vendor_contact,
+      vendor_alt_contact,
+      vendor_address,
+      vendor_email,
+      vendor_status
+   ) {
+      const query =
+         'UPDATE vendors SET vendor_name = ?, vendor_contact = ?, vendor_alt_contact = ?, vendor_address = ?, vendor_email = ?, vendor_status = ? WHERE vendor_id = ?';
       const connPool = await pool.getConnection();
       try {
-        const [result] = await connPool.query(query, [vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status, vendor_id]);
-        return result.affectedRows > 0;
+         const [result] = await connPool.query(query, [
+            vendor_name,
+            vendor_contact,
+            vendor_alt_contact,
+            vendor_address,
+            vendor_email,
+            vendor_status,
+            vendor_id,
+         ]);
+         return result.affectedRows > 0;
       } catch (error) {
-        console.error(`Error updating vendor with ID ${vendor_id}:`, error);
-        throw error;
+         console.error(`Error updating vendor with ID ${vendor_id}:`, error);
+         throw error;
       } finally {
-        connPool.release();
+         connPool.release();
       }
-    }
-  
-    static async delete(vendor_id) {
+   }
+
+   static async delete(vendor_id) {
       const query = 'DELETE FROM vendors WHERE vendor_id = ?';
       const connPool = await pool.getConnection();
       try {
-        const [result] = await connPool.query(query, [vendor_id]);
-        return result.affectedRows > 0;
+         const [result] = await connPool.query(query, [vendor_id]);
+         return result.affectedRows > 0;
       } catch (error) {
-        console.error(`Error deleting vendor with ID ${vendor_id}:`, error);
-        throw error;
+         console.error(`Error deleting vendor with ID ${vendor_id}:`, error);
+         throw error;
       } finally {
-        connPool.release();
+         connPool.release();
       }
-    }
-  }
-  
-  module.exports = VendorsModel;
-  
+   }
+}
+
+module.exports = VendorsModel;
