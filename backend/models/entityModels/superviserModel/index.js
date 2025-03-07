@@ -5,7 +5,7 @@ const pool = require('@/config/dbConfig');
 class SuperviserModel {
    constructor() {}
 
-   async findAll() {
+   static async findAll() {
       const query = 'SELECT * FROM superviser';
       const conn = await pool.getConnection();
       try {
@@ -18,7 +18,7 @@ class SuperviserModel {
       }
    }
 
-   async findOne(id) {
+   static async findOne(id) {
       const query = 'SELECT * FROM superviser WHERE sup_id = ?';
       const conn = await pool.getConnection();
       try {
@@ -31,7 +31,7 @@ class SuperviserModel {
       }
    }
 
-   async create(sup_name, sup_contact, sup_alt_contact, sup_address) {
+   static async create(sup_name, sup_contact, sup_alt_contact, sup_address) {
       const query = 'INSERT INTO superviser (sup_name, sup_contact, sup_alt_contact, sup_address) VALUES (?, ?, ?, ?)';
       const conn = await pool.getConnection();
       try {
@@ -44,7 +44,7 @@ class SuperviserModel {
       }
    }
 
-   async update(id, sup_name, sup_contact, sup_alt_contact, sup_address) {
+   static async update(id, sup_name, sup_contact, sup_alt_contact, sup_address) {
       const query =
          'UPDATE superviser SET sup_name = ?, sup_contact = ?, sup_alt_contact = ?, sup_address = ? WHERE sup_id = ?';
       const conn = await pool.getConnection();
@@ -58,7 +58,7 @@ class SuperviserModel {
       }
    }
 
-   async delete(id) {
+   static async delete(id) {
       const query = 'DELETE FROM superviser WHERE sup_id = ?';
       const conn = await pool.getConnection();
       try {

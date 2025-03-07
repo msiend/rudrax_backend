@@ -15,14 +15,14 @@ class ClientsController {
   // Get a single client by ID
   static async findOne(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const data = await ClientsModel.findOne(id);
       if (!data) {
         return res.status(404).send({ status: false, msg: 'Client not found' });
       }
       return res.status(200).send({ status: true, msg: 'Client retrieved successfully', data });
     } catch (error) {
-      console.error(`Error fetching client with ID ${req.params.id}:`, error);
+      console.error(`Error fetching client with ID ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -46,7 +46,7 @@ class ClientsController {
   // Update an existing client
   static async update(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const { client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email } = req.body;
       const updated = await ClientsModel.update(id, client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
 
@@ -55,7 +55,7 @@ class ClientsController {
       }
       return res.status(200).send({ status: true, msg: 'Client updated successfully' });
     } catch (error) {
-      console.error(`Error updating client with ID ${req.params.id}:`, error);
+      console.error(`Error updating client with ID ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -63,14 +63,14 @@ class ClientsController {
   // Delete a client
   static async remove(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const deleted = await ClientsModel.remove(id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Client not found' });
       }
       return res.status(200).send({ status: true, msg: 'Client deleted successfully' });
     } catch (error) {
-      console.error(`Error deleting client with ID ${req.params.id}:`, error);
+      console.error(`Error deleting client with ID ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }

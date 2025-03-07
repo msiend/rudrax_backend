@@ -1,0 +1,17 @@
+meta {
+  name: delete
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{URL.Entity}}superviser/remove
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 2
+  }
+}

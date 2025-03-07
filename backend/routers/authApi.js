@@ -20,10 +20,10 @@ Object.entries(roleControllerMap).forEach(([role, controller]) => {
    authRouter.get(`/auth/logout/${role}`, controller.handleLogout);
 });
 
-// authRouter.post('/auth/create/super-admin', authControllers.create)
-// authRouter.post('/auth/login/super-admin', authControllers.handleLogin)
-// authRouter.get('/auth/refresh/super-admin', authControllers.handleRefreshToken)
-// authRouter.get('/auth/logout/super-admin', authControllers.handleLogout)
+// authRouter.post('/auth/create/super-admin', superAdminControllers.create)
+// authRouter.post('/auth/login/super-admin', superAdminControllers.handleLogin)
+// authRouter.get('/auth/refresh/super-admin', superAdminControllers.handleRefreshToken)
+// authRouter.get('/auth/logout/super-admin', superAdminControllers.handleLogout)
 
 module.exports = authRouter;
 

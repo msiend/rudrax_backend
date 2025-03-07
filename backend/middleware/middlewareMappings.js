@@ -6,7 +6,8 @@ const middlewareMappings = {
   entity: {
     projectController: {
       findAll: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
-      create: [verifyJwt],
+      create: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
+      update: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
     },
   },
 };

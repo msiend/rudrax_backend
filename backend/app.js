@@ -47,55 +47,16 @@ app.use('/api', authRoutes);
 // app.use(jwt_authenticationVerify)
 
 ////// api routes
-app.use('/api/v1', appRoutes);
-
-
-
-
-const swaggerUi = require('swagger-ui-express');
-const swaggerJSDoc = require('swagger-jsdoc');
-
-const port = 3000;
-
-// Swagger definition
-const swaggerOptions = {
-    swaggerDefinition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'My API',
-            version: '1.0.0',
-            description: 'API documentation using Swagger',
-        },
-        servers: [
-            {
-                url: `http://localhost:${PORT}`,
-            },
-        ],
-   components: {
-     securitySchemes: {
-         bearerAuth: {
-             type: 'http',
-             scheme: 'bearer',
-             bearerFormat: 'JWT', 
-         },
-     },
- },
-    },
-    apis: ['./routers/*.js'], // Path to your API docs
-};
-
-const swaggerDocs = swaggerJSDoc(swaggerOptions);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api/v1', appRoutes); 
 
 
 
 ///
 ////
 ///// DEV Executions =================
-app._router.stack.forEach(print.bind(null, [])) 
+// app._router.stack.forEach(print.bind(null, [])) 
 // app.use(require('express-status-monitor')())
 ////////////////////////////////
-
 
 
 app.listen(PORT, () => {

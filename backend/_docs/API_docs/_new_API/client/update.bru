@@ -1,0 +1,23 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}client/update
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "id": 4,
+      "client_name": "Gamma Industries ltd.",
+      "client_ref_no": "BETA2",
+      "client_contact": "555-555-5555",
+      "client_alt_contact": null,
+      "client_address": "456 Oak Ave, Anytown, CA 91235",
+      "client_email": "contact@betaind.net"
+    }
+}

@@ -85,7 +85,7 @@ class ClientModel {
       }
    }
 
-   static async delete(clientId) {
+   static async remove(clientId) {
       const query = 'DELETE FROM clients WHERE client_id = ?';
       const connPool = await pool.getConnection();
       try {

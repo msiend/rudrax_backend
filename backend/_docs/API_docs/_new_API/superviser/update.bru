@@ -1,0 +1,21 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}superviser/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 1,
+    "sup_name": "Acme Supplies",
+    "sup_contact": "9401069337",
+    "sup_alt_contact": "789456123",
+    "sup_address": "123 Main St, Anytown, CA 91234"
+  }
+}

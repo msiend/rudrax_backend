@@ -33,15 +33,15 @@ class ProjectsController {
    static async create(req, res) {
       try {
          const {
-            pro_client_r_id,
-            pro_name,
-            pro_ref_no,
-            pro_housetype,
-            pro_rcctype,
-            pro_sitedesc,
-            pro_duration,
-            pro_totalcost,
-            pro_advancepayment,
+           client_r_id,
+           name,
+           ref_no,
+           housetype,
+           rcctype,
+           sitedesc,
+           duration,
+           totalcost,
+           advancepayment,
          } = req.body;
 
          if (!pro_client_r_id || !pro_ref_no) {
@@ -49,17 +49,17 @@ class ProjectsController {
          }
 
          const projectId = await ProjectsModel.create(
-            pro_client_r_id,
-            pro_name,
-            pro_ref_no,
-            pro_housetype,
-            pro_rcctype,
-            pro_sitedesc,
-            pro_duration,
-            pro_totalcost,
-            pro_advancepayment
+           client_r_id,
+           name,
+           ref_no,
+           housetype,
+           rcctype,
+           sitedesc,
+           duration,
+           totalcost,
+           advancepayment
          );
-         return res.status(201).send({ status: true, msg: 'Project added successfully', data: { pro_id: projectId } });
+         return res.status(201).send({ status: true, msg: 'Project added successfully', data: {id: projectId } });
       } catch (error) {
          console.error('Error adding project:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -71,27 +71,27 @@ class ProjectsController {
       try {
          const { id } = req.params;
          const {
-            pro_client_r_id,
-            pro_name,
-            pro_ref_no,
-            pro_housetype,
-            pro_rcctype,
-            pro_sitedesc,
-            pro_duration,
-            pro_totalcost,
-            pro_advancepayment,
+           client_r_id,
+           name,
+           ref_no,
+           housetype,
+           rcctype,
+           sitedesc,
+           duration,
+           totalcost,
+           advancepayment,
          } = req.body;
          const updated = await ProjectsModel.update(
             id,
-            pro_client_r_id,
-            pro_name,
-            pro_ref_no,
-            pro_housetype,
-            pro_rcctype,
-            pro_sitedesc,
-            pro_duration,
-            pro_totalcost,
-            pro_advancepayment
+           client_r_id,
+           name,
+           ref_no,
+           housetype,
+           rcctype,
+           sitedesc,
+           duration,
+           totalcost,
+           advancepayment
          );
 
          if (!updated) {
