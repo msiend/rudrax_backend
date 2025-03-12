@@ -12,7 +12,7 @@ class PhasesController {
 
   static async findOne(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const phase = await PhasesModel.findOne(id);
       if (!phase) return res.status(404).send({ status: false, msg: 'Phase not found', data: null });
       res.status(200).send({ status: true, msg: 'Phase retrieved successfully', data: phase });
@@ -33,7 +33,7 @@ class PhasesController {
 
   static async update(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const { phase_name, phase_alt_name } = req.body;
       const success = await PhasesModel.update(id, phase_name, phase_alt_name);
       if (!success) return res.status(404).send({ status: false, msg: 'Phase not found', data: null });
@@ -45,7 +45,7 @@ class PhasesController {
 
   static async remove(req, res) {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const success = await PhasesModel.delete(id);
       if (!success) return res.status(404).send({ status: false, msg: 'Phase not found', data: null });
       res.status(200).send({ status: true, msg: 'Phase deleted successfully', data: null });
