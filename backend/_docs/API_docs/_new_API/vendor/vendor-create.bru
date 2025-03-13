@@ -24,3 +24,7 @@ body:json {
     "vendor_status": "open"
   }
 }
+
+assert {
+  ~vendor_name: isNumber
+}

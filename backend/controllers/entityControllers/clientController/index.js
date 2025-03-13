@@ -34,9 +34,8 @@ class ClientsController {
       if (!client_name || !client_ref_no || !client_contact) {
         return res.status(400).send({ status: false, msg: 'Missing required fields' });
       }
-
-      const clientId = await ClientsModel.create(client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
-      return res.status(201).send({ status: true, msg: 'Client created successfully', data: { client_id: clientId } });
+      const clientData = await ClientsModel.create(client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
+      return res.status(201).send({ status: true, msg: 'Client created successfully', data:  clientData  });
     } catch (error) {
       console.error('Error creating client:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -49,7 +48,6 @@ class ClientsController {
       const { id } = req.body;
       const { client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email } = req.body;
       const updated = await ClientsModel.update(id, client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
-
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Client not found or no changes made' });
       }

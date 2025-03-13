@@ -51,8 +51,19 @@ class ClientModel {
             clientAltContact,
             clientAddress,
             clientEmail,
-         ]);
-         return result.insertId;
+         ]);         
+         if(result.affectedRows > 0 ){
+            let affectedData={
+               c_id:result.insertId,
+               clientName:clientName,
+               clientRefNo:clientRefNo,
+               clientContact:clientContact,
+               clientAltContact:clientAltContact,
+               clientAddress:clientAddress,
+               clientEmail:clientEmail,
+            }
+            return affectedData;
+         }
       } catch (error) {
          console.error('Error creating client:', error);
          throw error;
