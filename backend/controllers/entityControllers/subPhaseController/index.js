@@ -17,7 +17,7 @@ class SubPhasesController {
 
    static async findOne(req, res) {
       try {
-         const { id } = req.params;
+         const { id } = req.body;
          const subPhase = await SubPhasesModel.findOne(id);
          if (!subPhase) return res.status(404).send({ status: false, msg: 'Sub-phase not found', data: null });
          res.status(200).send({ status: true, msg: 'Sub-phase retrieved successfully', data: subPhase });
@@ -38,8 +38,7 @@ class SubPhasesController {
 
    static async update(req, res) {
       try {
-         const { id } = req.params;
-         const { sub_phase_name, sub_phase_alt_name } = req.body;
+         const { id, sub_phase_name, sub_phase_alt_name} = req.body;
          const success = await SubPhasesModel.update(id, sub_phase_name, sub_phase_alt_name);
          if (!success) return res.status(404).send({ status: false, msg: 'Sub-phase not found', data: null });
          res.status(200).send({ status: true, msg: 'Sub-phase updated successfully', data: null });
@@ -50,7 +49,7 @@ class SubPhasesController {
 
    static async remove(req, res) {
       try {
-         const { id } = req.params;
+         const { id } = req.body;
          const success = await SubPhasesModel.delete(id);
          if (!success) return res.status(404).send({ status: false, msg: 'Sub-phase not found', data: null });
          res.status(200).send({ status: true, msg: 'Sub-phase deleted successfully', data: null });

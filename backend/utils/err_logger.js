@@ -1,6 +1,6 @@
 const { createLogger, transports, format } = require('winston');
 
-const logger = createLogger({
+const err_logger = createLogger({
   level: 'error',
   format: format.combine(
     format.timestamp(),
@@ -11,4 +11,4 @@ const logger = createLogger({
   transports: [new transports.Console(), new transports.File({ filename: '@/src/error_logs/error.log' })],
 });
 
-module.exports = logger;
+module.exports = err_logger;

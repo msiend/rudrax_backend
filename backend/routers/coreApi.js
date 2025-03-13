@@ -1,13 +1,16 @@
 require('module-alias/register');
 
 const express = require('express');
-const authRouter = express.Router();
-const authControllers = require('@/controllers/authControllers/superadmin')
+const coreRouter = express.Router();
+const ClientController = require('@/controllers/coreEntityControllers/ClientController')
 
-authRouter.post('/auth/create/super-admin', authControllers.create)
-authRouter.post('/auth/login/super-admin', authControllers.handleLogin)
-authRouter.get('/auth/refresh/super-admin', authControllers.handleRefreshToken)
-authRouter.get('/auth/logout/super-admin', authControllers.handleLogout)
+// authRouter.post('/auth/create/super-admin', authControllers.create)
+// authRouter.post('/auth/login/super-admin', authControllers.handleLogin)
+// authRouter.get('/auth/refresh/super-admin', authControllers.handleRefreshToken)
+// authRouter.get('/auth/logout/super-admin', authControllers.handleLogout)
 
 
-module.exports = authRouter;
+coreRouter.get('/core/client/get_lastRef',ClientController.getClientsLastRef )
+
+
+module.exports = coreRouter;

@@ -71,7 +71,7 @@ class VendorsController {
 
    static async remove(req, res) {
       try {
-        //  const { id } = req.params;
+         //  const { id } = req.params;
          const { id } = req.body;
          const success = await VendorsModel.delete(id);
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });

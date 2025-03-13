@@ -40,7 +40,8 @@ app.use(cookieParser());
 // app.use(requestLogger);
 
 
-const appRoutes = require('@/routers/applicationApi');
+const appRoutes_entity = require('@/routers/applicationApi');
+const appRoutes_core = require('@/routers/coreApi');
 const authRoutes = require('@/routers/authApi');
 
 ////// auth routes
@@ -48,14 +49,15 @@ app.use('/api', authRoutes);
 // app.use(jwt_authenticationVerify)
 
 ////// api routes
-app.use('/api/v1', appRoutes); 
+app.use('/api/v1', appRoutes_entity); 
+app.use('/api/v1', appRoutes_core); 
 
 
 
 ///
 ////
 ///// DEV Executions =================
-// app._router.stack.forEach(print.bind(null, [])) 
+app._router.stack.forEach(print.bind(null, [])) 
 // app.use(require('express-status-monitor')())
 ////////////////////////////////
 
