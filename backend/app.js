@@ -15,6 +15,7 @@ require('dotenv').config({ path: '.env.development' });
 require('@/config/dbConfig');
 
 
+app.use(cors())
 
 
 ///
