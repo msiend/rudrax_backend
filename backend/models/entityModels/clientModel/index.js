@@ -54,13 +54,13 @@ class ClientModel {
          ]);         
          if(result.affectedRows > 0 ){
             let affectedData={
-               c_id:result.insertId,
-               clientName:clientName,
-               clientRefNo:clientRefNo,
-               clientContact:clientContact,
-               clientAltContact:clientAltContact,
-               clientAddress:clientAddress,
-               clientEmail:clientEmail,
+               client_id:result.insertId,
+               client_name:clientName,
+               client_ref_no:clientRefNo,
+               client_contact:clientContact,
+               client_alt_contact:clientAltContact,
+               client_address:clientAddress,
+               client_email:clientEmail,
             }
             return affectedData;
          }
