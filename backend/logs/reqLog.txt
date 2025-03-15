@@ -620,3 +620,13 @@
 20250313	15:42:01	1c57f902-f1a7-4141-9c37-9820abb3ae5d	GET	undefined	/api/v1/core/client/get_lastRef
 20250313	15:42:01	7b81703b-4907-4a3c-859f-50c5659244c0	GET	undefined	/api/v1/core/client/get_lastRef
 20250313	15:43:39	c39f575e-6a54-4664-8c08-20ad9ab18575	GET	undefined	/api/v1/core/client/get_lastRef
+20250313	15:51:22	53259164-54d0-4160-a3dc-78ecd74ff106	GET	undefined	/api/v1/entity/client/readAll
+20250315	18:52:28	d0a828fa-c284-47c2-b28c-a19a29476a16	POST	undefined	/api/v1/entity/client/create
+20250315	18:52:34	ed79823d-7597-400b-836b-836ad40341af	POST	undefined	/api/v1/entity/client/create
+20250315	18:52:41	cfed58b6-bf45-4aa2-85b0-7e8e8c99216d	POST	undefined	/api/v1/entity/client/create
+20250315	19:01:08	1a591792-923c-4c10-bf02-9ef7bdf5d78b	POST	undefined	/api/v1/entity/client/create
+20250315	19:01:09	9d35af5e-ba3d-424c-acfc-f58d1047c732	POST	undefined	/api/v1/entity/client/create
+20250315	19:01:09	f35bca3f-db7c-465d-9d89-1acaa6420da6	POST	undefined	/api/v1/entity/client/create
+20250315	19:02:26	545be21a-ae03-4c50-80fc-d0dde0719f99	POST	undefined	/api/v1/entity/client/create
+20250315	19:02:28	0dcee20a-9f96-4cd4-80bf-61b975706ad1	POST	undefined	/api/v1/entity/client/create
+20250315	19:02:28	49e74609-5713-4de4-8538-3b3ca1b00287	POST	undefined	/api/v1/entity/client/create
