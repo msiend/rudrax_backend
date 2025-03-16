@@ -45,13 +45,13 @@ class ClientsController {
   // Update an existing client
   static async update(req, res) {
     try {
-      const { id } = req.body;
+      const { client_id } = req.body;
       const { client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email } = req.body;
-      const updated = await ClientsModel.update(id, client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
+      const updated = await ClientsModel.update(client_id, client_name, client_ref_no, client_contact, client_alt_contact, client_address, client_email);
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Client not found or no changes made' });
       }
-      return res.status(200).send({ status: true, msg: 'Client updated successfully' });
+      return res.status(200).send({ status: true, msg: 'Client updated successfully', client: req.body });
     } catch (error) {
       console.error(`Error updating client with ID ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -66,7 +66,7 @@ class ClientsController {
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Client not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Client deleted successfully' });
+      return res.status(200).send({ status: true, msg: 'Client deleted successfully', deletedId: id });
     } catch (error) {
       console.error(`Error deleting client with ID ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });

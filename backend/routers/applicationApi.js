@@ -16,7 +16,7 @@ function createRoutes(controllerBox, prefix) {
     if (findOne) router.get(`/${prefix}/${key.split('C')[0]}/readOne`, [controllerMiddlewares.findOne||[], findOne]);
     if (create) router.post(`/${prefix}/${key.split('C')[0]}/create`, [controllerMiddlewares.create||[], create]);
     if (update) router.put(`/${prefix}/${key.split('C')[0]}/update`, [controllerMiddlewares.update||[], update]);
-    if (remove) router.get(`/${prefix}/${key.split('C')[0]}/remove`, [controllerMiddlewares.remove||[], remove]);
+    if (remove) router.delete(`/${prefix}/${key.split('C')[0]}/remove`, [controllerMiddlewares.remove||[], remove]);
     if (paginate) router.get(`/${prefix}/${key.split('C')[0]}/paginate`, [controllerMiddlewares.paginate||[], paginate]);
   });
 }
