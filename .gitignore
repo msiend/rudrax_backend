@@ -4,3 +4,5 @@
 .env.development
 ./Construction
 
+backend/logs/reqLog.txt
+backend/logs/req_logs.log
