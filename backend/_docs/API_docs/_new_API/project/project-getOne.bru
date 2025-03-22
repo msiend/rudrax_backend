@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}branch_client/readOne
+  url: {{URL.Entity}}project/readOne
   body: json
   auth: bearer
 }
@@ -16,6 +16,6 @@ auth:bearer {
 
 body:json {
   {
-    "b_client_id":22
+    "pro_id":4
   }
 }

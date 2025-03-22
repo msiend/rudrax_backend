@@ -5,7 +5,7 @@ meta {
 }
 
 delete {
-  url: {{URL.Entity}}branch_client/remove
+  url: {{URL.Entity}}project/remove
   body: json
   auth: bearer
 }
@@ -16,6 +16,6 @@ auth:bearer {
 
 body:json {
   {
-    "b_client_id": 20
+    "pro_id": 4
   }
 }
