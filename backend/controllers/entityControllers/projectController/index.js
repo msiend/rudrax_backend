@@ -1,6 +1,5 @@
-//Hello, this is a Controller for project!
 
-const { project } = require('@/models/entityModels/projectModel');
+const ProjectsModel = require('@/models/entityModels/projectModel');
 
 class ProjectsController {
    // Get all projects
@@ -44,7 +43,7 @@ class ProjectsController {
            advancepayment,
          } = req.body;
 
-         if (!pro_client_r_id || !pro_ref_no) {
+         if (!client_r_id || !ref_no) {
             return res.status(400).send({ status: false, msg: 'Missing required fields' });
          }
 

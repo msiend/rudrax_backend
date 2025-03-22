@@ -22,13 +22,13 @@ class VendorsModel {
    }
 
    static async findAll() {
-      const query = 'SELECT * FROM vendodrs';
+      const query = 'SELECT * FROM vendors';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
          return rows;
       } catch (error) {
-         sqlErrorHandler(error)
+         sqlErrorHandler(error);
          console.error('Error retrieving all vendors:', error);
          throw error;
       } finally {
@@ -50,20 +50,33 @@ class VendorsModel {
       }
    }
 
-   static async create(vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
+   static async create(vendor_name,vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
       const query =
-         'INSERT INTO vendors (vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) VALUES (?, ?, ?, ?, ?, ?)';
+         'INSERT INTO vendors (vendor_name, vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) VALUES (?, ?, ?, ?, ?, ?, ?)';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [
             vendor_name,
+            vendor_ref_no,
             vendor_contact,
             vendor_alt_contact,
             vendor_address,
             vendor_email,
             vendor_status,
          ]);
-         return result.insertId;
+         if(result.affectedRows > 0 ){
+            let affectedData={
+               vendor_id:result.insertId,
+               vendor_name:vendor_name,
+               vendor_ref_no:vendor_ref_no,
+               vendor_contact:vendor_contact,
+               vendor_alt_contact:vendor_alt_contact,
+               vendor_address:vendor_address,
+               vendor_email:vendor_email,
+            }
+            return affectedData;
+         }
+        
       } catch (error) {
          console.error('Error creating vendor:', error);
          throw error;

@@ -13,17 +13,17 @@ class LaboursController {
     }
   }
 
-  // Get a single labour by ID
+  // Get a single labour by lab_id
   static async findOne(req, res) {
     try {
-      const { id } = req.params;
-      const data = await LaboursModel.findOne(id);
+      const { lab_id } = req.body;
+      const data = await LaboursModel.findOne(lab_id);
       if (!data) {
         return res.status(404).send({ status: false, msg: 'Labour not found' });
       }
       return res.status(200).send({ status: true, msg: 'Labour retrieved successfully', data });
     } catch (error) {
-      console.error(`Error fetching labour with ID ${req.params.id}:`, error);
+      console.error(`Error fetching labour with lab_id ${req.body.lab_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -32,13 +32,11 @@ class LaboursController {
   static async create(req, res) {
     try {
       const { lab_name, lab_contact, lab_alt_contact, lab_address, lab_email } = req.body;
-
       if (!lab_name || !lab_contact) {
         return res.status(400).send({ status: false, msg: 'Missing required fields' });
       }
-
-      const labourId = await LaboursModel.create(lab_name, lab_contact, lab_alt_contact, lab_address, lab_email);
-      return res.status(201).send({ status: true, msg: 'Labour added successfully', data: { lab_id: labourId } });
+      const labourlab_id = await LaboursModel.create(lab_name, lab_contact, lab_alt_contact, lab_address, lab_email);
+      return res.status(201).send({ status: true, msg: 'Labour added successfully', data: { lab_lab_id: labourlab_id } });
     } catch (error) {
       console.error('Error adding labour:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -48,16 +46,15 @@ class LaboursController {
   // Update an existing labour
   static async update(req, res) {
     try {
-      const { id } = req.params;
+      const { lab_id } = req.body;
       const { lab_name, lab_contact, lab_alt_contact, lab_address, lab_email } = req.body;
-      const updated = await LaboursModel.update(id, lab_name, lab_contact, lab_alt_contact, lab_address, lab_email);
-
+      const updated = await LaboursModel.update(lab_id, lab_name, lab_contact, lab_alt_contact, lab_address, lab_email);
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Labour not found or no changes made' });
       }
-      return res.status(200).send({ status: true, msg: 'Labour updated successfully' });
+      return res.status(200).send({ status: true, msg: 'Labour updated successfully',data: null  });
     } catch (error) {
-      console.error(`Error updating labour with ID ${req.params.id}:`, error);
+      console.error(`Error updating labour with lab_id ${req.body.lab_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -65,14 +62,14 @@ class LaboursController {
   // Delete a labour
   static async remove(req, res) {
     try {
-      const { id } = req.params;
-      const deleted = await LaboursModel.remove(id);
+      const { lab_id } = req.body;
+      const deleted = await LaboursModel.remove(lab_id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Labour not found' });
       }
       return res.status(200).send({ status: true, msg: 'Labour deleted successfully' });
     } catch (error) {
-      console.error(`Error deleting labour with ID ${req.params.id}:`, error);
+      console.error(`Error deleting labour with lab_id ${req.body.lab_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }

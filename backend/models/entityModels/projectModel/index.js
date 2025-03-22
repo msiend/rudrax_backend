@@ -1,4 +1,3 @@
-//Hello, this is a Model for project!
 
 const pool = require('@/config/dbConfig')
 

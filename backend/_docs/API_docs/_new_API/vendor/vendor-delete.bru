@@ -1,17 +1,13 @@
 meta {
   name: vendor-delete
   type: http
-  seq: 4
+  seq: 5
 }
 
 delete {
-  url: 127.0.0.1:3500/api/v1/entity/vendor/remove?id=7
+  url: 127.0.0.1:3500/api/v1/entity/vendor/remove
   body: json
   auth: bearer
-}
-
-params:query {
-  id: 7
 }
 
 auth:bearer {
@@ -20,6 +16,6 @@ auth:bearer {
 
 body:json {
   {
-    "id": 7
+    "vendor_id": 8
   }
 }

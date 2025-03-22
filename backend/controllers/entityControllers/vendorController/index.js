@@ -1,5 +1,6 @@
 //Hello, this is a Controller for vendor!
 const VendorsModel = require('@/models/entityModels/vendorModel');
+const VendorsCorModel = require('@/models/coreEntityModels/vendorModel');
 
 class VendorsController {
    static async findAll(req, res) {
@@ -13,8 +14,10 @@ class VendorsController {
 
    static async findOne(req, res) {
       try {
-         const { id } = req.params;
-         const vendor = await VendorsModel.findOne(id);
+         const { vendor_id } = req.body;
+         const vendor = await VendorsModel.findOne(vendor_id);
+         console.log(vendor);
+         
          if (!vendor) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
          res.status(200).send({ status: true, msg: 'Vendor retrieved successfully', data: vendor });
       } catch (error) {
@@ -24,10 +27,16 @@ class VendorsController {
 
    static async create(req, res) {
       try {
-         const { vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =
-            req.body;
+         const { vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =req.body;
+         const data = await VendorsCorModel.getLastVendorRef();
+         let newRef;
+         if (data) {
+            let lastNum = parseInt(data[0]['vendor_ref_no'].slice(-4));
+            newRef = data[0]['vendor_ref_no'].replace(lastNum, lastNum + 1);
+         } else {newRef = 'JGCV0001';}
          const result = await VendorsModel.create(
             vendor_name,
+            newRef,
             vendor_contact,
             vendor_alt_contact,
             vendor_address,
@@ -40,8 +49,7 @@ class VendorsController {
                msg: 'Something Went Wrong!',
                errMsg: result?.errMsg,
             });
-         }
-         res.status(201).send({ status: true, msg: 'Vendor created successfully', data: { id: result } });
+         } else res.status(201).send({ status: true, msg: 'Vendor created successfully', data: { id: result } });
       } catch (error) {
          console.log(error);
          res.status(500).send({ status: false, msg: 'Failed to create vendor', error: error });
@@ -51,10 +59,10 @@ class VendorsController {
    static async update(req, res) {
       try {
          //  const { id } = req.params;
-         const { id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =
+         const { vendor_id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =
             req.body;
          const success = await VendorsModel.update(
-            id,
+            vendor_id,
             vendor_name,
             vendor_contact,
             vendor_alt_contact,
@@ -72,10 +80,10 @@ class VendorsController {
    static async remove(req, res) {
       try {
          //  const { id } = req.params;
-         const { id } = req.body;
-         const success = await VendorsModel.delete(id);
+         const { vendor_id } = req.body;
+         const success = await VendorsModel.delete(vendor_id);
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
-         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: null });
+         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: {vendor_id:vendor_id} });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to delete vendor', data: null });
       }

@@ -1,0 +1,36 @@
+meta {
+  name: branch_client-update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}branch_client/update
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyX2lkIjo2LCJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJyb2xlcyI6NTE5MH0sImlhdCI6MTczODEzNjM2OSwiZXhwIjoxNzQwNzI4MzY5fQ.zCBTamWE5KdubO7HMj4Pw-5EuLA9j1Jqj13eG2l0Nlw
+}
+
+body:json {
+  {
+    "b_client_id": 18,
+    "b_r_id": "3",
+    "b_client_name": "Acme Corporation=======",
+    "b_client_ref_no": "ACME-2023-5",
+    "b_client_contact": "555-100-1001",
+    "b_client_alt_contact": "555-200-2001",
+    "b_client_address": "100 Industry Lane, Anytown",
+    "b_client_email": "info@acmecorp.com",
+    "b_client_housetype": "Warehouse",
+    "b_client_rcctype": "Pre-engineered Steel",
+    "b_client_totalcost": 500000.00,
+    "b_client_advancepayment": 150000.00,
+    "b_client_sitedesc": "Large open area, flat terrain.",
+    "b_client_duration": "6 months",
+    "b_client_commision": 0.05,
+    "b_admin_approval": true
+  }
+}

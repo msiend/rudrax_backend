@@ -82,7 +82,7 @@ class LaboursModel {
     }
   }
 
-  static async delete(lab_id) {
+  static async remove(lab_id) {
     const query = 'DELETE FROM labours WHERE lab_id = ?';
     const connPool = await pool.getConnection();
     try {

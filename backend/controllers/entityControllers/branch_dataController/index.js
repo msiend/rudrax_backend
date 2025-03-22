@@ -13,11 +13,11 @@ class BranchDataController {
     }
   }
 
-  // Get a single branch by ID
+  // Get a single branch by b_id
   static async findOne(req, res) {
     try {
-      const { id } = req.params;
-      const data = await BranchDataModel.findOne(id);
+      const { b_id } = req.body;
+      const data = await BranchDataModel.findOne(b_id);
       if (!data) {
         return res.status(404).send({ status: false, msg: 'Branch not found' });
       }
@@ -35,8 +35,8 @@ class BranchDataController {
       if (!b_name || !b_contact_number) {
         return res.status(400).send({ status: false, msg: 'Branch Name and Contact Number are required' });
       }
-      const newId = await BranchDataModel.create(b_name, b_location, b_head, b_contact_number, b_alt_number, b_email, b_commision);
-      return res.status(201).send({ status: true, msg: 'Branch created successfully', data: { id: newId } });
+      const newb_id = await BranchDataModel.create(b_name, b_location, b_head, b_contact_number, b_alt_number, b_email, b_commision);
+      return res.status(201).send({ status: true, msg: 'Branch created successfully', data: { b_id: newb_id } });
     } catch (error) {
       console.error('Error creating branch:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -46,9 +46,9 @@ class BranchDataController {
   // Update a branch
   static async update(req, res) {
     try {
-      const { id } = req.params;
+      const { b_id } = req.body;
       const { b_name, b_location, b_head, b_contact_number, b_alt_number, b_email, b_commision } = req.body;
-      const updated = await BranchDataModel.update(id, b_name, b_location, b_head, b_contact_number, b_alt_number, b_email, b_commision);
+      const updated = await BranchDataModel.update(b_id, b_name, b_location, b_head, b_contact_number, b_alt_number, b_email, b_commision);
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Branch not found or no changes made' });
       }
@@ -62,12 +62,12 @@ class BranchDataController {
   // Delete a branch
   static async remove(req, res) {
     try {
-      const { id } = req.params;
-      const deleted = await BranchDataModel.remove(id);
+      const { b_id } = req.body;
+      const deleted = await BranchDataModel.remove(b_id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Branch not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Branch deleted successfully' });
+      return res.status(200).send({ status: true, msg: 'Branch deleted successfully' , data:b_id });
     } catch (error) {
       console.error('Error deleting branch:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });

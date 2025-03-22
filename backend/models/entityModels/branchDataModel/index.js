@@ -66,12 +66,12 @@ class BranchData {
     }
   }
 
-  static async deleteOne(id) {
+  static async remove(id) {
     const query = 'DELETE FROM branch_data WHERE b_id = ?';
     const connPool = await pool.getConnection();
     try {
-      await connPool.query(query, [id]);
-      console.log(`Branch data with ID ${id} deleted successfully.`);
+      const [result] =await connPool.query(query, [id]);
+      return result.affectedRows > 0;
     } catch (error) {
       console.error(`Error deleting branch data with ID ${id}:`, error);
     } finally {

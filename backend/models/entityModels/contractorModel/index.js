@@ -82,7 +82,7 @@ class ContractorsModel {
     }
   }
 
-  static async delete(con_id) {
+  static async remove(con_id) {
     const query = 'DELETE FROM contractors WHERE con_id = ?';
     const connPool = await pool.getConnection();
     try {
