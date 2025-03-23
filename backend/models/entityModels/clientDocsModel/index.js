@@ -8,11 +8,11 @@ class ClientsDocsModel {
     this.cl_doc_url = cl_doc_url;
   }
 
-  static async findAll() {
-    const query = 'SELECT cl_doc_id, cl_r_id, cl_doc_url FROM clients_docs';
+  static async findAll(cl_r_id) {
+    const query = 'SELECT cl_doc_id, cl_r_id, cl_doc_url FROM clients_docs WHERE cl_r_id=?';
     const connPool = await pool.getConnection();
     try {
-      const [rows] = await connPool.query(query);
+      const [rows] = await connPool.query(query,[cl_r_id]);
       return rows;
     } catch (error) {
       console.error('Error retrieving client documents:', error);
@@ -22,14 +22,14 @@ class ClientsDocsModel {
     }
   }
 
-  static async findOne(id) {
-    const query = 'SELECT cl_doc_id, cl_r_id, cl_doc_url FROM clients_docs WHERE cl_doc_id = ?';
+  static async findOne(cl_doc_id, cl_r_id) {
+    const query = 'SELECT cl_doc_id, cl_r_id, cl_doc_url FROM clients_docs WHERE cl_r_id = ? AND cl_doc_id=? ';
     const connPool = await pool.getConnection();
     try {
-      const [rows] = await connPool.query(query, [id]);
+      const [rows] = await connPool.query(query, [cl_r_id,cl_doc_id]);
       return rows.length > 0 ? rows[0] : null;
     } catch (error) {
-      console.error(`Error retrieving client document with ID ${id}:`, error);
+      console.error(`Error retrieving client document with cl_doc_id, cl_r_id - ${cl_doc_id, cl_r_id}:`, error);
       throw error;
     } finally {
       connPool.release();
@@ -64,14 +64,14 @@ class ClientsDocsModel {
     }
   }
 
-  static async deleteOne(id) {
+  static async remove(cl_doc_id) {
     const query = 'DELETE FROM clients_docs WHERE cl_doc_id = ?';
     const connPool = await pool.getConnection();
     try {
-      await connPool.query(query, [id]);
-      console.log(`Client document with ID ${id} deleted successfully.`);
+    const [result] =  await connPool.query(query, [cl_doc_id]);
+    return result.affectedRows > 0;
     } catch (error) {
-      console.error(`Error deleting client document with ID ${id}:`, error);
+      console.error(`Error deleting client document with ID ${cl_doc_id}:`, error);
       throw error;
     } finally {
       connPool.release();

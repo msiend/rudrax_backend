@@ -65,7 +65,7 @@ class ParticlesModel {
     }
   }
 
-  static async delete(particle_id) {
+  static async remove(particle_id) {
     const query = 'DELETE FROM particles WHERE particle_id = ?';
     const connPool = await pool.getConnection();
     try {

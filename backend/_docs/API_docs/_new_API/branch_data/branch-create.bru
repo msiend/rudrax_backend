@@ -1,0 +1,31 @@
+meta {
+  name: branch-create
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL.Entity}}branch_data/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyX2lkIjo2LCJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJyb2xlcyI6NTE5MH0sImlhdCI6MTczODEzNjM2OSwiZXhwIjoxNzQwNzI4MzY5fQ.zCBTamWE5KdubO7HMj4Pw-5EuLA9j1Jqj13eG2l0Nlw
+}
+
+body:json {
+  {
+      "b_name": "Sunrise Branch 44",
+      "b_location": "New York, NY",
+      "b_head": "John Doe",
+      "b_contact_number": "212-555-1234",
+      "b_alt_number": "917-555-5678",
+      "b_email": "sunrise@example.com",
+      "b_commision": 0.05
+    }
+}
+
+assert {
+  ~vendor_name: isNumber
+}

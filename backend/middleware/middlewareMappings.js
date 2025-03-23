@@ -4,12 +4,13 @@ const ROLES_LIST = require('@/config/roles_list')
 
 const middlewareMappings = {
   entity: {
-    projectController: {
-      findAll: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
-      create: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
-      update: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
-    },
+   
   },
 };
 
+// projectController: {
+//   findAll: [verifyJwt,authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
+//   create: [verifyJwt,authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
+//   update: [authorize(ROLES_LIST.SuperAdmin,ROLES_LIST.Branch)],
+// },
 module.exports = middlewareMappings;

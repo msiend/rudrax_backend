@@ -16,14 +16,14 @@ class ParticlesController {
   // Get a single particle by ID
   static async findOne(req, res) {
     try {
-      const { id } = req.params;
-      const data = await ParticlesModel.findOne(id);
+      const { particle_id } = req.body;
+      const data = await ParticlesModel.findOne(particle_id);
       if (!data) {
         return res.status(404).send({ status: false, msg: 'Particle not found' });
       }
       return res.status(200).send({ status: true, msg: 'Particle retrieved successfully', data });
     } catch (error) {
-      console.error(`Error fetching particle with ID ${req.params.id}:`, error);
+      console.error(`Error fetching particle with ID ${req.body.particle_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -48,16 +48,15 @@ class ParticlesController {
   // Update an existing particle
   static async update(req, res) {
     try {
-      const { id } = req.params;
-      const { particle_name, particle_price } = req.body;
-      const updated = await ParticlesModel.update(id, particle_name, particle_price);
-
+      const { particle_id ,particle_name, particle_price } = req.body;
+      const updated = await ParticlesModel.update(particle_id, particle_name, particle_price);
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Particle not found or no changes made' });
       }
-      return res.status(200).send({ status: true, msg: 'Particle updated successfully' });
+      return res.status(200).send({ status: true, msg: 'Particle updated successfully',
+         data:{particle_id:particle_id ,particle_name:particle_name, particle_price:particle_price}});
     } catch (error) {
-      console.error(`Error updating particle with ID ${req.params.id}:`, error);
+      console.error(`Error updating particle with ID ${req.body.particle_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }
@@ -65,14 +64,14 @@ class ParticlesController {
   // Delete a particle
   static async remove(req, res) {
     try {
-      const { id } = req.params;
-      const deleted = await ParticlesModel.remove(id);
+      const { particle_id } = req.body;
+      const deleted = await ParticlesModel.remove(particle_id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Particle not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Particle deleted successfully' });
+      return res.status(200).send({ status: true, msg: 'Particle deleted successfully', data :null });
     } catch (error) {
-      console.error(`Error deleting particle with ID ${req.params.id}:`, error);
+      console.error(`Error deleting particle with ID ${req.body.particle_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }

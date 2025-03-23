@@ -1,0 +1,36 @@
+meta {
+  name: project-create
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL.Entity}}project/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyX2lkIjo2LCJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJyb2xlcyI6NTE5MH0sImlhdCI6MTc0MjYzMDY4OSwiZXhwIjoxNzQ1MjIyNjg5fQ.qZAJmn_1Oy-7QqDbS96IdFvVsakMBnJAXCK4etq7FeY
+}
+
+body:json {
+   {
+      "pro_client_r_id": "35",
+      "pro_name": "Lakeview Resort",
+      "pro_housetype": "Bungalow Resort",
+      "pro_rcctype": "Timber and Stone",
+      "pro_sitedesc": "Scenic lakefront, hilly terrain.",
+      "pro_duration": "15 months",
+      "pro_totalcost": 1800000.00,
+      "pro_advancepayment": 540000.00
+    }
+}
+
+assert {
+  ~vendor_name: isNumber
+}
+
+docs {
+    b_client_ref_no=should not be same every time;
+}

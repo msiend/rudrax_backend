@@ -77,7 +77,7 @@ class BranchClientsModel {
     }
   }
 
-  static async update(id, data) {
+  static async update(data) {
     const query = `UPDATE branch_clients SET b_r_id = ?, b_client_name = ?, b_client_ref_no = ?, b_client_contact = ?, b_client_alt_contact = ?, b_client_address = ?, b_client_email = ?, b_client_housetype = ?, b_client_rcctype = ?, b_client_totalcost = ?, b_client_advancepayment = ?, b_client_sitedesc = ?, b_client_duration = ?, b_client_commision = ?, b_admin_approval = ? WHERE b_client_id = ?`;
     const connPool = await pool.getConnection();
     try {
@@ -97,23 +97,23 @@ class BranchClientsModel {
         data.b_client_duration,
         data.b_client_commision,
         data.b_admin_approval,
-        id
+        data.b_client_id,
       ]);
       return result.affectedRows > 0;
     } catch (error) {
-      console.error(`Error updating branch client with ID ${id}:`, error);
+      console.error(`Error updating branch client with ID ${ data.b_client_id}:`, error);
     } finally {
       connPool.release();
     }
   }
 
-  static async deleteOne(id) {
+  static async remove(id) {
     const query = 'DELETE FROM branch_clients WHERE b_client_id = ?';
     const connPool = await pool.getConnection();
     try {
-      await connPool.query(query, [id]);
-      console.log(`Branch client with ID ${id} deleted successfully.`);
-    } catch (error) {
+    const [result] =  await connPool.query(query, [id]);
+      return result.affectedRows > 0;   
+     } catch (error) {
       console.error(`Error deleting branch client with ID ${id}:`, error);
     } finally {
       connPool.release();
