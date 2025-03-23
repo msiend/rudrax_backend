@@ -1536,3 +1536,12 @@
 20250323	10:29:39	a081bac1-8c83-41b2-8336-ebd44bd6b9cf	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
 20250323	10:29:43	bbc133b1-84b2-426e-b6b6-bd4574f3cf31	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
 20250323	10:31:29	86c5bb99-7c60-4b11-a9b9-3e4d278a83bb	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:46:33	00e1923e-ff3c-40d9-afae-e9ecb7488771	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:46:46	15e849fc-01d5-4dcb-a786-9acd05fd3297	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:55:11	1121d1ef-cc0b-49f8-803a-6bea0276101c	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:56:13	aaee6e81-063b-4f53-aecc-4655e9d95a28	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:56:32	fd5f037d-42c5-4709-bb82-542cec8cc40d	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	11:56:52	2c2559f2-6b0f-4821-b40f-6e034dc50980	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	12:07:40	6d26c749-d1bf-461d-bedb-c98d0282938c	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	13:28:09	b38940b2-6f3e-4ce3-8049-9a5b1b3c834b	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	13:28:25	b23e7575-3810-4e61-86bb-ae14975df378	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
