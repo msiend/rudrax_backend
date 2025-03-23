@@ -1530,3 +1530,9 @@
 20250322	21:39:23	2d016377-b37a-4104-aa6d-246a7614fe75	GET	undefined	/api/v1/core/client/get_lastRef
 20250322	21:39:28	556c938e-d44d-4c66-ae72-8236ba0c6764	GET	undefined	/api/v1/core/client/get_lastRef
 20250322	21:39:28	5eaaf11f-e1bb-4a30-b5e1-63eab3fdceda	GET	undefined	/api/v1/core/client/get_lastRef
+20250323	10:28:23	686d0ef4-9d68-475d-8197-8ee155c944d0	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	10:28:36	cae56600-0044-43a3-be33-1e026919ba4b	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	10:28:59	c47e883f-acd7-42c3-bde8-02be8f69b26e	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	10:29:39	a081bac1-8c83-41b2-8336-ebd44bd6b9cf	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	10:29:43	bbc133b1-84b2-426e-b6b6-bd4574f3cf31	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250323	10:31:29	86c5bb99-7c60-4b11-a9b9-3e4d278a83bb	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
