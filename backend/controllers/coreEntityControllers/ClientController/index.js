@@ -5,7 +5,6 @@ class ClientsCoreController {
   // Get Last +1 Controller clients
   static async getClientsLastRef(req, res) {
     try {
-        // let pref= 'JGCOO'
       const [data] = await ClientsModel.getLastClientRef();
       let lastNum =parseInt(data['client_ref_no'].slice(-4))
       let newRef = data['client_ref_no'].replace(lastNum,lastNum+1 )
