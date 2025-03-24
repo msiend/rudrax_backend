@@ -1,0 +1,21 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}vendorPayment/update
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "pay_id": 17,
+      "pay_vendor_id": "9",
+      "pay_client_id": "37",
+      "pay_amount": 5000,
+      "pay_note": "Payment for materials supplied for PRJ10vvvvvvvvv01"
+    }
+}

@@ -14,7 +14,7 @@ class CollectionController {
 
    // Fetch a single collection by ID
    static async findOne(req, res) {
-      const { col_id } = req.params;
+      const { col_id } = req.body;
       try {
          const collection = await collectionModel.findOne(col_id);
          if (!collection) {
@@ -44,7 +44,7 @@ class CollectionController {
 
    // Update an existing collection
    static async update(req, res) {
-      const { col_id } = req.params;
+      const { col_id } = req.body;
       const { col_amount, col_mode, col_remark, col_date, col_project_id } = req.body;
       if (!col_amount || !col_mode || !col_date || !col_project_id) {
          return res.status(400).send({ status: false, msg: 'All required fields must be provided', data: null });
@@ -70,7 +70,7 @@ class CollectionController {
 
    // Delete a collection
    static async remove(req, res) {
-      const { col_id } = req.params;
+      const { col_id } = req.body;
       try {
          const isDeleted = await collectionModel.remove(col_id);
          if (!isDeleted) {

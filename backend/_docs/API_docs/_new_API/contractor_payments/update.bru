@@ -1,0 +1,21 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}contractorPayment/update
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "pay_id": 1,
+      "pay_con_id": "1",
+      "pay_client_id": "36",
+      "pay_amount": 15000,
+      "pay_note": "First installment for project PRJ1001sdafasd"
+    }
+}

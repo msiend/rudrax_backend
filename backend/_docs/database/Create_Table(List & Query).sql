@@ -219,3 +219,6 @@ ALTER TABLE `finance_dep_auth` ADD `fd_password` VARCHAR(255) NOT NULL AFTER `fd
 ALTER TABLE `superviser_auth` ADD `sup_isactive` INT(2) NOT NULL DEFAULT '1' AFTER `sup_token`;
 
 
+ALTER TABLE `expense_item` CHANGE `exp_ref_id` `exp_ref_id` INT(20) NULL DEFAULT NULL;
+ALTER TABLE `expense_item` ADD FOREIGN KEY (`exp_ref_id`) REFERENCES `expenses`(`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+

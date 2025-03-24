@@ -5,19 +5,21 @@ meta {
 }
 
 put {
-  url: {{URL.Entity}}client/update
+  url: {{URL.Entity}}expense/update
   body: json
   auth: none
 }
 
 body:json {
    {
-      "id": 4,
-      "client_name": "Gamma Industries ltd.",
-      "client_ref_no": "BETA2",
-      "client_contact": "555-555-5555",
-      "client_alt_contact": null,
-      "client_address": "456 Oak Ave, Anytown, CA 91235",
-      "client_email": "contact@betaind.net"
+      "exp_id": 1,
+      "exp_name": "Material Purchase ok",
+      "exp_amount": 2500,
+      "exp_mode": "Credit Card",
+      "exp_remark": "Purchase of cement and bricks",
+      "exp_date": "2023-10-26",
+      "exp_category": "Construction Materials",
+      "exp_entity": "Supplier A",
+      "exp_project_ref": "PRJ1001"
     }
 }

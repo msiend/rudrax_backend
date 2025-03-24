@@ -5,19 +5,18 @@ meta {
 }
 
 put {
-  url: {{URL.Entity}}client/update
+  url: {{URL.Entity}}collection/update
   body: json
   auth: none
 }
 
 body:json {
-   {
-      "id": 4,
-      "client_name": "Gamma Industries ltd.",
-      "client_ref_no": "BETA2",
-      "client_contact": "555-555-5555",
-      "client_alt_contact": null,
-      "client_address": "456 Oak Ave, Anytown, CA 91235",
-      "client_email": "contact@betaind.net"
+  {
+      "col_id": 1,
+      "col_amount": "15003",
+      "col_mode": "Bank Transfer",
+      "col_remark": "Advance payment for materials",
+      "col_date": "2023-10-26",
+      "col_project_id": "PRJ1001"
     }
 }

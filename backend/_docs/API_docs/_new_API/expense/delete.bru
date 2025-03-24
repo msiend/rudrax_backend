@@ -5,13 +5,13 @@ meta {
 }
 
 delete {
-  url: {{URL.Entity}}client/remove
+  url: {{URL.Entity}}expense/remove
   body: json
   auth: none
 }
 
 body:json {
   {
-    "id": 128
+    "exp_id": 1
   }
 }
