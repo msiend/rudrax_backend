@@ -1,0 +1,18 @@
+meta {
+  name: readAll
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{URL.Entity}}contractorPayment/readAll
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "pay_con_id":1
+  
+  }
+}

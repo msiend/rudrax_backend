@@ -5,13 +5,13 @@ meta {
 }
 
 delete {
-  url: {{URL.Entity}}collection/remove
+  url: {{URL.Entity}}vendorPayment/remove
   body: json
   auth: none
 }
 
 body:json {
   {
-    "col_id": 1
+  "pay_id": 20
   }
 }

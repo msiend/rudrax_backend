@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}expense/readOne
+  url: {{URL.Entity}}vendorPayment/readOne
   body: json
   auth: none
 }
 
 body:json {
   {
-  "exp_id":1
+  "pay_id": 17
   }
 }

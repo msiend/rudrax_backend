@@ -5,21 +5,17 @@ meta {
 }
 
 post {
-  url: {{URL.Entity}}client/create
+  url: {{URL.Entity}}collection/create
   body: json
   auth: none
 }
 
 body:json {
   {
-    "client_name": "Wave Industries pvt. ltd.",
-  <<<<<<< HEAD
-    "client_ref_no": "BETA2569654",
-  =======
-  >>>>>>> e530b9357f5579cc5e47c4b2e40e2a3651c2e3c4
-    "client_contact": "555-555-5555",
-    "client_alt_contact": null,
-    "client_address": "Dibrugarh, assam",
-    "client_email": "contact@betaind.net"
+    "col_amount": "1500",
+    "col_mode": "Bank Transfer",
+    "col_remark": "Advance payment for materials",
+    "col_date": "2023-10-26",
+    "col_project_id": "PRJ1001"
   }
 }

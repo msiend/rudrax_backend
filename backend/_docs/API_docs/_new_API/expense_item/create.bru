@@ -1,0 +1,20 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Entity}}expenseItem/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "exp_item_name": "Cement Bags",
+      "exp_item_quantity": 100,
+      "exp_item_rate": 10.50,
+      "exp_ref_id": "2"
+    }
+}

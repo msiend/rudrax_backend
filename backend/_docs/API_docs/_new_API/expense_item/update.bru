@@ -1,0 +1,21 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}expenseItem/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "exp_item_id": 1,
+      "exp_item_name": "Cement Bags 55",
+      "exp_item_quantity": 100,
+      "exp_item_rate": 10.5,
+      "exp_ref_id": "2"
+    }
+}

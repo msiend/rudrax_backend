@@ -143,14 +143,17 @@ CREATE TABLE `sub_phases` (
   `sub_phase_alt_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `vendors` (
-  `vendor_id` int(20) NOT NULL PRIMARY KEY auto_increment,
-  `vendor_name` varchar(200) DEFAULT NULL,
-  `vendor_contact` int(11) DEFAULT NULL,
-  `vendor_alt_contact` int(11) DEFAULT NULL,
-  `vendor_address` varchar(300) DEFAULT NULL,
-  `vendor_email` varchar(80) DEFAULT NULL,
-  `vendor_status` varchar(80) DEFAULT 'open'
+CREATE TABLE `cons` (
+  `con_id` int(20) NOT NULL PRIMARY KEY auto_increment,
+  `con_name` varchar(200) DEFAULT NULL,
+  `con_contact` int(11) DEFAULT NULL,
+  `con_alt_contact` int(11) DEFAULT NULL,
+  `con_address` varchar(300) DEFAULT NULL,
+  `con_email` varchar(80) DEFAULT NULL,
+  `con_status` varchar(80) DEFAULT 'open'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
 
 

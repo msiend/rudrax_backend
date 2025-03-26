@@ -5,18 +5,20 @@ meta {
 }
 
 post {
-  url: {{URL.Entity}}client/create
+  url: {{URL.Entity}}expense/create
   body: json
   auth: none
 }
 
 body:json {
   {
-    "client_name": "Wave Industries pvt. ltd.",
-    "client_ref_no": "BETA2569654",
-    "client_contact": "555-555-5555",
-    "client_alt_contact": null,
-    "client_address": "Dibrugarh, assam",
-    "client_email": "contact@betaind.net"
+    "exp_name": "Material Purchase",
+    "exp_amount": 2500.00,
+    "exp_mode": "Credit Card",
+    "exp_remark": "Purchase of cement and bricks",
+    "exp_date": "2023-10-26",
+    "exp_category": "Construction Materials",
+    "exp_entity": "Supplier A",
+    "exp_project_ref": "PRJ1001"
   }
 }
