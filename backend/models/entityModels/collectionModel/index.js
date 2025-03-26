@@ -1,0 +1,108 @@
+// Hello, this is a Model for Collection!
+
+const pool = require('@/config/dbConfig');
+
+class CollectionModel {
+   constructor(col_amount, col_mode, col_remark, col_date, col_project_id) {
+      this.col_amount = col_amount;
+      this.col_mode = col_mode;
+      this.col_remark = col_remark;
+      this.col_date = col_date;
+      this.col_project_id = col_project_id;
+   }
+
+   // Get all collections
+   static async findAll() {
+      const query = 'SELECT * FROM collection ORDER BY col_date DESC';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving all collections:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
+   // Get a single collection by ID
+   static async findOne(col_id) {
+      const query = 'SELECT * FROM collection WHERE col_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query, [col_id]);
+         return rows.length > 0 ? rows[0] : null;
+      } catch (error) {
+         console.error(`Error retrieving collection with ID ${col_id}:`, error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
+   // Create a new collection
+   static async create(col_amount, col_mode, col_remark, col_date, col_project_id) {
+      const query = `INSERT INTO collection (col_amount, col_mode, col_remark, col_date, col_project_id) VALUES (?, ?, ?, ?, ?)`;
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [col_amount, col_mode, col_remark, col_date, col_project_id]);
+         if (result.affectedRows > 0) {
+            return {
+               col_id: result.insertId,
+               col_amount,
+               col_mode,
+               col_remark,
+               col_date,
+               col_project_id,
+            };
+         }
+      } catch (error) {
+         console.error('Error creating collection:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
+   // Update an existing collection
+   static async update(col_id, col_amount, col_mode, col_remark, col_date, col_project_id) {
+      const query = `UPDATE collection 
+                     SET col_amount = ?, col_mode = ?, col_remark = ?, col_date = ?, col_project_id = ? 
+                     WHERE col_id = ?`;
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [
+            col_amount,
+            col_mode,
+            col_remark,
+            col_date,
+            col_project_id,
+            col_id,
+         ]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error updating collection with ID ${col_id}:`, error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
+   // Delete a collection
+   static async remove(col_id) {
+      const query = 'DELETE FROM collection WHERE col_id = ?';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query, [col_id]);
+         return result.affectedRows > 0;
+      } catch (error) {
+         console.error(`Error deleting collection with ID ${col_id}:`, error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+}
+
+module.exports = CollectionModel;
