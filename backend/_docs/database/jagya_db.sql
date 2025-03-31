@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2025 at 03:04 PM
+-- Generation Time: Mar 31, 2025 at 10:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -104,7 +104,9 @@ CREATE TABLE `branch_data` (
 
 INSERT INTO `branch_data` (`b_id`, `b_name`, `b_location`, `b_head`, `b_contact_number`, `b_alt_number`, `b_email`, `b_commision`) VALUES
 (3, 'Sunrise Branch adsga', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(4, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0);
+(4, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
+(5, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
+(6, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0);
 
 -- --------------------------------------------------------
 
@@ -129,7 +131,8 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`client_id`, `client_name`, `client_ref_no`, `client_contact`, `client_alt_contact`, `client_address`, `client_email`) VALUES
 (35, 'Wave Industries pvt. ltd.', 'JGCC0001', '555-555-5555', '456789123', '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
 (36, 'Wave Industries pvt. ltd.', 'JGCC0002', '555-555-5555', NULL, '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
-(37, 'Wave Industries pvt. ltd.', 'JGCC0003', '555-555-5555', NULL, '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net');
+(37, 'Wave Industries pvt. ltd.', 'JGCC0003', '555-555-5555', NULL, '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
+(38, 'Wave Industries pvt. ltd.', 'JGCC0004', '555-555-5555', NULL, 'Dibrugarh, assam', 'contact@betaind.net');
 
 -- --------------------------------------------------------
 
@@ -155,7 +158,8 @@ INSERT INTO `clients_docs` (`cl_doc_id`, `cl_r_id`, `cl_doc_url`) VALUES
 (13, 37, 'https://example.com/documents/report_12345.pdf'),
 (14, 37, 'https://example.com/documents/report_12345.pdf'),
 (15, 35, 'https://example.com/documents/report_12345.pdf'),
-(16, 35, 'https://example.com/documents/report_12345.pdf');
+(16, 35, 'https://example.com/documents/report_12345.pdf'),
+(17, 35, 'https://example.com/documents/report_12345.pdf');
 
 -- --------------------------------------------------------
 
@@ -171,6 +175,17 @@ CREATE TABLE `collections` (
   `col_date` varchar(20) DEFAULT NULL,
   `col_project_id` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `collections`
+--
+
+INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `col_date`, `col_project_id`) VALUES
+(2, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(4, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(5, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001');
 
 -- --------------------------------------------------------
 
@@ -194,7 +209,36 @@ CREATE TABLE `contractors` (
 INSERT INTO `contractors` (`con_id`, `con_name`, `con_contact`, `con_alt_contact`, `con_address`, `con_email`) VALUES
 (1, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
 (2, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(4, 'Alice Johnson new', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com');
+(5, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contractor_payments`
+--
+
+CREATE TABLE `contractor_payments` (
+  `pay_id` int(20) NOT NULL,
+  `pay_con_id` int(20) DEFAULT NULL,
+  `pay_client_id` bigint(20) DEFAULT NULL,
+  `pay_amount` varchar(50) DEFAULT NULL,
+  `pay_note` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contractor_payments`
+--
+
+INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_client_id`, `pay_amount`, `pay_note`) VALUES
+(2, 1, 36, '15000', 'First installment for project PRJ1001'),
+(3, 1, 36, '15000', 'First installment for project PRJ1001'),
+(4, 1, 36, '15000', 'First installment for project PRJ1001'),
+(5, 1, 37, '15000', 'First installment for project PRJ1001'),
+(6, 1, 37, '15000', 'First installment for project PRJ1001'),
+(7, 1, 37, '15000', 'First installment for project PRJ1001'),
+(20, 2, 36, '4574', '748574'),
+(21, 1, 35, '78574', '2485'),
+(22, 5, 37, '4574', '748574');
 
 -- --------------------------------------------------------
 
@@ -211,8 +255,53 @@ CREATE TABLE `expenses` (
   `exp_date` varchar(11) DEFAULT NULL,
   `exp_category` varchar(155) DEFAULT NULL,
   `exp_entity` varchar(155) DEFAULT NULL,
-  `exp_project_ref` varchar(155) DEFAULT NULL
+  `exp_project_ref` varchar(155) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `expenses`
+--
+
+INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_remark`, `exp_date`, `exp_category`, `exp_entity`, `exp_project_ref`, `created_at`) VALUES
+(2, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
+(3, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
+(4, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
+(5, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
+(6, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:31:50'),
+(7, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:33:24'),
+(8, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:35:02'),
+(9, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:37:59'),
+(10, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:38:41'),
+(11, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:41:36'),
+(12, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:42:03'),
+(13, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:42:04'),
+(14, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:44:03'),
+(15, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 14:54:47'),
+(16, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 14:56:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expense_item`
+--
+
+CREATE TABLE `expense_item` (
+  `exp_item_id` int(20) NOT NULL,
+  `exp_item_name` varchar(255) DEFAULT NULL,
+  `exp_item_quantity` varchar(255) DEFAULT NULL,
+  `exp_item_rate` varchar(255) DEFAULT NULL,
+  `exp_ref_id` int(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `expense_item`
+--
+
+INSERT INTO `expense_item` (`exp_item_id`, `exp_item_name`, `exp_item_quantity`, `exp_item_rate`, `exp_ref_id`) VALUES
+(2, 'Cement Bags', '100', '10.5', 2),
+(3, 'Cement Bags', '100', '10.5', 2),
+(4, 'Cement Bags', '100', '10.5', 2);
 
 -- --------------------------------------------------------
 
@@ -270,7 +359,9 @@ INSERT INTO `labours` (`lab_id`, `lab_name`, `lab_contact`, `lab_alt_contact`, `
 (5, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
 (6, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
 (7, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(8, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com');
+(8, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(9, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(10, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com');
 
 -- --------------------------------------------------------
 
@@ -324,7 +415,8 @@ CREATE TABLE `particles` (
 
 INSERT INTO `particles` (`particle_id`, `particle_name`, `particle_price`) VALUES
 (5, 'particles_name1', '2000'),
-(6, 'particles_name1', '2000');
+(6, 'particles_name1', '2000'),
+(7, 'particles_name1', '2000');
 
 -- --------------------------------------------------------
 
@@ -349,7 +441,8 @@ INSERT INTO `phases` (`phase_id`, `phase_name`, `phase_alt_name`) VALUES
 (5, 'Phase 44', 'phase_alt_name 1'),
 (6, 'Phase 44', 'phase_alt_name 1'),
 (7, 'Phase 44', 'phase_alt_name 1'),
-(8, 'Phase 44', 'phase_alt_name 1');
+(8, 'Phase 44', 'phase_alt_name 1'),
+(9, 'Phase 44', 'phase_alt_name 1');
 
 -- --------------------------------------------------------
 
@@ -383,7 +476,8 @@ INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `
 (14, 35, 'Lakeview Resort', 'JGCP0007', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000),
 (15, 35, 'Lakeview Resort', 'JGCP0008', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000),
 (16, 35, 'Lakeview Resort', 'JGCP0009', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000),
-(17, 35, 'Lakeview Resort', 'JGCP00010', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000);
+(17, 35, 'Lakeview Resort', 'JGCP00010', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000),
+(18, 35, 'Lakeview Resort', 'JGCP00011', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000);
 
 -- --------------------------------------------------------
 
@@ -413,7 +507,8 @@ INSERT INTO `sub_phases` (`sub_phase_id`, `sub_phase_name`, `sub_phase_alt_name`
 (10, 'Phase 1', 'sub_phase_alt_name 1'),
 (11, 'Phase 1', 'sub_phase_alt_name 1'),
 (12, 'Phase 1', 'sub_phase_alt_name 1'),
-(13, 'Phase 1', 'sub_phase_alt_name 1');
+(13, 'Phase 1', 'sub_phase_alt_name 1'),
+(14, 'Phase 1', 'sub_phase_alt_name 1');
 
 -- --------------------------------------------------------
 
@@ -438,7 +533,8 @@ INSERT INTO `superviser` (`sup_id`, `sup_name`, `sup_contact`, `sup_alt_contact`
 (3, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
 (4, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
 (5, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(6, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234');
+(6, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
+(7, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234');
 
 -- --------------------------------------------------------
 
@@ -505,7 +601,7 @@ INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_email`, `su_password`,
 (3, 3, 'sfda@gmail.com', '$2a$12$kv3o7F4EMI0nj1oh5FO6JuPsHghXDwX0c.UAtfmzpcDvwd04sxQoW', NULL, 1),
 (4, 4, 'sfda@gmail.com', '$2a$12$jCZl/FMBqLy8ggzFHYeY9.0pdp0V/ecy5/tXAL0HvSioNU.HaLBsq', NULL, 1),
 (5, 5, 'sfda@gmail.com', '$2a$12$REz.HimjxYfVrJMPnbnocefihiivRrQ8LglHM9BuMHi145xjGr02K', NULL, 1),
-(6, 6, 'msi@gmail.com', '$2a$12$3NY/M1vJrbatxBOChxcqC.hRqCJ8VpfWC8QJEjn.EGuf.7k3Y6e4a', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJpYXQiOjE3NDI2MzA2ODksImV4cCI6MTc0MjcxNzA4OX0.VPQ8Stod2grGfKLX24GADdASCK28EBwt9bxbBOurp3M', 1);
+(6, 6, 'msi@gmail.com', '$2a$12$3NY/M1vJrbatxBOChxcqC.hRqCJ8VpfWC8QJEjn.EGuf.7k3Y6e4a', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJpYXQiOjE3NDI4MDc1NjgsImV4cCI6MTc0Mjg5Mzk2OH0.etT7wWo0AeRqoCfh9yaBBiWgDbBzKq3uA3nIFhLv6mQ', 1);
 
 -- --------------------------------------------------------
 
@@ -550,7 +646,46 @@ INSERT INTO `vendors` (`vendor_id`, `vendor_ref_no`, `vendor_name`, `vendor_cont
 (27, 'JGCV0002', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (28, 'JGCV0003', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (29, 'JGCV0004', NULL, NULL, NULL, NULL, NULL, NULL),
-(30, 'JGCV0005', NULL, NULL, NULL, NULL, NULL, NULL);
+(30, 'JGCV0005', NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 'JGCV0006', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendor_payments`
+--
+
+CREATE TABLE `vendor_payments` (
+  `pay_id` int(20) NOT NULL,
+  `pay_vendor_id` int(20) DEFAULT NULL,
+  `pay_client_id` bigint(20) DEFAULT NULL,
+  `pay_amount` varchar(50) DEFAULT NULL,
+  `pay_note` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vendor_payments`
+--
+
+INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_client_id`, `pay_amount`, `pay_note`) VALUES
+(1, NULL, NULL, NULL, NULL),
+(5, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
+(6, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
+(7, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
+(8, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
+(9, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
+(10, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
+(11, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
+(12, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
+(13, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
+(14, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
+(15, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
+(16, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
+(17, 9, 37, '5000', 'Payment for materials supplied for PRJ10vvvvvvvvv01'),
+(21, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
+(22, 12, 35, '4574', '748574'),
+(23, 13, 37, '4574', '748574'),
+(24, 14, 35, '4574', '748574');
 
 --
 -- Indexes for dumped tables
@@ -604,10 +739,25 @@ ALTER TABLE `contractors`
   ADD PRIMARY KEY (`con_id`);
 
 --
+-- Indexes for table `contractor_payments`
+--
+ALTER TABLE `contractor_payments`
+  ADD PRIMARY KEY (`pay_id`),
+  ADD KEY `pay_con_id` (`pay_con_id`),
+  ADD KEY `pay_client_id` (`pay_client_id`);
+
+--
 -- Indexes for table `expenses`
 --
 ALTER TABLE `expenses`
   ADD PRIMARY KEY (`exp_id`);
+
+--
+-- Indexes for table `expense_item`
+--
+ALTER TABLE `expense_item`
+  ADD PRIMARY KEY (`exp_item_id`),
+  ADD KEY `exp_ref_id` (`exp_ref_id`);
 
 --
 -- Indexes for table `finance_dep`
@@ -703,6 +853,14 @@ ALTER TABLE `vendors`
   ADD PRIMARY KEY (`vendor_id`);
 
 --
+-- Indexes for table `vendor_payments`
+--
+ALTER TABLE `vendor_payments`
+  ADD PRIMARY KEY (`pay_id`),
+  ADD KEY `pay_client_id` (`pay_client_id`),
+  ADD KEY `pay_vendor_id` (`pay_vendor_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -716,43 +874,55 @@ ALTER TABLE `branch_auth`
 -- AUTO_INCREMENT for table `branch_clients`
 --
 ALTER TABLE `branch_clients`
-  MODIFY `b_client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `b_client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `branch_data`
 --
 ALTER TABLE `branch_data`
-  MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `clients_docs`
 --
 ALTER TABLE `clients_docs`
-  MODIFY `cl_doc_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cl_doc_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `collections`
 --
 ALTER TABLE `collections`
-  MODIFY `col_id` int(155) NOT NULL AUTO_INCREMENT;
+  MODIFY `col_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contractors`
 --
 ALTER TABLE `contractors`
-  MODIFY `con_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `con_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `contractor_payments`
+--
+ALTER TABLE `contractor_payments`
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT;
+  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `expense_item`
+--
+ALTER TABLE `expense_item`
+  MODIFY `exp_item_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `finance_dep`
@@ -770,7 +940,7 @@ ALTER TABLE `finance_dep_auth`
 -- AUTO_INCREMENT for table `labours`
 --
 ALTER TABLE `labours`
-  MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `material_list`
@@ -788,31 +958,31 @@ ALTER TABLE `material_requests`
 -- AUTO_INCREMENT for table `particles`
 --
 ALTER TABLE `particles`
-  MODIFY `particle_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `particle_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `phases`
 --
 ALTER TABLE `phases`
-  MODIFY `phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `sub_phases`
 --
 ALTER TABLE `sub_phases`
-  MODIFY `sub_phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `sub_phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `superviser`
 --
 ALTER TABLE `superviser`
-  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `superviser_auth`
@@ -836,7 +1006,13 @@ ALTER TABLE `super_admin_auth`
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `vendor_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `vendor_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `vendor_payments`
+--
+ALTER TABLE `vendor_payments`
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
@@ -853,6 +1029,19 @@ ALTER TABLE `branch_clients`
 --
 ALTER TABLE `clients_docs`
   ADD CONSTRAINT `clients_docs_ibfk_1` FOREIGN KEY (`cl_r_id`) REFERENCES `clients` (`client_id`);
+
+--
+-- Constraints for table `contractor_payments`
+--
+ALTER TABLE `contractor_payments`
+  ADD CONSTRAINT `contractor_payments_ibfk_1` FOREIGN KEY (`pay_con_id`) REFERENCES `contractors` (`con_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `contractor_payments_ibfk_2` FOREIGN KEY (`pay_client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `expense_item`
+--
+ALTER TABLE `expense_item`
+  ADD CONSTRAINT `expense_item_ibfk_1` FOREIGN KEY (`exp_ref_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `finance_dep_auth`
@@ -890,6 +1079,13 @@ ALTER TABLE `superviser_auth`
 --
 ALTER TABLE `super_admin_auth`
   ADD CONSTRAINT `super_admin_auth_ibfk_1` FOREIGN KEY (`su_r_id`) REFERENCES `super_admin` (`su_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `vendor_payments`
+--
+ALTER TABLE `vendor_payments`
+  ADD CONSTRAINT `vendor_payments_ibfk_1` FOREIGN KEY (`pay_client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vendor_payments_ibfk_2` FOREIGN KEY (`pay_vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
