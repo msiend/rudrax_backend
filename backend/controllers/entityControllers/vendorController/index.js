@@ -49,7 +49,7 @@ class VendorsController {
                msg: 'Something Went Wrong!',
                errMsg: result?.errMsg,
             });
-         } else res.status(201).send({ status: true, msg: 'Vendor created successfully', data: { id: result } });
+         } else res.status(201).send({ status: true, msg: 'Vendor created successfully', data: result });
       } catch (error) {
          console.log(error);
          res.status(500).send({ status: false, msg: 'Failed to create vendor', error: error });
@@ -71,7 +71,7 @@ class VendorsController {
             vendor_status
          );
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
-         res.status(200).send({ status: true, msg: 'Vendor updated successfully', data: null });
+         res.status(200).send({ status: true, msg: 'Vendor updated successfully', data: req.body });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to update vendor', data: null });
       }
@@ -80,10 +80,10 @@ class VendorsController {
    static async remove(req, res) {
       try {
          //  const { id } = req.params;
-         const { vendor_id } = req.body;
-         const success = await VendorsModel.delete(vendor_id);
+         const { id } = req.body;
+         const success = await VendorsModel.delete(id);
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
-         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: {vendor_id:vendor_id} });
+         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: {vendor_id: id} });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to delete vendor', data: null });
       }

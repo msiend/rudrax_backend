@@ -50,9 +50,9 @@ class VendorsModel {
       }
    }
 
-   static async create(vendor_name,vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) {
+   static async create(vendor_name, vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email) {
       const query =
-         'INSERT INTO vendors (vendor_name, vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status) VALUES (?, ?, ?, ?, ?, ?, ?)';
+         'INSERT INTO vendors (vendor_name, vendor_ref_no, vendor_contact, vendor_alt_contact, vendor_address, vendor_email) VALUES (?, ?, ?, ?, ?, ?)';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [
@@ -61,22 +61,22 @@ class VendorsModel {
             vendor_contact,
             vendor_alt_contact,
             vendor_address,
-            vendor_email,
-            vendor_status,
+            vendor_email
          ]);
-         if(result.affectedRows > 0 ){
-            let affectedData={
-               vendor_id:result.insertId,
-               vendor_name:vendor_name,
-               vendor_ref_no:vendor_ref_no,
-               vendor_contact:vendor_contact,
-               vendor_alt_contact:vendor_alt_contact,
-               vendor_address:vendor_address,
-               vendor_email:vendor_email,
+         if (result.affectedRows > 0) {
+            let affectedData = {
+               vendor_id: result.insertId,
+               vendor_ref_no: vendor_ref_no,
+               vendor_name: vendor_name,
+               vendor_contact: vendor_contact,
+               vendor_alt_contact: vendor_alt_contact,
+               vendor_address: vendor_address,
+               vendor_email: vendor_email,
+               vendor_status: "open"
             }
             return affectedData;
          }
-        
+
       } catch (error) {
          console.error('Error creating vendor:', error);
          throw error;
