@@ -1,0 +1,1 @@
+mysql -u root -p jagya_const_db < M:\jagya-contruction\jagya_const\backend\_docs\database\jagya_db.sql
