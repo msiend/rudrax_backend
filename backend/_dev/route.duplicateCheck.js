@@ -9,9 +9,9 @@ function createRoutes(controllerBox, prefix) {
       if (!createdRoutes.has(fullPath)) {
         createdRoutes.add(fullPath);
         router[method.toLowerCase()](path, handlers);
-        console.log(`✅ Route added: ${fullPath}`);
+        console.log(`Route added: ${fullPath}`);
       } else {
-        console.log(`⚠️ Skipping duplicate: ${fullPath}`);
+        console.log(`Skipping duplicate: ${fullPath}`);
       }
     };
 
