@@ -82,15 +82,15 @@ class ExpenseController {
       }
    }
    static async remove(req, res) {
-      const { exp_id } = req.body;
+      const { id } = req.body;
       try {
-         const isDeleted = await expenseModel.remove(exp_id);
+         const isDeleted = await expenseModel.remove(id);
          if (!isDeleted) {
             return res.status(404).send({ status: false, msg: 'Expense not found', data: null });
          }
-         return res.status(200).send({ status: true, msg: 'Expense deleted successfully', data: null });
+         return res.status(200).send({ status: true, msg: 'Expense deleted successfully', data: {exp_id: id }});
       } catch (error) {
-         console.error(`Error deleting expense with ID ${exp_id}:`, error);
+         console.error(`Error deleting expense with ID ${id}:`, error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }

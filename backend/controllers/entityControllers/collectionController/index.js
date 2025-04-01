@@ -70,15 +70,15 @@ class CollectionController {
 
    // Delete a collection
    static async remove(req, res) {
-      const { col_id } = req.body;
+      const { id } = req.body;
       try {
-         const isDeleted = await collectionModel.remove(col_id);
+         const isDeleted = await collectionModel.remove(id);
          if (!isDeleted) {
             return res.status(404).send({ status: false, msg: 'Collection not found', data: null });
          }
-         return res.status(200).send({ status: true, msg: 'Collection deleted successfully', data: null });
+         return res.status(200).send({ status: true, msg: 'Collection deleted successfully', data: {col_id: id} });
       } catch (error) {
-         console.error(`Error deleting collection with ID ${col_id}:`, error);
+         console.error(`Error deleting collection with ID ${id}:`, error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }

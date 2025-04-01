@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{URL.Core}}expense/add-expense
+  url: {{URL.Core}}expense/create
   body: json
   auth: none
 }
@@ -13,7 +13,7 @@ post {
 body:json {
   {
     "dateofexpense": "2025-03-16",
-    "expenseName": "name sd",
+    "expenseName": "new dhoni expense",
     "remarks": "dfdrvds",
     "Amount": 63452,
     "contractorExpenses": [
@@ -22,18 +22,6 @@ body:json {
         "client": "35",
         "contractor": "1",
         "note": "2485"
-      },
-      {
-        "amount": 4574,
-        "client": "37",
-        "note": "748574",
-        "contractor": "5"
-      },
-      {
-        "amount": 4574,
-        "client": "36",
-        "note": "748574",
-        "contractor": "2"
       }
     ],
     "vendorExpenses": [
@@ -41,19 +29,7 @@ body:json {
         "amount": 4574,
         "client": "35",
         "note": "748574",
-        "vendor": "12"
-      },
-      {
-        "amount": 4574,
-        "client": "37",
-        "note": "748574",
-        "vendor": "13"
-      },
-      {
-        "amount": 4574,
-        "client": "35",
-        "note": "748574",
-        "vendor": "14"
+        "vendor": "16"
       }
     ]
   }
