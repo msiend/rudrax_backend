@@ -3425,3 +3425,10 @@
 20250402	19:21:40	ba01941b-2c84-4f02-956d-a06a22d6e72e	GET	undefined	/api/v1/core/client/get_ProjectInfo
 20250402	19:21:59	30e39fe2-948b-4305-a3c1-05a2c1fec182	GET	undefined	/api/v1/core/client/get_ProjectInfo
 20250402	19:22:32	d3c20472-5c0e-4caf-8967-fbe36aabd0f1	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250402	21:43:05	85ccba6f-725b-4ad4-aa46-f5e21fea7dbc	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250402	21:53:07	68ee5ef9-b7ed-4ff6-bbf7-77b0a16c3090	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase
+20250402	22:10:56	0922a33b-1a15-468c-8290-f62ac0149287	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase
+20250402	22:11:42	4f7d8ae4-56cf-4481-a248-2feba8e0f3b7	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase
+20250402	22:12:11	faf01f4d-72a3-424c-bdb6-8bb18a305a75	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase
+20250402	22:13:14	990d617b-e4ac-40f7-88be-890b1ef02897	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase
+20250402	22:14:04	cc44262c-8622-427e-b0b9-dd62760f5264	GET	undefined	/api/v1/core/vendor/get_vendor_payment_purchase

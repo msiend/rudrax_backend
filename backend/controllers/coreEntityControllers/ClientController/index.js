@@ -45,7 +45,6 @@ class ClientsCoreController {
             data: null,
          });
       }
-
       try {
          const financeData = await ClientsModel.getFinancesByProjectRef(pro_ref_id);
          return res.status(200).send({
