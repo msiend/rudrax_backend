@@ -7,6 +7,8 @@ const ExpenseCoreController = require('@/controllers/coreEntityControllers/expen
 
 // [CLIENT]-----------
 coreRouter.get('/core/client/get_lastRef',ClientCoreController.getClientsLastRef )
+coreRouter.get('/core/client/get_clientProject',ClientCoreController.getClientProjects )
+coreRouter.get('/core/client/get_ProjectInfo',ClientCoreController.getProject_Col_Exp )
 
 
 // [EXPENSES]-----------
