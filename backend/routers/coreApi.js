@@ -18,6 +18,7 @@ coreRouter.get('/core/vendor/get_vendor_payment_purchase',VendorCoreController.g
 
 // [EXPENSES]-----------
 coreRouter.post('/core/expense/add-expense',ExpenseCoreController.add_Expense_and_dist )
+coreRouter.get('/core/expense/get_expense_details/:exp_id',ExpenseCoreController.getExpenseDetails )
 
 module.exports = coreRouter;
 	

@@ -1,10 +1,9 @@
-
 const pool = require('@/config/dbConfig');
 
 class vendorPayModel {
-   constructor(pay_vendor_id, pay_client_id, pay_amount, pay_note) {
+   constructor(pay_vendor_id, pay_project_id, pay_amount, pay_note) {
       this.pay_vendor_id = pay_vendor_id;
-      this.pay_client_id = pay_client_id;
+      this.pay_project_id = pay_project_id;
       this.pay_amount = pay_amount;
       this.pay_note = pay_note;
    }
@@ -37,17 +36,17 @@ class vendorPayModel {
       }
    }
 
-   static async create(pay_vendor_id, pay_client_id, pay_amount, pay_note) {
-      const query = `INSERT INTO vendor_payments (pay_vendor_id, pay_client_id, pay_amount, pay_note) 
-                     VALUES (?, ?, ?, ?)`;
+   static async create(pay_vendor_id, pay_project_id, pay_amount, pay_note,pay_exp_id) {
+      const query = `INSERT INTO vendor_payments (pay_vendor_id, pay_project_id, pay_amount, pay_note,pay_exp_id) 
+                     VALUES (?, ?, ?, ?,?)`;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [pay_vendor_id, pay_client_id, pay_amount, pay_note]);
+         const [result] = await connPool.query(query, [pay_vendor_id, pay_project_id, pay_amount, pay_note,pay_exp_id]);
          if (result.affectedRows > 0) {
             return {
                pay_id: result.insertId,
                pay_vendor_id,
-               pay_client_id,
+               pay_project_id,
                pay_amount,
                pay_note,
             };
@@ -60,13 +59,13 @@ class vendorPayModel {
       }
    }
 
-   static async update(pay_id, pay_vendor_id, pay_client_id, pay_amount, pay_note) {
+   static async update(pay_id, pay_vendor_id, pay_project_id, pay_amount, pay_note) {
       const query = `UPDATE vendor_payments 
-                     SET pay_vendor_id = ?, pay_client_id = ?, pay_amount = ?, pay_note = ? 
+                     SET pay_vendor_id = ?, pay_project_id = ?, pay_amount = ?, pay_note = ? 
                      WHERE pay_id = ?`;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [pay_vendor_id, pay_client_id, pay_amount, pay_note, pay_id]);
+         const [result] = await connPool.query(query, [pay_vendor_id, pay_project_id, pay_amount, pay_note, pay_id]);
          return result.affectedRows > 0;
       } catch (error) {
          console.error(`Error updating payment with ID ${pay_id}:`, error);
