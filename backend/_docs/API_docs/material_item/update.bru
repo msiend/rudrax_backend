@@ -1,0 +1,25 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}expense/update
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "exp_id": 1,
+      "exp_name": "Material Purchase ok",
+      "exp_amount": 2500,
+      "exp_mode": "Credit Card",
+      "exp_remark": "Purchase of cement and bricks",
+      "exp_date": "2023-10-26",
+      "exp_category": "Construction Materials",
+      "exp_entity": "Supplier A",
+      "exp_project_ref": "PRJ1001"
+    }
+}
