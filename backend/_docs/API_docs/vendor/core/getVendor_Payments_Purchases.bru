@@ -1,0 +1,17 @@
+meta {
+  name: getVendor_Payments_Purchases
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{URL.Core}}vendor/get_vendor_payment_purchase
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "vendor_id":9
+  }
+}

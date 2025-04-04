@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2025 at 10:24 AM
+-- Generation Time: Apr 03, 2025 at 06:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -129,7 +129,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`client_id`, `client_name`, `client_ref_no`, `client_contact`, `client_alt_contact`, `client_address`, `client_email`) VALUES
-(35, 'Wave Industries pvt. ltd.', 'JGCC0001', '555-555-5555', '456789123', '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
+(35, 'Wave Industries pvt. ltd.', 'JGCC0001', '9401069337', '456789123', '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
 (36, 'Wave Industries pvt. ltd.', 'JGCC0002', '555-555-5555', NULL, '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
 (37, 'Wave Industries pvt. ltd.', 'JGCC0003', '555-555-5555', NULL, '456 Oak Ave, Anytown, CA 91235', 'contact@betaind.net'),
 (38, 'Wave Industries pvt. ltd.', 'JGCC0004', '555-555-5555', NULL, 'Dibrugarh, assam', 'contact@betaind.net');
@@ -181,8 +181,8 @@ CREATE TABLE `collections` (
 --
 
 INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `col_date`, `col_project_id`) VALUES
-(2, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(2, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005'),
+(3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005'),
 (4, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
 (5, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
 (6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001');
@@ -220,25 +220,23 @@ INSERT INTO `contractors` (`con_id`, `con_name`, `con_contact`, `con_alt_contact
 CREATE TABLE `contractor_payments` (
   `pay_id` int(20) NOT NULL,
   `pay_con_id` int(20) DEFAULT NULL,
-  `pay_client_id` bigint(20) DEFAULT NULL,
+  `pay_project_id` bigint(20) DEFAULT NULL,
   `pay_amount` varchar(50) DEFAULT NULL,
-  `pay_note` varchar(255) DEFAULT NULL
+  `pay_note` varchar(255) DEFAULT NULL,
+  `pay_exp_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contractor_payments`
 --
 
-INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_client_id`, `pay_amount`, `pay_note`) VALUES
-(2, 1, 36, '15000', 'First installment for project PRJ1001'),
-(3, 1, 36, '15000', 'First installment for project PRJ1001'),
-(4, 1, 36, '15000', 'First installment for project PRJ1001'),
-(5, 1, 37, '15000', 'First installment for project PRJ1001'),
-(6, 1, 37, '15000', 'First installment for project PRJ1001'),
-(7, 1, 37, '15000', 'First installment for project PRJ1001'),
-(20, 2, 36, '4574', '748574'),
-(21, 1, 35, '78574', '2485'),
-(22, 5, 37, '4574', '748574');
+INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pay_amount`, `pay_note`, `pay_exp_id`) VALUES
+(29, 1, 9, '78574', '2485', 20),
+(30, 5, 9, '4574', '748574', 20),
+(31, 2, 9, '4574', '748574', 20),
+(32, 1, 9, '78574', '2485', 21),
+(33, 2, 9, '4574', '748574', 21),
+(34, 5, 9, '4574', '748574', 21);
 
 -- --------------------------------------------------------
 
@@ -254,7 +252,6 @@ CREATE TABLE `expenses` (
   `exp_remark` varchar(255) DEFAULT NULL,
   `exp_date` varchar(11) DEFAULT NULL,
   `exp_category` varchar(155) DEFAULT NULL,
-  `exp_entity` varchar(155) DEFAULT NULL,
   `exp_project_ref` varchar(155) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -263,22 +260,27 @@ CREATE TABLE `expenses` (
 -- Dumping data for table `expenses`
 --
 
-INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_remark`, `exp_date`, `exp_category`, `exp_entity`, `exp_project_ref`, `created_at`) VALUES
-(2, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
-(3, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
-(4, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
-(5, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', 'PRJ1001', '2025-03-24 11:54:40'),
-(6, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:31:50'),
-(7, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:33:24'),
-(8, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:35:02'),
-(9, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:37:59'),
-(10, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:38:41'),
-(11, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:41:36'),
-(12, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:42:03'),
-(13, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:42:04'),
-(14, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 13:44:03'),
-(15, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 14:54:47'),
-(16, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, NULL, '2025-03-29 14:56:15');
+INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_remark`, `exp_date`, `exp_category`, `exp_project_ref`, `created_at`) VALUES
+(2, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
+(3, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
+(4, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
+(5, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'PRJ1001', '2025-03-24 11:54:40'),
+(6, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:31:50'),
+(7, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:33:24'),
+(8, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:35:02'),
+(9, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:37:59'),
+(10, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:38:41'),
+(11, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:41:36'),
+(12, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:42:03'),
+(13, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:42:04'),
+(14, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:44:03'),
+(15, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 14:54:47'),
+(16, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 14:56:15'),
+(17, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 04:56:02'),
+(18, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:18'),
+(19, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:35'),
+(20, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:09:19'),
+(21, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:19:37');
 
 -- --------------------------------------------------------
 
@@ -366,19 +368,20 @@ INSERT INTO `labours` (`lab_id`, `lab_name`, `lab_contact`, `lab_alt_contact`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `material_list`
+-- Table structure for table `material_item_list`
 --
 
-CREATE TABLE `material_list` (
-  `mat_id` bigint(20) NOT NULL,
-  `mr_r_id` bigint(20) NOT NULL,
-  `mat_name` varchar(200) NOT NULL,
-  `mat_unit` varchar(60) NOT NULL,
-  `mat_sup_qnt` int(11) NOT NULL,
-  `mat_mh_qnt` int(11) DEFAULT NULL,
-  `mat_fd_qnt` int(11) DEFAULT NULL,
-  `mat_price` int(11) DEFAULT NULL,
-  `mat_delivered_status` tinyint(1) DEFAULT 0
+CREATE TABLE `material_item_list` (
+  `mr_item_id` bigint(20) NOT NULL,
+  `mr_project_r_id` bigint(20) NOT NULL,
+  `mr_item_name` varchar(255) DEFAULT NULL,
+  `mr_item_quantity` varchar(55) DEFAULT NULL,
+  `mr_item_amount` varchar(55) DEFAULT NULL,
+  `mr_item_date` varchar(20) DEFAULT NULL,
+  `md_approval` tinyint(1) DEFAULT 0,
+  `fd_approval` tinyint(1) DEFAULT 0,
+  `vendor_id` int(155) DEFAULT NULL,
+  `mr_delivery_status` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -388,13 +391,13 @@ CREATE TABLE `material_list` (
 --
 
 CREATE TABLE `material_requests` (
-  `mr_id` bigint(20) NOT NULL,
-  `mr_project_r_id` bigint(20) NOT NULL,
-  `mr_sup_r_id` int(11) NOT NULL,
-  `mh_approval` tinyint(1) DEFAULT 0,
-  `fd_approval` tinyint(1) DEFAULT 0,
-  `mr_fd_r_id` int(11) DEFAULT NULL,
-  `mr_delivered_status` tinyint(1) DEFAULT 0
+  `mr_r_id` bigint(20) NOT NULL,
+  `material_ref_no` varchar(55) DEFAULT NULL,
+  `mr_project_ref` varchar(20) DEFAULT NULL,
+  `mr_project_id` varchar(20) DEFAULT NULL,
+  `mr_phase` varchar(155) DEFAULT NULL,
+  `mr_date` varchar(55) DEFAULT NULL,
+  `created_at` varchar(55) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -658,34 +661,23 @@ INSERT INTO `vendors` (`vendor_id`, `vendor_ref_no`, `vendor_name`, `vendor_cont
 CREATE TABLE `vendor_payments` (
   `pay_id` int(20) NOT NULL,
   `pay_vendor_id` int(20) DEFAULT NULL,
-  `pay_client_id` bigint(20) DEFAULT NULL,
+  `pay_project_id` bigint(20) DEFAULT NULL,
   `pay_amount` varchar(50) DEFAULT NULL,
-  `pay_note` varchar(255) DEFAULT NULL
+  `pay_note` varchar(255) DEFAULT NULL,
+  `pay_exp_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vendor_payments`
 --
 
-INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_client_id`, `pay_amount`, `pay_note`) VALUES
-(1, NULL, NULL, NULL, NULL),
-(5, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
-(6, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
-(7, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
-(8, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
-(9, 9, 35, '5000', 'Payment for materials supplied for PRJ1001'),
-(10, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
-(11, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
-(12, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
-(13, 9, 36, '5000', 'Payment for materials supplied for PRJ1001'),
-(14, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
-(15, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
-(16, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
-(17, 9, 37, '5000', 'Payment for materials supplied for PRJ10vvvvvvvvv01'),
-(21, 9, 37, '5000', 'Payment for materials supplied for PRJ1001'),
-(22, 12, 35, '4574', '748574'),
-(23, 13, 37, '4574', '748574'),
-(24, 14, 35, '4574', '748574');
+INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay_amount`, `pay_note`, `pay_exp_id`) VALUES
+(25, 12, 11, '4574', '748574', 20),
+(26, 13, 11, '4574', '748574', 20),
+(27, 14, 11, '4574', '748574', 20),
+(28, 13, 11, '4574', '748574', 21),
+(29, 12, 11, '4574', '748574', 21),
+(30, 14, 11, '4574', '748574', 21);
 
 --
 -- Indexes for dumped tables
@@ -744,7 +736,8 @@ ALTER TABLE `contractors`
 ALTER TABLE `contractor_payments`
   ADD PRIMARY KEY (`pay_id`),
   ADD KEY `pay_con_id` (`pay_con_id`),
-  ADD KEY `pay_client_id` (`pay_client_id`);
+  ADD KEY `contractor_payments_ibfk_2` (`pay_project_id`),
+  ADD KEY `pay_exp_id` (`pay_exp_id`);
 
 --
 -- Indexes for table `expenses`
@@ -780,19 +773,18 @@ ALTER TABLE `labours`
   ADD PRIMARY KEY (`lab_id`);
 
 --
--- Indexes for table `material_list`
+-- Indexes for table `material_item_list`
 --
-ALTER TABLE `material_list`
-  ADD PRIMARY KEY (`mat_id`),
-  ADD KEY `mr_r_id` (`mr_r_id`);
+ALTER TABLE `material_item_list`
+  ADD PRIMARY KEY (`mr_item_id`),
+  ADD KEY `material_item_list_ibfk_1` (`mr_project_r_id`),
+  ADD KEY `vendor_id` (`vendor_id`);
 
 --
 -- Indexes for table `material_requests`
 --
 ALTER TABLE `material_requests`
-  ADD PRIMARY KEY (`mr_id`),
-  ADD KEY `mr_project_r_id` (`mr_project_r_id`),
-  ADD KEY `mr_sup_r_id` (`mr_sup_r_id`);
+  ADD PRIMARY KEY (`mr_r_id`);
 
 --
 -- Indexes for table `particles`
@@ -857,8 +849,9 @@ ALTER TABLE `vendors`
 --
 ALTER TABLE `vendor_payments`
   ADD PRIMARY KEY (`pay_id`),
-  ADD KEY `pay_client_id` (`pay_client_id`),
-  ADD KEY `pay_vendor_id` (`pay_vendor_id`);
+  ADD KEY `pay_vendor_id` (`pay_vendor_id`),
+  ADD KEY `pay_client_id` (`pay_project_id`),
+  ADD KEY `pay_exp_id` (`pay_exp_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -910,13 +903,13 @@ ALTER TABLE `contractors`
 -- AUTO_INCREMENT for table `contractor_payments`
 --
 ALTER TABLE `contractor_payments`
-  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `expense_item`
@@ -943,16 +936,16 @@ ALTER TABLE `labours`
   MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `material_list`
+-- AUTO_INCREMENT for table `material_item_list`
 --
-ALTER TABLE `material_list`
-  MODIFY `mat_id` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `material_item_list`
+  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `material_requests`
 --
 ALTER TABLE `material_requests`
-  MODIFY `mr_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `mr_r_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `particles`
@@ -1012,7 +1005,7 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `vendor_payments`
 --
 ALTER TABLE `vendor_payments`
-  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
@@ -1035,7 +1028,8 @@ ALTER TABLE `clients_docs`
 --
 ALTER TABLE `contractor_payments`
   ADD CONSTRAINT `contractor_payments_ibfk_1` FOREIGN KEY (`pay_con_id`) REFERENCES `contractors` (`con_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `contractor_payments_ibfk_2` FOREIGN KEY (`pay_client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `contractor_payments_ibfk_2` FOREIGN KEY (`pay_project_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `contractor_payments_ibfk_3` FOREIGN KEY (`pay_exp_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `expense_item`
@@ -1050,17 +1044,11 @@ ALTER TABLE `finance_dep_auth`
   ADD CONSTRAINT `finance_dep_auth_ibfk_1` FOREIGN KEY (`fd_r_id`) REFERENCES `finance_dep` (`fd_id`);
 
 --
--- Constraints for table `material_list`
+-- Constraints for table `material_item_list`
 --
-ALTER TABLE `material_list`
-  ADD CONSTRAINT `material_list_ibfk_1` FOREIGN KEY (`mr_r_id`) REFERENCES `material_requests` (`mr_id`) ON DELETE CASCADE;
-
---
--- Constraints for table `material_requests`
---
-ALTER TABLE `material_requests`
-  ADD CONSTRAINT `material_requests_ibfk_1` FOREIGN KEY (`mr_project_r_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `material_requests_ibfk_2` FOREIGN KEY (`mr_sup_r_id`) REFERENCES `superviser` (`sup_id`) ON DELETE CASCADE;
+ALTER TABLE `material_item_list`
+  ADD CONSTRAINT `material_item_list_ibfk_1` FOREIGN KEY (`mr_project_r_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `material_item_list_ibfk_2` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `projects`
@@ -1084,8 +1072,9 @@ ALTER TABLE `super_admin_auth`
 -- Constraints for table `vendor_payments`
 --
 ALTER TABLE `vendor_payments`
-  ADD CONSTRAINT `vendor_payments_ibfk_1` FOREIGN KEY (`pay_client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `vendor_payments_ibfk_2` FOREIGN KEY (`pay_vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `vendor_payments_ibfk_2` FOREIGN KEY (`pay_vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vendor_payments_ibfk_3` FOREIGN KEY (`pay_project_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vendor_payments_ibfk_4` FOREIGN KEY (`pay_exp_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

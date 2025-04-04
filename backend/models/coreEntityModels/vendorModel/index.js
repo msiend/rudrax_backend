@@ -15,7 +15,20 @@ class VendorModel {
       try {
          const [rows] = await connPool.query(query);
          return rows;
-         
+      } catch (error) {
+         console.error('Error retrieving all vendors:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+   static async getVendor_Purcheses_Payments(vendor_id) {
+      const query = `SELECT * FROM vendor_payments WHERE pay_vendor_id=? ORDER BY pay_id DESC;
+                     SELECT vendor_id ,mr_item_id, mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date FROM material_item_list WHERE vendor_id=? AND mr_delivery_status='1'`;
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query, [vendor_id,vendor_id]);
+         return rows;
       } catch (error) {
          console.error('Error retrieving all vendors:', error);
          throw error;

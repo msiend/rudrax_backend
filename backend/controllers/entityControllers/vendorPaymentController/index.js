@@ -27,9 +27,9 @@ class vendorPayController {
    }
 
    static async create(req, res) {
-      const { pay_vendor_id, pay_client_id, pay_amount, pay_note } = req.body;
+      const { pay_vendor_id, pay_project_id, pay_amount, pay_note } = req.body;
       try {
-         const newPayment = await vendorPayModel.create(pay_vendor_id, pay_client_id, pay_amount, pay_note);
+         const newPayment = await vendorPayModel.create(pay_vendor_id, pay_project_id, pay_amount, pay_note);
          return res.status(201).send({ status: true, msg: 'Payment created successfully', data: newPayment });
       } catch (error) {
          console.error('Error creating payment:', error);
@@ -39,9 +39,9 @@ class vendorPayController {
 
    static async update(req, res) {
       const { pay_id } = req.body;
-      const { pay_vendor_id, pay_client_id, pay_amount, pay_note } = req.body;
+      const { pay_vendor_id, pay_project_id, pay_amount, pay_note } = req.body;
       try {
-         const isUpdated = await vendorPayModel.update(pay_id, pay_vendor_id, pay_client_id, pay_amount, pay_note);
+         const isUpdated = await vendorPayModel.update(pay_id, pay_vendor_id, pay_project_id, pay_amount, pay_note);
          if (!isUpdated) {
             return res.status(404).send({ status: false, msg: 'Payment not found', data: null });
          }

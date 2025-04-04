@@ -44,12 +44,12 @@ class ExpenseModel {
    }
 
    // Create a new expense
-   static async create(exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref) {
-      const query = `INSERT INTO expenses (exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref) 
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+   static async create(exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) {
+      const query = `INSERT INTO expenses (exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?)`;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref]);
+         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref]);
          if (result.affectedRows > 0) {
             return {
                exp_id: result.insertId,
@@ -59,7 +59,6 @@ class ExpenseModel {
                exp_remark,
                exp_date,
                exp_category,
-               exp_entity,
                exp_project_ref,
             };
          }
@@ -72,13 +71,13 @@ class ExpenseModel {
    }
 
    // Update an existing expense
-   static async update(exp_id, exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref) {
+   static async update(exp_id, exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) {
       const query = `UPDATE expenses 
-                     SET exp_name = ?, exp_amount = ?, exp_mode = ?, exp_remark = ?, exp_date = ?, exp_category = ?, exp_entity = ?, exp_project_ref = ?
+                     SET exp_name = ?, exp_amount = ?, exp_mode = ?, exp_remark = ?, exp_date = ?, exp_category = ?,  exp_project_ref = ?
                      WHERE exp_id = ?`;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref, exp_id]);
+         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref, exp_id]);
          return result.affectedRows > 0;
       } catch (error) {
          console.error(`Error updating expense with ID ${exp_id}:`, error);
