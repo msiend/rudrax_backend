@@ -36,7 +36,7 @@ class LaboursController {
         return res.status(400).send({ status: false, msg: 'Missing required fields' });
       }
       const labourlab_id = await LaboursModel.create(lab_name, lab_contact, lab_alt_contact, lab_address, lab_email);
-      return res.status(201).send({ status: true, msg: 'Labour added successfully', data: { lab_lab_id: labourlab_id } });
+      return res.status(201).send({ status: true, msg: 'Labour added successfully', data: { lab_id: labourlab_id, lab_name, lab_contact, lab_alt_contact, lab_address, lab_email } });
     } catch (error) {
       console.error('Error adding labour:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -52,7 +52,7 @@ class LaboursController {
       if (!updated) {
         return res.status(404).send({ status: false, msg: 'Labour not found or no changes made' });
       }
-      return res.status(200).send({ status: true, msg: 'Labour updated successfully',data: null  });
+      return res.status(200).send({ status: true, msg: 'Labour updated successfully', data: req.body });
     } catch (error) {
       console.error(`Error updating labour with lab_id ${req.body.lab_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -62,14 +62,14 @@ class LaboursController {
   // Delete a labour
   static async remove(req, res) {
     try {
-      const { lab_id } = req.body;
-      const deleted = await LaboursModel.remove(lab_id);
+      const { id } = req.body;
+      const deleted = await LaboursModel.remove(id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Labour not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Labour deleted successfully' });
+      return res.status(200).send({ status: true, msg: 'Labour deleted successfully', data: { lab_id: id } });
     } catch (error) {
-      console.error(`Error deleting labour with lab_id ${req.body.lab_id}:`, error);
+      console.error(`Error deleting labour with id ${req.body.id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
     }
   }

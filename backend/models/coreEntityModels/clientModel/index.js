@@ -22,6 +22,47 @@ class ClientModel {
          connPool.release();
       }
    }
+   static async getClientProjects(client_id) {
+      const query = `
+            SELECT c.client_id, c.client_name, p.pro_id, p.pro_ref_no, p.pro_name 
+            FROM clients c
+            LEFT JOIN projects p ON c.client_id = p.pro_client_r_id WHERE client_id=?`;
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query, [client_id]);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving client projects:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
+   static async getFinancesByProjectRef(projectRefNo) {
+      if (!projectRefNo) {
+         throw new Error('Project Reference Number is required.');
+      }
+      const collectionQuery = 'SELECT * FROM collections WHERE col_project_id = ?';
+      const expenseQuery = 'SELECT * FROM expenses WHERE exp_project_ref = ?';
+      const connPool = await pool.getConnection();
+
+      try {
+         const [collections] = await connPool.query(collectionQuery, [projectRefNo]);
+         const [expenses] = await connPool.query(expenseQuery, [projectRefNo]);
+         return {
+            collections: collections,
+            expenses: expenses,
+         };
+      } catch (error) {
+         console.error('Error retrieving project finances:', error);
+         throw error;
+      } finally {
+         if (connPool) {
+            connPool.release();
+         }
+      }
+   }
 }
 
 module.exports = ClientModel;

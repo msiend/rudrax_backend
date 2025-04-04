@@ -1,0 +1,17 @@
+meta {
+  name: get_ProjectInfo
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL.Core}}client/get_ProjectInfo
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "pro_ref_id":"JGCP0005"
+  }
+}

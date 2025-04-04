@@ -30,7 +30,7 @@ class SubPhasesController {
       try {
          const { sub_phase_name, sub_phase_alt_name } = req.body;
          const insertId = await SubPhasesModel.create(sub_phase_name, sub_phase_alt_name);
-         res.status(201).send({ status: true, msg: 'Sub-phase created successfully', data: { id: insertId } });
+         res.status(201).send({ status: true, msg: 'Sub-phase created successfully', data: { id: insertId, sub_phase_name } });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to create sub-phase', data: null });
       }

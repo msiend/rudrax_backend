@@ -23,9 +23,10 @@ class PhasesController {
 
   static async create(req, res) {
     try {
+      console.log(req.body)
       const { phase_name, phase_alt_name } = req.body;
       const insertId = await PhasesModel.create(phase_name, phase_alt_name);
-      res.status(201).send({ status: true, msg: 'Phase created successfully', data: { id: insertId } });
+      res.status(201).send({ status: true, msg: 'Phase created successfully', data: { phase_id: insertId, phase_name } });
     } catch (error) {
       res.status(500).send({ status: false, msg: 'Failed to create phase', data: null });
     }

@@ -1,0 +1,21 @@
+meta {
+  name: get_clientProject
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{URL.Core}}client/get_clientProject?client_id=35
+  body: json
+  auth: none
+}
+
+params:query {
+  client_id: 35
+}
+
+body:json {
+  {
+    "client_id":35
+  }
+}
