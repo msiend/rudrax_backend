@@ -42,6 +42,7 @@ app.use(cookieParser());
 
 const appRoutes_entity = require('@/routers/applicationApi');
 const appRoutes_core = require('@/routers/coreApi');
+const appRoutes_core_file = require('@/routers/file_uploadApi');
 const authRoutes = require('@/routers/authApi');
 
 ////// auth routes
@@ -51,6 +52,7 @@ app.use('/api', authRoutes);
 ////// api routes
 app.use('/api/v1', appRoutes_entity); 
 app.use('/api/v1', appRoutes_core); 
+app.use('/api/v1', appRoutes_core_file); 
 
 
 

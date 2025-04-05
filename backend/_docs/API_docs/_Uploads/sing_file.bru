@@ -1,0 +1,15 @@
+meta {
+  name: sing_file
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Core}}project/upload
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(C:\Users\BS\Pictures\3.jpeg)
+}

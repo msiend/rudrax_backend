@@ -3485,3 +3485,9 @@
 20250405	19:38:45	7f7d6ff1-c466-4e1f-92db-14f455d2c1a7	POST	undefined	/api/v1/core/expense/create
 20250405	19:39:04	2cfb90ce-c39f-4481-9ee9-e6ce1a0ff428	GET	undefined	/api/v1/core/expense/get_expense_details/21
 20250405	19:40:07	a9c091e9-f986-4b09-af5e-53b30799a9ef	GET	http://localhost:5173	/api/v1/entity/expense/readAll
+20250405	19:51:12	77823e97-6d42-458c-b0be-ab12d6811f0c	POST	undefined	/api/v1/core/project/upload
+20250405	19:52:55	821514cc-bba1-40e2-956f-ec5e3a9b189e	POST	undefined	/api/v1/core/project/upload
+20250405	19:56:05	9e236cc1-80c5-4637-b231-a059c8511377	POST	undefined	/api/v1/core/project/upload
+20250405	19:56:07	b57775d5-0950-45b8-9ffe-a6e8fd72083d	POST	undefined	/api/v1/core/project/upload
+20250405	19:56:48	93663056-a2d9-4218-ae20-ad4a47d56a93	POST	undefined	/api/v1/core/project/upload
+20250405	19:57:01	7ac46608-f5b9-4b5c-8b8a-9003d4f4a6f6	GET	undefined	/public/avatar-58f0ea15-374d-43a6-87c3-6e7cc2572b3f-1743863208641.jpg
