@@ -3450,3 +3450,6 @@
 20250403	19:02:42	aa72e5f2-9063-4c6e-9104-dc3738c140d4	GET	undefined	/api/v1/core/expense/get_expense_details/21
 20250403	19:03:35	13ffa00f-b966-428d-a1ac-5c9136baa198	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
 20250403	19:03:48	df659ea1-36a9-4492-aa35-463c42e55e30	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250405	14:26:56	a338e440-932e-4409-a06d-5d28e935b74b	POST	undefined	/api/v1/entity/client/create
+20250405	14:28:35	ca3b2c05-f9d8-4812-8f36-bd7533d93903	POST	undefined	/api/v1/entity/client/create
+20250405	14:29:07	95e10904-0da0-4c5b-9ab8-b78cc1aeba3b	POST	undefined	/api/v1/entity/client/create
