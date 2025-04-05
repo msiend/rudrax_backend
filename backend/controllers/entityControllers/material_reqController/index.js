@@ -31,8 +31,8 @@ class MaterialRequestController {
       try {const [data] = await coreMaterialRequestModel.getLastMaterialRef();
          let newMaterialRef;
          if (data) {let lastNum = parseInt(data['material_ref_no'].slice(-4));
-            newRef = data['material_ref_no'].replace(lastNum, lastNum + 1);
-         } else {newRef = 'JGCMRQ0001';}
+            newMaterialRef = data['material_ref_no'].replace(lastNum, lastNum + 1);
+         } else {newMaterialRef = 'JGCMRQ0001';}
          const newRequest = await MaterialRequestModel.create(
             newMaterialRef,
             mr_project_ref,

@@ -3453,3 +3453,12 @@
 20250405	14:26:56	a338e440-932e-4409-a06d-5d28e935b74b	POST	undefined	/api/v1/entity/client/create
 20250405	14:28:35	ca3b2c05-f9d8-4812-8f36-bd7533d93903	POST	undefined	/api/v1/entity/client/create
 20250405	14:29:07	95e10904-0da0-4c5b-9ab8-b78cc1aeba3b	POST	undefined	/api/v1/entity/client/create
+20250405	18:40:20	c404ce75-7d68-48fc-8cdb-f289311646ee	POST	undefined	/api/v1/entity/material_req/create
+20250405	18:41:28	a6f8e295-1481-400f-83f1-a7f03958948b	POST	undefined	/api/v1/entity/material_req/create
+20250405	18:41:48	c92cc029-30ca-4b2d-9a0f-7d9ad03855ee	POST	undefined	/api/v1/entity/material_req/create
+20250405	18:41:49	f3cabc10-ca71-44a8-8952-3d7c7c773309	POST	undefined	/api/v1/entity/material_req/create
+20250405	18:43:06	5a9f583b-8a41-4ee4-a515-25fb12d95f62	POST	undefined	/api/v1/entity/material_req/create
+20250405	18:46:18	509f02de-2226-4d30-88bc-e3de2f00cd00	GET	undefined	/api/v1/entity/material_req/readOne
+20250405	18:46:46	efce3270-2c90-4e99-be30-633de1c3c5b9	GET	undefined	/api/v1/entity/material_req/readOne?mr_r_id=%201
+20250405	18:48:02	a5b81988-779f-4d5b-99eb-b9f03eb748e8	GET	undefined	/api/v1/entity/material_req/readOne/1
+20250405	18:48:05	67e6ea03-b5c0-456f-a943-7aee4f411859	GET	undefined	/api/v1/entity/material_req/readOne/1
