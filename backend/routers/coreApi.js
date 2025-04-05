@@ -17,12 +17,8 @@ coreRouter.get('/core/vendor/get_vendor_payment_purchase',VendorCoreController.g
 
 
 // [EXPENSES]-----------
-<<<<<<< HEAD
 coreRouter.post('/core/expense/create',ExpenseCoreController.add_Expense_and_dist )
-=======
-coreRouter.post('/core/expense/add-expense',ExpenseCoreController.add_Expense_and_dist )
 coreRouter.get('/core/expense/get_expense_details/:exp_id',ExpenseCoreController.getExpenseDetails )
->>>>>>> d564951b91d65ec9cb0003a225bf1aa799593e3a
 
 module.exports = coreRouter;
 	
