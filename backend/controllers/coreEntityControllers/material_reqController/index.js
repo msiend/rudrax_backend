@@ -1,4 +1,5 @@
-const MaterialItemUpdateModel = require('@/models/coreEntityModels/material_reqModel');
+const MaterialItemUpdateModel = require('@/models/entityModels/material_itemModel');
+// const MaterialItemUpdateModel = require('@/models/entityModels/material_itemModel');
 
 class MaterialItemUpdateController {
    static async updateMdApproval(req, res) {

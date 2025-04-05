@@ -1,4 +1,5 @@
 const MaterialRequestModel = require('@/models/entityModels/material_reqModel');
+const coreMaterialRequestModel = require('@/models/coreEntityModels/material_reqModel');
 
 class MaterialRequestController {
    static async findAll(req, res) {
@@ -26,9 +27,19 @@ class MaterialRequestController {
    }
 
    static async create(req, res) {
-      const { material_ref_no, mr_project_ref, mr_project_id, mr_phase, mr_date } = req.body;
-      try {
-         const newRequest = await MaterialRequestModel.create(material_ref_no, mr_project_ref, mr_project_id, mr_phase, mr_date);
+      const { mr_project_ref, mr_project_id, mr_phase, mr_date } = req.body;
+      try {const [data] = await coreMaterialRequestModel.getLastMaterialRef();
+         let newMaterialRef;
+         if (data) {let lastNum = parseInt(data['material_ref_no'].slice(-4));
+            newMaterialRef = data['material_ref_no'].replace(lastNum, lastNum + 1);
+         } else {newMaterialRef = 'JGCMRQ0001';}
+         const newRequest = await MaterialRequestModel.create(
+            newMaterialRef,
+            mr_project_ref,
+            mr_project_id,
+            mr_phase,
+            mr_date
+         );
          return res.status(201).send({ status: true, msg: 'Material request created successfully', data: newRequest });
       } catch (error) {
          console.error('Error creating material request:', error);
@@ -38,9 +49,15 @@ class MaterialRequestController {
 
    static async update(req, res) {
       const { mr_r_id } = req.params;
-      const { material_ref_no, mr_project_ref, mr_project_id, mr_phase, mr_date } = req.body;
+      const { mr_project_ref, mr_project_id, mr_phase, mr_date } = req.body;
       try {
-         const isUpdated = await MaterialRequestModel.update(mr_r_id, material_ref_no, mr_project_ref, mr_project_id, mr_phase, mr_date);
+         const isUpdated = await MaterialRequestModel.update(
+            mr_r_id,
+            mr_project_ref,
+            mr_project_id,
+            mr_phase,
+            mr_date
+         );
          if (!isUpdated) {
             return res.status(404).send({ status: false, msg: 'Material request not found', data: null });
          }
@@ -72,7 +89,9 @@ class MaterialRequestController {
 
       try {
          const paginatedData = await MaterialRequestModel.paginate(page, limit);
-         return res.status(200).send({ status: true, msg: 'Material requests retrieved successfully', data: paginatedData });
+         return res
+            .status(200)
+            .send({ status: true, msg: 'Material requests retrieved successfully', data: paginatedData });
       } catch (error) {
          console.error('Error fetching paginated material requests:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });

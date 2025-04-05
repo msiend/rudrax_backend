@@ -26,9 +26,29 @@ class MaterialItemController {
    }
 
    static async create(req, res) {
-      const { mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, md_approval, fd_approval, vendor_id, mr_delivery_status } = req.body;
+      const {
+         mr_project_r_id,
+         mr_item_name,
+         mr_item_quantity,
+         mr_item_amount,
+         mr_item_date,
+         md_approval,
+         fd_approval,
+         vendor_id,
+         mr_delivery_status,
+      } = req.body;
       try {
-         const newItem = await MaterialItemModel.create(mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, md_approval, fd_approval, vendor_id, mr_delivery_status);
+         const newItem = await MaterialItemModel.create(
+            mr_project_r_id,
+            mr_item_name,
+            mr_item_quantity,
+            mr_item_amount,
+            mr_item_date,
+            md_approval,
+            fd_approval,
+            vendor_id,
+            mr_delivery_status
+         );
          return res.status(201).send({ status: true, msg: 'Material item created successfully', data: newItem });
       } catch (error) {
          console.error('Error creating material item:', error);
@@ -38,9 +58,30 @@ class MaterialItemController {
 
    static async update(req, res) {
       const { mr_item_id } = req.params;
-      const { mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, md_approval, fd_approval, vendor_id, mr_delivery_status } = req.body;
+      const {
+         mr_project_r_id,
+         mr_item_name,
+         mr_item_quantity,
+         mr_item_amount,
+         mr_item_date,
+         md_approval,
+         fd_approval,
+         vendor_id,
+         mr_delivery_status,
+      } = req.body;
       try {
-         const isUpdated = await MaterialItemModel.update(mr_item_id, mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, md_approval, fd_approval, vendor_id, mr_delivery_status);
+         const isUpdated = await MaterialItemModel.update(
+            mr_item_id,
+            mr_project_r_id,
+            mr_item_name,
+            mr_item_quantity,
+            mr_item_amount,
+            mr_item_date,
+            md_approval,
+            fd_approval,
+            vendor_id,
+            mr_delivery_status
+         );
          if (!isUpdated) {
             return res.status(404).send({ status: false, msg: 'Material item not found', data: null });
          }

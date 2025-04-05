@@ -5,20 +5,16 @@ meta {
 }
 
 post {
-  url: {{URL.Entity}}expense/create
+  url: {{URL.Entity}}material_req/create
   body: json
   auth: none
 }
 
 body:json {
   {
-    "exp_name": "Material Purchase",
-    "exp_amount": 2500.00,
-    "exp_mode": "Credit Card",
-    "exp_remark": "Purchase of cement and bricks",
-    "exp_date": "2023-10-26",
-    "exp_category": "Construction Materials",
-    "exp_entity": "Supplier A",
-    "exp_project_ref": "PRJ1001"
+    "mr_project_ref": "JGCP0002",
+    "mr_project_id": "12",
+    "mr_phase": "installment",
+    "mr_date": "<date>"
   }
 }
