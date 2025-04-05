@@ -42,6 +42,19 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
+   static async getLastMaterialRef() {
+      const query = 'SELECT material_ref_no FROM material_requests ORDER BY mr_r_id DESC LIMIT 1;';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving all clients:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
 }
 
 module.exports = MaterialItemUpdateModel;
