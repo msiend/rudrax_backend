@@ -6,6 +6,7 @@ const contractorPaymentModel = require('@/models/entityModels/contractorPaymentM
 
 class ExpenseCoreController {
    static async add_Expense_and_dist(req, res) {
+      console.log(req.body)
       const { dateofexpense, expenseName, remarks, Amount, contractorExpenses, vendorExpenses } = req.body;
       if (!Amount || !dateofexpense) {
          return res.status(400).send({

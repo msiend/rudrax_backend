@@ -38,7 +38,14 @@ class ContractorsController {
       }
 
       const contractorcon_id = await ContractorsModel.create(con_name, con_contact, con_alt_contact, con_address, con_email);
-      return res.status(201).send({ status: true, msg: 'Contractor added successfully', data: { con_id: contractorcon_id } });
+      return res.status(201).send({ status: true, msg: 'Contractor added successfully', data: { 
+        con_id: contractorcon_id,
+        con_name,
+        con_contact,
+        con_alt_contact,
+        con_address,
+        con_email
+      } });
     } catch (error) {
       console.error('Error adding contractor:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -53,9 +60,11 @@ class ContractorsController {
       const updated = await ContractorsModel.update(con_id, con_name, con_contact, con_alt_contact, con_address, con_email);
 
       if (!updated) {
-        return res.status(404).send({ status: false, msg: 'Contractor not found or no changes made' });
+        return res.status(404).send({ status: false, msg: 'Contractor not found or no changes made', data: null });
       }
-      return res.status(200).send({ status: true, msg: 'Contractor updated successfully' });
+      return res.status(200).send({ status: true, msg: 'Contractor updated successfully', data: {
+        con_id, con_name, con_contact, con_alt_contact, con_address, con_email
+      } });
     } catch (error) {
       console.error(`Error updating contractor with con_id ${req.body.con_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });
@@ -65,12 +74,12 @@ class ContractorsController {
   // Delete a contractor
   static async remove(req, res) {
     try {
-      const { con_id } = req.body;
-      const deleted = await ContractorsModel.remove(con_id);
+      const { id } = req.body;
+      const deleted = await ContractorsModel.remove(id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Contractor not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Contractor deleted successfully' });
+      return res.status(200).send({ status: true, msg: 'Contractor deleted successfully', data: {con_id: id} });
     } catch (error) {
       console.error(`Error deleting contractor with con_id ${req.body.con_id}:`, error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });

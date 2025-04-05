@@ -18,7 +18,7 @@ class ClientsCoreController {
       }
    }
    static async getClientProjects(req, res) {
-      const { client_id } = req.body;
+      const { client_id } = req.query;
       try {
          const data = await ClientsModel.getClientProjects(client_id);
          return res.status(200).send({

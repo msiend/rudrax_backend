@@ -32,7 +32,7 @@ class ProjectController {
          const { pro_client_r_id, pro_name, pro_housetype, pro_rcctype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment } = req.body;
          let getLastProjectId = await ProjectCoreModel.getLastClientRef()
          let newProjectRef;
-         if (getLastProjectId) {
+         if (getLastProjectId.length) {
             let lastNum = parseInt(getLastProjectId[0]['pro_ref_no'].slice(-4));
             newProjectRef = getLastProjectId[0]['pro_ref_no'].replace(lastNum, lastNum + 1);
          } else { newProjectRef = 'JGCP0001'; }
@@ -55,6 +55,7 @@ class ProjectController {
             }
          });
       } catch (error) {
+         console.log(error)
          res.status(500).send({ status: false, msg: 'Error creating project', error: error.message });
       }
    }
@@ -79,7 +80,6 @@ class ProjectController {
             pro_name,
             pro_ref_no,
             pro_housetype,
-            pro_rcctype,
             pro_sitedesc,
             pro_duration,
             pro_totalcost,
@@ -103,7 +103,8 @@ class ProjectController {
             }
          });
       } catch (error) {
-         res.status(500).send({ status: false, msg: 'Error updating project', error: error.message });
+         console.log(error)
+         res.status(500).send({ status: false, msg: 'Error in updating project', error: error.message });
       }
    }
 
@@ -114,7 +115,7 @@ class ProjectController {
          if (!deleted) {
             return res.status(404).send({ status: false, msg: 'Project not found', data: null });
          }
-         res.status(200).send({ status: true, msg: 'Project deleted successfully', data: { id } });
+         res.status(200).send({ status: true, msg: 'Project deleted successfully', data: { pro_id: id } });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Error deleting project', error: error.message });
       }

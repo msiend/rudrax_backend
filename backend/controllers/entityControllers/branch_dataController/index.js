@@ -62,12 +62,12 @@ class BranchDataController {
   // Delete a branch
   static async remove(req, res) {
     try {
-      const { b_id } = req.body;
-      const deleted = await BranchDataModel.remove(b_id);
+      const { id } = req.body;
+      const deleted = await BranchDataModel.remove(id);
       if (!deleted) {
         return res.status(404).send({ status: false, msg: 'Branch not found' });
       }
-      return res.status(200).send({ status: true, msg: 'Branch deleted successfully' , data:b_id });
+      return res.status(200).send({ status: true, msg: 'Branch deleted successfully' , data: {b_id: id} });
     } catch (error) {
       console.error('Error deleting branch:', error);
       return res.status(500).send({ status: false, msg: 'Internal Server Error' });

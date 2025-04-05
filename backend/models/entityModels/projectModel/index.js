@@ -7,7 +7,6 @@ class ProjectModel {
       pro_name,
       pro_ref_no,
       pro_housetype,
-      pro_rcctype,
       pro_sitedesc,
       pro_duration,
       pro_totalcost,
@@ -54,8 +53,8 @@ class ProjectModel {
    }
 
    static async create(data) {
-      const query = `INSERT INTO projects (pro_client_r_id, pro_name, pro_ref_no, pro_housetype, pro_rcctype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+      const query = `INSERT INTO projects (pro_client_r_id, pro_name, pro_ref_no, pro_housetype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [
@@ -63,7 +62,6 @@ class ProjectModel {
             data.pro_name,
             data.newProjectRef,
             data.pro_housetype,
-            data.pro_rcctype,
             data.pro_sitedesc,
             data.pro_duration,
             data.pro_totalcost,
@@ -79,7 +77,7 @@ class ProjectModel {
    }
 
    static async update(data) {
-      const query = `UPDATE projects SET pro_client_r_id=?, pro_name=?, pro_ref_no=?, pro_housetype=?, pro_rcctype=?, pro_sitedesc=?, pro_duration=?, pro_totalcost=?, pro_advancepayment=?
+      const query = `UPDATE projects SET pro_client_r_id=?, pro_name=?, pro_ref_no=?, pro_housetype=?, pro_sitedesc=?, pro_duration=?, pro_totalcost=?, pro_advancepayment=?
       WHERE pro_id=?`;
       const connPool = await pool.getConnection();
       try {
@@ -88,16 +86,15 @@ class ProjectModel {
             data.pro_name,
             data.pro_ref_no,
             data.pro_housetype,
-            data.pro_rcctype,
             data.pro_sitedesc,
             data.pro_duration,
             data.pro_totalcost,
             data.pro_advancepayment,
-            data.pro_id,
+            data.pro_id
          ]);
          return result.affectedRows > 0;
       } catch (error) {
-         console.error(`Error updating project with ID ${pro_id}:`, error);
+         console.error(`Error updating project with ID ${data.pro_id}:`, error);
          throw error;
       } finally {
          connPool.release();
