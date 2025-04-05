@@ -3462,3 +3462,6 @@
 20250405	18:46:46	efce3270-2c90-4e99-be30-633de1c3c5b9	GET	undefined	/api/v1/entity/material_req/readOne?mr_r_id=%201
 20250405	18:48:02	a5b81988-779f-4d5b-99eb-b9f03eb748e8	GET	undefined	/api/v1/entity/material_req/readOne/1
 20250405	18:48:05	67e6ea03-b5c0-456f-a943-7aee4f411859	GET	undefined	/api/v1/entity/material_req/readOne/1
+20250405	19:15:28	d41558d1-3278-43be-9db1-395a65499418	POST	undefined	/api/v1/entity/client/create
+20250405	19:15:34	fd9edc02-5831-4d6f-8b4a-6f89439638f0	POST	undefined	/api/v1/entity/client/create
+20250405	19:15:48	a3553762-3538-4076-9612-a8ec95cef09a	POST	undefined	/api/v1/entity/client/create
