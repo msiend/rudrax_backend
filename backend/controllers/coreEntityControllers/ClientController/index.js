@@ -37,7 +37,7 @@ class ClientsCoreController {
    }
 
    static async getProject_Col_Exp(req, res) {
-      const { pro_ref_id } = req.body;
+      const { pro_ref_id } = req.query;
       if (!pro_ref_id) {
          return res.status(400).send({
             status: false,
