@@ -30,7 +30,7 @@ class MaterialItemUpdateModel {
    }
 
    static async updateMrDeliveryStatus(mr_item_id) {
-      const query = 'UPDATE material_item_list SET mr_delivery_status = 1 WHERE mr_item_id = ?';
+      const query = 'UPDATE material_item_list SET mr_delivery_status = 1 WHERE mr_item_id = ? ';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [mr_item_id]);
@@ -53,6 +53,50 @@ class MaterialItemUpdateModel {
          throw error;
       } finally {
          connPool.release();
+      }
+   }
+   static async insertMaterialRequestWithItems(materialRequestData, materialItemsData) {
+      const conn = await pool.getConnection();
+      try {
+         await conn.beginTransaction();
+         const requestQuery = `
+            INSERT INTO material_requests (material_ref_no,  mr_project_id, mr_phase, mr_date) 
+            VALUES (?, ?, ?, ?)
+         `;
+         const [requestResult] = await conn.query(requestQuery, [
+            materialRequestData.material_ref_no,
+            materialRequestData.mr_project_id,
+            materialRequestData.mr_phase,
+            materialRequestData.mr_date,
+         ]);
+
+         const mr_project_r_id = requestResult.insertId;
+         const itemsQuery = `
+            INSERT INTO material_item_list (
+               mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, 
+                vendor_id
+            ) VALUES ?
+         `;
+
+         const itemValues = materialItemsData.map((item) => [
+            mr_project_r_id,
+            item.mr_item_name,
+            item.mr_item_quantity,
+            item.mr_item_amount,
+            item.mr_item_date,
+            item.vendor_id,
+         ]);
+
+         await conn.query(itemsQuery, [itemValues]);
+
+         await conn.commit();
+         return { success: true, insertedId: mr_project_r_id };
+      } catch (error) {
+         await conn.rollback();
+         console.error('Transaction error:', error);
+         throw error;
+      } finally {
+         conn.release();
       }
    }
 }

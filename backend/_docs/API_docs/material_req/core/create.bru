@@ -5,7 +5,33 @@ meta {
 }
 
 post {
-  url: {{URL.Core}}material_req/add-expense
+  url: {{URL.Core}}material_req/create
   body: json
   auth: none
+}
+
+body:json {
+  {
+    "materialRequestData": {
+      "mr_project_id": 9,
+      "mr_phase": "Phase 1",
+      "mr_date": "2025-04-03"
+    },
+    "materialItemsData": [
+      {
+        "mr_item_name": "Cement",
+        "mr_item_quantity": 20,
+        "mr_item_amount": 2000,
+        "mr_item_date": "2025-04-03",
+        "vendor_id": 9
+      },
+      {
+        "mr_item_name": "Sand",
+        "mr_item_quantity": 50,
+        "mr_item_amount": 1500,
+        "mr_item_date": "2025-04-03",
+        "vendor_id": 9
+      }
+    ]
+  }
 }
