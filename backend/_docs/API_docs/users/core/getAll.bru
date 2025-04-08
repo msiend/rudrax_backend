@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: 127.0.0.1:3500/api/v1/core/users/readAll
+  url: 127.0.0.1:3500/api/v1/core/users/readAll?role=super_admin
   body: none
   auth: bearer
+}
+
+params:query {
+  role: super_admin
 }
 
 auth:bearer {

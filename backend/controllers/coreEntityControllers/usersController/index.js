@@ -1,4 +1,4 @@
-const _UserModel = require('@/models/_UserModel');
+const _UserModel = require('@/models/coreEntityModels/usersModel');
 
 class _UserController  {
   static async create(req, res) {
