@@ -70,7 +70,7 @@ class MaterialItemUpdateModel {
             materialRequestData.mr_date,
          ]);
 
-         const mr_project_r_id = requestResult.insertId;
+         const mr_project_r_id = materialRequestData.mr_project_id;
          const itemsQuery = `
             INSERT INTO material_item_list (
                mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, 

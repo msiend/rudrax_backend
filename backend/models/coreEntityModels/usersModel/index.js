@@ -12,7 +12,7 @@ class _UserModel {
   }
 
   static async create(role, { r_id, email, password }) {
-    const { auth, email: emailCol, password: passCol } = this.getTableByRole(role);
+    const { auth, email: emailCol, password: passCol } = _UserModel.getTableByRole(role);
     const query = `INSERT INTO ${auth} (${role.slice(0, 2)}_r_id, ${emailCol}, ${passCol}) VALUES (?, ?, ?)`;
 
     const conn = await pool.getConnection();
@@ -25,7 +25,7 @@ class _UserModel {
   }
 
   static async findAll(role) {
-    const { auth } = this.getTableByRole(role);
+    const { auth } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [rows] = await conn.query(`SELECT * FROM ${auth}`);
@@ -36,7 +36,7 @@ class _UserModel {
   }
 
   static async findOne(role, id) {
-    const { auth, idField } = this.getTableByRole(role);
+    const { auth, idField } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [rows] = await conn.query(`SELECT * FROM ${auth} WHERE ${idField} = ?`, [id]);
@@ -47,7 +47,7 @@ class _UserModel {
   }
 
   static async update(role, id, { email }) {
-    const { auth, idField, email: emailCol } = this.getTableByRole(role);
+    const { auth, idField, email: emailCol } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [result] = await conn.query(`UPDATE ${auth} SET ${emailCol} = ? WHERE ${idField} = ?`, [email, id]);
@@ -58,7 +58,7 @@ class _UserModel {
   }
 
   static async updatePassword(role, id, password) {
-    const { auth, idField, password: passCol } = this.getTableByRole(role);
+    const { auth, idField, password: passCol } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [result] = await conn.query(`UPDATE ${auth} SET ${passCol} = ? WHERE ${idField} = ?`, [password, id]);
@@ -69,7 +69,7 @@ class _UserModel {
   }
 
   static async toggleStatus(role, id, status) {
-    const { auth, idField, active } = this.getTableByRole(role);
+    const { auth, idField, active } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [result] = await conn.query(`UPDATE ${auth} SET ${active} = ? WHERE ${idField} = ?`, [status, id]);
@@ -80,7 +80,7 @@ class _UserModel {
   }
 
   static async remove(role, id) {
-    const { auth, idField } = this.getTableByRole(role);
+    const { auth, idField } = _UserModel.getTableByRole(role);
     const conn = await pool.getConnection();
     try {
       const [result] = await conn.query(`DELETE FROM ${auth} WHERE ${idField} = ?`, [id]);

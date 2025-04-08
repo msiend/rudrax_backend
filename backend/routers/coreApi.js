@@ -30,7 +30,7 @@ coreRouter.post('/core/material_req/create', MaterialCoreController.insertMateri
 
 // [Material]-----------
 coreRouter.post('/core/users/create', UsersCoreController.create)
-coreRouter.post('/core/users/create', UsersCoreController.findAll)
+coreRouter.post('/core/users/readAll', UsersCoreController.findAll)
 coreRouter.post('/core/users/create', UsersCoreController.findOne)
 coreRouter.post('/core/users/create', UsersCoreController.update)
 coreRouter.post('/core/users/create', UsersCoreController.updatePassword)

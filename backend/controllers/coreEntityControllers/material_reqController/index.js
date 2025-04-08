@@ -12,9 +12,7 @@ class MaterialItemUpdateController {
       try {
          const [data] = await coreMaterialRequestModel.getLastMaterialRef();
          let newMaterialRef;if (data['material_ref_no']) {
-            console.log(data);
             let lastNum = parseInt(data['material_ref_no'].slice(-4));
-            
             newMaterialRef = data['material_ref_no'].replace(lastNum, lastNum + 1);
          } else {newMaterialRef = 'JGCMRQ0001';}
          const result = await coreMaterialRequestModel.insertMaterialRequestWithItems(

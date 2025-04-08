@@ -1,0 +1,7 @@
+20250408	14:26:59	2c4ab49d-7b6c-4b2e-aafc-4293d8a68d55	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250408	14:27:01	afa52885-bc07-4655-9e4c-55cd0075eb7a	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250408	14:27:11	54dc0893-d2c9-4969-8121-3946f86bc294	POST	undefined	/api/v1/core/material_req/create
+20250408	14:30:32	91e94b0a-1b0a-449d-a0bb-8ca171f03df0	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250408	14:30:37	7fae4372-d3e6-4a4a-be5f-31edffb87266	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250408	14:30:52	bddb4e4a-919f-48cf-966c-3dcca76cf1fd	POST	undefined	/api/v1/core/material_req/create
+20250408	14:38:07	b30f44aa-9cb0-40de-b3b8-4e8fbdc5a12f	POST	undefined	/api/v1/core/material_req/create
