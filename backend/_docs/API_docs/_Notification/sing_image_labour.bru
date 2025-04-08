@@ -1,0 +1,15 @@
+meta {
+  name: sing_image_labour
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL.Core}}project/upload
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  image: @file(C:\Users\BS\Pictures\3.jpeg)
+}

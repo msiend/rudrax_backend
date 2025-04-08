@@ -70,16 +70,17 @@ class MaterialItemUpdateModel {
             materialRequestData.mr_date,
          ]);
 
-         const mr_project_r_id = requestResult.insertId;
+         const mr_r_id = requestResult.insertId;
          const itemsQuery = `
             INSERT INTO material_item_list (
-               mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, 
+              mr_r_id, mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, 
                 vendor_id
             ) VALUES ?
          `;
 
          const itemValues = materialItemsData.map((item) => [
-            mr_project_r_id,
+            mr_r_id,
+            materialRequestData.mr_project_id,
             item.mr_item_name,
             item.mr_item_quantity,
             item.mr_item_amount,
@@ -90,7 +91,7 @@ class MaterialItemUpdateModel {
          await conn.query(itemsQuery, [itemValues]);
 
          await conn.commit();
-         return { success: true, insertedId: mr_project_r_id };
+         return { success: true, insertedId: mr_r_id };
       } catch (error) {
          await conn.rollback();
          console.error('Transaction error:', error);
