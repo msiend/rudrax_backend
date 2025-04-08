@@ -6,3 +6,4 @@
 
 backend/logs/req_logs.log
 backend/logs/reqLog.txt
+backend/src/logs/req_logs/req_logs.txt

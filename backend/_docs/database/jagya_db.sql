@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2025 at 03:50 PM
+-- Generation Time: Apr 08, 2025 at 10:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -135,7 +135,8 @@ INSERT INTO `clients` (`client_id`, `client_name`, `client_ref_no`, `client_cont
 (38, 'Wave Industries pvt. ltd.', 'JGCC0004', '555-555-5555', NULL, 'Dibrugarh, assam', 'contact@betaind.net'),
 (39, 'Wave Industries pvt. ltd.', 'JGCC0005', '88008095', NULL, 'Dibrugarh, assam', 'contact@betaind.net'),
 (40, 'Wave Industries pvt. ltd.', 'JGCC0006', '88008095', NULL, 'Dibrugarh, assam', 'contact@betaind.net'),
-(41, 'Wave Industries pvt. ltd.', 'JGCC0007', '88008095', '9401069337', 'Dibrugarh, assam', 'contact@betaind.net');
+(41, 'Wave Industries pvt. ltd.', 'JGCC0007', '88008095', '9401069337', 'Dibrugarh, assam', 'contact@betaind.net'),
+(42, 'Mintu Sharma', 'JGCC0008', '9401069337', '9401069337', 'siwan', 'msi2gmail@gaf.com');
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,8 @@ INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `co
 (3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005'),
 (4, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
 (5, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001');
+(6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
+(7, '5000', 'upi', '', '2025-04-06', '35');
 
 -- --------------------------------------------------------
 
@@ -211,7 +213,7 @@ CREATE TABLE `contractors` (
 
 INSERT INTO `contractors` (`con_id`, `con_name`, `con_contact`, `con_alt_contact`, `con_address`, `con_email`) VALUES
 (1, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(2, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
+(2, 'Alice Johnson', 2147483647, 2147483647, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
 (5, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com');
 
 -- --------------------------------------------------------
@@ -387,6 +389,20 @@ CREATE TABLE `material_item_list` (
   `mr_delivery_status` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `material_item_list`
+--
+
+INSERT INTO `material_item_list` (`mr_item_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
+(15, 9, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(16, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(17, 10, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(18, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(19, 11, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(20, 11, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(21, 12, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(22, 12, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -396,7 +412,6 @@ CREATE TABLE `material_item_list` (
 CREATE TABLE `material_requests` (
   `mr_r_id` bigint(20) NOT NULL,
   `material_ref_no` varchar(55) DEFAULT NULL,
-  `mr_project_ref` varchar(20) DEFAULT NULL,
   `mr_project_id` varchar(20) DEFAULT NULL,
   `mr_phase` varchar(155) DEFAULT NULL,
   `mr_date` varchar(55) DEFAULT NULL,
@@ -407,8 +422,44 @@ CREATE TABLE `material_requests` (
 -- Dumping data for table `material_requests`
 --
 
-INSERT INTO `material_requests` (`mr_r_id`, `material_ref_no`, `mr_project_ref`, `mr_project_id`, `mr_phase`, `mr_date`, `created_at`) VALUES
-(1, 'JGCMRQ0001', 'JGCP0002', '12', 'installment', '<date>', '2025-04-05 13:13:06');
+INSERT INTO `material_requests` (`mr_r_id`, `material_ref_no`, `mr_project_id`, `mr_phase`, `mr_date`, `created_at`) VALUES
+(1, 'JGCMRQ0001', '12', 'installment', '<date>', '2025-04-05 13:13:06'),
+(9, NULL, '9', 'Phase 1', '2025-04-03', '2025-04-06 13:42:03'),
+(10, 'JGCMRQ0001', '9', 'Phase 1', '2025-04-03', '2025-04-06 13:48:40'),
+(11, 'JGCMRQ0002', '9', 'Phase 1', '2025-04-03', '2025-04-06 13:49:59'),
+(12, 'JGCMRQ0003', '9', 'Phase 1', '2025-04-03', '2025-04-08 02:04:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `type` enum('info','warning','error','success','system') NOT NULL DEFAULT 'info',
+  `is_read` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`metadata`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification_recipients`
+--
+
+CREATE TABLE `notification_recipients` (
+  `id` int(11) NOT NULL,
+  `notification_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `role` varchar(50) DEFAULT NULL,
+  `is_read` tinyint(1) DEFAULT 0,
+  `read_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -798,6 +849,21 @@ ALTER TABLE `material_requests`
   ADD PRIMARY KEY (`mr_r_id`);
 
 --
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notification_recipients`
+--
+ALTER TABLE `notification_recipients`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `notification_id` (`notification_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `role` (`role`);
+
+--
 -- Indexes for table `particles`
 --
 ALTER TABLE `particles`
@@ -890,7 +956,7 @@ ALTER TABLE `branch_data`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `clients_docs`
@@ -902,7 +968,7 @@ ALTER TABLE `clients_docs`
 -- AUTO_INCREMENT for table `collections`
 --
 ALTER TABLE `collections`
-  MODIFY `col_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `col_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contractors`
@@ -950,13 +1016,25 @@ ALTER TABLE `labours`
 -- AUTO_INCREMENT for table `material_item_list`
 --
 ALTER TABLE `material_item_list`
-  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `material_requests`
 --
 ALTER TABLE `material_requests`
-  MODIFY `mr_r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `mr_r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `notification_recipients`
+--
+ALTER TABLE `notification_recipients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `particles`
@@ -1060,6 +1138,12 @@ ALTER TABLE `finance_dep_auth`
 ALTER TABLE `material_item_list`
   ADD CONSTRAINT `material_item_list_ibfk_1` FOREIGN KEY (`mr_project_r_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `material_item_list_ibfk_2` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `notification_recipients`
+--
+ALTER TABLE `notification_recipients`
+  ADD CONSTRAINT `notification_recipients_ibfk_1` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `projects`
