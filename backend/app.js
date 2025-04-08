@@ -35,7 +35,7 @@ app.use(credentials);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public',express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 // app.use(requestLogger);
 
@@ -44,6 +44,7 @@ app.use(cookieParser());
 const appRoutes_entity = require('@/routers/applicationApi');
 const appRoutes_core = require('@/routers/coreApi');
 const appRoutes_core_file = require('@/routers/file_uploadApi');
+const appRoutes_notification = require('@/routers/notificationApi');
 const authRoutes = require('@/routers/authApi');
 
 ////// auth routes
@@ -54,6 +55,9 @@ app.use('/api', authRoutes);
 app.use('/api/v1', appRoutes_entity); 
 app.use('/api/v1', appRoutes_core); 
 app.use('/api/v1', appRoutes_core_file); 
+app.use('/api/v1/notification', appRoutes_notification); 
+
+
 
 
 
