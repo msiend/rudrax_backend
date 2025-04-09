@@ -17,7 +17,7 @@ class VendorsController {
          const { vendor_id } = req.body;
          const vendor = await VendorsModel.findOne(vendor_id);
          console.log(vendor);
-         
+
          if (!vendor) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
          res.status(200).send({ status: true, msg: 'Vendor retrieved successfully', data: vendor });
       } catch (error) {
@@ -27,13 +27,13 @@ class VendorsController {
 
    static async create(req, res) {
       try {
-         const { vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =req.body;
+         const { vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } = req.body;
          const data = await VendorsCorModel.getLastVendorRef();
          let newRef;
          if (data) {
             let lastNum = parseInt(data[0]['vendor_ref_no'].slice(-4));
             newRef = data[0]['vendor_ref_no'].replace(lastNum, lastNum + 1);
-         } else {newRef = 'JGCV0001';}
+         } else { newRef = 'JGCV0001'; }
          const result = await VendorsModel.create(
             vendor_name,
             newRef,
@@ -59,7 +59,8 @@ class VendorsController {
    static async update(req, res) {
       try {
          //  const { id } = req.params;
-         const { vendor_id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =
+         console.log(req.body)
+         const { vendor_ref_no, vendor_id, vendor_name, vendor_contact, vendor_alt_contact, vendor_address, vendor_email, vendor_status } =
             req.body;
          const success = await VendorsModel.update(
             vendor_id,
@@ -71,7 +72,18 @@ class VendorsController {
             vendor_status
          );
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
-         res.status(200).send({ status: true, msg: 'Vendor updated successfully', data: req.body });
+         res.status(200).send({
+            status: true, msg: 'Vendor updated successfully', data: {               
+               vendor_id,
+               vendor_ref_no,
+               vendor_name,
+               vendor_contact,
+               vendor_alt_contact,
+               vendor_address,
+               vendor_email,
+               vendor_status
+            }
+         });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to update vendor', data: null });
       }
@@ -83,7 +95,7 @@ class VendorsController {
          const { id } = req.body;
          const success = await VendorsModel.delete(id);
          if (!success) return res.status(404).send({ status: false, msg: 'Vendor not found', data: null });
-         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: {vendor_id: id} });
+         res.status(200).send({ status: true, msg: 'Vendor deleted successfully', data: { vendor_id: id } });
       } catch (error) {
          res.status(500).send({ status: false, msg: 'Failed to delete vendor', data: null });
       }

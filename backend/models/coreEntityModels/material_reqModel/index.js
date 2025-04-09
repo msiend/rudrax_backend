@@ -72,7 +72,7 @@ class MaterialItemUpdateModel {
 
          const mr_r_id = requestResult.insertId;
          const itemsQuery = `
-            INSERT INTO material_item_list (
+            INSERT INTO material_item_list ( 
               mr_r_id, mr_project_r_id, mr_item_name, mr_item_quantity, mr_item_amount, mr_item_date, 
                 vendor_id
             ) VALUES ?
@@ -91,7 +91,7 @@ class MaterialItemUpdateModel {
          await conn.query(itemsQuery, [itemValues]);
 
          await conn.commit();
-         return { success: true, insertedId: mr_r_id };
+         return { success: true, insertedId: mr_r_id, ref: materialRequestData.material_ref_no };
       } catch (error) {
          await conn.rollback();
          console.error('Transaction error:', error);

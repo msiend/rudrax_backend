@@ -5,8 +5,8 @@ const coreMaterialRequestModel = require('@/models/coreEntityModels/material_req
 
 class MaterialItemUpdateController {
    static async insertMaterialRequestWithItems(req, res) {
-      const { materialRequestData, materialItemsData } = req.body;
-      if (!materialRequestData || !Array.isArray(materialItemsData) || materialItemsData.length === 0) {
+      const { mr_project_id, mr_phase, mr_date, materialItemsData } = req.body;
+      if (!mr_project_id || !Array.isArray(materialItemsData) || materialItemsData.length === 0) {
          return res.status(400).send({ status: false, msg: 'Invalid request data', data: null });
       }
       try {
@@ -16,13 +16,15 @@ class MaterialItemUpdateController {
             newMaterialRef = data['material_ref_no'].replace(lastNum, lastNum + 1);
          } else {newMaterialRef = 'JGCMRQ0001';}
          const result = await coreMaterialRequestModel.insertMaterialRequestWithItems(
-            {...materialRequestData,...{material_ref_no:newMaterialRef}},
+            { mr_project_id, mr_phase, mr_date, ...{material_ref_no:newMaterialRef}},
             materialItemsData
          );
          return res.status(200).send({
             status: true,
-            msg: 'Material request and items insarted successfully',
-            data: result,
+            msg: 'Material request and items inserted successfully',
+            data: {
+               mr_r_id: result.insertedId, material_ref_no: result.ref, mr_project_id, mr_phase, mr_date
+            },
          });
       } catch (error) {
          console.error('Error inserting material request and itams:', error);
