@@ -87,9 +87,9 @@ class MaterialItemUpdateController {
       }
    }
    static async findAllByMatrialReqId(req, res) {
-      const { mr_r_id } = req.params;
+      const { id } = req.params;
       try {
-         const requests = await coreMaterialRequestModel.findAllByMatrialReqId(mr_r_id);
+         const requests = await coreMaterialRequestModel.findAllByMatrialReqId(id);
          return res.status(200).send({ status: true, msg: 'Material requests retrieved successfully', data: requests });
       } catch (error) {
          console.error('Error fetching material requests:', error);

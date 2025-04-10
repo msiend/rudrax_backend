@@ -26,7 +26,8 @@ coreRouter.post('/core/project', ExpenseCoreController.add_Expense_and_dist);
 
 // [Material]-----------
 coreRouter.post('/core/material_req/create', MaterialCoreController.insertMaterialRequestWithItems);
-coreRouter.get('/core/material_req/realAll_by_materialId/:mr-r_id', MaterialCoreController.findAllByMatrialReqId);
+coreRouter.get('/core/material_req/realAll_by_materialId/:id', MaterialCoreController.findAllByMatrialReqId);
+
 
 // [Material]-----------
 coreRouter.post('/core/users/create', UsersCoreController.create);

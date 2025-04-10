@@ -140,3 +140,15 @@
 20250409	10:42:51	6dac2077-9e0d-4ad9-964e-14ed6e41bd32	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
 20250409	10:42:51	ad28995a-906d-4a3b-9245-c254b83c3356	GET	http://127.0.0.1:5173	/api/v1/entity/contractor/readAll
 20250409	10:42:54	5fa923e5-7cca-4f62-8ba0-7c2be7dcb138	GET	http://127.0.0.1:5173	/api/v1/entity/branch_data/readAll
+20250410	12:54:30	12bfd356-38b1-4f01-87be-ca00c2b4ead0	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/2
+20250410	12:54:33	78705742-11e3-47bb-82d6-326b6ff6ed10	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/2
+20250410	12:55:46	22cac411-b940-48e0-a979-896a23e87863	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/2
+20250410	12:56:57	a3598183-8e70-45fe-b5d4-6846323d2824	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/2
+20250410	12:57:04	d3430da7-2624-45cc-b7eb-6c41d2e4f64c	GET	undefined	/api/v1/core/material_req/realAll_by_materialId
+20250410	12:57:26	efe9e693-e6a5-41bd-b85e-dd87d0d6a603	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/
+20250410	12:57:49	2ad5b38f-cd4c-487b-b0c8-46d9f04fcc3a	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/
+20250410	12:58:19	9e6e4d1d-759a-4050-b940-399e59d0e789	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/
+20250410	12:58:22	b4e69aff-6fbe-4ba6-9842-6b0afa1bc4de	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/2
+20250410	12:58:27	490fac8a-e4f4-423d-934a-943a74c00e26	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/3
+20250410	12:58:31	359247e0-6c49-4f7a-9ee9-6bb433bfafbe	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/1
+20250410	13:00:20	038bd1cb-163d-4424-981e-f027bda9c774	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/1

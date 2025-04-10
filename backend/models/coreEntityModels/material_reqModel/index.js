@@ -101,7 +101,7 @@ class MaterialItemUpdateModel {
       }
    }
    
-   static async findAllByMatrialReqId() {
+   static async findAllByMatrialReqId(mr_r_id) {
       const query = 'SELECT * FROM material_item_list WHERE mr_r_id=? ';
       const connPool = await pool.getConnection();
       try {
