@@ -16,7 +16,7 @@ class MaterialItemModel {
    }
 
    static async findAll() {
-      const query = 'SELECT * FROM material_item_list';
+      const query = 'SELECT * FROM material_item_list where ';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
