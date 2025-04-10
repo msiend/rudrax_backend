@@ -116,3 +116,10 @@
 20250408	20:46:53	9baa9c7c-4c5b-4222-8b99-0a5cf9ee3eca	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
 20250408	20:47:08	406d7cdd-bf3f-4eb3-b234-930c996e31cb	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
 20250408	20:49:15	691b41b4-17be-473d-aef9-cbe6a7bfb60d	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250410	11:16:03	8535f4b1-b13a-4493-8ec5-529532f895dc	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
+20250410	11:18:42	38f61235-6f9f-4a44-a140-2c45a003a8c6	GET	undefined	/api/v1/entity/material_item/readAll
+20250410	11:18:49	a2bce9e9-50e7-488f-8a6b-29525dfd42d6	GET	undefined	/api/v1/entity/material_item/readOne
+20250410	11:19:11	8361b27c-92af-405c-a337-df83742dfedf	GET	undefined	/api/v1/entity/material_req/readOne
+20250410	11:19:42	0ab9797f-a8a7-40e5-9084-a5fcaf04fd19	GET	undefined	/api/v1/entity/material_req/readOne
+20250410	11:19:58	68bc5d84-d74c-4780-baac-42844356b4a9	GET	undefined	/api/v1/entity/material_req/readAll
+20250410	11:38:06	f7d1dfd1-1e80-49ca-8b79-641f11267cf5	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
