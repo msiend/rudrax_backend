@@ -1,0 +1,29 @@
+meta {
+  name: readAllBy_Matrial_req_id
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL.Core}}material_req/realAll_by_materialId/:mr-r_id
+  body: none
+  auth: none
+}
+
+params:path {
+  mr-r_id: 2
+}
+
+body:json {
+  {
+    "mr_project_id": 9,
+    "mr_phase": "Phase 1",
+    "mr_date": "2025-04-03",
+    "materialItemsData": [
+      {
+        "mr_item_name": "Cement",
+        "mr_item_quantity": 20
+      }
+    ]
+  }
+}

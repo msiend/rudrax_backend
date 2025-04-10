@@ -93,7 +93,7 @@ class NotificationController {
 
     static async sendToRoles(req, res) {
         try {
-            // Check if user has permission (e.g., super_admin)
+            // Check s permission ( super_admin)
             if (req.user.role !== 'super_admin') {
                 return res.status(403).json({
                     success: false,
@@ -129,7 +129,7 @@ class NotificationController {
 
     static async sendToUsers(req, res) {
         try {
-            // Check if user has permission (e.g., super_admin or supervisor)
+            // Check permission ( super_admin or supervisor)
             if (!['super_admin', 'supervisor'].includes(req.user.role)) {
                 return res.status(403).json({
                     success: false,

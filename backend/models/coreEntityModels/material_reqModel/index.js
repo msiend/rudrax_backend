@@ -100,6 +100,21 @@ class MaterialItemUpdateModel {
          conn.release();
       }
    }
+   
+   static async findAllByMatrialReqId() {
+      const query = 'SELECT * FROM material_item_list WHERE mr_r_id=? ';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query,[mr_r_id]);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving all material items:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
 }
 
 module.exports = MaterialItemUpdateModel;
