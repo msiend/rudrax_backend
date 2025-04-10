@@ -86,7 +86,7 @@ class MaterialItemUpdateController {
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }
-   static async findAll(req, res) {
+   static async findAllByMatrialReqId(req, res) {
       const { mr_r_id } = req.params;
       try {
          const requests = await coreMaterialRequestModel.findAllByMatrialReqId(mr_r_id);
