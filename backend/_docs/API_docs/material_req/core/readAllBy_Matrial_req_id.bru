@@ -4,14 +4,14 @@ meta {
   seq: 2
 }
 
-post {
-  url: {{URL.Core}}material_req/realAll_by_materialId/:mr-r_id
+get {
+  url: {{URL.Core}}material_req/realAll_by_materialId/:id
   body: none
   auth: none
 }
 
 params:path {
-  mr-r_id: 2
+  id: 1
 }
 
 body:json {

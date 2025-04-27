@@ -1,0 +1,47 @@
+Changes for Expense CREATE api ----
+
+1. [0] object in request body will come in this FORMAT --
+    "exp_name": "march expense 1",
+    "exp_amount": "20000",
+    "exp_mode": "UPI",
+    "exp_remark": "Bob da record",
+    "exp_date": "2025-04-25",
+    "contractor": [
+      {
+        "pay_id": 36,
+        "pay_con_id": 2,
+        "pay_project_id": null,
+        "pay_amount": "30000",
+        "pay_note": "for arun da ",
+        "pay_exp_id": 23
+      }
+    ],
+    "vendor": [
+      {
+        "pay_id": 33, // pay_id will come in update request Only
+        "pay_vendor_id": 25,
+        "payment_mode" : "UPI",
+        "pay_project_id": null,
+        "pay_amount": "20000",
+        "pay_note": "for item purchase",
+        "pay_exp_id": 23
+      },
+      {
+        "pay_id": 34, // pay_id will come in update request Only
+        "pay_vendor_id": 10,
+        "payment_mode" : "UPI",
+        "pay_project_id": null,
+        "pay_amount": "50000",
+        "pay_note": "fo 3 truck red soil",
+        "pay_exp_id": 23
+      }
+    ]
+
+    Send same fieldname in response to CREATE request. Dont need to send contractor and vendor array in response body.
+
+
+
+    2. [0] On READ request send vendor_name and contractor_name, client_name, client_ref, project_ref, and project_name as well.
+
+    3. [0] payment_mode should be there in every expense item.
+   
