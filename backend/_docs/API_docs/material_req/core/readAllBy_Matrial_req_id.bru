@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{URL.Core}}material_req/realAll_by_materialId/16
+  url: {{URL.Core}}material_req/realAll_by_materialId/:id
   body: none
   auth: none
+}
+
+params:path {
+  id: 13
 }
 
 body:json {

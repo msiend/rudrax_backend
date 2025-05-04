@@ -1,0 +1,26 @@
+meta {
+  name: super-admin-refresh
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{URL.auth}}refresh/super-admin
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyX2lkIjo2LCJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJyb2xlcyI6NTE5MH0sImlhdCI6MTc0NjI4NjU1NCwiZXhwIjoxNzQ4ODc4NTU0fQ.0EGtG-4pfQpAR5K1K3GTTGhoG9xFDfsY-i8YKfJqrpA
+}
+
+body:json {
+  {
+  "email":"msi@gmail.com",
+    "password":"9401069337"
+  }
+}
+
+docs {
+  SDsdvSV
+}
