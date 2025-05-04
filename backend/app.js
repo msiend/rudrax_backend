@@ -49,7 +49,7 @@ const authRoutes = require('@/routers/authApi');
 
 ////// auth routes
 app.use('/api', authRoutes);
-// app.use(jwt_authenticationVerify)
+app.use(jwt_authenticationVerify)
 
 ////// api routes
 app.use('/api/v1', appRoutes_entity); 
