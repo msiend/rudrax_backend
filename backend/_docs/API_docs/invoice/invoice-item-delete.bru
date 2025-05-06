@@ -1,0 +1,19 @@
+meta {
+  name: invoice-item-delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://127.0.0.1:3500/api/v1/invoice/item/delete/:invoice_item_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  invoice_item_id: 5
+}
+
+auth:bearer {
+  token: <your_jwt_token>
+}

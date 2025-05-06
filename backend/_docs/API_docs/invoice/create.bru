@@ -1,0 +1,46 @@
+meta {
+  name: invoice-create
+  type: http
+  seq: 1
+}
+
+post {
+  url: 127.0.0.1:3500/api/v1/invoice/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "invoiceData": {
+      "invoice_no": "INV-2024-001",
+      "invoice_date": "2024-05-06",
+      "payment_status": "unpaid",
+      "amount": "10000",
+      "gst_rate": "18",
+      "discount": "500",
+      "total": "11300",
+      "client_contact": "9876543210",
+      "client_address": "Guwahati, Assam",
+      "client_id": 101
+    },
+    "invoice_items": [
+      {
+        "inv_item_name": "Steel Rod",
+        "inv_item_quantity": "10",
+        "inv_item_rate": "100",
+        "inv_item_amount": "1000"
+      },
+      {
+        "inv_item_name": "Cement Bag",
+        "inv_item_quantity": "20",
+        "inv_item_rate": "200",
+        "inv_item_amount": "4000"
+      }
+    ]
+  }
+}

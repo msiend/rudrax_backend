@@ -3,6 +3,7 @@ require('module-alias/register');
 const express = require('express');
 const coreRouter = express.Router();
 const ClientCoreController = require('@/controllers/coreEntityControllers/clientController');
+const ProjectCoreController = require('@/controllers/coreEntityControllers/projectController');
 const VendorCoreController = require('@/controllers/coreEntityControllers/vendorController');
 const ExpenseCoreController = require('@/controllers/coreEntityControllers/expenseController');
 const MaterialCoreController = require('@/controllers/coreEntityControllers/material_reqController');
@@ -22,7 +23,7 @@ coreRouter.post('/core/expense/create', ExpenseCoreController.add_Expense_and_di
 coreRouter.get('/core/expense/get_expense_details/:exp_id', ExpenseCoreController.getExpenseDetails);
 
 // [PROJECTS]-----------
-coreRouter.post('/core/project', ExpenseCoreController.add_Expense_and_dist);
+coreRouter.post('/core/project/get_project_detail', ProjectCoreController.getFullProjectDetails);
 
 // [Material]-----------
 coreRouter.post('/core/material_req/create', MaterialCoreController.insertMaterialRequestWithItems);

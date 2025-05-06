@@ -1,0 +1,19 @@
+meta {
+  name: projectSubphase-delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{URL.Entity}}project_subphase/delete/1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+assert {
+  ~status: isTrue
+}

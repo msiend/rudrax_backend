@@ -1,0 +1,27 @@
+meta {
+  name: projectPhase-create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Entity}}project_phase/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_id": 10,
+    "pro_phase_status": "In Progress",
+    "pro_phase_deadline": "2025-06-30"
+  }
+}
+
+assert {
+  ~status: isTrue
+}

@@ -1,0 +1,23 @@
+meta {
+  name: projectContractor-findOne
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL.Entity}}project_contractor/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+assert {
+  ~status: isTrue
+}

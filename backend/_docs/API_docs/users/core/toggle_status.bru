@@ -1,0 +1,17 @@
+meta {
+  name: user-toggle-status
+  type: http
+  seq: 6
+}
+
+put {
+  url: 127.0.0.1:3500/api/v1/user/branch/1/status
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "status": 0
+  }
+}

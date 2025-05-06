@@ -1,0 +1,28 @@
+meta {
+  name: projectContractor-update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}project_contractor/update/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_id":10,
+    "con_id": 101,
+    "pro_phase": "Phase 1",
+    "pro_sub_phase": "Subphase A"
+  }
+}
+
+assert {
+  ~status: isTrue
+}
