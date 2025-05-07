@@ -1,0 +1,20 @@
+meta {
+  name: user-create
+  type: http
+  seq: 1
+}
+
+post {
+  url: 127.0.0.1:3500/api/v1/user/create
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "role": "branch",
+    "r_id": 1,
+    "email": "user@example.com",
+    "password": "securepassword"
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: super-admin-create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.auth}}create/super-admin
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <YOUR_ACCESS_TOKEN_HERE>
+}
+
+body:json {
+  {
+    "name": "John Doe",
+    "email": "deka@gmail.com",
+    "contact": "9401069337",
+    "password": "12345",
+    "cpassword": "12345"
+  }
+}
+
+assert {
+  ~status: isBoolean
+  ~msg: isString
+}

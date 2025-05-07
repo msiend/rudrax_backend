@@ -1,0 +1,17 @@
+meta {
+  name: user-update
+  type: http
+  seq: 4
+}
+
+put {
+  url: 127.0.0.1:3500/api/v1/user/branch/1
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "email": "newuser@example.com"
+  }
+}

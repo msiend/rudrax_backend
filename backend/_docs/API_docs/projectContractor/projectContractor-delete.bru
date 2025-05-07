@@ -1,0 +1,23 @@
+meta {
+  name: projectContractor-delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{URL.Entity}}project_contractor/delete/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+assert {
+  ~status: isTrue
+}

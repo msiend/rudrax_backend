@@ -1,0 +1,28 @@
+meta {
+  name: projectContractor-create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Entity}}project_contractor/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_id": 9,
+    "con_id": 101,
+    "pro_phase": "Phase 1",
+    "pro_sub_phase": "Subphase A"
+  }
+}
+
+assert {
+  ~status: isTrue
+}

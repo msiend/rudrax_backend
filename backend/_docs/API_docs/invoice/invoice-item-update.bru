@@ -1,0 +1,28 @@
+meta {
+  name: invoice-item-update
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://127.0.0.1:3500/api/v1/invoice/item/update/:invoice_item_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  invoice_item_id: 5
+}
+
+auth:bearer {
+  token: <your_jwt_token>
+}
+
+body:json {
+  {
+    "inv_item_name": "Cement",
+    "inv_item_quantity": "10",
+    "inv_item_rate": "400",
+    "inv_item_amount": "4000"
+  }
+}

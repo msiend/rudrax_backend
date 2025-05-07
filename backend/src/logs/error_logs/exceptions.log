@@ -470,3 +470,2778 @@ ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-06 16:35:25 [ERROR] uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:469:13)
+    at Function.<anonymous> (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:224:7)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:60:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:469:13)
+    at Function.<anonymous> (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:224:7)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:60:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+{
+  error: TypeError: Router.use() requires a middleware function but got a Object
+      at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:469:13)
+      at Function.<anonymous> (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:227:21)
+      at Array.forEach (<anonymous>)
+      at Function.use (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:224:7)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:60:5)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14),
+  exception: true,
+  date: 'Tue May 06 2025 16:35:25 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 18380,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112762880,
+      heapTotal: 70582272,
+      heapUsed: 50447296,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1822370.546 },
+  trace: [
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.use',
+      line: 469,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 21,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\application.js',
+      function: null,
+      line: 227,
+      method: null,
+      native: false
+    },
+    {
+      column: null,
+      file: null,
+      function: 'Array.forEach',
+      line: null,
+      method: 'forEach',
+      native: false
+    },
+    {
+      column: 7,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\application.js',
+      function: 'Function.use',
+      line: 224,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 60,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:46:23 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:35)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:35)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:35)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:46:23 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6468,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111484928,
+      heapTotal: 68861952,
+      heapUsed: 42830000,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823028.234 },
+  trace: [
+    {
+      column: 35,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:46:43 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:46:43 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 11220,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111767552,
+      heapTotal: 69238784,
+      heapUsed: 42467008,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823047.64 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:47:06 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:47:06 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 1708,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112295936,
+      heapTotal: 69591040,
+      heapUsed: 43566704,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823071.156 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:49:41 [ERROR] uncaughtException: Unexpected token ';'
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+    };
+     ^
+  
+  SyntaxError: Unexpected token ';'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:49:41 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 16816,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112193536,
+      heapTotal: 69443584,
+      heapUsed: 42745080,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823225.843 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:49:55 [ERROR] uncaughtException: Unexpected token ';'
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+    };
+     ^
+  
+  SyntaxError: Unexpected token ';'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:49:55 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 18080,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112230400,
+      heapTotal: 69533696,
+      heapUsed: 44090672,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823240 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:49:57 [ERROR] uncaughtException: Unexpected token ';'
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+  };
+   ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:62
+    };
+     ^
+  
+  SyntaxError: Unexpected token ';'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:49:57 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 15660,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112050176,
+      heapTotal: 69443584,
+      heapUsed: 42744472,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823242.093 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:50:33 [ERROR] uncaughtException: Unexpected token 'async'
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+   async deleteInvoiceItem (req, res)  {
+   ^^^^^
+
+SyntaxError: Unexpected token 'async'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+   async deleteInvoiceItem (req, res)  {
+   ^^^^^
+
+SyntaxError: Unexpected token 'async'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+     async deleteInvoiceItem (req, res)  {
+     ^^^^^
+  
+  SyntaxError: Unexpected token 'async'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:50:33 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 22012,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112021504,
+      heapTotal: 69238784,
+      heapUsed: 42162288,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823277.953 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:50:37 [ERROR] uncaughtException: Unexpected token 'async'
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+   async deleteInvoiceItem (req, res)  {
+   ^^^^^
+
+SyntaxError: Unexpected token 'async'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+   async deleteInvoiceItem (req, res)  {
+   ^^^^^
+
+SyntaxError: Unexpected token 'async'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:66
+     async deleteInvoiceItem (req, res)  {
+     ^^^^^
+  
+  SyntaxError: Unexpected token 'async'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:50:37 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 14252,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112324608,
+      heapTotal: 69591040,
+      heapUsed: 43648608,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823281.781 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:50:57 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:50:57 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 15832,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112410624,
+      heapTotal: 69795840,
+      heapUsed: 44022872,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823302.39 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:51:56 [ERROR] uncaughtException: Unexpected identifier 'pool'
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:113
+   const pool          = require('../config/db'); // adjust the path to your db config
+         ^^^^
+
+SyntaxError: Unexpected identifier 'pool'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:113
+   const pool          = require('../config/db'); // adjust the path to your db config
+         ^^^^
+
+SyntaxError: Unexpected identifier 'pool'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:113
+     const pool          = require('../config/db'); // adjust the path to your db config
+           ^^^^
+  
+  SyntaxError: Unexpected identifier 'pool'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22),
+  exception: true,
+  date: 'Tue May 06 2025 16:51:56 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 16752,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111919104,
+      heapTotal: 69443584,
+      heapUsed: 42658584,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823361.156 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\invoice\\index.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:53:27 [ERROR] uncaughtException: Unexpected token ','
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+     },
+      ^
+  
+  SyntaxError: Unexpected token ','
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22),
+  exception: true,
+  date: 'Tue May 06 2025 16:53:27 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5504,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112254976,
+      heapTotal: 69591040,
+      heapUsed: 43547368,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823452.453 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\invoice\\index.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:53:29 [ERROR] uncaughtException: Unexpected token ','
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\models\invoice\index.js:112
+     },
+      ^
+  
+  SyntaxError: Unexpected token ','
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\invoice\index.js:1:22),
+  exception: true,
+  date: 'Tue May 06 2025 16:53:29 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 15148,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111853568,
+      heapTotal: 69124096,
+      heapUsed: 43212248,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823453.765 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\invoice\\index.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:54:15 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:54:15 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 22864,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111812608,
+      heapTotal: 69181440,
+      heapUsed: 42794376,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823500.531 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 16:54:20 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 16:54:20 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17808,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111947776,
+      heapTotal: 69181440,
+      heapUsed: 42665632,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1823505.078 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 17:10:32 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 17:10:32 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7484,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111788032,
+      heapTotal: 69386240,
+      heapUsed: 42989480,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1824476.671 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 17:10:50 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 17:10:50 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10408,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111890432,
+      heapTotal: 69181440,
+      heapUsed: 42665520,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1824495.5 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 17:11:45 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 17:11:45 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6664,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111652864,
+      heapTotal: 69181440,
+      heapUsed: 42794312,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1824550.578 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-06 17:12:33 [ERROR] uncaughtException: invoiceController is not defined
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+ReferenceError: invoiceController is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27)
+{
+  error: ReferenceError: invoiceController is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\invoiceApi.js:12:45)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:48:27),
+  exception: true,
+  date: 'Tue May 06 2025 17:12:33 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17444,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111841280,
+      heapTotal: 69443584,
+      heapUsed: 42679216,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1824597.671 },
+  trace: [
+    {
+      column: 45,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 12,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

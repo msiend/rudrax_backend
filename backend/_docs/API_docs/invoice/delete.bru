@@ -1,0 +1,15 @@
+meta {
+  name: invoice-delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: 127.0.0.1:3500/api/v1/invoice/delete/:invoice_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  invoice_id: 2
+}

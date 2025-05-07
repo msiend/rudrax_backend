@@ -1,0 +1,28 @@
+meta {
+  name: projectSubphase-update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}project_subphase/update/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_id": 1,
+    "pro_phase": 1,
+    "pro_subphase": "Subphase A",
+    "deadline": "2025-07-15"
+  }
+}
+
+assert {
+  ~status: isTrue
+}

@@ -1,0 +1,27 @@
+meta {
+  name: projectPhase-update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}project_phase/update/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_id": 1,
+    "pro_phase_status": "In Progress",
+    "pro_phase_deadline": "2025-06-30"
+  }
+}
+
+assert {
+  ~status: isTrue
+}
