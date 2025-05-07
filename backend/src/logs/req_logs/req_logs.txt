@@ -1611,3 +1611,7 @@
 20250506	19:06:12	2d76c2db-017b-42ec-b5a4-d65d9eef2b52	POST	undefined	/api/v1/entity/project_hase/create
 20250506	19:06:19	f63a859f-ecf6-4bbc-8257-c9a8f3f35fe0	POST	undefined	/api/v1/entity/project_phase/create
 20250506	19:06:54	9f692587-5ffb-44c0-ae17-da87baab72d7	POST	undefined	/api/v1/entity/project_subphase/create
+20250507	21:29:24	bb9075a7-3025-47fc-b9ac-1fc4542851ca	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/13
+20250507	21:29:28	f7f4c7aa-5bfc-4acd-ac81-beab6892bfa5	GET	undefined	/api/v1/core/material_req/readAll
+20250507	22:15:22	1e2602b2-5db4-4613-8d8f-8d8ee793ddce	POST	undefined	/api/auth/create/super-admin
+20250507	22:16:15	200f235a-6d01-4721-8013-116c423b994a	POST	undefined	/api/v1/entity/project_contractor/create
