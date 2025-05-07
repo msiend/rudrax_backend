@@ -1,0 +1,44 @@
+meta {
+  name: update_by_materialId
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Core}}material_req/update_by_materialId
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "mr_r_id": "14",
+    "materialItemsData": [
+      {
+        "mr_project_r_id": 10,
+        "mr_item_name": "Sand",
+        "mr_item_quantity": "50",
+        "mr_item_amount": "1500",
+        "mr_item_date": "2025-04-03",
+        "mr_r_id": 14,
+        "vendor_id": 9,
+        "fd_approval": 0,
+        "md_approval": 0,
+        "mr_delivery_status": 0
+      },
+      {
+        "mr_item_id": 15,
+        "mr_project_r_id": 10,
+        "mr_item_name": "Sand",
+        "mr_item_quantity": "50",
+        "mr_item_amount": "1500",
+        "mr_item_date": "2025-04-03",
+        "mr_r_id": 14,
+        "vendor_id": 9,
+        "fd_approval": 0,
+        "md_approval": 0,
+        "mr_delivery_status": 0
+      }
+    ]
+  }
+}

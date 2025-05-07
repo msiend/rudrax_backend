@@ -88,17 +88,17 @@ exports.handleLogin = async (req, res) => {
                },
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '30d' }
+            { expiresIn: '10d' }
          );
          const refreshToken = jwt.sign({ email: result.email }, process.env.REFRESH_TOKEN_SECRET, {
-            expiresIn: '1d',
+            expiresIn: '30d',
          });
 
          await superAdminModel.updateRefreshToken(result.id, refreshToken);
          res.cookie('jwt', refreshToken, {
             httpOnly: true,
             sameSite: 'None',
-            secure: true,
+            secure: false,
             maxAge: 24 * 60 * 60 * 1000,
          }); // 1day=24 * 60 * 60 * 1000
          return res.status(200).json({ status: true, msg: 'Successfully Login !', accessToken, refreshToken });
@@ -137,7 +137,7 @@ exports.handleRefreshToken = async (req, res) => {
             },
          },
          process.env.ACCESS_TOKEN_SECRET,
-         { expiresIn: '5d' }
+         { expiresIn: '10d' }
       );
       res.status(200).json({ status: true, msg: 'Successfully Login Refreshed !', accessToken });
    });
@@ -155,5 +155,5 @@ exports.handleLogout = async (req, res) => {
    // Delete refreshToken in db
    const DeleteToken = await superAdminModel.DeleteToken(refreshToken);
    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });
-   res.sendStatus(204);
+   res.status(201).json({ status: true, msg: 'Account Logged out successfully!' });
 };

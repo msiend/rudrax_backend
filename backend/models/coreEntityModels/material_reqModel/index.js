@@ -1,6 +1,21 @@
 const pool = require('@/config/dbConfig');
 
 class MaterialItemUpdateModel {
+   static async readAll() {
+      const query =
+         'SELECT material_requests.*,p.pro_name,p.pro_ref_no,cl.client_name FROM `material_requests` JOIN projects p ON material_requests.mr_project_id=p.pro_id LEFT JOIN clients cl ON cl.client_id =p.pro_client_r_id;';
+      const connPool = await pool.getConnection();
+      try {
+         const [result] = await connPool.query(query);
+         return result;
+      } catch (error) {
+         console.error('Error retriving Material request:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
+
    static async updateMdApproval(mr_item_id) {
       const query = 'UPDATE material_item_list SET md_approval = 1 WHERE mr_item_id = ?';
       const connPool = await pool.getConnection();
@@ -14,7 +29,6 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
-
    static async updateFdApproval(mr_item_id) {
       const query = 'UPDATE material_item_list SET fd_approval = 1 WHERE mr_item_id = ?';
       const connPool = await pool.getConnection();
@@ -100,12 +114,12 @@ class MaterialItemUpdateModel {
          conn.release();
       }
    }
-   
-   static async findAllByMatrialReqId(mr_r_id) {
-      const query = 'SELECT * FROM material_item_list WHERE mr_r_id=? ';
+
+   static async findAll_materialItems_ByMatrialReqId(mr_r_id) {
+      const query = 'SELECT * FROM material_item_list WHERE mr_r_id=? ;';
       const connPool = await pool.getConnection();
       try {
-         const [rows] = await connPool.query(query,[mr_r_id]);
+         const [rows] = await connPool.query(query, [mr_r_id]);
          return rows;
       } catch (error) {
          console.error('Error retrieving all material items:', error);
@@ -114,7 +128,53 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
+   static async replaceMaterialItemsByRequestId(mr_r_id, materialItemsData) {
+      const connPool = await pool.getConnection();
 
+      try {
+         await connPool.beginTransaction();
+         const deleteQuery = 'DELETE FROM material_item_list WHERE mr_r_id = ?';
+         await connPool.query(deleteQuery, [mr_r_id]);
+
+         const insertQuery = `
+          INSERT INTO material_item_list (
+            mr_project_r_id,
+            mr_item_name,
+            mr_item_quantity,
+            mr_item_amount,
+            mr_item_date,
+            mr_r_id,
+            vendor_id,
+            fd_approval,
+            md_approval,
+            mr_delivery_status
+          ) VALUES ?
+        `;
+         const insertValues = materialItemsData.map((item) => [
+            item.mr_project_r_id,
+            item.mr_item_name,
+            item.mr_item_quantity,
+            item.mr_item_amount,
+            item.mr_item_date,
+            item.mr_r_id,
+            item.vendor_id,
+            item.fd_approval,
+            item.md_approval,
+            item.mr_delivery_status,
+         ]);
+         if (insertValues.length > 0) {
+            await connPool.query(insertQuery, [insertValues]);
+         }
+         await connPool.commit();
+         return { success: true };
+      } catch (error) {
+         await connPool.rollback();
+         console.error('Error replacing material items:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
 }
 
 module.exports = MaterialItemUpdateModel;

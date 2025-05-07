@@ -26,10 +26,12 @@ coreRouter.post('/core/project', ExpenseCoreController.add_Expense_and_dist);
 
 // [Material]-----------
 coreRouter.post('/core/material_req/create', MaterialCoreController.insertMaterialRequestWithItems);
+coreRouter.get('/core/material_req/readAll', MaterialCoreController.readAll);
 coreRouter.get('/core/material_req/realAll_by_materialId/:id', MaterialCoreController.findAllByMatrialReqId);
+coreRouter.put('/core/material_req/update_by_materialId', MaterialCoreController.updateMaterialItemList);
 
 
-// [Material]-----------
+// [User]-----------
 coreRouter.post('/core/users/create', UsersCoreController.create);
 coreRouter.post('/core/users/readAll', UsersCoreController.findAll);
 coreRouter.post('/core/users/readOne', UsersCoreController.findOne);

@@ -47,3 +47,426 @@ Error: connect ECONNREFUSED ::1:3306
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-04 22:02:01 [ERROR] uncaughtException: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+{
+  error: ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31),
+  exception: true,
+  date: 'Sun May 04 2025 22:02:01 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 3152,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 108789760,
+      heapTotal: 69967872,
+      heapUsed: 48673048,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1669168.203 },
+  trace: [
+    {
+      column: 1,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\authControllers\\superadmin\\index.js',
+      function: null,
+      line: 165,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 31,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\authApi.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-04 22:02:31 [ERROR] uncaughtException: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+{
+  error: ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31),
+  exception: true,
+  date: 'Sun May 04 2025 22:02:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 23528,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 108457984,
+      heapTotal: 69763072,
+      heapUsed: 48380640,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1669198.234 },
+  trace: [
+    {
+      column: 1,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\authControllers\\superadmin\\index.js',
+      function: null,
+      line: 165,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 31,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\authApi.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-04 22:03:27 [ERROR] uncaughtException: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31)
+{
+  error: ReferenceError: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\authControllers\superadmin\index.js:165:1)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\authApi.js:5:31),
+  exception: true,
+  date: 'Sun May 04 2025 22:03:27 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 23408,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 108527616,
+      heapTotal: 69967872,
+      heapUsed: 48834760,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 1669253.765 },
+  trace: [
+    {
+      column: 1,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\authControllers\\superadmin\\index.js',
+      function: null,
+      line: 165,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 31,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\authApi.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
