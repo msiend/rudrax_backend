@@ -11,9 +11,10 @@ class projectCoreController {
          res.status(500).send({ status: false, msg: 'Failed to create user', data: null });
       }
    }
+
    static async getFullProjectDetails(req, res) {
       try {
-         const rawData = await ProjectDetailsModel.getProjectDetails();
+         const rawData = await projectCoreModel.getProjectDetails();
          const structuredData = {};
          rawData.forEach((row) => {
             const projectId = row.pro_id;
