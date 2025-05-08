@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2025 at 03:48 PM
+-- Generation Time: May 08, 2025 at 05:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `branch_auth` (
   `br_a_id` int(11) NOT NULL,
   `br_r_id` int(11) NOT NULL,
-  `br_email` varchar(255) NOT NULL,
+  `br_user_id` varchar(255) NOT NULL,
   `br_password` varchar(255) NOT NULL,
   `br_token` varchar(255) DEFAULT NULL,
   `br_isactive` int(2) NOT NULL DEFAULT 1
@@ -40,7 +40,7 @@ CREATE TABLE `branch_auth` (
 -- Dumping data for table `branch_auth`
 --
 
-INSERT INTO `branch_auth` (`br_a_id`, `br_r_id`, `br_email`, `br_password`, `br_token`, `br_isactive`) VALUES
+INSERT INTO `branch_auth` (`br_a_id`, `br_r_id`, `br_user_id`, `br_password`, `br_token`, `br_isactive`) VALUES
 (9, 3, 'branch@gmail.com', '$2a$12$D2n7UJoy3raYRO1KllXIquJpFdB.Wk7CFDRIg9Q57z9FjG0Fziynq', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW5jaEBnbWFpbC5jb20iLCJpYXQiOjE3MzgwNDU4OTQsImV4cCI6MTczODQ3Nzg5NH0.ENMlU0oaKp1h636MPAUdGJOwu6iLyxVEvKoklIywSmI', 1);
 
 -- --------------------------------------------------------
@@ -106,7 +106,7 @@ INSERT INTO `branch_data` (`br_id`, `b_name`, `b_location`, `b_head`, `b_contact
 (3, 'Sunrise Branch adsga', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
 (4, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
 (5, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(6, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0);
+(6, 'Dispur Branch', 'Dispur Secretariat, Guwahati', 'Ms. P. Devi', '9435056789', NULL, 'dispur.branch@sample.net', 0);
 
 -- --------------------------------------------------------
 
@@ -343,7 +343,7 @@ CREATE TABLE `finance_dep` (
 CREATE TABLE `finance_dep_auth` (
   `fd_a_id` int(11) NOT NULL,
   `fd_r_id` int(11) NOT NULL,
-  `fd_email` varchar(100) DEFAULT NULL,
+  `fd_user_id` varchar(100) DEFAULT NULL,
   `fd_password` varchar(255) NOT NULL,
   `fd_token` varchar(455) NOT NULL,
   `fd_isactive` int(2) NOT NULL DEFAULT 1
@@ -681,6 +681,7 @@ INSERT INTO `sub_phases` (`sub_phase_id`, `sub_phase_name`, `sub_phase_alt_name`
 CREATE TABLE `superviser` (
   `sup_id` int(11) NOT NULL,
   `sup_name` varchar(100) NOT NULL,
+  `sup_email` varchar(155) DEFAULT NULL,
   `sup_contact` varchar(13) NOT NULL,
   `sup_alt_contact` varchar(13) DEFAULT NULL,
   `sup_address` varchar(300) DEFAULT NULL
@@ -690,13 +691,13 @@ CREATE TABLE `superviser` (
 -- Dumping data for table `superviser`
 --
 
-INSERT INTO `superviser` (`sup_id`, `sup_name`, `sup_contact`, `sup_alt_contact`, `sup_address`) VALUES
-(1, 'Acme Supplies', '9401069337', '789456123', '123 Main St, Anytown, CA 91234'),
-(3, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(4, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(5, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(6, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(7, 'Supervise Supplies', '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234');
+INSERT INTO `superviser` (`sup_id`, `sup_name`, `sup_email`, `sup_contact`, `sup_alt_contact`, `sup_address`) VALUES
+(1, 'Acme Supplies', NULL, '9401069337', '789456123', '123 Main St, Anytown, CA 91234'),
+(3, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
+(4, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
+(5, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
+(6, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
+(7, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234');
 
 -- --------------------------------------------------------
 
@@ -707,7 +708,7 @@ INSERT INTO `superviser` (`sup_id`, `sup_name`, `sup_contact`, `sup_alt_contact`
 CREATE TABLE `superviser_auth` (
   `sup_a_id` int(11) NOT NULL,
   `sup_r_id` int(11) NOT NULL,
-  `sup_email` varchar(100) NOT NULL,
+  `sup_user_id` varchar(100) NOT NULL,
   `sup_password` varchar(300) NOT NULL,
   `sup_token` varchar(300) DEFAULT NULL,
   `sup_isactive` int(2) NOT NULL DEFAULT 1
@@ -722,6 +723,7 @@ CREATE TABLE `superviser_auth` (
 CREATE TABLE `super_admin` (
   `su_id` int(11) NOT NULL,
   `su_name` varchar(200) DEFAULT NULL,
+  `su_email` varchar(155) DEFAULT NULL,
   `su_contact` varchar(15) DEFAULT NULL,
   `su_alt_contact` varchar(155) DEFAULT NULL,
   `su_address` varchar(155) DEFAULT NULL
@@ -731,14 +733,9 @@ CREATE TABLE `super_admin` (
 -- Dumping data for table `super_admin`
 --
 
-INSERT INTO `super_admin` (`su_id`, `su_name`, `su_contact`, `su_alt_contact`, `su_address`) VALUES
-(1, 'adfgag', '1234567890', NULL, NULL),
-(2, 'adfgag', '1234567890', NULL, NULL),
-(3, 'adfgag', '1234567890', NULL, NULL),
-(4, 'adfgag', '1234567890', NULL, NULL),
-(5, 'adfgag', '1234567890', NULL, NULL),
-(6, 'msi', '9401069337', NULL, NULL),
-(7, 'John Doe', '9401069337', NULL, NULL);
+INSERT INTO `super_admin` (`su_id`, `su_name`, `su_email`, `su_contact`, `su_alt_contact`, `su_address`) VALUES
+(6, 'msi', 'msiadga@gmail.com', '9401069337', '7777777', NULL),
+(7, 'John Doe', NULL, '9401069337', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -749,7 +746,7 @@ INSERT INTO `super_admin` (`su_id`, `su_name`, `su_contact`, `su_alt_contact`, `
 CREATE TABLE `super_admin_auth` (
   `su_a_id` int(11) NOT NULL,
   `su_r_id` int(11) NOT NULL,
-  `su_email` varchar(80) DEFAULT NULL,
+  `su_user_id` varchar(80) DEFAULT NULL,
   `su_password` varchar(300) DEFAULT NULL,
   `su_token` varchar(400) DEFAULT NULL,
   `su_isactive` tinyint(1) DEFAULT 1
@@ -759,13 +756,8 @@ CREATE TABLE `super_admin_auth` (
 -- Dumping data for table `super_admin_auth`
 --
 
-INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_email`, `su_password`, `su_token`, `su_isactive`) VALUES
-(1, 1, 'sfda@gmail.com', '$2a$12$CMNSRlFCilZUBlgeOiuMkuewwXTnRzcNCOmaorIfxTo41as69zMVC', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNmZGFAZ21haWwuY29tIiwiaWF0IjoxNzM3NjIxNDY0LCJleHAiOjE3Mzc3MDc4NjR9.3DqWry9epcTCUAw17A9jkdiBImxlNNzBuEornarCoxQ', 1),
-(2, 2, 'sfda@gmail.com', '$2a$12$ckCeQQmsViJAvS6L9TgPNuLhDfAo8nFCD8./CQwD0tsLNBiKXTd5i', NULL, 1),
-(3, 3, 'sfda@gmail.com', '$2a$12$kv3o7F4EMI0nj1oh5FO6JuPsHghXDwX0c.UAtfmzpcDvwd04sxQoW', NULL, 1),
-(4, 4, 'sfda@gmail.com', '$2a$12$jCZl/FMBqLy8ggzFHYeY9.0pdp0V/ecy5/tXAL0HvSioNU.HaLBsq', NULL, 1),
-(5, 5, 'sfda@gmail.com', '$2a$12$REz.HimjxYfVrJMPnbnocefihiivRrQ8LglHM9BuMHi145xjGr02K', NULL, 1),
-(6, 6, 'msi@gmail.com', '$2a$12$3NY/M1vJrbatxBOChxcqC.hRqCJ8VpfWC8QJEjn.EGuf.7k3Y6e4a', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJpYXQiOjE3NDI4MDc1NjgsImV4cCI6MTc0Mjg5Mzk2OH0.etT7wWo0AeRqoCfh9yaBBiWgDbBzKq3uA3nIFhLv6mQ', 1),
+INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_user_id`, `su_password`, `su_token`, `su_isactive`) VALUES
+(6, 6, 'msi@gmail.com', '$2a$12$3NY/M1vJrbatxBOChxcqC.hRqCJ8VpfWC8QJEjn.EGuf.7k3Y6e4a', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXNpQGdtYWlsLmNvbSIsImlhdCI6MTc0NjcxODY1MSwiZXhwIjoxNzQ5MzEwNjUxfQ.C22zD082d0UULYaPAPM1ZKmCMoWa-LFe_ZSFVohWPcc', 1),
 (7, 7, 'john@example.com', '$2a$12$s3bW3zvCUEsqoduKYezsRO8TVGfmIYmicLwju.nqBoHyGRpJ3WVhW', NULL, 1);
 
 -- --------------------------------------------------------
@@ -854,7 +846,7 @@ INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay
 --
 ALTER TABLE `branch_auth`
   ADD PRIMARY KEY (`br_a_id`),
-  ADD UNIQUE KEY `br_email` (`br_email`),
+  ADD UNIQUE KEY `br_email` (`br_user_id`),
   ADD KEY `br_r_id` (`br_r_id`);
 
 --
@@ -930,7 +922,7 @@ ALTER TABLE `finance_dep`
 --
 ALTER TABLE `finance_dep_auth`
   ADD PRIMARY KEY (`fd_a_id`),
-  ADD UNIQUE KEY `un_fd_mail` (`fd_email`),
+  ADD UNIQUE KEY `un_fd_mail` (`fd_user_id`),
   ADD KEY `fd_r_id` (`fd_r_id`);
 
 --
