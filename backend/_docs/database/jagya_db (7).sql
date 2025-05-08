@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2025 at 08:46 AM
+-- Generation Time: May 08, 2025 at 03:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `branch_auth` (
 --
 
 INSERT INTO `branch_auth` (`br_a_id`, `br_r_id`, `br_email`, `br_password`, `br_token`, `br_isactive`) VALUES
-(9, 0, 'branch@gmail.com', '$2a$12$D2n7UJoy3raYRO1KllXIquJpFdB.Wk7CFDRIg9Q57z9FjG0Fziynq', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW5jaEBnbWFpbC5jb20iLCJpYXQiOjE3MzgwNDU4OTQsImV4cCI6MTczODQ3Nzg5NH0.ENMlU0oaKp1h636MPAUdGJOwu6iLyxVEvKoklIywSmI', 1);
+(9, 3, 'branch@gmail.com', '$2a$12$D2n7UJoy3raYRO1KllXIquJpFdB.Wk7CFDRIg9Q57z9FjG0Fziynq', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW5jaEBnbWFpbC5jb20iLCJpYXQiOjE3MzgwNDU4OTQsImV4cCI6MTczODQ3Nzg5NH0.ENMlU0oaKp1h636MPAUdGJOwu6iLyxVEvKoklIywSmI', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ INSERT INTO `branch_clients` (`b_client_id`, `b_r_id`, `b_client_name`, `b_clien
 --
 
 CREATE TABLE `branch_data` (
-  `b_id` int(11) NOT NULL,
+  `br_id` int(11) NOT NULL,
   `b_name` varchar(200) DEFAULT NULL,
   `b_location` varchar(300) DEFAULT NULL,
   `b_head` varchar(100) DEFAULT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `branch_data` (
 -- Dumping data for table `branch_data`
 --
 
-INSERT INTO `branch_data` (`b_id`, `b_name`, `b_location`, `b_head`, `b_contact_number`, `b_alt_number`, `b_email`, `b_commision`) VALUES
+INSERT INTO `branch_data` (`br_id`, `b_name`, `b_location`, `b_head`, `b_contact_number`, `b_alt_number`, `b_email`, `b_commision`) VALUES
 (3, 'Sunrise Branch adsga', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
 (4, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
 (5, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
@@ -245,7 +245,10 @@ INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pa
 (34, 5, 9, '4574', NULL, '748574', 21),
 (35, 5, 9, '4574', 'UPI', '748574', 23),
 (36, 1, 9, '78574', 'UPI', '2485', 23),
-(37, 2, 9, '4574', 'UPI', '748574', 23);
+(37, 2, 9, '4574', 'UPI', '748574', 23),
+(44, 1, 9, '78574777', NULL, '2485', 9),
+(45, 5, 9, '4574', NULL, '748574', 9),
+(46, 2, 9, '4574', NULL, '748574', 9);
 
 -- --------------------------------------------------------
 
@@ -277,7 +280,7 @@ INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_rem
 (6, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:31:50'),
 (7, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:33:24'),
 (8, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:35:02'),
-(9, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:37:59'),
+(9, NULL, NULL, 'UPI', NULL, NULL, 'Project', NULL, '2025-03-29 13:37:59'),
 (10, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:38:41'),
 (11, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:41:36'),
 (12, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:42:03'),
@@ -437,7 +440,7 @@ CREATE TABLE `material_item_list` (
 --
 
 INSERT INTO `material_item_list` (`mr_item_id`, `mr_r_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
-(15, 9, 9, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(15, 9, 9, 'Cement', '20', '2000', '2025-04-03', 1, 1, 9, 1),
 (16, 9, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
 (17, 9, 10, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
 (18, 9, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
@@ -720,21 +723,22 @@ CREATE TABLE `super_admin` (
   `su_id` int(11) NOT NULL,
   `su_name` varchar(200) DEFAULT NULL,
   `su_contact` varchar(15) DEFAULT NULL,
-  `role` varchar(20) NOT NULL
+  `su_alt_contact` varchar(155) DEFAULT NULL,
+  `su_address` varchar(155) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `super_admin`
 --
 
-INSERT INTO `super_admin` (`su_id`, `su_name`, `su_contact`, `role`) VALUES
-(1, 'adfgag', '1234567890', ''),
-(2, 'adfgag', '1234567890', ''),
-(3, 'adfgag', '1234567890', ''),
-(4, 'adfgag', '1234567890', ''),
-(5, 'adfgag', '1234567890', ''),
-(6, 'msi', '9401069337', ''),
-(7, 'John Doe', '9401069337', '');
+INSERT INTO `super_admin` (`su_id`, `su_name`, `su_contact`, `su_alt_contact`, `su_address`) VALUES
+(1, 'adfgag', '1234567890', NULL, NULL),
+(2, 'adfgag', '1234567890', NULL, NULL),
+(3, 'adfgag', '1234567890', NULL, NULL),
+(4, 'adfgag', '1234567890', NULL, NULL),
+(5, 'adfgag', '1234567890', NULL, NULL),
+(6, 'msi', '9401069337', NULL, NULL),
+(7, 'John Doe', '9401069337', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -836,7 +840,10 @@ INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay
 (27, 14, 11, '4574', NULL, '748574', 20),
 (28, 13, 11, '4574', NULL, '748574', 21),
 (29, 12, 11, '4574', NULL, '748574', 21),
-(30, 14, 11, '4574', NULL, '748574', 21);
+(30, 14, 11, '4574', NULL, '748574', 21),
+(34, 16, 11, '4574', NULL, '748574', 9),
+(35, 13, 11, '4574', NULL, '748574', 9),
+(36, 14, 11, '4574', NULL, '748574', 9);
 
 --
 -- Indexes for dumped tables
@@ -847,7 +854,8 @@ INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay
 --
 ALTER TABLE `branch_auth`
   ADD PRIMARY KEY (`br_a_id`),
-  ADD UNIQUE KEY `br_email` (`br_email`);
+  ADD UNIQUE KEY `br_email` (`br_email`),
+  ADD KEY `br_r_id` (`br_r_id`);
 
 --
 -- Indexes for table `branch_clients`
@@ -861,7 +869,7 @@ ALTER TABLE `branch_clients`
 -- Indexes for table `branch_data`
 --
 ALTER TABLE `branch_data`
-  ADD PRIMARY KEY (`b_id`);
+  ADD PRIMARY KEY (`br_id`);
 
 --
 -- Indexes for table `clients`
@@ -1076,7 +1084,7 @@ ALTER TABLE `branch_clients`
 -- AUTO_INCREMENT for table `branch_data`
 --
 ALTER TABLE `branch_data`
-  MODIFY `b_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `br_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `clients`
@@ -1106,7 +1114,7 @@ ALTER TABLE `contractors`
 -- AUTO_INCREMENT for table `contractor_payments`
 --
 ALTER TABLE `contractor_payments`
-  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `expenses`
@@ -1238,17 +1246,23 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `vendor_payments`
 --
 ALTER TABLE `vendor_payments`
-  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `branch_auth`
+--
+ALTER TABLE `branch_auth`
+  ADD CONSTRAINT `branch_auth_ibfk_1` FOREIGN KEY (`br_r_id`) REFERENCES `branch_data` (`br_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `branch_clients`
 --
 ALTER TABLE `branch_clients`
-  ADD CONSTRAINT `branch_clients_ibfk_1` FOREIGN KEY (`b_r_id`) REFERENCES `branch_data` (`b_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `branch_clients_ibfk_1` FOREIGN KEY (`b_r_id`) REFERENCES `branch_data` (`br_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `clients_docs`
@@ -1325,7 +1339,7 @@ ALTER TABLE `project_subphase`
 -- Constraints for table `superviser_auth`
 --
 ALTER TABLE `superviser_auth`
-  ADD CONSTRAINT `superviser_auth_ibfk_1` FOREIGN KEY (`sup_r_id`) REFERENCES `superviser` (`sup_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `superviser_auth_ibfk_1` FOREIGN KEY (`sup_r_id`) REFERENCES `superviser` (`sup_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `super_admin_auth`
