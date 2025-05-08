@@ -37,15 +37,6 @@ coreRouter.get( '/core/material_req/status/material_delivery/:mr_item_id',Materi
 );
 
 // [User]-----------
-// coreRouter.post('/core/users/create', UsersCoreController.create); // (Users can only created using Auth/create)
-// coreRouter.post('/core/users/readAll', UsersCoreController.findAll);
-// coreRouter.post('/core/users/:user_type/:id', UsersCoreController.findAll);
-// coreRouter.post('/core/users/readOne', UsersCoreController.findOne);
-// coreRouter.post('/core/users/update', UsersCoreController.update);
-// coreRouter.post('/core/users/update_password', UsersCoreController.updatePassword);
-// coreRouter.post('/core/users/set_status', UsersCoreController.toggleStatus);
-// coreRouter.post('/core/users/remove', UsersCoreController.remove);
-
 coreRouter.post('/core/users/create/:role', UsersCoreController.create);
 coreRouter.get('/core/users/readAll/:role', UsersCoreController.findAll);
 coreRouter.get('/core/users/readOne/:role/:id', UsersCoreController.findOne);
@@ -53,4 +44,7 @@ coreRouter.put('/core/users/update/:role/:id', UsersCoreController.update);
 coreRouter.put('/core/users/updatePassword/:role/:id', UsersCoreController.updatePassword);
 coreRouter.put('/core/users/toggleStatus/:role/:id', UsersCoreController.toggleStatus);
 coreRouter.delete('/core/users/delete/:role/:id', UsersCoreController.remove);
+
+
+
 module.exports = coreRouter;
