@@ -21,6 +21,7 @@ coreRouter.get('/core/vendor/get_vendor_payment_purchase', VendorCoreController.
 // [EXPENSES]-----------
 coreRouter.post('/core/expense/create', ExpenseCoreController.add_Expense_and_dist);
 coreRouter.get('/core/expense/get_expense_details/:exp_id', ExpenseCoreController.getExpenseDetails);
+coreRouter.post('/core/expense/update', ExpenseCoreController.updateExpense);
 
 // [PROJECTS]-----------
 coreRouter.post('/core/project/get_project_detail', ProjectCoreController.getFullProjectDetails);
@@ -32,9 +33,7 @@ coreRouter.get('/core/material_req/realAll_by_materialId/:id', MaterialCoreContr
 coreRouter.put('/core/material_req/update_by_materialId', MaterialCoreController.updateMaterialItemList);
 coreRouter.get('/core/material_req/status/finance_dep/:mr_item_id', MaterialCoreController.updateFdApproval);
 coreRouter.get('/core/material_req/status/material_dep/:mr_item_id', MaterialCoreController.updateMdApproval);
-coreRouter.get(
-   '/core/material_req/status/material_delivery/:mr_item_id',
-   MaterialCoreController.updateMrDeliveryStatus
+coreRouter.get( '/core/material_req/status/material_delivery/:mr_item_id',MaterialCoreController.updateMrDeliveryStatus
 );
 
 // [User]-----------

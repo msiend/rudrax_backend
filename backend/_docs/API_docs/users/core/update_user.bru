@@ -5,13 +5,22 @@ meta {
 }
 
 put {
-  url: 127.0.0.1:3500/api/v1/user/branch/1
+  url: 127.0.0.1:3500/api/v1/core/users/update/:role/:id
   body: json
   auth: bearer
 }
 
+params:path {
+  id: 9
+  role: branch
+}
+
 body:json {
   {
-    "email": "newuser@example.com"
+    "b_email": "updated.finance@example.com",
+    "b_name": "Updated Finance User",
+    "b_contact": "9876543222",
+    "b_alt_contact": "9876543222",
+    "b_address": "456 Updated Financial St, Mumbai"
   }
 }

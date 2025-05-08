@@ -86,7 +86,27 @@ class ExpenseCoreController {
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }
-   
+   static async updateExpense(req, res) {
+      const { exp_id, dateofexpense, expenseName, remarks, Amount,  contractorExpenses, vendorExpenses } =req.body;
+      try {
+         await expenseCoreModel.updateExpenseWithTransaction(
+            exp_id,
+            {
+               exp_date: dateofexpense,
+               exp_name: expenseName,
+               exp_remark: remarks,
+               exp_amount: Amount,
+            },
+            contractorExpenses,
+            vendorExpenses
+         );
+
+         return res.status(200).json({ status: true, msg: 'Expense updated successfully!' });
+      } catch (err) {
+         console.error(err);
+         return res.status(500).json({ status: false, msg: 'Failed to update expense', error: err.message });
+      }
+   }
 }
 
 module.exports = ExpenseCoreController;
