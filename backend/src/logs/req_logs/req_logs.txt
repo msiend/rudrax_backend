@@ -1841,3 +1841,10 @@
 20250507	18:10:44	7687c44f-a7e8-48b9-b441-5880534b14a8	GET	http://127.0.0.1:5173	/api/v1/core/client/get_clientProject?client_id=35
 20250507	18:10:44	f3d95e72-3b28-4801-9eda-4dc5444cef43	GET	http://127.0.0.1:5173	/api/v1/core/client/get_ProjectInfo?pro_ref_id=JGCP0002
 20250507	18:10:53	3c78af82-ce97-45fb-b62c-720e295457d0	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250507	22:10:03	b0ab06dc-b32d-4561-bec9-25730977dc1c	POST	undefined	/api/auth/create/super-admin
+20250507	22:11:22	5852d740-81e8-446d-8113-f6cfaf54d79a	GET	http://127.0.0.1:5173	/api/v1/entity/collection/readAll
+20250507	22:11:27	27b17f21-f016-4e7b-a506-7f1abb8a6a14	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250507	22:11:30	cedf020b-03ed-4dd8-8133-c1c410d45b07	GET	http://127.0.0.1:5173	/api/v1/core/client/get_clientProject?client_id=35
+20250507	22:11:30	a36d3283-0544-4a4a-ae37-35aaa933ca2c	GET	http://127.0.0.1:5173	/api/v1/core/client/get_ProjectInfo?pro_ref_id=0
+20250507	22:23:56	74d190dd-43cd-4a49-ae89-15e3b00ce336	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/13
+20250507	22:24:40	41d6ebde-17b8-42d5-a733-7620c7f7586d	GET	undefined	/api/v1/core/material_req/readAll
