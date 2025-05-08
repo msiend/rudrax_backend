@@ -86,6 +86,7 @@ class ExpenseCoreController {
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }
+   
 }
 
 module.exports = ExpenseCoreController;

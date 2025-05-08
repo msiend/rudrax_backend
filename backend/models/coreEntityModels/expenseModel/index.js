@@ -25,6 +25,7 @@ class ExpenseModel {
          connPool.release();
       }
    }
+   
 }
 
 module.exports = ExpenseModel;

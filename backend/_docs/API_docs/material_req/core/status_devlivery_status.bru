@@ -1,0 +1,15 @@
+meta {
+  name: status_devlivery_status
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{URL.Core}}material_req/status/material_delivery/:mr_item_id
+  body: none
+  auth: none
+}
+
+params:path {
+  mr_item_id: 15
+}

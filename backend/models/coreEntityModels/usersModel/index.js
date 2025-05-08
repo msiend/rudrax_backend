@@ -3,10 +3,10 @@ const pool = require('@/config/dbConfig');
 class _UserModel {
   static getTableByRole(role) {
     const tables = {
-      branch: { auth: 'branch_auth', idField: 'br_a_id', email: 'br_email', password: 'br_password', active: 'br_isactive' },
-      supervisor: { auth: 'superviser_auth', idField: 'sup_a_id', email: 'sup_email', password: 'sup_password', active: 'sup_isactive' },
-      super_admin: { auth: 'super_admin_auth', idField: 'su_a_id', email: 'su_email', password: 'su_password', active: 'su_isactive' },
-      finance: { auth: 'finance_dep_auth', idField: 'fd_a_id', email: 'fd_email', password: 'fd_password', active: 'fd_isactive' },
+      branch: { auth: 'branch_auth',info: 'branch_data', idField: 'br_a_id', email: 'br_email', password: 'br_password', active: 'br_isactive' },
+      supervisor: { auth: 'superviser_auth',info: 'superviser', idField: 'sup_a_id', email: 'sup_email', password: 'sup_password', active: 'sup_isactive' },
+      super_admin: { auth: 'super_admin_auth',info: 'super_admin', idField: 'su_a_id', email: 'su_email', password: 'su_password', active: 'su_isactive' },
+      finance: { auth: 'finance_dep_auth',info: 'finance_dep', idField: 'fd_a_id', email: 'fd_email', password: 'fd_password', active: 'fd_isactive' },
     };
     return tables[role];
   }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2025 at 06:47 PM
+-- Generation Time: May 08, 2025 at 08:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -227,6 +227,7 @@ CREATE TABLE `contractor_payments` (
   `pay_con_id` int(20) DEFAULT NULL,
   `pay_project_id` bigint(20) DEFAULT NULL,
   `pay_amount` varchar(50) DEFAULT NULL,
+  `pay_mode` varchar(155) DEFAULT NULL,
   `pay_note` varchar(255) DEFAULT NULL,
   `pay_exp_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -235,13 +236,16 @@ CREATE TABLE `contractor_payments` (
 -- Dumping data for table `contractor_payments`
 --
 
-INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pay_amount`, `pay_note`, `pay_exp_id`) VALUES
-(29, 1, 9, '78574', '2485', 20),
-(30, 5, 9, '4574', '748574', 20),
-(31, 2, 9, '4574', '748574', 20),
-(32, 1, 9, '78574', '2485', 21),
-(33, 2, 9, '4574', '748574', 21),
-(34, 5, 9, '4574', '748574', 21);
+INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pay_amount`, `pay_mode`, `pay_note`, `pay_exp_id`) VALUES
+(29, 1, 9, '78574', NULL, '2485', 20),
+(30, 5, 9, '4574', NULL, '748574', 20),
+(31, 2, 9, '4574', NULL, '748574', 20),
+(32, 1, 9, '78574', NULL, '2485', 21),
+(33, 2, 9, '4574', NULL, '748574', 21),
+(34, 5, 9, '4574', NULL, '748574', 21),
+(35, 5, 9, '4574', 'UPI', '748574', 23),
+(36, 1, 9, '78574', 'UPI', '2485', 23),
+(37, 2, 9, '4574', 'UPI', '748574', 23);
 
 -- --------------------------------------------------------
 
@@ -285,7 +289,9 @@ INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_rem
 (18, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:18'),
 (19, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:35'),
 (20, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:09:19'),
-(21, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:19:37');
+(21, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:19:37'),
+(22, 'new dhoni expense', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-05-08 05:02:51'),
+(23, 'new dhoni expense', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-05-08 05:04:00');
 
 -- --------------------------------------------------------
 
@@ -414,6 +420,7 @@ INSERT INTO `labours` (`lab_id`, `lab_name`, `lab_contact`, `lab_alt_contact`, `
 
 CREATE TABLE `material_item_list` (
   `mr_item_id` bigint(20) NOT NULL,
+  `mr_r_id` bigint(20) DEFAULT NULL,
   `mr_project_r_id` bigint(20) NOT NULL,
   `mr_item_name` varchar(255) DEFAULT NULL,
   `mr_item_quantity` varchar(55) DEFAULT NULL,
@@ -429,15 +436,15 @@ CREATE TABLE `material_item_list` (
 -- Dumping data for table `material_item_list`
 --
 
-INSERT INTO `material_item_list` (`mr_item_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
-(15, 9, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(16, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(17, 10, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(18, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(19, 11, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(20, 11, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(21, 12, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(22, 12, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0);
+INSERT INTO `material_item_list` (`mr_item_id`, `mr_r_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
+(15, 9, 9, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(16, 9, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(17, 9, 10, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(18, 9, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(19, 9, 11, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(20, 9, 11, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
+(21, 9, 12, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
+(22, 9, 12, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0);
 
 -- --------------------------------------------------------
 
@@ -448,7 +455,7 @@ INSERT INTO `material_item_list` (`mr_item_id`, `mr_project_r_id`, `mr_item_name
 CREATE TABLE `material_requests` (
   `mr_r_id` bigint(20) NOT NULL,
   `material_ref_no` varchar(55) DEFAULT NULL,
-  `mr_project_id` varchar(20) DEFAULT NULL,
+  `mr_project_id` bigint(20) DEFAULT NULL,
   `mr_phase` varchar(155) DEFAULT NULL,
   `mr_date` varchar(55) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -459,11 +466,11 @@ CREATE TABLE `material_requests` (
 --
 
 INSERT INTO `material_requests` (`mr_r_id`, `material_ref_no`, `mr_project_id`, `mr_phase`, `mr_date`, `created_at`) VALUES
-(1, 'JGCMRQ0001', '12', 'installment', '<date>', '2025-04-05 13:13:06'),
-(9, NULL, '9', 'Phase 1', '2025-04-03', '2025-04-06 13:42:03'),
-(10, 'JGCMRQ0001', '9', 'Phase 1', '2025-04-03', '2025-04-06 13:48:40'),
-(11, 'JGCMRQ0002', '9', 'Phase 1', '2025-04-03', '2025-04-06 13:49:59'),
-(12, 'JGCMRQ0003', '9', 'Phase 1', '2025-04-03', '2025-04-08 02:04:00');
+(1, 'JGCMRQ0001', 12, 'installment', '<date>', '2025-04-05 13:13:06'),
+(9, NULL, 9, 'Phase 1', '2025-04-03', '2025-04-06 13:42:03'),
+(10, 'JGCMRQ0001', 9, 'Phase 1', '2025-04-03', '2025-04-06 13:48:40'),
+(11, 'JGCMRQ0002', 9, 'Phase 1', '2025-04-03', '2025-04-06 13:49:59'),
+(12, 'JGCMRQ0003', 9, 'Phase 1', '2025-04-03', '2025-04-08 02:04:00');
 
 -- --------------------------------------------------------
 
@@ -594,6 +601,13 @@ CREATE TABLE `project_contractor` (
   `pro_sub_phase` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `project_contractor`
+--
+
+INSERT INTO `project_contractor` (`pro_con_id`, `pro_id`, `con_id`, `pro_phase`, `pro_sub_phase`) VALUES
+(2, 9, 5, 'Phase 1', 'Subphase A');
+
 -- --------------------------------------------------------
 
 --
@@ -602,6 +616,7 @@ CREATE TABLE `project_contractor` (
 
 CREATE TABLE `project_phase` (
   `pro_phase_id` int(20) NOT NULL,
+  `phase_id` int(155) NOT NULL,
   `pro_id` bigint(20) NOT NULL,
   `pro_phase_status` varchar(255) NOT NULL,
   `pro_phase_deadline` varchar(255) NOT NULL,
@@ -806,6 +821,7 @@ CREATE TABLE `vendor_payments` (
   `pay_vendor_id` int(20) DEFAULT NULL,
   `pay_project_id` bigint(20) DEFAULT NULL,
   `pay_amount` varchar(50) DEFAULT NULL,
+  `pay_mode` varchar(155) DEFAULT NULL,
   `pay_note` varchar(255) DEFAULT NULL,
   `pay_exp_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -814,13 +830,13 @@ CREATE TABLE `vendor_payments` (
 -- Dumping data for table `vendor_payments`
 --
 
-INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay_amount`, `pay_note`, `pay_exp_id`) VALUES
-(25, 12, 11, '4574', '748574', 20),
-(26, 13, 11, '4574', '748574', 20),
-(27, 14, 11, '4574', '748574', 20),
-(28, 13, 11, '4574', '748574', 21),
-(29, 12, 11, '4574', '748574', 21),
-(30, 14, 11, '4574', '748574', 21);
+INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay_amount`, `pay_mode`, `pay_note`, `pay_exp_id`) VALUES
+(25, 12, 11, '4574', NULL, '748574', 20),
+(26, 13, 11, '4574', NULL, '748574', 20),
+(27, 14, 11, '4574', NULL, '748574', 20),
+(28, 13, 11, '4574', NULL, '748574', 21),
+(29, 12, 11, '4574', NULL, '748574', 21),
+(30, 14, 11, '4574', NULL, '748574', 21);
 
 --
 -- Indexes for dumped tables
@@ -933,7 +949,8 @@ ALTER TABLE `material_item_list`
 -- Indexes for table `material_requests`
 --
 ALTER TABLE `material_requests`
-  ADD PRIMARY KEY (`mr_r_id`);
+  ADD PRIMARY KEY (`mr_r_id`),
+  ADD KEY `mr_project_id` (`mr_project_id`);
 
 --
 -- Indexes for table `notifications`
@@ -969,6 +986,28 @@ ALTER TABLE `projects`
   ADD PRIMARY KEY (`pro_id`),
   ADD UNIQUE KEY `un_project` (`pro_ref_no`),
   ADD KEY `pro_client_r_id` (`pro_client_r_id`);
+
+--
+-- Indexes for table `project_contractor`
+--
+ALTER TABLE `project_contractor`
+  ADD PRIMARY KEY (`pro_con_id`),
+  ADD KEY `con_id` (`con_id`),
+  ADD KEY `pro_id` (`pro_id`);
+
+--
+-- Indexes for table `project_phase`
+--
+ALTER TABLE `project_phase`
+  ADD PRIMARY KEY (`pro_phase_id`),
+  ADD KEY `pro_id` (`pro_id`),
+  ADD KEY `phase_id` (`phase_id`);
+
+--
+-- Indexes for table `project_subphase`
+--
+ALTER TABLE `project_subphase`
+  ADD KEY `pro_phase` (`pro_phase`);
 
 --
 -- Indexes for table `sub_phases`
@@ -1067,13 +1106,13 @@ ALTER TABLE `contractors`
 -- AUTO_INCREMENT for table `contractor_payments`
 --
 ALTER TABLE `contractor_payments`
-  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `pay_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `expense_item`
@@ -1146,6 +1185,18 @@ ALTER TABLE `phases`
 --
 ALTER TABLE `projects`
   MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `project_contractor`
+--
+ALTER TABLE `project_contractor`
+  MODIFY `pro_con_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `project_phase`
+--
+ALTER TABLE `project_phase`
+  MODIFY `pro_phase_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sub_phases`
@@ -1233,6 +1284,12 @@ ALTER TABLE `material_item_list`
   ADD CONSTRAINT `material_item_list_ibfk_2` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `material_requests`
+--
+ALTER TABLE `material_requests`
+  ADD CONSTRAINT `material_requests_ibfk_1` FOREIGN KEY (`mr_project_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `notification_recipients`
 --
 ALTER TABLE `notification_recipients`
@@ -1243,6 +1300,26 @@ ALTER TABLE `notification_recipients`
 --
 ALTER TABLE `projects`
   ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`pro_client_r_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `project_contractor`
+--
+ALTER TABLE `project_contractor`
+  ADD CONSTRAINT `project_contractor_ibfk_1` FOREIGN KEY (`con_id`) REFERENCES `contractors` (`con_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `project_contractor_ibfk_2` FOREIGN KEY (`pro_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `project_phase`
+--
+ALTER TABLE `project_phase`
+  ADD CONSTRAINT `project_phase_ibfk_1` FOREIGN KEY (`pro_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `project_phase_ibfk_2` FOREIGN KEY (`phase_id`) REFERENCES `phases` (`phase_id`);
+
+--
+-- Constraints for table `project_subphase`
+--
+ALTER TABLE `project_subphase`
+  ADD CONSTRAINT `project_subphase_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `project_phase` (`pro_phase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `superviser_auth`

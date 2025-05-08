@@ -5,6 +5,11 @@ meta {
 }
 
 get {
-  url: 127.0.0.1:3500/api/v1/user/all?role=branch
+  url: 127.0.0.1:3500/api/v1/core/users/readAll/:role
+  body: none
   auth: bearer
+}
+
+params:path {
+  role: branch
 }

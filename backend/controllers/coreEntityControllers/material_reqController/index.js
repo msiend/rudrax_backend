@@ -1,6 +1,7 @@
 const MaterialItemUpdateModel = require('@/models/entityModels/material_itemModel');
 const coreMaterialRequestModel = require('@/models/coreEntityModels/material_reqModel');
 // const MaterialItemUpdateModel = require('@/models/entityModels/material_itemModel');
+const pool = require('@/config/dbConfig');
 
 class MaterialItemUpdateController {
    static async readAll(req, res) {
@@ -58,14 +59,19 @@ class MaterialItemUpdateController {
    }
    static async updateMdApproval(req, res) {
       const { mr_item_id } = req.params;
+      const connPool = await pool.getConnection();
       try {
-         const affectedRows = await MaterialItemUpdateModel.updateMdApproval(mr_item_id);
+         const affectedRows = await coreMaterialRequestModel.updateMdApproval(mr_item_id);
          if (affectedRows === 0) {
-            return res.status(404).send({ status: false, msg: 'No records found with md_approval = 0', data: null });
+            return res.status(404).send({ status: false, msg: 'No records found to update.', data: null });
          }
-         return res
-            .status(200)
-            .send({ status: true, msg: 'md_approval updated successfully', data: { updatedRows: affectedRows } });
+         const [rows] = await connPool.query('SELECT md_approval FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+         const updatedStatus = rows[0].md_approval;
+         const message = updatedStatus === 1 ? 'md_approval approved' : 'md_approval not approved';
+
+         return res.status(200).send({ status: true, msg: message, data: { updatedStatus } });
       } catch (error) {
          console.error('Error updating md_approval:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
@@ -73,15 +79,21 @@ class MaterialItemUpdateController {
    }
 
    static async updateFdApproval(req, res) {
+      const connPool = await pool.getConnection();
+
       const { mr_item_id } = req.params;
       try {
-         const affectedRows = await MaterialItemUpdateModel.updateFdApproval(mr_item_id);
+         const affectedRows = await coreMaterialRequestModel.updateFdApproval(mr_item_id);
          if (affectedRows === 0) {
-            return res.status(404).send({ status: false, msg: 'No records found with fd_approval = 0', data: null });
+            return res.status(404).send({ status: false, msg: 'No records found to update.', data: null });
          }
-         return res
-            .status(200)
-            .send({ status: true, msg: 'fd_approval updated successfully', data: { updatedRows: affectedRows } });
+         const [rows] = await connPool.query('SELECT fd_approval FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+         const updatedStatus = rows[0].fd_approval;
+         const message = updatedStatus === 1 ? 'fd_approval approved' : 'fd_approval not approved';
+
+         return res.status(200).send({ status: true, msg: message, data: { updatedStatus } });
       } catch (error) {
          console.error('Error updating fd_approval:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
@@ -89,18 +101,24 @@ class MaterialItemUpdateController {
    }
 
    static async updateMrDeliveryStatus(req, res) {
+      const connPool = await pool.getConnection();
+
       const { mr_item_id } = req.params;
       try {
-         const affectedRows = await MaterialItemUpdateModel.updateMrDeliveryStatus(mr_item_id);
+         const affectedRows = await coreMaterialRequestModel.updateMrDeliveryStatus(mr_item_id);
          if (affectedRows === 0) {
-            return res
-               .status(404)
-               .send({ status: false, msg: 'No records found with mr_delivery_status = 0', data: null });
+            return res.status(404).send({ status: false, msg: 'No records found to update.', data: null });
          }
+         const [rows] = await connPool.query('SELECT mr_delivery_status FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+         const updatedStatus = rows[0].mr_delivery_status;
+         const message = updatedStatus === 1 ? 'mr_delivery_status approved' : 'mr_delivery_status not approved';
+
          return res.status(200).send({
             status: true,
-            msg: 'mr_delivery_status updated successfully',
-            data: { updatedRows: affectedRows },
+            msg: message,
+            data: { updatedStatus },
          });
       } catch (error) {
          console.error('Error updating mr_delivery_status:', error);
@@ -111,7 +129,11 @@ class MaterialItemUpdateController {
       const { id } = req.params;
       try {
          const requests = await coreMaterialRequestModel.findAll_materialItems_ByMatrialReqId(id);
-         return res.status(200).send({ status: true, msg: 'Material requests retrieved successfully', data: requests });
+         return res.status(200).send({
+            status: true,
+            msg: 'Material requests retrieved successfully',
+            data: [{ ...requests[0][0], matrial_items: requests[1] }],
+         });
       } catch (error) {
          console.error('Error fetching material requests:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });

@@ -13,7 +13,7 @@ class _UserController  {
   }
 
   static async findAll(req, res) {
-    const { role } = req.query;
+    const { role } = req.params;
     try {
       const data = await _UserModel.findAll(role);
       res.status(200).send({ status: true, msg: 'All users fetched', data });
