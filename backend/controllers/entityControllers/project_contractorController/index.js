@@ -37,7 +37,7 @@ const ProjectContractorController = {
       }
    },
 
-   async delete(req, res) {
+   async remove(req, res) {
       try {
          const success = await ProjectContractorModel.delete(req.body.pro_con_id);
          res.status(200).send({ status: success, msg: success ? 'Deleted successfully' : 'Not found', data: null });

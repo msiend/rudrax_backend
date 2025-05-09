@@ -5,13 +5,19 @@ meta {
 }
 
 delete {
-  url: {{URL.Entity}}project_subphase/delete/1
-  body: none
+  url: {{URL.Entity}}project_subphase/remove
+  body: json
   auth: bearer
 }
 
 auth:bearer {
   token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_subphase_id": 1
+  }
 }
 
 assert {
