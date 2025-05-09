@@ -38,31 +38,49 @@ class _UserModel {
    static async create(role, { r_id, user_id, password, ...userInfo }) {
       const { auth, info, prefix, relationField } = _UserModel.getTableConfig(role);
       const conn = await pool.getConnection();
+      
       try {
          await conn.beginTransaction();
-
-         // 1. Create auth record
-         const [authResult] = await conn.query(
-            `INSERT INTO ${auth} (${relationField}, ${prefix}_user_id, ${prefix}_password) VALUES (?, ?, ?)`,
-            [r_id, user_id, password]
-         );
-
-         // 2. Create info record if info table exists and data provided
-         if (userInfo && Object.keys(userInfo).length > 0) {
+   
+         // 1. First insert into info table (if data exists)
+         let infoInsertId = null;
+         if (info && userInfo && Object.keys(userInfo).length > 0) {
             const infoColumns = Object.keys(userInfo).join(', ');
             const infoValues = Object.values(userInfo);
-            const placeholders = Object.keys(userInfo)
-               .map(() => '?')
-               .join(', ');
-
-            await conn.query(`INSERT INTO ${info} (${prefix}_id, ${infoColumns}) VALUES (?, ${placeholders})`, [
-               authResult.insertId,
-               ...infoValues,
-            ]);
+            const placeholders = Object.keys(userInfo).map(() => '?').join(', ');
+   
+            const [infoResult] = await conn.query(
+               `INSERT INTO ${info} (${infoColumns}) VALUES (${placeholders})`,
+               [...infoValues]
+            );
+            infoInsertId = infoResult.insertId;
          }
-
+   
+         // 2. Then insert into auth table
+         const authColumns = [
+            relationField, 
+            `${prefix}_email`, 
+            `${prefix}_password`,
+            ...(infoInsertId ? [`${prefix}_id`] : [])
+         ].join(', ');
+   
+         const authValues = [
+            r_id, 
+            user_id, 
+            password,
+            ...(infoInsertId ? [infoInsertId] : [])
+         ];
+         const placeholders = authValues.map(() => '?').join(', ');
+         const [authResult] = await conn.query(
+            `INSERT INTO ${auth} (${authColumns}) VALUES (${placeholders})`,
+            authValues
+         );
          await conn.commit();
-         return { id: authResult.insertId, user_id };
+         return { 
+            auth_id: authResult.insertId, 
+            user_id,
+            ...(infoInsertId ? { info_id: infoInsertId } : {}) 
+         };
       } catch (error) {
          await conn.rollback();
          throw error;
