@@ -155,7 +155,7 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
-   static async replaceMaterialItemsByRequestId(mr_r_id, materialItemsData) {
+   static async replaceMaterialItemsByRequestId(mr_r_id, mr_project_id,materialItemsData) {
       const connPool = await pool.getConnection();
 
       try {
@@ -178,7 +178,7 @@ class MaterialItemUpdateModel {
           ) VALUES ?
         `;
          const insertValues = materialItemsData.map((item) => [
-            item.mr_project_r_id,
+            mr_project_id,
             item.mr_item_name,
             item.mr_item_quantity,
             item.mr_item_amount,

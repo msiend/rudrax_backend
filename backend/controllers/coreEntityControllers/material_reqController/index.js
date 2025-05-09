@@ -140,7 +140,7 @@ class MaterialItemUpdateController {
       }
    }
    static async updateMaterialItemList(req, res) {
-      const { mr_r_id, materialItemsData } = req.body;
+      const { mr_r_id, mr_project_id, materialItemsData } = req.body;
 
       if (!mr_r_id || !Array.isArray(materialItemsData)) {
          return res.status(400).send({
@@ -151,7 +151,11 @@ class MaterialItemUpdateController {
       }
 
       try {
-         const result = await coreMaterialRequestModel.replaceMaterialItemsByRequestId(mr_r_id, materialItemsData);
+         const result = await coreMaterialRequestModel.replaceMaterialItemsByRequestId(
+            mr_r_id,
+            mr_project_id,
+            materialItemsData
+         );
 
          return res.status(200).send({
             status: true,

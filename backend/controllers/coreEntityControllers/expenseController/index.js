@@ -5,6 +5,15 @@ const vendorPaymentModel = require('@/models/entityModels/vendorPaymentModel');
 const contractorPaymentModel = require('@/models/entityModels/contractorPaymentModel');
 
 class ExpenseCoreController {
+   static async findWithAllDate(req, res) {
+      try {
+         const expenses = await expenseCoreModel.findAllWithAll_Date();
+         return res.status(200).send({ status: true, msg: 'Expenses retrieved successfully', data: expenses });
+      } catch (error) {
+         console.error('Error fetching expenses:', error);
+         return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
+      }
+   }
    static async add_Expense_and_dist(req, res) {
       const { dateofexpense, expenseName, remarks, Amount, contractorExpenses, vendorExpenses } = req.body;
 
@@ -87,7 +96,7 @@ class ExpenseCoreController {
       }
    }
    static async updateExpense(req, res) {
-      const { exp_id, dateofexpense, expenseName, remarks, Amount,  contractorExpenses, vendorExpenses } =req.body;
+      const { exp_id, dateofexpense, expenseName, remarks, Amount, contractorExpenses, vendorExpenses } = req.body;
       try {
          await expenseCoreModel.updateExpenseWithTransaction(
             exp_id,
