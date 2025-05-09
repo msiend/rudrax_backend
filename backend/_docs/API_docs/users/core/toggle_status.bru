@@ -5,13 +5,18 @@ meta {
 }
 
 put {
-  url: 127.0.0.1:3500/api/v1/user/branch/1/status
+  url: 127.0.0.1:3500/api/v1/core/users/toggleStatus/:role/:id
   body: json
   auth: bearer
 }
 
+params:path {
+  role: super_admin
+  id: 6
+}
+
 body:json {
   {
-    "status": 0
+    "status": 1
   }
 }

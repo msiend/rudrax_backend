@@ -21,6 +21,7 @@ coreRouter.get('/core/vendor/get_vendor_payment_purchase', VendorCoreController.
 // [EXPENSES]-----------
 coreRouter.post('/core/expense/create', ExpenseCoreController.add_Expense_and_dist);
 coreRouter.get('/core/expense/get_expense_details/:exp_id', ExpenseCoreController.getExpenseDetails);
+coreRouter.post('/core/expense/update', ExpenseCoreController.updateExpense);
 
 // [PROJECTS]-----------
 coreRouter.post('/core/project/get_project_detail', ProjectCoreController.getFullProjectDetails);
@@ -31,14 +32,21 @@ coreRouter.get('/core/material_req/readAll', MaterialCoreController.readAll);
 coreRouter.get('/core/material_req/realAll_by_materialId/:id', MaterialCoreController.findAllByMatrialReqId);
 coreRouter.put('/core/material_req/update', MaterialCoreController.updateMaterialItemList);
 
+coreRouter.put('/core/material_req/update_by_materialId', MaterialCoreController.updateMaterialItemList);
+coreRouter.get('/core/material_req/status/finance_dep/:mr_item_id', MaterialCoreController.updateFdApproval);
+coreRouter.get('/core/material_req/status/material_dep/:mr_item_id', MaterialCoreController.updateMdApproval);
+coreRouter.get( '/core/material_req/status/material_delivery/:mr_item_id',MaterialCoreController.updateMrDeliveryStatus
+);
 
 // [User]-----------
-coreRouter.post('/core/users/create', UsersCoreController.create);
-coreRouter.post('/core/users/readAll', UsersCoreController.findAll);
-coreRouter.post('/core/users/readOne', UsersCoreController.findOne);
-coreRouter.post('/core/users/update', UsersCoreController.update);
-coreRouter.post('/core/users/update_password', UsersCoreController.updatePassword);
-coreRouter.post('/core/users/set_status', UsersCoreController.toggleStatus);
-coreRouter.post('/core/users/remove', UsersCoreController.remove);
+coreRouter.post('/core/users/create/:role', UsersCoreController.create);
+coreRouter.get('/core/users/readAll/:role', UsersCoreController.findAll);
+coreRouter.get('/core/users/readOne/:role/:id', UsersCoreController.findOne);
+coreRouter.put('/core/users/update/:role/:id', UsersCoreController.update);
+coreRouter.put('/core/users/updatePassword/:role/:id', UsersCoreController.updatePassword);
+coreRouter.put('/core/users/toggleStatus/:role/:id', UsersCoreController.toggleStatus);
+coreRouter.delete('/core/users/delete/:role/:id', UsersCoreController.remove);
+
+
 
 module.exports = coreRouter;

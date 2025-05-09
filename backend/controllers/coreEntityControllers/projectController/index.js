@@ -14,7 +14,7 @@ class projectCoreController {
 
    static async getFullProjectDetails(req, res) {
       try {
-         const rawData = await projectCoreModel.getProjectDetails();
+         const rawData = await projectCoreModel.getProjectDetails(pro_id);
          const structuredData = {};
          rawData.forEach((row) => {
             const projectId = row.pro_id;

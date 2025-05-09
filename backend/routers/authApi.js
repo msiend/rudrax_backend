@@ -21,9 +21,6 @@ Object.entries(roleControllerMap).forEach(([role, controller]) => {
 });
 
 // authRouter.post('/auth/create/super-admin', superAdminControllers.create)
-// authRouter.post('/auth/login/super-admin', superAdminControllers.handleLogin)
-// authRouter.get('/auth/refresh/super-admin', superAdminControllers.handleRefreshToken)
-// authRouter.get('/auth/logout/super-admin', superAdminControllers.handleLogout)
 
 module.exports = authRouter;
 

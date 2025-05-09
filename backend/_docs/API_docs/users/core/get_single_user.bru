@@ -5,6 +5,12 @@ meta {
 }
 
 get {
-  url: 127.0.0.1:3500/api/v1/user/branch/1
+  url: 127.0.0.1:3500/api/v1/core/users/readOne/:role/:id
+  body: none
   auth: bearer
+}
+
+params:path {
+  role: super_admin
+  id: 6
 }

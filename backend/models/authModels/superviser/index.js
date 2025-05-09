@@ -1,16 +1,16 @@
 const pool = require('@/config/dbConfig');
 
 class SuperviserAuthModel {
-   constructor(sup_a_id, sup_r_id, sup_email, sup_password, sup_token) {
+   constructor(sup_a_id, sup_r_id, sup_user_id, sup_password, sup_token) {
       this.sup_a_id = sup_a_id;
       this.sup_r_id = sup_r_id;
-      this.sup_email = sup_email;
+      this.sup_user_id = sup_user_id;
       this.sup_password = sup_password;
       this.sup_token = sup_token;
    }
 
    static async findAll() {
-      const query = 'SELECT sup_a_id, sup_r_id, sup_email, sup_password FROM superviser_auth';
+      const query = 'SELECT sup_a_id, sup_r_id, sup_user_id, sup_password FROM superviser_auth';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
@@ -23,7 +23,7 @@ class SuperviserAuthModel {
    }
 
    static async findOne(id) {
-      const query = 'SELECT sup_a_id, sup_r_id, sup_email, sup_password FROM superviser_auth WHERE sup_a_id = ?';
+      const query = 'SELECT sup_a_id, sup_r_id, sup_user_id, sup_password FROM superviser_auth WHERE sup_a_id = ?';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query, [id]);
@@ -35,11 +35,11 @@ class SuperviserAuthModel {
       }
    }
 
-   static async create(sup_r_id, sup_email, sup_password) {
-      const query = 'INSERT INTO superviser_auth (sup_r_id, sup_email, sup_password) VALUES (?, ?, ?)';
+   static async create(sup_r_id, sup_user_id, sup_password) {
+      const query = 'INSERT INTO superviser_auth (sup_r_id, sup_user_id, sup_password) VALUES (?, ?, ?)';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [sup_r_id, sup_email, sup_password]);
+         const [result] = await connPool.query(query, [sup_r_id, sup_user_id, sup_password]);
          return result.insertId;
       } catch (error) {
          console.error('Error creating superviser auth record:', error);
@@ -48,11 +48,11 @@ class SuperviserAuthModel {
       }
    }
 
-   static async update(id, sup_r_id, sup_email) {
-      const query = 'UPDATE superviser_auth SET sup_r_id = ?, sup_email = ? WHERE sup_a_id = ?';
+   static async update(id, sup_r_id, sup_user_id) {
+      const query = 'UPDATE superviser_auth SET sup_r_id = ?, sup_user_id = ? WHERE sup_a_id = ?';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [sup_r_id, sup_email, id]);
+         const [result] = await connPool.query(query, [sup_r_id, sup_user_id, id]);
          return result.affectedRows > 0;
       } catch (error) {
          console.error(`Error updating superviser auth record with ID ${id}:`, error);
@@ -61,19 +61,19 @@ class SuperviserAuthModel {
       }
    }
 
-   static async findByLoginInfo(email) {
+   static async findByLoginInfo(user_id) {
       const promisePool = await pool.getConnection();
       const selectUserSQL =
-         'SELECT sup_a_id as id, sup_email as email, sup_password as password FROM superviser_auth WHERE sup_email = ? LIMIT 0,1';
+         'SELECT sup_a_id as id, sup_user_id as user_id, sup_password as password FROM superviser_auth WHERE sup_user_id = ? LIMIT 0,1';
       try {
-         const [rows] = await promisePool.query(selectUserSQL, [email]);
+         const [rows] = await promisePool.query(selectUserSQL, [user_id]);
          if (rows.length > 0) {
-            const { id, password, email } = rows[0];
-            return { id, password, email };
+            const { id, password, user_id } = rows[0];
+            return { id, password, user_id };
          }
          return null;
       } catch (error) {
-         console.error(`Error Finding Info  sup_admin with email: ${email}:`, error);
+         console.error(`Error Finding Info  sup_admin with user_id: ${user_id}:`, error);
       }
    }
 
@@ -129,7 +129,7 @@ class SuperviserAuthModel {
    }
    static async getUserByToken(refreshToken) {
       const promisePool = await pool.getConnection();
-      const updateSQL = 'SELECT sup_a_id as id, sup_email as email FROM superviser_auth WHERE sup_token = ?';
+      const updateSQL = 'SELECT sup_a_id as id, sup_user_id as user_id FROM superviser_auth WHERE sup_token = ?';
       try {
          const [rows] = await promisePool.query(updateSQL, [refreshToken]);
          if (rows.length > 0) {

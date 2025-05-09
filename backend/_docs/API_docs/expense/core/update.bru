@@ -1,0 +1,61 @@
+meta {
+  name: update
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL.Core}}expense/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "exp_id": 9,
+    "dateofexpense": "2025-03-16",
+    "expenseName": "new dhoni expense",
+    "remarks": "dfdrvds",
+    "Amount": 63452,
+    "contractorExpenses": [
+      {
+        "amount": 78574777,
+        "project_id": "9",
+        "contractor": "1",
+        "note": "2485"
+      },
+      {
+        "amount": 4574,
+        "project_id": "9",
+        "note": "748574",
+        "contractor": "5"
+      },
+      {
+        "amount": 4574,
+        "project_id": "9",
+        "note": "748574",
+        "contractor": "2"
+      }
+    ],
+    "vendorExpenses": [
+      {
+        "amount": 4574,
+        "project_id": "11",
+        "note": "748574",
+        "vendor": "16"
+      },
+      {
+        "amount": 4574,
+        "project_id": "11",
+        "note": "748574",
+        "vendor": "13"
+      },
+      {
+        "amount": 4574,
+        "project_id": "11",
+        "note": "748574",
+        "vendor": "14"
+      }
+    ]
+  }
+}

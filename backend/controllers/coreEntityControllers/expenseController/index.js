@@ -6,9 +6,9 @@ const contractorPaymentModel = require('@/models/entityModels/contractorPaymentM
 
 class ExpenseCoreController {
    static async add_Expense_and_dist(req, res) {
-      const { dateofexpense, expenseName, remarks, Amount, contractorExpenses, vendorExpenses } = req.body;
+      const { exp_date, exp_name, exp_remark, exp_amount, vendor, contractor } = req.body;
 
-      if (!Amount || !dateofexpense) {
+      if (!exp_amount || !exp_date) {
          return res.status(400).json({
             status: false,
             msg: 'Amount and Date of Expense are required',
@@ -17,7 +17,7 @@ class ExpenseCoreController {
       }
 
       try {
-         const newExpense = await expenseModel.create(expenseName, Amount, 'UPI', remarks, dateofexpense, 'Project');
+         const newExpense = await expenseModel.create(exp_name, exp_amount, 'UPI', exp_remark, exp_date, 'Project');
          const expenseId = newExpense.exp_id;
          let contractorPayments = [];
          let vendorPayments = [];
@@ -84,6 +84,27 @@ class ExpenseCoreController {
       } catch (error) {
          console.error('Error fetching clients:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
+      }
+   }
+   static async updateExpense(req, res) {
+      const { exp_id, dateofexpense, expenseName, remarks, Amount,  contractorExpenses, vendorExpenses } =req.body;
+      try {
+         await expenseCoreModel.updateExpenseWithTransaction(
+            exp_id,
+            {
+               exp_date: dateofexpense,
+               exp_name: expenseName,
+               exp_remark: remarks,
+               exp_amount: Amount,
+            },
+            contractorExpenses,
+            vendorExpenses
+         );
+
+         return res.status(200).json({ status: true, msg: 'Expense updated successfully!' });
+      } catch (err) {
+         console.error(err);
+         return res.status(500).json({ status: false, msg: 'Failed to update expense', error: err.message });
       }
    }
 }

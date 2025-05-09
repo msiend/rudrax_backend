@@ -1,0 +1,15 @@
+meta {
+  name: status_finance_dep
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{URL.Core}}material_req/status/finance_dep/:mr_item_id
+  body: none
+  auth: none
+}
+
+params:path {
+  mr_item_id: 15
+}

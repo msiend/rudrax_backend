@@ -5,13 +5,116 @@ meta {
 }
 
 put {
-  url: 127.0.0.1:3500/api/v1/user/branch/1
+  url: 127.0.0.1:3500/api/v1/core/users/update/:role/:id
   body: json
   auth: bearer
 }
 
+params:path {
+  id: 6
+  role: super_admin
+}
+
 body:json {
   {
-    "email": "newuser@example.com"
+    "su_name": "msi",
+    "su_email": "msiadga@gmail.com",
+    "su_contact": "9401069337",
+    "su_alt_contact": "7777777",
+    "su_address": null
   }
+}
+
+docs {
+  ### Branch
+  ```
+   {
+      "b_name": "Guwahati Central Branch",
+      "b_location": "GS Road, Guwahati",
+      "b_head": "Mr. R. K. Sharma",
+      "b_contact_number": "9864012345",
+      "b_alt_number": "8011223344",
+      "b_email": "guwahati.central@example.com",
+      "b_commision": 0.025
+    },
+    {
+      "b_name": "Dispur Branch",
+      "b_location": "Dispur Secretariat, Guwahati",
+      "b_head": "Ms. P. Devi",
+      "b_contact_number": "9435056789",
+      "b_alt_number": null,
+      "b_email": "dispur.branch@sample.net",
+      "b_commision": 0.030
+    },
+  ```
+  ### Super_Admin
+  ```
+  {
+      "su_name": "Admin Sharma",
+      "su_email": "admin.sharma@example.com",
+      "su_contact": "9876500000",
+      "su_alt_contact": "8765400000",
+      "su_address": "Super Admin HQ, Guwahati"
+    },
+    {
+      "su_name": "Super User Verma",
+      "su_email": "super.verma@sample.net",
+      "su_contact": "7418500000",
+      "su_alt_contact": null,
+      "su_address": "Central Admin Building, Guwahati"
+    },
+  ```
+  ### Supervisor
+  ```
+   {
+      "sup_name": "Rajesh Sharma",
+      "sup_email": "rajesh.sharma@example.com",
+      "sup_contact": "9876543210",
+      "sup_alt_contact": "8765432109",
+      "sup_address": "A-102, Green Valley Apartments, Guwahati"
+    },
+    {
+      "sup_name": "Priya Verma",
+      "sup_email": "priya.verma@sample.com",
+      "sup_contact": "7418529630",
+      "sup_alt_contact": 8765432109,
+      "sup_address": "B-5, River View Enclave, Guwahati"
+    },
+  ```
+  ### Finance
+  ```
+  {
+      "fd_name": "Acme Food Distributors",
+      "fd_contact": "9876543210",
+      "fd_alt_contact": "8765432109",
+      "fd_address": "123 Main Street, Anytown, USA",
+      "fd_email": "info@acmefood.com"
+    },
+    {
+      "fd_name": "Global Grocery Suppliers",
+      "fd_contact": "7418529630",
+      "fd_alt_contact": null,
+      "fd_address": "PO Box 456, Central City, USA",
+      "fd_email": "sales@globalgrocery.net"
+    },
+  ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

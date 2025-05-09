@@ -17,10 +17,18 @@ class MaterialItemUpdateModel {
    }
 
    static async updateMdApproval(mr_item_id) {
-      const query = 'UPDATE material_item_list SET md_approval = 1 WHERE mr_item_id = ?';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [mr_item_id]);
+         const [rows] = await connPool.query('SELECT md_approval FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+         if (rows.length === 0) {
+            return 0;
+         }
+         const currentApprovalStatus = rows[0].md_approval;
+         const newApprovalStatus = currentApprovalStatus === 0 ? 1 : 0;
+         const query = 'UPDATE material_item_list SET md_approval = ? WHERE mr_item_id = ?';
+         const [result] = await connPool.query(query, [newApprovalStatus, mr_item_id]);
          return result.affectedRows;
       } catch (error) {
          console.error('Error updating md_approval:', error);
@@ -29,11 +37,20 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
+
    static async updateFdApproval(mr_item_id) {
-      const query = 'UPDATE material_item_list SET fd_approval = 1 WHERE mr_item_id = ?';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [mr_item_id]);
+         const [rows] = await connPool.query('SELECT fd_approval FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+         if (rows.length === 0) {
+            return 0;
+         }
+         const currentApprovalStatus = rows[0].fd_approval;
+         const newApprovalStatus = currentApprovalStatus === 0 ? 1 : 0;
+         const query = 'UPDATE material_item_list SET fd_approval = ? WHERE mr_item_id = ?';
+         const [result] = await connPool.query(query, [newApprovalStatus, mr_item_id]);
          return result.affectedRows;
       } catch (error) {
          console.error('Error updating fd_approval:', error);
@@ -44,10 +61,19 @@ class MaterialItemUpdateModel {
    }
 
    static async updateMrDeliveryStatus(mr_item_id) {
-      const query = 'UPDATE material_item_list SET mr_delivery_status = 1 WHERE mr_item_id = ? ';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [mr_item_id]);
+         const [rows] = await connPool.query('SELECT mr_delivery_status FROM material_item_list WHERE mr_item_id = ?', [
+            mr_item_id,
+         ]);
+
+         if (rows.length === 0) {
+            return 0;
+         }
+         const currentDeliveryStatus = rows[0].mr_delivery_status;
+         const newDeliveryStatus = currentDeliveryStatus === 0 ? 1 : 0;
+         const query = 'UPDATE material_item_list SET mr_delivery_status = ? WHERE mr_item_id = ?';
+         const [result] = await connPool.query(query, [newDeliveryStatus, mr_item_id]);
          return result.affectedRows;
       } catch (error) {
          console.error('Error updating mr_delivery_status:', error);
@@ -116,10 +142,11 @@ class MaterialItemUpdateModel {
    }
 
    static async findAll_materialItems_ByMatrialReqId(mr_r_id) {
-      const query = 'SELECT * FROM material_item_list WHERE mr_r_id=? ;';
+      const query =
+         'SELECT p.pro_name,p.pro_ref_no,p.pro_client_r_id ,c.client_name FROM `material_requests`JOIN projects p ON p.pro_id = material_requests.mr_project_id JOIN clients c ON c.client_id =p.pro_client_r_id WHERE material_requests.mr_r_id=?;SELECT * FROM material_item_list WHERE mr_r_id=?;';
       const connPool = await pool.getConnection();
       try {
-         const [rows] = await connPool.query(query, [mr_r_id]);
+         const [rows] = await connPool.query(query, [mr_r_id, mr_r_id]);
          return rows;
       } catch (error) {
          console.error('Error retrieving all material items:', error);

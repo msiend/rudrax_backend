@@ -16,7 +16,7 @@ class projectModel {
       }
    }
 
-   static async getProjectDetails() {
+   static async getProjectDetails(pro_id) {
       const query = `
     SELECT 
       pc.pro_id,
@@ -44,7 +44,7 @@ class projectModel {
 
       const connPool = await pool.getConnection();
       try {
-         const [rows] = await connPool.query(query);
+         const [rows] = await connPool.query(query,[]);
          return rows;
       } catch (error) {
          console.error('Error fetching project details:', error);
