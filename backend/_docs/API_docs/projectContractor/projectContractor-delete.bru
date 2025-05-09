@@ -5,17 +5,19 @@ meta {
 }
 
 delete {
-  url: {{URL.Entity}}project_contractor/delete/:id
-  body: none
+  url: {{URL.Entity}}project_contractor/remove
+  body: json
   auth: bearer
-}
-
-params:path {
-  id: 
 }
 
 auth:bearer {
   token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_con_id": 2,
+  }
 }
 
 assert {

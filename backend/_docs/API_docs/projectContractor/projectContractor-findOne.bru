@@ -5,17 +5,19 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}project_contractor/readOne/:id
-  body: none
+  url: {{URL.Entity}}project_contractor/readOne
+  body: json
   auth: bearer
-}
-
-params:path {
-  id: 1
 }
 
 auth:bearer {
   token: <your_token_here>
+}
+
+body:json {
+  {
+    "pro_con_id": 2
+  }
 }
 
 assert {

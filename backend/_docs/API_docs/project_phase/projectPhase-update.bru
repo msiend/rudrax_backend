@@ -5,7 +5,7 @@ meta {
 }
 
 put {
-  url: {{URL.Entity}}project_phase/update/1
+  url: {{URL.Entity}}project_phase/update
   body: json
   auth: bearer
 }
@@ -16,8 +16,10 @@ auth:bearer {
 
 body:json {
   {
-    "pro_id": 1,
-    "pro_phase_status": "In Progress",
+    "pro_phase_id": 4,
+    "phase_id": 3,
+    "pro_id": 9,
+    "pro_phase_status": "In Progressdghsdf",
     "pro_phase_deadline": "2025-06-30"
   }
 }
