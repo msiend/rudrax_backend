@@ -10,6 +10,19 @@ class ExpenseModel {
       this.exp_category = exp_category;
       this.exp_project_ref = exp_project_ref;
    }
+   static async findAllWithAll_Date() {
+      const query = 'SELECT * FROM expenses ORDER BY exp_date DESC ';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving all expenses:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
 
    // Get all expenses
    static async getExpenseDetails(exp_id) {
