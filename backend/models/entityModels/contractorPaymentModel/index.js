@@ -52,6 +52,7 @@ class PayModel {
                pay_project_id,
                pay_amount,
                pay_note,
+               pay_exp_id,
                pay_mode
             };
          }

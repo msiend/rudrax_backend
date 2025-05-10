@@ -1950,3 +1950,7 @@
 20250510	20:11:00	70ac0f80-6436-4aa8-9b4c-f863a3f94ef9	POST	undefined	/api/v1/core/expense/create
 20250510	20:12:37	cf9a4606-6588-4075-93e9-2df5ad47d7c1	POST	undefined	/api/v1/core/expense/create
 20250510	20:13:22	0bd4ea3e-6d46-4ccd-84e1-6c38b64d8dbf	POST	undefined	/api/v1/core/expense/create
+20250510	20:35:30	5db94c4c-8d18-495f-bf02-d3f04e10c523	POST	undefined	/api/v1/core/expense/create
+20250510	20:35:37	7c5613cb-8596-414a-92c1-d46718b03597	POST	undefined	/api/v1/core/expense/create
+20250510	20:36:15	cbf62414-a54a-4aa2-bc5a-18abca90312b	POST	undefined	/api/v1/core/expense/create
+20250510	20:37:06	94e7cc0e-f216-4f58-9f16-7af60a7eafce	POST	undefined	/api/v1/core/expense/create
