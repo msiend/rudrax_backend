@@ -80,7 +80,7 @@ class ExpenseModel {
          }
 
          await conn.commit();
-         return { success: true };
+         return { affectedRow: true };
       } catch (error) {
          await conn.rollback();
          console.error('Transaction failed:', error);

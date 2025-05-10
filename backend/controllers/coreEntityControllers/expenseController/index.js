@@ -117,7 +117,7 @@ class ExpenseCoreController {
    static async updateExpense(req, res) {
       const { exp_id, exp_date, exp_name, exp_remark, exp_amount, contractor, vendor } = req.body;
       try {
-         await expenseCoreModel.updateExpenseWithTransaction(
+         const UpdateData = await expenseCoreModel.updateExpenseWithTransaction(
             exp_id,
             {
                exp_date: exp_date,
@@ -128,8 +128,23 @@ class ExpenseCoreController {
             contractor,
             vendor
          );
-
-         return res.status(200).json({ status: true, msg: 'Expense updated successfully!' });
+         if (UpdateData.affectedRow) {
+            return res.status(200).json({
+               status: true,
+               msg: 'Expense updated successfully!',
+               data: [
+                  exp_id,
+                  {
+                     exp_date: exp_date,
+                     exp_name: exp_name,
+                     exp_remark: exp_remark,
+                     exp_amount: exp_amount,
+                  },
+                  contractor,
+                  vendor,
+               ],
+            });
+         }
       } catch (err) {
          console.error(err);
          return res.status(500).json({ status: false, msg: 'Failed to update expense', error: err.message });

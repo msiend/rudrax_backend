@@ -1954,3 +1954,12 @@
 20250510	20:35:37	7c5613cb-8596-414a-92c1-d46718b03597	POST	undefined	/api/v1/core/expense/create
 20250510	20:36:15	cbf62414-a54a-4aa2-bc5a-18abca90312b	POST	undefined	/api/v1/core/expense/create
 20250510	20:37:06	94e7cc0e-f216-4f58-9f16-7af60a7eafce	POST	undefined	/api/v1/core/expense/create
+20250510	22:07:16	516fa7a0-63ef-4c85-b022-141446953afc	POST	undefined	/api/v1/core/expense/update
+20250510	22:08:10	156f71a8-7aa9-47bc-b4af-af0c466811b4	POST	undefined	/api/v1/core/expense/update
+20250510	22:08:27	04e430a2-84db-4dbc-90ff-e32a8fc6d249	GET	undefined	/api/v1/core/expense/get_expense_details/9
+20250510	22:08:31	510ffeaa-e21d-4c46-b221-ef71039d265b	GET	undefined	/api/v1/entity/expense/readAll
+20250510	22:09:20	a2d5d9de-c981-42e2-8ff2-1d149033a05b	POST	undefined	/api/v1/core/expense/update
+20250510	22:09:26	47099a1b-9eef-4939-a235-ac7ace3d3afe	POST	undefined	/api/v1/core/expense/update
+20250510	22:09:36	fc55ea06-bcca-4a47-be0e-b20bfa17285e	POST	undefined	/api/v1/core/expense/update
+20250510	22:09:39	1d8af9b4-fe13-4cae-99be-c5d0a2b827a1	GET	undefined	/api/v1/core/expense/get_expense_details/9
+20250510	22:10:19	0d66e56f-e441-4ba1-af9c-4afce3283b0d	GET	undefined	/api/v1/core/expense/get_expense_details/9
