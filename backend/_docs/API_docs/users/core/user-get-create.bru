@@ -4,7 +4,7 @@ meta {
   seq: 1
 }
 
-get {
+post {
   url: 127.0.0.1:3500/api/v1/core/users/create/:role
   body: json
   auth: bearer
@@ -22,4 +22,68 @@ body:json {
     "su_alt_contact": "8765400000",
     "su_address": "Super Admin HQ, Guwahati"
   }
+}
+
+docs {
+  ### Branch
+  ```
+   {
+      "b_name": "Guwahati Central Branch",
+      "b_location": "GS Road, Guwahati",
+      "b_head": "Mr. R. K. Sharma",
+      "b_contact_number": "9864012345",
+      "b_alt_number": "8011223344",
+      "b_email": "guwahati.central@example.com",
+      "b_commision": 0.025
+    }
+  ```
+  ### Super_Admin
+  ```
+  {
+      "su_name": "Admin Sharma",
+      "su_email": "admin.sharma@example.com",
+      "su_contact": "9876500000",
+      "su_alt_contact": "8765400000",
+      "su_address": "Super Admin HQ, Guwahati"
+    }
+  ```
+  ### Supervisor
+  ```
+   {
+      "sup_name": "Rajesh Sharma",
+      "sup_email": "rajesh.sharma@example.com",
+      "sup_contact": "9876543210",
+      "sup_alt_contact": "8765432109",
+      "sup_address": "A-102, Green Valley Apartments, Guwahati"
+    }
+  ```
+  ### Finance
+  ```
+  {
+      "fd_name": "Acme Food Distributors",
+      "fd_contact": "9876543210",
+      "fd_alt_contact": "8765432109",
+      "fd_address": "123 Main Street, Anytown, USA",
+      "fd_email": "info@acmefood.com"
+    }
+  ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
