@@ -15,8 +15,8 @@ class ExpenseCoreController {
       }
    }
    static async add_Expense_and_dist(req, res) {
-      const { exp_date, exp_name, exp_remark, exp_amount, vendor, contractor } = req.body;
-
+      const { exp_date, exp_name, exp_remark, exp_amount, contractor, vendor } = req.body;
+      const exp_mode = req.body.exp_mode ? req.body.exp_mode : 'UPI';
       if (!exp_amount || !exp_date) {
          return res.status(400).json({
             status: false,
@@ -26,19 +26,19 @@ class ExpenseCoreController {
       }
 
       try {
-         const newExpense = await expenseModel.create(exp_name, exp_amount, 'UPI', exp_remark, exp_date, 'Project');
+         const newExpense = await expenseModel.create(exp_name, exp_amount, exp_mode, exp_remark, exp_date, 'Project');
          const expenseId = newExpense.exp_id;
          let contractorPayments = [];
          let vendorPayments = [];
-         if (Array.isArray(contractorExpenses) && contractorExpenses.length > 0) {
-            contractorPayments = await ExpenseCoreController._processContractorExpenses(expenseId, contractorExpenses);
+         if (Array.isArray(contractor) && contractor.length > 0) {
+            contractorPayments = await ExpenseCoreController._processContractorExpenses(expenseId,exp_mode, contractor);
          }
-         if (Array.isArray(vendorExpenses) && vendorExpenses.length > 0) {
-            vendorPayments = await ExpenseCoreController._processVendorExpenses(expenseId, vendorExpenses);
+         if (Array.isArray(vendor) && vendor.length > 0) {
+            vendorPayments = await ExpenseCoreController._processVendorExpenses(expenseId,exp_mode, vendor);
          }
          const fullResponse = {
             exp_name: newExpense.exp_name,
-            exp_amount: newExpense.exp_amount,
+            exp_exp_amount: newExpense.exp_amount,
             exp_mode: newExpense.exp_mode,
             exp_remark: newExpense.exp_remark,
             exp_date: newExpense.exp_date,
@@ -60,16 +60,30 @@ class ExpenseCoreController {
          });
       }
    }
-   static async _processContractorExpenses(expenseId, contractorExpenses) {
+   static async _processContractorExpenses(expenseId,exp_mode, contractorExpenses) {
       const promises = contractorExpenses.map((exp) =>
-         contractorPaymentModel.create(exp.contractor, exp.project_id, exp.amount, exp.note, expenseId, 'UPI')
+         contractorPaymentModel.create(
+            exp.pay_con_id,
+            exp.pay_project_id,
+            exp.pay_amount,
+            exp.pay_note,
+            expenseId,
+            exp_mode
+         )
       );
       return Promise.all(promises);
    }
 
-   static async _processVendorExpenses(expenseId, vendorExpenses) {
+   static async _processVendorExpenses(expenseId,exp_mode, vendorExpenses) {
       const promises = vendorExpenses.map((exp) =>
-         vendorPaymentModel.create(exp.vendor, exp.project_id, exp.amount, exp.note, expenseId, 'UPI')
+         vendorPaymentModel.create(
+            exp.pay_vendor_id,
+            exp.pay_project_id,
+            exp.pay_amount,
+            exp.pay_note,
+            expenseId,
+            exp_mode
+         )
       );
       return Promise.all(promises);
    }
@@ -96,15 +110,15 @@ class ExpenseCoreController {
       }
    }
    static async updateExpense(req, res) {
-      const { exp_id, dateofexpense, expenseName, remarks, Amount, contractorExpenses, vendorExpenses } = req.body;
+      const { exp_id, exp_date, exp_name, exp_remark, exp_amount, contractorExpenses, vendorExpenses } = req.body;
       try {
          await expenseCoreModel.updateExpenseWithTransaction(
             exp_id,
             {
-               exp_date: dateofexpense,
-               exp_name: expenseName,
-               exp_remark: remarks,
-               exp_amount: Amount,
+               exp_date: exp_date,
+               exp_name: exp_name,
+               exp_remark: exp_remark,
+               exp_exp_amount: exp_amount,
             },
             contractorExpenses,
             vendorExpenses

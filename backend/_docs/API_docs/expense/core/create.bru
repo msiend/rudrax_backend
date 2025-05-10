@@ -12,48 +12,36 @@ post {
 
 body:json {
   {
-    "dateofexpense": "2025-03-16",
-    "expenseName": "new dhoni expense",
-    "remarks": "dfdrvds",
-    "Amount": 63452,
-    "contractorExpenses": [
+    "exp_name": "march expense 1",
+    "exp_amount": "20000",
+    "exp_mode": "UPI",
+    "exp_remark": "Bob da record",
+    "exp_date": "2025-04-25",
+    "contractor": [
       {
-        "amount": 78574,
-        "project_id": "9",
-        "contractor": "1",
-        "note": "2485"
-      },
-      {
-        "amount": 4574,
-        "project_id": "9",
-        "note": "748574",
-        "contractor": "5"
-      },
-      {
-        "amount": 4574,
-        "project_id": "9",
-        "note": "748574",
-        "contractor": "2"
+        "pay_con_id": 2,
+        "pay_project_id": 9,
+        "pay_amount": "30000",
+        "pay_note": "for arun da ",
+        "pay_exp_id": 23
       }
     ],
-    "vendorExpenses": [
+    "vendor": [
       {
-        "amount": 4574,
-        "project_id": "11",
-        "note": "748574",
-        "vendor": "16"
+        "pay_vendor_id": 11,
+        "payment_mode": "UPI",
+        "pay_project_id": 9,
+        "pay_amount": "20000",
+        "pay_note": "for item purchase",
+        "pay_exp_id": 23
       },
       {
-        "amount": 4574,
-        "project_id": "11",
-        "note": "748574",
-        "vendor": "13"
-      },
-      {
-        "amount": 4574,
-        "project_id": "11",
-        "note": "748574",
-        "vendor": "14"
+        "pay_vendor_id": 10,
+        "payment_mode": "UPI",
+        "pay_project_id": 9,
+        "pay_amount": "50000",
+        "pay_note": "fo 3 truck red soil",
+        "pay_exp_id": 23
       }
     ]
   }

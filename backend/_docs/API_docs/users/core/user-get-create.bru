@@ -1,0 +1,25 @@
+meta {
+  name: user-get-create
+  type: http
+  seq: 1
+}
+
+get {
+  url: 127.0.0.1:3500/api/v1/core/users/create/:role
+  body: json
+  auth: bearer
+}
+
+params:path {
+  role: super_admin
+}
+
+body:json {
+  {
+    "su_name": "Admin Sharma",
+    "su_email": "admin.sharma@example.com",
+    "su_contact": "9876500000",
+    "su_alt_contact": "8765400000",
+    "su_address": "Super Admin HQ, Guwahati"
+  }
+}

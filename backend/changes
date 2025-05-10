@@ -2,11 +2,11 @@ Changes for Expense CREATE api ----
 
 // 1. [0] object in request body will come in this FORMAT --
    [
-    "exp_name": "march expense 1",
-    "exp_amount": "20000",
-    "exp_mode": "UPI",
-    "exp_remark": "Bob da record",
-    "exp_date": "2025-04-25",
+    // "exp_name": "march expense 1",
+    // "exp_amount": "20000",
+    // "exp_mode": "UPI",
+    // "exp_remark": "Bob da record",
+    // "exp_date": "2025-04-25",
     "contractor": [
       {
         "pay_id": 36,
