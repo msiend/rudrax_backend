@@ -38,7 +38,7 @@ class ExpenseCoreController {
          }
          const fullResponse = {
             exp_name: newExpense.exp_name,
-            exp_exp_amount: newExpense.exp_amount,
+            exp_amount: newExpense.exp_amount,
             exp_mode: newExpense.exp_mode,
             exp_remark: newExpense.exp_remark,
             exp_date: newExpense.exp_date,
@@ -118,7 +118,7 @@ class ExpenseCoreController {
                exp_date: exp_date,
                exp_name: exp_name,
                exp_remark: exp_remark,
-               exp_exp_amount: exp_amount,
+               exp_amount: exp_amount,
             },
             contractorExpenses,
             vendorExpenses
