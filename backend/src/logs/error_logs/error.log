@@ -188,6 +188,7 @@ TypeError: Joi.string(...).user_id is not a function
   ],
   [Symbol(level)]: 'error'
 }
+<<<<<<< HEAD
 2025-05-09 03:27:50 [ERROR] unhandledRejection: connect ECONNREFUSED ::1:3306
 Error: connect ECONNREFUSED ::1:3306
     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16)
@@ -232,6 +233,56 @@ Error: connect ECONNREFUSED ::1:3306
       function: 'TCPConnectWrap.afterConnect [as oncomplete]',
       line: 1615,
       method: 'afterConnect [as oncomplete]',
+=======
+2025-05-09 21:09:10 [ERROR] unhandledRejection: error is not defined
+ReferenceError: error is not defined
+    at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+ReferenceError: error is not defined
+    at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+{
+  error: ReferenceError: error is not defined
+      at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5),
+  rejection: true,
+  date: 'Fri May 09 2025 21:09:10 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 14232,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 58499072,
+      heapTotal: 22724608,
+      heapUsed: 20040936,
+      external: 2336741,
+      arrayBuffers: 17633
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 179862.593 },
+  trace: [
+    {
+      column: 19,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\entityControllers\\project_phaseController\\index.js',
+      function: 'create',
+      line: 27,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'process.processTicksAndRejections',
+      line: 105,
+      method: 'processTicksAndRejections',
+>>>>>>> 528fc318cec6192a1da1b2397a7ab99bc6921b4d
       native: false
     }
   ],

@@ -25,9 +25,7 @@ class ProjectPhaseModel {
     const query = 'INSERT INTO project_phase (phase_id, pro_id, pro_phase_status, pro_phase_deadline) VALUES (?, ?, ?, ?)';
     const conn = await pool.getConnection();
     try {
-      const [result] = await conn.query(query, [
-        data.phase_id, data.pro_id, data.pro_phase_status, data.pro_phase_deadline
-      ]);
+      const [result] = await conn.query(query, [data.phase_id, data.pro_id, data.pro_phase_status, data.pro_phase_deadline]);
       return result.insertId;
     } finally {
       conn.release();

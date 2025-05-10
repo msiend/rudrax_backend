@@ -3386,3 +3386,56 @@ TypeError: Joi.string(...).user_id is not a function
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-09 21:09:10 [ERROR] uncaughtException: error is not defined
+ReferenceError: error is not defined
+    at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+ReferenceError: error is not defined
+    at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+{
+  error: ReferenceError: error is not defined
+      at create (Z:\Visual_Codes\jagya_const\backend\controllers\entityControllers\project_phaseController\index.js:27:19)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5),
+  exception: true,
+  date: 'Fri May 09 2025 21:09:10 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 14232,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 58683392,
+      heapTotal: 22724608,
+      heapUsed: 20241304,
+      external: 2336805,
+      arrayBuffers: 17657
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 179862.609 },
+  trace: [
+    {
+      column: 19,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\entityControllers\\project_phaseController\\index.js',
+      function: 'create',
+      line: 27,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'process.processTicksAndRejections',
+      line: 105,
+      method: 'processTicksAndRejections',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

@@ -183,7 +183,7 @@ class MaterialItemUpdateModel {
             item.mr_item_quantity,
             item.mr_item_amount,
             item.mr_item_date,
-            item.mr_r_id,
+            mr_r_id,
             item.vendor_id,
             item.fd_approval,
             item.md_approval,

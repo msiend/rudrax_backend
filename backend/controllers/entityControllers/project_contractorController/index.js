@@ -12,7 +12,7 @@ const ProjectContractorController = {
 
    async findOne(req, res) {
       try {
-         const data = await ProjectContractorModel.findOne(req.params.id);
+         const data = await ProjectContractorModel.findOne(req.body.pro_con_id);
          res.status(200).send({ status: true, msg: 'Project contractor retrieved', data });
       } catch (err) {
          res.status(500).send({ status: false, msg: 'Error retrieving project contractor', data: null });
@@ -30,16 +30,16 @@ const ProjectContractorController = {
 
    async update(req, res) {
       try {
-         const success = await ProjectContractorModel.update(req.params.id, req.body);
+         const success = await ProjectContractorModel.update(req.body.pro_con_id, req.body);
          res.status(200).send({ status: success, msg: success ? 'Updated successfully' : 'Not found', data: null });
       } catch (err) {
          res.status(500).send({ status: false, msg: 'Error updating project contractor', data: null });
       }
    },
 
-   async delete(req, res) {
+   async remove(req, res) {
       try {
-         const success = await ProjectContractorModel.delete(req.params.id);
+         const success = await ProjectContractorModel.delete(req.body.pro_con_id);
          res.status(200).send({ status: success, msg: success ? 'Deleted successfully' : 'Not found', data: null });
       } catch (err) {
          res.status(500).send({ status: false, msg: 'Error deleting project contractor', data: null });

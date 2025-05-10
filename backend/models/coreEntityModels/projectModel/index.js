@@ -18,33 +18,12 @@ class projectModel {
 
    static async getProjectDetails(pro_id) {
       const query = `
-    SELECT 
-      pc.pro_id,
-      pc.pro_con_id,
-      pc.con_id,
-      pc.pro_phase AS contractor_phase,
-      pc.pro_sub_phase AS contractor_subphase,
-
-      pp.pro_phase_id,
-      pp.pro_phase_status,
-      pp.pro_phase_deadline,
-      pp.created_at AS phase_created_at,
-
-      ps.pro_subphase_id,
-      ps.pro_phase AS subphase_phase_id,
-      ps.pro_subphase,
-      ps.deadline,
-      ps.created_at AS subphase_created_at
-
-    FROM project_contractor pc
-    LEFT JOIN project_phase pp ON pc.pro_id = pp.pro_id
-    LEFT JOIN project_subphase ps ON pc.pro_id = ps.pro_id
-    ORDER BY pc.pro_id, pp.pro_phase_id, ps.pro_subphase_id
+       SELECT pc.*,c.con_name FROM project_contractor pc JOIN contractors c ON c.con_id =pc.con_id WHERE pro_id = ?;
+       SELECT pp.*,psp.*,phases.phase_name,phases.phase_alt_name FROM project_phase pp LEFT JOIN project_subphase psp ON psp.pro_phase=pp.pro_phase_id RIGHT JOIN phases ON pp.phase_id=phases.phase_id WHERE pp.pro_id =?;
   `;
-
       const connPool = await pool.getConnection();
       try {
-         const [rows] = await connPool.query(query,[]);
+         const [rows] = await connPool.query(query, [pro_id, pro_id]);
          return rows;
       } catch (error) {
          console.error('Error fetching project details:', error);
