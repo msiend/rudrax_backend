@@ -2144,3 +2144,14 @@
 20250511	12:55:18	0496c56d-e281-49f1-b5b5-a571eecdfe7f	PUT	undefined	/api/v1/core/expense/update
 20250511	12:56:51	0f1f5600-9e12-4c65-9c02-45ddd276c5fe	PUT	undefined	/api/v1/core/expense/update
 20250511	12:57:05	54e69136-fd2a-410b-9a03-ef0f532906c1	PUT	undefined	/api/v1/core/expense/update
+20250511	12:58:02	2495843a-5d20-4d15-81a6-7c77371b5fc2	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	12:58:10	63b075df-ed55-4c5d-9669-4918acdc4b02	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250511	12:58:10	6586d1f7-6340-422c-a23f-3a41670da011	GET	http://127.0.0.1:5173	/api/v1/entity/contractor/readAll
+20250511	12:58:25	aed0ffbd-e6fc-417c-a49a-a19d8ac34671	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250511	12:58:38	4014fba2-ad5d-4c93-aaf0-173df0a0d8d8	PUT	http://127.0.0.1:5173	/api/v1/core/expense/update
+20250511	12:58:43	ebe7ab80-f1d5-40df-aa34-6b210066bb17	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	12:59:06	430c2ca8-da0d-4c37-b94f-9ec17fbb698c	GET	http://127.0.0.1:5173	/api/v1/core/expense/get_expense_details/11
+20250511	12:59:21	f650adbb-5668-4d99-ae28-ac967ad32ad1	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	12:59:21	942a9b44-e591-40bb-8e91-2d3d5ae5979c	GET	http://127.0.0.1:5173	/api/v1/core/expense/get_expense_details/11
+20250511	12:59:27	fedb6018-257a-4187-9d4b-17b11d623f87	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	13:00:12	afbe84c4-2a03-4653-8970-9f601e282081	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
