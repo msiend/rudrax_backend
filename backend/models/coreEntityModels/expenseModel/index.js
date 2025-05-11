@@ -41,16 +41,18 @@ class ExpenseModel {
 
    static async updateExpenseWithTransaction(
       expId,
-      { expenseName, Amount, remarks, mode, dateofexpense },
+      { exp_name, exp_amount, exp_remark, exp_date, exp_mode },
       contractorExpenses = [],
       vendorExpenses = []
    ) {
       const conn = await pool.getConnection();
+      console.log(expId, { exp_name, exp_amount, exp_remark, exp_date, exp_mode });
+
       try {
          await conn.beginTransaction();
          await conn.query(
             'UPDATE expenses SET exp_name=?, exp_amount=?, exp_remark=?, exp_date=?,exp_mode=? WHERE exp_id=?',
-            [expenseName, Amount, remarks, dateofexpense, mode, expId]
+            [exp_name, exp_amount, exp_remark, exp_date, exp_mode , expId]
          );
          await conn.query('DELETE FROM contractor_payments WHERE pay_exp_id=?', [expId]);
          await conn.query('DELETE FROM vendor_payments WHERE pay_exp_id=?', [expId]);
