@@ -6,6 +6,7 @@ const superAdminModel = require('@/models/authModels/superadmin');
 
 exports.create = async (req, res) => {
    const schema = Joi.object({
+      id: Joi.required(),
       user_id: Joi.string().min(3).max(30).required(),
       password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
       cpassword: Joi.string().valid(Joi.ref('password')).required().messages({
@@ -15,10 +16,10 @@ exports.create = async (req, res) => {
    });
 
    try {
-      const {  user_id, password, cpassword } = req.body;
+      const { id, user_id, password, cpassword } = req.body;
       console.log(req.body);
 
-      const { error } = schema.validate({  user_id,  password, cpassword });
+      const { error } = schema.validate({ id, user_id,  password, cpassword });
       if (error) {
          return res.status(400).json({
             err: error,
@@ -28,14 +29,14 @@ exports.create = async (req, res) => {
       }
       const salt = bcrypt.genSaltSync(12);
       const hash = bcrypt.hashSync(password, salt);
-      const result = await superAdminModel.create( user_id,  hash);
+      const result = await superAdminModel.create(id, user_id,  hash);
       if (!result.status) {
          return res.status(500).json({
             status: false,
             msg: 'Something Went Wrong!',
          });
       }
-      return res.status(200).json({ status: true, msg: 'Inserted Successfully!' });
+      return res.status(200).json({ status: true, msg: 'User Created Successfully!' });
    } catch (err) {
       console.log(err);
       return res.status(500).json({

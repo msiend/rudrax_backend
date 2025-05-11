@@ -130,8 +130,6 @@ class ExpenseCoreController {
             contractor,
             vendor
          );
-         console.log(req.body);
-         
          if (UpdateData.affectedRow) {
             return res.status(200).json({
                status: true,

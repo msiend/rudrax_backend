@@ -9,24 +9,18 @@ class SuperAdminAuthModel {
    }
 
    // Insert a new uer
-   static async create(user_id, hashpassword) {
+   static async create(id, user_id, hashpassword) {
       const connPool = await pool.getConnection();
       try {
-         await connPool.beginTransaction();
-         if (dbresponseOne) {
-            const queryTwo = `INSERT INTO super_admin_auth (su_r_id, su_user_id, su_password) VALUES(?, ?, ?) `;
-            const [dbresponseTwo] = await connPool.query(queryTwo, [dbresponseOne.insertId, user_id, hashpassword]);
+         const queryTwo = `UPDATE super_admin_auth SET su_r_id=?, su_user_id=?, su_password=?`;
+         const [result] = await connPool.query(queryTwo, [id, user_id, hashpassword]);
 
-            if (dbresponseTwo?.affectedRows) {
-               await connPool.commit();
-               return { status: true, dbresponseTwo, msg: 'Successfully inserted!' };
-            } else {
-               await connPool.rollback();
-               return { status: false, msg: 'Something went wrong!' };
-            }
+         if (result?.affectedRows) {
+            return { status: true, result, msg: 'Successfully inserted!' };
+         } else {
+            return { status: false, msg: 'Something went wrong!' };
          }
       } catch (error) {
-         await connPool.rollback();
          console.error('Transaction rolled back due to error:', error);
       } finally {
          connPool.release();
