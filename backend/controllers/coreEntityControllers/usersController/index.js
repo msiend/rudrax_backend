@@ -4,9 +4,9 @@ class _UserController {
   // Create User (already provided)
   static async create(req, res) {
     const { role } = req.params;
-    const { r_id, email, password, ...userInfo } = req.body;
+    const { ...userInfo } = req.body;
     try {
-      const result = await _UserModel.create(role, { r_id, email, password, ...userInfo });
+      const result = await _UserModel.create(role, { ...userInfo });
       res.status(201).json({ 
         status: true, 
         message: 'User created successfully', 

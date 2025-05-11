@@ -67,7 +67,7 @@ class ExpenseModel {
          for (const item of contractorExpenses) {
             await conn.query(
                'INSERT INTO contractor_payments (pay_con_id, pay_project_id, pay_amount, pay_note, pay_exp_id) VALUES (?, ?, ?, ?, ?)',
-               [item.contractor, item.project_id, item.amount.toString(), item.note, expId]
+               [item.pay_con_id, item.pay_project_id, item.pay_amount.toString(), item.pay_note, expId]
             );
          }
 
@@ -75,12 +75,12 @@ class ExpenseModel {
          for (const item of vendorExpenses) {
             await conn.query(
                'INSERT INTO vendor_payments (pay_vendor_id, pay_project_id, pay_amount, pay_note, pay_exp_id) VALUES (?, ?, ?, ?, ?)',
-               [item.vendor, item.project_id, item.amount.toString(), item.note, expId]
+               [item.pay_vendor_id, item.pay_project_id, item.pay_amount.toString(), item.pay_note, expId]
             );
          }
 
          await conn.commit();
-         return { success: true };
+         return { affectedRow: true };
       } catch (error) {
          await conn.rollback();
          console.error('Transaction failed:', error);

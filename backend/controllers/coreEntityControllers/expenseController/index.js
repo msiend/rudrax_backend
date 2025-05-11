@@ -31,12 +31,17 @@ class ExpenseCoreController {
          let contractorPayments = [];
          let vendorPayments = [];
          if (Array.isArray(contractor) && contractor.length > 0) {
-            contractorPayments = await ExpenseCoreController._processContractorExpenses(expenseId,exp_mode, contractor);
+            contractorPayments = await ExpenseCoreController._processContractorExpenses(
+               expenseId,
+               exp_mode,
+               contractor
+            );
          }
          if (Array.isArray(vendor) && vendor.length > 0) {
-            vendorPayments = await ExpenseCoreController._processVendorExpenses(expenseId,exp_mode, vendor);
+            vendorPayments = await ExpenseCoreController._processVendorExpenses(expenseId, exp_mode, vendor);
          }
          const fullResponse = {
+            exp_id: expenseId,
             exp_name: newExpense.exp_name,
             exp_amount: newExpense.exp_amount,
             exp_mode: newExpense.exp_mode,
@@ -60,7 +65,7 @@ class ExpenseCoreController {
          });
       }
    }
-   static async _processContractorExpenses(expenseId,exp_mode, contractorExpenses) {
+   static async _processContractorExpenses(expenseId, exp_mode, contractorExpenses) {
       const promises = contractorExpenses.map((exp) =>
          contractorPaymentModel.create(
             exp.pay_con_id,
@@ -74,7 +79,7 @@ class ExpenseCoreController {
       return Promise.all(promises);
    }
 
-   static async _processVendorExpenses(expenseId,exp_mode, vendorExpenses) {
+   static async _processVendorExpenses(expenseId, exp_mode, vendorExpenses) {
       const promises = vendorExpenses.map((exp) =>
          vendorPaymentModel.create(
             exp.pay_vendor_id,
@@ -110,9 +115,9 @@ class ExpenseCoreController {
       }
    }
    static async updateExpense(req, res) {
-      const { exp_id, exp_date, exp_name, exp_remark, exp_amount, contractorExpenses, vendorExpenses } = req.body;
+      const { exp_id, exp_date, exp_name, exp_remark, exp_amount, contractor, vendor } = req.body;
       try {
-         await expenseCoreModel.updateExpenseWithTransaction(
+         const UpdateData = await expenseCoreModel.updateExpenseWithTransaction(
             exp_id,
             {
                exp_date: exp_date,
@@ -120,11 +125,26 @@ class ExpenseCoreController {
                exp_remark: exp_remark,
                exp_amount: exp_amount,
             },
-            contractorExpenses,
-            vendorExpenses
+            contractor,
+            vendor
          );
-
-         return res.status(200).json({ status: true, msg: 'Expense updated successfully!' });
+         if (UpdateData.affectedRow) {
+            return res.status(200).json({
+               status: true,
+               msg: 'Expense updated successfully!',
+               data: [
+                  exp_id,
+                  {
+                     exp_date: exp_date,
+                     exp_name: exp_name,
+                     exp_remark: exp_remark,
+                     exp_amount: exp_amount,
+                  },
+                  contractor,
+                  vendor,
+               ],
+            });
+         }
       } catch (err) {
          console.error(err);
          return res.status(500).json({ status: false, msg: 'Failed to update expense', error: err.message });
