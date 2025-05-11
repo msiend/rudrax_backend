@@ -20,6 +20,7 @@ const uploadLabour_Images = createFileUploadMiddleware({
 });
 
 // [PROJECTS]-----------
+
 coreRouter.post('/core/project/upload/file', uploadProject_Files, (req, res, next) => {
    res.json({
       message: 'File uploaded successfully',
