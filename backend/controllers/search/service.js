@@ -1,7 +1,7 @@
 const pool = require('@/config/dbConfig');
 const entityQueries = require('@/models/search');
 
-async function searchEntities(searchTerm, entityType = 'all', page = 1, pageSize = 1) {
+async function searchEntities(searchTerm, entityType = 'all', page, pageSize) {
    const offset = (page - 1) * pageSize;
    let results = [];
    let totalCount = 0;

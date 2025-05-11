@@ -14,7 +14,7 @@ const searchEntities = async (req, res) => {
          query,
          type || 'all',
          parseInt(page) || 1,
-         parseInt(pageSize) || 2
+         parseInt(pageSize) || 3
       );
       res.json({
          status: true,
