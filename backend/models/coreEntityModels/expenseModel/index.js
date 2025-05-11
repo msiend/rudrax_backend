@@ -41,44 +41,31 @@ class ExpenseModel {
 
    static async updateExpenseWithTransaction(
       expId,
-      { expenseName, Amount, remarks, dateofexpense },
+      { expenseName, Amount, remarks, mode, dateofexpense },
       contractorExpenses = [],
       vendorExpenses = []
    ) {
       const conn = await pool.getConnection();
-
       try {
          await conn.beginTransaction();
-
-         // 1. Update main expense
-         await conn.query('UPDATE expenses SET exp_name=?, exp_amount=?, exp_remark=?, exp_date=? WHERE exp_id=?', [
-            expenseName,
-            Amount,
-            remarks,
-            dateofexpense,
-            expId,
-         ]);
-
-         // 2. Clear old payments
+         await conn.query(
+            'UPDATE expenses SET exp_name=?, exp_amount=?, exp_remark=?, exp_date=?,exp_mode=? WHERE exp_id=?',
+            [expenseName, Amount, remarks, dateofexpense, mode, expId]
+         );
          await conn.query('DELETE FROM contractor_payments WHERE pay_exp_id=?', [expId]);
          await conn.query('DELETE FROM vendor_payments WHERE pay_exp_id=?', [expId]);
-
-         // 3. Add new contractor payments
          for (const item of contractorExpenses) {
             await conn.query(
                'INSERT INTO contractor_payments (pay_con_id, pay_project_id, pay_amount, pay_note, pay_exp_id) VALUES (?, ?, ?, ?, ?)',
                [item.pay_con_id, item.pay_project_id, item.pay_amount.toString(), item.pay_note, expId]
             );
          }
-
-         // 4. Add new vendor payments
          for (const item of vendorExpenses) {
             await conn.query(
                'INSERT INTO vendor_payments (pay_vendor_id, pay_project_id, pay_amount, pay_note, pay_exp_id) VALUES (?, ?, ?, ?, ?)',
                [item.pay_vendor_id, item.pay_project_id, item.pay_amount.toString(), item.pay_note, expId]
             );
          }
-
          await conn.commit();
          return { affectedRow: true };
       } catch (error) {
