@@ -4,7 +4,7 @@ meta {
   seq: 3
 }
 
-post {
+put {
   url: {{URL.Core}}expense/update
   body: json
   auth: none
@@ -12,10 +12,10 @@ post {
 
 body:json {
   {
-    "exp_id": 9,
+    "exp_id": 11,
     "exp_name": "march expense kkl",
     "exp_amount": "20000",
-    "exp_mode": "UPI",
+    "exp_mode":"UPI",
     "exp_remark": "Bob da record 785",
     "exp_date": "2025-04-25",
     "contractor": [
@@ -38,6 +38,14 @@ body:json {
       },
       {
         "pay_vendor_id": 10,
+        "payment_mode": "UPI",
+        "pay_project_id": 9,
+        "pay_amount": "50000",
+        "pay_note": "fo 3 truck red soil",
+        "pay_exp_id": 23
+      },
+         {
+        "pay_vendor_id": null,
         "payment_mode": "UPI",
         "pay_project_id": 9,
         "pay_amount": "50000",

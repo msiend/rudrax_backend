@@ -2,7 +2,7 @@ const mysql = require('mysql2/promise');
 
 const con = mysql.createPool({
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 20,
   idleTimeout: 60000,
   host: process.env.MySQL_host,
   user: process.env.MySQL_user,
