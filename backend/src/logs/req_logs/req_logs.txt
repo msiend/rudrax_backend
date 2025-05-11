@@ -3120,3 +3120,25 @@
 20250511	12:59:27	fedb6018-257a-4187-9d4b-17b11d623f87	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
 20250511	13:00:12	afbe84c4-2a03-4653-8970-9f601e282081	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
 >>>>>>> bba59d1b093ab9c21b0250bf4a344dcb575a418d
+20250511	13:04:40	f0871ee5-d2d9-40d9-aea0-9c0e081a218c	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	13:04:47	7cbfc0e9-37bd-4d3b-965e-616ca0803d01	GET	http://127.0.0.1:5173	/api/v1/core/expense/get_expense_details/22
+20250511	13:04:49	cef1ff5f-8691-4f42-8547-bdb3cfafe756	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250511	13:04:49	fe020b71-cb57-4ce7-acea-7c9fffc9ce18	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250511	13:04:49	62838abf-18cf-403e-8ddb-1242cc15d5b1	GET	http://127.0.0.1:5173	/api/v1/entity/contractor/readAll
+20250511	13:04:49	1edef7c8-819a-421f-a400-c4d824aa3ea3	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250511	13:05:53	4f5f840a-aec5-4eb0-ad3c-43db59384800	POST	http://127.0.0.1:5173	/api/v1/core/expense/create
+20250511	13:06:16	500e2e49-d3fb-44da-b465-0eb766cc3080	GET	http://127.0.0.1:5173	/api/v1/core/expense/get_expense_details/29
+20250511	13:07:04	491ee94a-6b49-4578-a698-4cf49b4b12eb	PUT	http://127.0.0.1:5173	/api/v1/core/expense/update
+20250511	13:07:10	e2e8bdd3-e2bb-47cc-bd4f-7b27d9cfd519	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	13:07:17	9648f4bf-0aa8-4ae1-bd74-e3e0dd2d754a	GET	http://127.0.0.1:5173	/api/v1/core/expense/get_expense_details/29
+20250511	13:07:21	255100f2-4e96-44e4-b5e1-d15f0fccdae6	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250511	13:07:21	cf7399fd-427e-47b2-b52a-d346f4403511	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250511	13:07:21	80fa18ae-c1b3-40f8-a6f5-afe90f61f388	GET	http://127.0.0.1:5173	/api/v1/entity/contractor/readAll
+20250511	13:07:21	465facce-3a4b-40b7-9542-efce4f083e26	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250511	13:07:32	33c18ab4-08c9-4fb1-838a-5a2e78a881fb	PUT	http://127.0.0.1:5173	/api/v1/core/expense/update
+20250511	13:07:41	944b89d0-e450-4492-8365-dac705d59411	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	13:09:11	fa220532-43bb-4531-a888-adec4c099443	GET	undefined	/api/v1/entity/expense/readAll
+20250511	13:11:55	fe263434-b158-4001-b2b1-c583df40b2aa	POST	undefined	/api/auth/create/super-admin
+20250511	13:13:00	b8875b0c-2f01-4f68-83dd-438c4e81061c	POST	undefined	/api/auth/login/super-admin
+20250511	13:14:26	fd8eaab2-2f24-48e4-a740-6bfeded74860	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250511	13:22:21	767b8629-8945-4dc4-b3b2-94ef6afc24ef	POST	undefined	/api/v1/core/users/create/super_admin
