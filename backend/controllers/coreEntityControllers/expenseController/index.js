@@ -135,12 +135,12 @@ class ExpenseCoreController {
                msg: 'Expense updated successfully!',
                data: [
                   {
-                     exp_id: 'exp_id',
-                     exp_name: 'exp_name',
-                     exp_amount: 'exp_amount',
+                     exp_id: exp_id,
+                     exp_name: exp_name,
+                     exp_amount: exp_amount,
                      exp_mode: exp_mode,
-                     exp_remark: 'exp_remark',
-                     exp_date: 'exp_date',
+                     exp_remark: exp_remark,
+                     exp_date: exp_date,
                      contractor: contractor,
                      vendor: vendor,
                   },
