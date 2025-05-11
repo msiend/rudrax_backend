@@ -1,0 +1,25 @@
+meta {
+  name: search
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3500/api/v1/search?query=n&type=projects&page=1&pageSize=2
+  body: none
+  auth: inherit
+}
+
+params:query {
+  query: n
+  type: projects
+  page: 1
+  pageSize: 2
+}
+
+docs {
+  ## GET
+  ```
+  /api/search?q=construction&type=branch_clients&page=2&pageSize=20
+  ```
+}

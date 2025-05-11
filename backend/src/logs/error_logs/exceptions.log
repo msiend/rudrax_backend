@@ -3439,3 +3439,156 @@ ReferenceError: error is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-11 11:40:24 [ERROR] uncaughtException: Unexpected token ':'
+Z:\Visual_Codes\jagya_const\backend\controllers\search\service.js:46
+         data: [[entityType:EentityType],results],
+                           ^
+
+SyntaxError: Unexpected token ':'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\search\index.js:1:23)
+Z:\Visual_Codes\jagya_const\backend\controllers\search\service.js:46
+         data: [[entityType:EentityType],results],
+                           ^
+
+SyntaxError: Unexpected token ':'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\search\index.js:1:23)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\search\service.js:46
+           data: [[entityType:EentityType],results],
+                             ^
+  
+  SyntaxError: Unexpected token ':'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\search\index.js:1:23),
+  exception: true,
+  date: 'Sun May 11 2025 11:40:24 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17244,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 104869888,
+      heapTotal: 69853184,
+      heapUsed: 43989416,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 318536.906 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\search\\index.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
