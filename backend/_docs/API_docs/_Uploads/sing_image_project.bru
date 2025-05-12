@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: {{URL.Core}}project/upload/image
+  url: {{URL.Core}}project/upload/image/:pro_r_id
   body: multipartForm
   auth: inherit
+}
+
+params:path {
+  pro_r_id: 9
 }
 
 body:multipart-form {

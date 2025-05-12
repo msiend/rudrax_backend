@@ -1,11 +1,11 @@
 meta {
-  name: cl_doc-create
+  name: doc-create
   type: http
   seq: 4
 }
 
 post {
-  url: {{URL.Entity}}clientDocs/create
+  url: {{URL.Entity}}projectDocs/create
   body: json
   auth: bearer
 }
@@ -16,8 +16,8 @@ auth:bearer {
 
 body:json {
   {
-    "cl_r_id": "35",
-    "cl_doc_url": "https://example.com/documents/report_12345.pdf"
+    "pro_r_id": "35",
+    "pro_doc_url": "https://example.com/documents/report_12345.pdf"
   }
 }
 

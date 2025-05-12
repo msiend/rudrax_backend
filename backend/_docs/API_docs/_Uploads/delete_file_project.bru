@@ -1,17 +1,17 @@
 meta {
-  name: sing_file_project
+  name: delete_file_project
   type: http
-  seq: 1
+  seq: 4
 }
 
-post {
-  url: {{URL.Core}}project/upload/file/:pro_r_id
+delete {
+  url: {{URL.Core}}project/file/delete/:pro_r_id
   body: multipartForm
   auth: inherit
 }
 
 params:path {
-  pro_r_id: 
+  pro_r_id: 6
 }
 
 body:multipart-form {

@@ -68,7 +68,7 @@ app.use('/api/v1', appRoutes_search);
 ////
 ///// DEV Executions =================
 app._router.stack.forEach(print.bind(null, [])) 
-// app.use(require('express-status-monitor')())
+app.use(require('express-status-monitor')())
 ////////////////////////////////
 
 

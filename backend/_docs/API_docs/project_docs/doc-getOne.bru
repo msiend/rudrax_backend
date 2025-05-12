@@ -1,11 +1,11 @@
 meta {
-  name: cl_doc-getOne
+  name: doc-getOne
   type: http
   seq: 2
 }
 
 get {
-  url: {{URL.Entity}}clientDocs/readOne
+  url: {{URL.Entity}}projectDocs/readOne
   body: json
   auth: bearer
 }
@@ -16,7 +16,6 @@ auth:bearer {
 
 body:json {
   {
-    "cl_r_id": "35",
-    "cl_doc_id":"3"
+    "pro_doc_id":"8"
   }
 }
