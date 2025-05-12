@@ -20,10 +20,11 @@ class projectModel {
       const query = `
        SELECT pc.*,c.con_name FROM project_contractor pc JOIN contractors c ON c.con_id =pc.con_id WHERE pro_id = ?;
        SELECT pp.*,psp.*,phases.phase_name,phases.phase_alt_name FROM project_phase pp LEFT JOIN project_subphase psp ON psp.pro_phase=pp.pro_phase_id RIGHT JOIN phases ON pp.phase_id=phases.phase_id WHERE pp.pro_id =?;
+       SELECT pro_doc_id, pro_r_id, pro_doc_url FROM project_docs WHERE pro_r_id = ?;
   `;
       const connPool = await pool.getConnection();
       try {
-         const [rows] = await connPool.query(query, [pro_id, pro_id]);
+         const [rows] = await connPool.query(query, [pro_id, pro_id,pro_id]);
          return rows;
       } catch (error) {
          console.error('Error fetching project details:', error);

@@ -2484,3 +2484,16 @@
 20250512	13:06:53	ec1a7177-7679-40aa-8e30-e16c71c2889a	GET	undefined	/api/v1/entity/projectDocs/readOne
 20250512	13:07:44	7e5ab6c6-7259-4bbb-bf08-f69c72271905	POST	undefined	/api/v1/core/project/upload/image/9
 20250512	13:08:16	3fb97188-51ac-44f4-b477-f0a69c967378	GET	undefined	/public/project/images/image-34a17113-af97-4cc2-a081-60dab46dfa57-1747035464281.jpg
+20250512	13:18:28	92168b2f-1c66-408e-893f-ee7c17201910	GET	undefined	/api/v1/entity/project_contractor/readAll
+20250512	13:18:42	37176fc7-5e13-4ea0-bc79-82fb45055310	GET	undefined	/api/v1/entity/project_phase/readAll
+20250512	13:19:44	185ab137-7edc-4846-ac68-41d0b7bfeb25	GET	undefined	/api/v1/entity/material_item/readAll
+20250512	13:19:53	30cccd51-0b3d-4b0b-a97d-8bb4f7552f4a	GET	undefined	/api/v1/entity/material_item/readAll
+20250512	13:20:36	9352f41c-761e-4550-b1d1-513135012ee7	GET	undefined	/api/v1/entity/material_item/readOne
+20250512	13:20:40	84c386d4-8924-45a0-9b0c-91ded3f7314b	GET	undefined	/api/v1/entity/material_item/readOne
+20250512	13:21:22	d4598595-7122-4b93-9cfa-0aaf7c4b526a	GET	undefined	/api/v1/entity/material_item/readOne
+20250512	13:22:20	332bdd72-025e-4263-a679-6567e2cc248e	GET	undefined	/api/v1/core/material_req/status/material_delivery/15
+20250512	22:16:34	7d42f3d3-119b-44f0-a147-e15d532df8e1	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250512	22:18:09	3e9e0586-9abd-4fed-bd40-f27fe3e7d471	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250512	22:20:32	6c474eb1-eb16-4dfd-a4d3-99a025125100	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250512	22:20:34	87da9d18-5134-47c7-ac16-b822fd01e4e6	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250512	22:22:27	7e14fc13-4ad8-4f23-82f1-c2fb7598a5ee	GET	undefined	/api/v1/core/project/get_project_detail/9

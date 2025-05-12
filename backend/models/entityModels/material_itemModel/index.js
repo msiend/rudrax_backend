@@ -15,8 +15,8 @@ class MaterialItemModel {
       this.mr_delivery_status = mr_delivery_status;
    }
 
-   static async findAll() {
-      const query = 'SELECT * FROM material_item_list where ';
+   static async findAll(mr_item_id) {
+      const query = 'SELECT * FROM material_item_list WHERE mr_item_id = ? ';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
