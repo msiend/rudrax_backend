@@ -1,12 +1,12 @@
 meta {
-  name: cl_doc-update
+  name: doc-getAll
   type: http
-  seq: 5
+  seq: 1
 }
 
-put {
-  url: {{URL.Entity}}clientDocs/update
-  body: none
+get {
+  url: {{URL.Entity}}projectDocs/readAll
+  body: json
   auth: bearer
 }
 
@@ -16,6 +16,6 @@ auth:bearer {
 
 body:json {
   {
-  
+    "pro_r_id": 9
   }
 }

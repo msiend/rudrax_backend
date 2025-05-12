@@ -36,7 +36,7 @@ exports.create = async (req, res) => {
             msg: 'Something Went Wrong!',
          });
       }
-      return res.status(200).json({ status: true, msg: 'User Created Successfully!' });
+      return res.status(200).json({ status: true, msg: 'User Created Successfully! Now you can login ' });
    } catch (err) {
       console.log(err);
       return res.status(500).json({

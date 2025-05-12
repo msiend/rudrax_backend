@@ -1,0 +1,19 @@
+meta {
+  name: delete_file_project
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{URL.Core}}project/file/delete/:pro_r_id
+  body: multipartForm
+  auth: inherit
+}
+
+params:path {
+  pro_r_id: 6
+}
+
+body:multipart-form {
+  file: @file(C:\Users\BS\Downloads\Untitled document (2).pdf)
+}
