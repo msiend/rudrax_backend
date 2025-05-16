@@ -8,6 +8,7 @@ const VendorCoreController = require('@/controllers/coreEntityControllers/vendor
 const ExpenseCoreController = require('@/controllers/coreEntityControllers/expenseController');
 const MaterialCoreController = require('@/controllers/coreEntityControllers/material_reqController');
 const UsersCoreController = require('@/controllers/coreEntityControllers/usersController');
+const BranchClientsCoreController = require('@/controllers/coreEntityControllers/branch_clientController');
 
 // [CLIENT]-----------
 coreRouter.get('/core/client/get_lastRef', ClientCoreController.getClientsLastRef);
@@ -45,6 +46,7 @@ coreRouter.put('/core/users/updatePassword/:role/:id', UsersCoreController.updat
 coreRouter.put('/core/users/toggleStatus/:role/:id', UsersCoreController.toggleStatus);
 coreRouter.delete('/core/users/delete/:role/:id', UsersCoreController.remove);
 
-
+// [Branch Clients]-----------
+coreRouter.post('/core/branch_client/approve', BranchClientsCoreController.approveClientAndCreateProject);
 
 module.exports = coreRouter;

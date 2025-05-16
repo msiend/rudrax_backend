@@ -241,3 +241,708 @@ ReferenceError: error is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-16 17:25:14 [ERROR] unhandledRejection: Invalid request: admin_approval or b_client_id missing.
+Error: Invalid request: admin_approval or b_client_id missing.
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+Error: Invalid request: admin_approval or b_client_id missing.
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+{
+  error: Error: Invalid request: admin_approval or b_client_id missing.
+      at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+      at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+      at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+      at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+      at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12),
+  rejection: true,
+  date: 'Fri May 16 2025 17:25:14 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 1216,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 122908672,
+      heapTotal: 82755584,
+      heapUsed: 53078440,
+      external: 2429913,
+      arrayBuffers: 27523
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 771219.953 },
+  trace: [
+    {
+      column: 16,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\coreEntityControllers\\branch_clientController\\index.js',
+      function: 'approveClientAndCreateProject',
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'next',
+      line: 149,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.dispatch',
+      line: 119,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.process_params',
+      line: 346,
+      method: 'process_params',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'next',
+      line: 280,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.handle',
+      line: 175,
+      method: 'handle',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'router',
+      line: 47,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-16 17:25:54 [ERROR] unhandledRejection: Invalid request: admin_approval or b_client_id missing.
+Error: Invalid request: admin_approval or b_client_id missing.
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+Error: Invalid request: admin_approval or b_client_id missing.
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+{
+  error: Error: Invalid request: admin_approval or b_client_id missing.
+      at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:8:16)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+      at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+      at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+      at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+      at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12),
+  rejection: true,
+  date: 'Fri May 16 2025 17:25:54 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7528,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 102944768,
+      heapTotal: 63471616,
+      heapUsed: 27012296,
+      external: 2429913,
+      arrayBuffers: 27523
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 771260.078 },
+  trace: [
+    {
+      column: 16,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\coreEntityControllers\\branch_clientController\\index.js',
+      function: 'approveClientAndCreateProject',
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'next',
+      line: 149,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.dispatch',
+      line: 119,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.process_params',
+      line: 346,
+      method: 'process_params',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'next',
+      line: 280,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.handle',
+      line: 175,
+      method: 'handle',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'router',
+      line: 47,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-16 17:26:35 [ERROR] unhandledRejection: clientData is not defined
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+{
+  error: ReferenceError: clientData is not defined
+      at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+      at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+      at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+      at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+      at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12),
+  rejection: true,
+  date: 'Fri May 16 2025 17:26:35 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5688,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 124518400,
+      heapTotal: 82812928,
+      heapUsed: 52596328,
+      external: 2429913,
+      arrayBuffers: 27523
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 771301.078 },
+  trace: [
+    {
+      column: 26,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\coreEntityControllers\\branch_clientController\\index.js',
+      function: 'approveClientAndCreateProject',
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'next',
+      line: 149,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.dispatch',
+      line: 119,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.process_params',
+      line: 346,
+      method: 'process_params',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'next',
+      line: 280,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.handle',
+      line: 175,
+      method: 'handle',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'router',
+      line: 47,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-16 17:28:39 [ERROR] unhandledRejection: clientData is not defined
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+{
+  error: ReferenceError: clientData is not defined
+      at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:11:26)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+      at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+      at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+      at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+      at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12),
+  rejection: true,
+  date: 'Fri May 16 2025 17:28:39 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17132,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 71176192,
+      heapTotal: 29917184,
+      heapUsed: 26712664,
+      external: 2429766,
+      arrayBuffers: 27376
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 771425.828 },
+  trace: [
+    {
+      column: 26,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\coreEntityControllers\\branch_clientController\\index.js',
+      function: 'approveClientAndCreateProject',
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'next',
+      line: 149,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.dispatch',
+      line: 119,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.process_params',
+      line: 346,
+      method: 'process_params',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'next',
+      line: 280,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.handle',
+      line: 175,
+      method: 'handle',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'router',
+      line: 47,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-16 17:29:37 [ERROR] unhandledRejection: clientData is not defined
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:13:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+ReferenceError: clientData is not defined
+    at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:13:26)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+    at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12)
+{
+  error: ReferenceError: clientData is not defined
+      at approveClientAndCreateProject (Z:\Visual_Codes\jagya_const\backend\controllers\coreEntityControllers\branch_clientController\index.js:13:26)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:149:13)
+      at Route.dispatch (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:119:3)
+      at Layer.handle [as handle_request] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\layer.js:95:5)
+      at Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:284:15
+      at Function.process_params (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:346:12)
+      at next (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:280:10)
+      at Function.handle (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:175:3)
+      at router (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:47:12),
+  rejection: true,
+  date: 'Fri May 16 2025 17:29:37 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 1964,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 102924288,
+      heapTotal: 63995904,
+      heapUsed: 27052648,
+      external: 2429913,
+      arrayBuffers: 27523
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 771483.078 },
+  trace: [
+    {
+      column: 26,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\coreEntityControllers\\branch_clientController\\index.js',
+      function: 'approveClientAndCreateProject',
+      line: 13,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'next',
+      line: 149,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.dispatch',
+      line: 119,
+      method: 'dispatch',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\layer.js',
+      function: 'Layer.handle [as handle_request]',
+      line: 95,
+      method: 'handle [as handle_request]',
+      native: false
+    },
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: null,
+      line: 284,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.process_params',
+      line: 346,
+      method: 'process_params',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'next',
+      line: 280,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.handle',
+      line: 175,
+      method: 'handle',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'router',
+      line: 47,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
