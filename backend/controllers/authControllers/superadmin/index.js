@@ -65,10 +65,7 @@ exports.handleLogin = async (req, res) => {
    }
 
    try {
-      const start = Date.now();
       const result = await superAdminModel.findByLoginInfo(user_id);
-      console.log('DB Fetch Time:', Date.now() - start, 'ms');
-
       if (!result) {
          return res.status(404).json({ status: false, msg: 'User not found!' });
       }
@@ -94,10 +91,7 @@ exports.handleLogin = async (req, res) => {
       const refreshToken = jwt.sign({ user_id: result.user_id }, process.env.REFRESH_TOKEN_SECRET, {
          expiresIn: '30d',
       });
-      console.log('DB Fetch Time start: 2', Date.now(), 'ms');
       await superAdminModel.updateRefreshToken(result.id, refreshToken);
-      console.log('DB Fetch Time: 2', Date.now(), 'ms');
-
       res.cookie('jwt', refreshToken, {
          httpOnly: true,
          sameSite: 'None',
