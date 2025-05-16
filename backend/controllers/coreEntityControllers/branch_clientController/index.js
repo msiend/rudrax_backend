@@ -81,7 +81,7 @@ class BranchClientsController {
          );
 
          //  Update approval time
-         await conn.query(`UPDATE branch_clients SET approved_at = NOW() WHERE b_client_id = ?`, [b_client_id]);
+         await conn.query(`UPDATE branch_clients SET approved_at = NOW(), b_admin_approval=1 WHERE b_client_id = ?`, [b_client_id]);
 
          await conn.commit();
          conn.release();

@@ -2730,3 +2730,7 @@
 20250516	17:49:47	f5ef7f55-435b-452f-a776-dbe3b3b7fecf	POST	undefined	/api/v1/core/branch_client/approve
 20250516	17:49:48	a9e21bf3-1c52-40de-bf69-de223581fb9c	POST	undefined	/api/v1/core/branch_client/approve
 20250516	17:49:48	ad32850d-0a86-482f-bbd6-eda23098de03	POST	undefined	/api/v1/core/branch_client/approve
+20250516	17:53:16	a421a6a6-b4d0-4c1d-b373-8f1f4322c0c1	POST	undefined	/api/v1/core/branch_client/approve
+20250516	17:53:22	49e0d7fa-5dac-41ef-9ca5-91cf032d360a	POST	undefined	/api/v1/core/branch_client/approve
+20250516	17:53:28	9ed440b8-62cf-48ec-a8e6-b817123b19a8	GET	undefined	/api/v1/entity/branch_client/readAll
+20250516	17:54:03	0b2ec7bf-b8e0-45cc-9504-eaa94acdc121	POST	undefined	/api/v1/core/branch_client/approve
