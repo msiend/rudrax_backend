@@ -69,15 +69,16 @@ class MaterialRequestController {
    }
 
    static async remove(req, res) {
-      const { mr_r_id } = req.params;
+      const { id } = req.body;
+
       try {
-         const isDeleted = await MaterialRequestModel.remove(mr_r_id);
+         const isDeleted = await MaterialRequestModel.remove(id);
          if (!isDeleted) {
             return res.status(404).send({ status: false, msg: 'Material request not found', data: null });
          }
-         return res.status(200).send({ status: true, msg: 'Material request deleted successfully', data: null });
+         return res.status(200).send({ status: true, msg: 'Material request deleted successfully', data: {mr_r_id: id} });
       } catch (error) {
-         console.error(`Error deleting material request with ID ${mr_r_id}:`, error);
+         console.error(`Error deleting material request with ID ${id}:`, error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
       }
    }

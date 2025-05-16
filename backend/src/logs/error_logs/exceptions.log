@@ -3592,6 +3592,7 @@ SyntaxError: Unexpected token ':'
   ],
   [Symbol(level)]: 'error'
 }
+<<<<<<< HEAD
 2025-05-11 13:02:24 [ERROR] uncaughtException: listen EADDRINUSE: address already in use :::3500
 Error: listen EADDRINUSE: address already in use :::3500
     at Server.setupListenHandle [as _listen2] (node:net:1912:16)
@@ -3669,19 +3670,137 @@ Error: listen EADDRINUSE: address already in use :::3500
       file: 'node:net',
       function: 'listenInCluster',
       line: 1969,
+=======
+2025-05-14 18:46:21 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:46:21 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 13356,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106094592,
+      heapTotal: 69181440,
+      heapUsed: 43366392,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603288.64 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: null,
       native: false
     },
     {
+<<<<<<< HEAD
       column: 7,
       file: 'node:net',
       function: 'Server.listen',
       line: 2074,
       method: 'listen',
+=======
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       native: false
     },
     {
       column: 24,
+<<<<<<< HEAD
       file: 'M:\\jagya-contruction\\jagya_const\\backend\\node_modules\\express\\lib\\application.js',
       function: 'Function.listen',
       line: 635,
@@ -3693,6 +3812,35 @@ Error: listen EADDRINUSE: address already in use :::3500
       file: 'M:\\jagya-contruction\\jagya_const\\backend\\app.js',
       function: null,
       line: 75,
+=======
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: null,
       native: false
     },
@@ -3700,7 +3848,11 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 14,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._compile',
+<<<<<<< HEAD
       line: 1565,
+=======
+      line: 1546,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: '_compile',
       native: false
     },
@@ -3708,7 +3860,1617 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 10,
       file: 'node:internal/modules/cjs/loader',
       function: 'Object..js',
+<<<<<<< HEAD
       line: 1708,
+=======
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:46:29 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:46:29 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10900,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 105750528,
+      heapTotal: 68976640,
+      heapUsed: 42899472,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603296.984 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:46:32 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:46:32 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 13908,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106438656,
+      heapTotal: 69443584,
+      heapUsed: 43380016,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603300 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:46:43 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:46:43 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10076,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106053632,
+      heapTotal: 69124096,
+      heapUsed: 43533696,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603310.953 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:46:46 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:46:46 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6092,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106393600,
+      heapTotal: 69386240,
+      heapUsed: 43660176,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603313.375 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:47:31 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:47:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 4180,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106688512,
+      heapTotal: 70000640,
+      heapUsed: 44921416,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603359.031 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:47:33 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:47:33 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 16808,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106156032,
+      heapTotal: 69238784,
+      heapUsed: 42912984,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603360.625 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:47:48 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:47:48 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 4016,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106635264,
+      heapTotal: 69443584,
+      heapUsed: 43365920,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603375.546 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:48:08 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:23)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:48:08 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 14056,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106520576,
+      heapTotal: 69853184,
+      heapUsed: 44270608,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603395.078 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 23,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:48:56 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:28)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+Require stack:
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+- Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+- Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+- Z:\Visual_Codes\jagya_const\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:28)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\jagya_const\backend\queries\entityQueries'
+  Require stack:
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js
+  - Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js
+  - Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js
+  - Z:\Visual_Codes\jagya_const\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\jagya_const\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:2:28)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Wed May 14 2025 18:48:56 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10576,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106508288,
+      heapTotal: 69648384,
+      heapUsed: 43659720,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603443.734 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 28,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\service.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:49:19 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:49:19 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 12732,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 105984000,
+      heapTotal: 69181440,
+      heapUsed: 43218824,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603466.843 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 26,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: '.js',
       native: false
     },
@@ -3732,13 +5494,52 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 14,
       file: 'node:diagnostics_channel',
       function: 'TracingChannel.traceSync',
+<<<<<<< HEAD
       line: 322,
       method: 'traceSync',
       native: false
+=======
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
     }
   ],
   [Symbol(level)]: 'error'
 }
+<<<<<<< HEAD
 2025-05-11 13:03:34 [ERROR] uncaughtException: listen EADDRINUSE: address already in use :::3500
 Error: listen EADDRINUSE: address already in use :::3500
     at Server.setupListenHandle [as _listen2] (node:net:1912:16)
@@ -3840,6 +5641,71 @@ Error: listen EADDRINUSE: address already in use :::3500
       file: 'M:\\jagya-contruction\\jagya_const\\backend\\app.js',
       function: null,
       line: 75,
+=======
+2025-05-14 18:49:31 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:49:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6680,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106676224,
+      heapTotal: 69705728,
+      heapUsed: 43391600,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603479.031 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 26,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: null,
       native: false
     },
@@ -3847,7 +5713,11 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 14,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._compile',
+<<<<<<< HEAD
       line: 1565,
+=======
+      line: 1546,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: '_compile',
       native: false
     },
@@ -3855,7 +5725,11 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 10,
       file: 'node:internal/modules/cjs/loader',
       function: 'Object..js',
+<<<<<<< HEAD
       line: 1708,
+=======
+      line: 1689,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       method: '.js',
       native: false
     },
@@ -3879,6 +5753,7 @@ Error: listen EADDRINUSE: address already in use :::3500
       column: 14,
       file: 'node:diagnostics_channel',
       function: 'TracingChannel.traceSync',
+<<<<<<< HEAD
       line: 322,
       method: 'traceSync',
       native: false
@@ -3930,6 +5805,900 @@ Error: connect ECONNREFUSED ::1:3306
       function: 'TCPConnectWrap.afterConnect [as oncomplete]',
       line: 1615,
       method: 'afterConnect [as oncomplete]',
+=======
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:49:38 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:49:38 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10092,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106528768,
+      heapTotal: 69386240,
+      heapUsed: 43671608,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603485.562 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 26,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:50:19 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:50:19 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5864,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106377216,
+      heapTotal: 69386240,
+      heapUsed: 43830608,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603526.968 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 26,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:50:31 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:26:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:50:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 2416,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106496000,
+      heapTotal: 69443584,
+      heapUsed: 43377912,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603538.281 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 26,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:50:36 [ERROR] uncaughtException: getPaginatedResults is not defined
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:24:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+ReferenceError: getPaginatedResults is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:24:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30)
+{
+  error: ReferenceError: getPaginatedResults is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:24:20)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:3:30),
+  exception: true,
+  date: 'Wed May 14 2025 18:50:36 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7424,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106323968,
+      heapTotal: 69648384,
+      heapUsed: 43830704,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603544.031 },
+  trace: [
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 24,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 3,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 18:50:42 [ERROR] uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:6:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:6:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+{
+  error: Error: Route.get() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\route.js:216:15)
+      at proto.<computed> [as get] (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\routers\paginationApi.js:6:8)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12),
+  exception: true,
+  date: 'Wed May 14 2025 18:50:42 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5332,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106348544,
+      heapTotal: 69328896,
+      heapUsed: 44101592,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 603549.375 },
+  trace: [
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as get]',
+      line: 216,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'proto.<computed> [as get]',
+      line: 521,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\routers\\paginationApi.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-14 19:19:51 [ERROR] uncaughtException: Unexpected token '...'
+Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:23
+         data: [{entity:entity}...rows],
+                               ^^^
+
+SyntaxError: Unexpected token '...'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:1:27)
+Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:23
+         data: [{entity:entity}...rows],
+                               ^^^
+
+SyntaxError: Unexpected token '...'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:1:27)
+{
+  error: Z:\Visual_Codes\jagya_const\backend\controllers\pagination\service.js:23
+           data: [{entity:entity}...rows],
+                                 ^^^
+  
+  SyntaxError: Unexpected token '...'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\controllers\pagination\index.js:1:27),
+  exception: true,
+  date: 'Wed May 14 2025 19:19:51 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6496,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106258432,
+      heapTotal: 69443584,
+      heapUsed: 43092704,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 605298.218 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\controllers\\pagination\\index.js',
+      function: null,
+      line: 1,
+      method: null,
+>>>>>>> c69ae3dff2df94cd34cf3ad3cae01b82961a336e
       native: false
     }
   ],

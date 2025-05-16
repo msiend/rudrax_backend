@@ -49,7 +49,8 @@ exports.create = async (req, res) => {
 };
 exports.handleLogin = async (req, res) => {
    const { user_id, password } = req.body;
-   if (!user_id || !password) return res.status(400).json({ status: false, message: 'user_id and password are required.' });
+   if (!user_id || !password)
+      return res.status(400).json({ status: false, message: 'user_id and password are required.' });
    const schema = Joi.object({
       user_id: Joi.string().required().messages({
          'any.required': 'User ID is required!',
@@ -119,6 +120,7 @@ exports.handleLogin = async (req, res) => {
       });
    }
 };
+
 exports.handleRefreshToken = async (req, res) => {
    const cookies = req.cookies;
    if (!cookies?.jwt) return res.status(204).json({ status: true, msg: 'Refresh Failed! No Content' });
