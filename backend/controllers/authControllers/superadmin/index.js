@@ -49,77 +49,77 @@ exports.create = async (req, res) => {
 };
 exports.handleLogin = async (req, res) => {
    const { user_id, password } = req.body;
-   if (!user_id || !password)
+
+   if (!user_id || !password) {
       return res.status(400).json({ status: false, message: 'user_id and password are required.' });
+   }
+
    const schema = Joi.object({
-      user_id: Joi.string().required().messages({
-         'any.required': 'User ID is required!',
-      }),
-      password: Joi.string().required().messages({
-         'any.required': 'Password is required!',
-      }),
+      user_id: Joi.string().required().messages({ 'any.required': 'User ID is required!' }),
+      password: Joi.string().required().messages({ 'any.required': 'Password is required!' }),
    });
 
-   try {
-      const { user_id, password } = req.body;
-      const { error } = schema.validate({ user_id, password });
-      if (error) {
-         return res.status(400).json({
-            err: error,
-            status: false,
-            msg: error.message,
-         });
-      }
-      const result = await superAdminModel.findByLoginInfo(user_id);
-      if (!result) {
-         return res.status(500).json({
-            status: false,
-            msg: 'Something Wrong , While Login!',
-         });
-      }
-      const match = await bcrypt.compare(password, result.password);
-      if (match) {
-         // const roles = Object.values(ROLES_LIST);
-         const roles = ROLES_LIST.SuperAdmin;
-         const accessToken = jwt.sign(
-            {
-               UserInfo: {
-                  user_id: result.id,
-                  user_id: result.user_id,
-                  roles: roles,
-               },
-            },
-            process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '10d' }
-         );
-         const refreshToken = jwt.sign({ user_id: result.user_id }, process.env.REFRESH_TOKEN_SECRET, {
-            expiresIn: '30d',
-         });
+   const { error } = schema.validate({ user_id, password });
+   if (error) {
+      return res.status(400).json({ status: false, message: error.message });
+   }
 
-         await superAdminModel.updateRefreshToken(result.id, refreshToken);
-         res.cookie('jwt', refreshToken, {
-            httpOnly: true,
-            sameSite: 'None',
-            secure: false,
-            maxAge: 24 * 60 * 60 * 1000,
-         }); // 1day=24 * 60 * 60 * 1000
-         return res.status(200).json({ status: true, msg: 'Successfully Login !', data: [accessToken, refreshToken] });
-      } else {
-         return res.status(400).json({
-            status: false,
-            message: 'Invalid user_id or password!',
-         });
+   try {
+      const start = Date.now();
+      const result = await superAdminModel.findByLoginInfo(user_id);
+      console.log('DB Fetch Time:', Date.now() - start, 'ms');
+
+      if (!result) {
+         return res.status(404).json({ status: false, msg: 'User not found!' });
       }
+
+      const match = await bcrypt.compare(password, result.password);
+      if (!match) {
+         return res.status(400).json({ status: false, message: 'Invalid user_id or password!' });
+      }
+
+      const roles = ROLES_LIST.SuperAdmin;
+      const accessToken = jwt.sign(
+         {
+            UserInfo: {
+               user_id: result.id,
+               user_id_alias: result.user_id,
+               roles: roles,
+            },
+         },
+         process.env.ACCESS_TOKEN_SECRET,
+         { expiresIn: '10d' }
+      );
+
+      const refreshToken = jwt.sign({ user_id: result.user_id }, process.env.REFRESH_TOKEN_SECRET, {
+         expiresIn: '30d',
+      });
+      console.log('DB Fetch Time start: 2', Date.now(), 'ms');
+      await superAdminModel.updateRefreshToken(result.id, refreshToken);
+      console.log('DB Fetch Time: 2', Date.now(), 'ms');
+
+      res.cookie('jwt', refreshToken, {
+         httpOnly: true,
+         sameSite: 'None',
+         secure: false,
+         maxAge: 24 * 60 * 60 * 1000,
+      });
+
+      return res.status(200).json({
+         status: true,
+         msg: 'Successfully Logged in!',
+         data: { accessToken, refreshToken },
+      });
    } catch (err) {
-      console.log(err);
+      console.error('Login Error:', err.message);
       return res.status(500).json({
          status: false,
-         errMsg: err.message,
-         error: err,
-         msg: 'Something Went Wrong! Internal Server Error',
+         message: 'Something Went Wrong! Internal Server Error',
+         error: err.message,
       });
    }
 };
+
 exports.handleRefreshToken = async (req, res) => {
    const cookies = req.cookies;
    if (!cookies?.jwt) return res.status(204).json({ status: true, msg: 'Refresh Failed! No Content' });
