@@ -1,0 +1,19 @@
+meta {
+  name: aprove
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3500/api/v1/core/branch_client/approve
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "client_id": null,
+    "b_client_id": 13,
+    "admin_approval": true
+  }
+}
