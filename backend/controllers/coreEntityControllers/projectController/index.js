@@ -56,6 +56,8 @@ class projectCoreController {
 
                   return acc;
                }, []) || [],
+            documents: rawData[2],
+            
          };
 
          res.status(200).send({

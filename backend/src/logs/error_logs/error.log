@@ -288,3 +288,101 @@ ReferenceError: error is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-15 13:01:10 [ERROR] unhandledRejection: connect ECONNREFUSED ::1:3306
+Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16)
+Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16)
+{
+  error: Error: connect ECONNREFUSED ::1:3306
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '::1',
+    port: 3306,
+    fatal: true
+  },
+  rejection: true,
+  date: 'Thu May 15 2025 13:01:10 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7916,
+    uid: null,
+    gid: null,
+    cwd: 'M:\\jagya-contruction\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.12.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'M:\\jagya-contruction\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 115798016,
+      heapTotal: 73797632,
+      heapUsed: 47502192,
+      external: 2432351,
+      arrayBuffers: 27347
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 148.187 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'TCPConnectWrap.afterConnect [as oncomplete]',
+      line: 1615,
+      method: 'afterConnect [as oncomplete]',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-15 13:46:45 [ERROR] unhandledRejection: connect ECONNREFUSED ::1:3306
+Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16)
+Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16)
+{
+  error: Error: connect ECONNREFUSED ::1:3306
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1615:16) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '::1',
+    port: 3306,
+    fatal: true
+  },
+  rejection: true,
+  date: 'Thu May 15 2025 13:46:45 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 13036,
+    uid: null,
+    gid: null,
+    cwd: 'M:\\jagya-contruction\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.12.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'M:\\jagya-contruction\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 115851264,
+      heapTotal: 73740288,
+      heapUsed: 47939520,
+      external: 2432351,
+      arrayBuffers: 27347
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 905.625 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'TCPConnectWrap.afterConnect [as oncomplete]',
+      line: 1615,
+      method: 'afterConnect [as oncomplete]',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

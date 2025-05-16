@@ -19,7 +19,7 @@ exports.create = async (req, res) => {
       const { id, user_id, password, cpassword } = req.body;
       console.log(req.body);
 
-      const { error } = schema.validate({ id, user_id,  password, cpassword });
+      const { error } = schema.validate({ id, user_id, password, cpassword });
       if (error) {
          return res.status(400).json({
             err: error,
@@ -29,7 +29,7 @@ exports.create = async (req, res) => {
       }
       const salt = bcrypt.genSaltSync(12);
       const hash = bcrypt.hashSync(password, salt);
-      const result = await superAdminModel.create(id, user_id,  hash);
+      const result = await superAdminModel.create(id, user_id, hash);
       if (!result.status) {
          return res.status(500).json({
             status: false,
@@ -102,7 +102,7 @@ exports.handleLogin = async (req, res) => {
             secure: false,
             maxAge: 24 * 60 * 60 * 1000,
          }); // 1day=24 * 60 * 60 * 1000
-         return res.status(200).json({ status: true, msg: 'Successfully Login !', accessToken, refreshToken });
+         return res.status(200).json({ status: true, msg: 'Successfully Login !', data: { role: "super_admin", accessToken, refreshToken } });
       } else {
          return res.status(400).json({
             status: false,
