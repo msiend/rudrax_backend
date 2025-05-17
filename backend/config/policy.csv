@@ -1,8 +1,0 @@
-p, superadmin, data, read
-p, admin, data, write
-p, manager, data, read
-p, viewer, data, read
-
-g, alice, admin
-g, var, manager
-g, char, viewer
