@@ -3,7 +3,8 @@
 # === CONFIGURATION ===
 DB_NAME="jagya_db"
 DB_USER="reynrel01"
-DB_PASSWORD="your_db_password"
+DB_PASSWORD='reynrel01@vpsHOST$#'
+
 
 # Path to the cloned repo (update if it's different)
 REPO_PATH="./_docs/database/"
