@@ -22,7 +22,7 @@ const ProjectPhaseController = {
    async create(req, res) {
       try {
          const insertId = await ProjectPhaseModel.create(req.body);
-         res.status(201).send({ status: true, msg: 'Project phase created', data: { insertId } });
+         res.status(201).send({ status: true, msg: 'Project phase created', data: { pro_phase_id: insertId, ...req.body } });
       } catch (err) {
          console.log(err);
 

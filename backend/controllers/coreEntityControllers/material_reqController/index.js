@@ -132,7 +132,7 @@ class MaterialItemUpdateController {
          return res.status(200).send({
             status: true,
             msg: 'Material requests retrieved successfully',
-            data: [{ ...requests[0][0], matrial_items: requests[1] }],
+            data: { ...requests[0][0], materialItemsData: requests[1] },
          });
       } catch (error) {
          console.error('Error fetching material requests:', error);

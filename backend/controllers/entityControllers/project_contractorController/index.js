@@ -22,7 +22,7 @@ const ProjectContractorController = {
    async create(req, res) {
       try {
          const insertId = await ProjectContractorModel.create(req.body);
-         res.status(201).send({ status: true, msg: 'Project contractor created', data: { insertId } });
+         res.status(201).send({ status: true, msg: 'Project contractor created', data: { pro_con_id: insertId, ...req.body } });
       } catch (err) {
          res.status(500).send({ status: false, msg: 'Error creating project contractor', data: null });
       }

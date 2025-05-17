@@ -31,6 +31,8 @@ coreRouter.get('/core/project/get_project_detail/:pro_id', ProjectCoreController
 coreRouter.post('/core/material_req/create', MaterialCoreController.insertMaterialRequestWithItems);
 coreRouter.get('/core/material_req/readAll', MaterialCoreController.readAll);
 coreRouter.get('/core/material_req/realAll_by_materialId/:id', MaterialCoreController.findAllByMatrialReqId);
+coreRouter.put('/core/material_req/update', MaterialCoreController.updateMaterialItemList);
+
 coreRouter.put('/core/material_req/update_by_materialId', MaterialCoreController.updateMaterialItemList);
 coreRouter.get('/core/material_req/status/finance_dep/:mr_item_id', MaterialCoreController.updateFdApproval);
 coreRouter.get('/core/material_req/status/material_dep/:mr_item_id', MaterialCoreController.updateMdApproval);
