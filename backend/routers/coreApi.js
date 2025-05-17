@@ -2,7 +2,7 @@ require('module-alias/register');
 
 const express = require('express');
 const coreRouter = express.Router();
-const ClientCoreController = require('@/controllers/coreEntityControllers/clientController');
+const ClientCoreController = require('@/controllers/coreEntityControllers/clientController/index.js');
 const ProjectCoreController = require('@/controllers/coreEntityControllers/projectController');
 const VendorCoreController = require('@/controllers/coreEntityControllers/vendorController');
 const ExpenseCoreController = require('@/controllers/coreEntityControllers/expenseController');
