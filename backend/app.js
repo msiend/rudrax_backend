@@ -11,7 +11,7 @@ const credentials = require('@/middleware/credentials');
 const jwt_authenticationVerify = require('@/middleware/verifyJWT');
 
 const PORT = process.env.PORT || 3500;
-require('dotenv').config({ path: '.env.development' });
+require('dotenv').config({ path: '.env.production' });
 require('@/config/dbConfig');
 
 app.use(cors());
