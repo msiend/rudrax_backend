@@ -6,7 +6,7 @@ DB_USER="your_db_user"
 DB_PASSWORD="your_db_password"
 
 # Path to the cloned repo (update if it's different)
-REPO_PATH="./_docs/database/jagya_db.sql"
+REPO_PATH="./_docs/database/"
 
 # Name of the .sql file in your repo
 SQL_FILE="jagya_db.sql"
