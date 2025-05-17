@@ -7127,3 +7127,297 @@ ReferenceError: clientData is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-05-16 18:07:14 [ERROR] uncaughtException: listen EADDRINUSE: address already in use :::3500
+Error: listen EADDRINUSE: address already in use :::3500
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+Error: listen EADDRINUSE: address already in use :::3500
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+{
+  error: Error: listen EADDRINUSE: address already in use :::3500
+      at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+      at listenInCluster (node:net:1964:12)
+      at Server.listen (node:net:2066:7)
+      at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14) {
+    code: 'EADDRINUSE',
+    errno: -4091,
+    syscall: 'listen',
+    address: '::',
+    port: 3500
+  },
+  exception: true,
+  date: 'Fri May 16 2025 18:07:14 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7608,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 123318272,
+      heapTotal: 82288640,
+      heapUsed: 51028080,
+      external: 2427349,
+      arrayBuffers: 27007
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 773739.921 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1907,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1964,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 2066,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 65,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-05-16 18:07:21 [ERROR] uncaughtException: listen EADDRINUSE: address already in use :::3500
+Error: listen EADDRINUSE: address already in use :::3500
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+Error: listen EADDRINUSE: address already in use :::3500
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+{
+  error: Error: listen EADDRINUSE: address already in use :::3500
+      at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+      at listenInCluster (node:net:1964:12)
+      at Server.listen (node:net:2066:7)
+      at Function.listen (Z:\Visual_Codes\jagya_const\backend\node_modules\express\lib\application.js:635:24)
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:65:5)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14) {
+    code: 'EADDRINUSE',
+    errno: -4091,
+    syscall: 'listen',
+    address: '::',
+    port: 3500
+  },
+  exception: true,
+  date: 'Fri May 16 2025 18:07:21 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 13016,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 123875328,
+      heapTotal: 82345984,
+      heapUsed: 50723888,
+      external: 2427349,
+      arrayBuffers: 27007
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 773747.812 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1907,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1964,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 2066,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\node_modules\\express\\lib\\application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 65,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

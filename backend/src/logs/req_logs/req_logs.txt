@@ -2802,3 +2802,6 @@
 20250516	18:06:06	97e999ae-f489-4d37-8ad2-3ec4455427f7	POST	undefined	/api/auth/login/super-admin
 20250516	18:06:08	920fbdc0-22d0-44b9-befe-cf29b27c1479	POST	undefined	/api/auth/login/super-admin
 20250516	18:06:08	df06e71f-419d-404a-abb3-24b0cb895a72	POST	undefined	/api/auth/login/super-admin
+20250516	18:09:21	5b28b4fb-124f-4a4b-aef7-c1e776e71285	GET	http://127.0.0.1:5173	/api/v1/entity/branch_data/readAll
+20250516	18:09:24	1bad64a4-9fe2-42be-9159-d5e11aa2ff07	GET	http://127.0.0.1:5173	/api/v1/entity/branch_client/readAll
+20250516	18:41:53	050072de-fa28-471f-a62c-d7fd137b2390	POST	undefined	/api/v1/core/users/create/super_admin

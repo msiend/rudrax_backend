@@ -3,3 +3,5 @@
 ../frontend
 /logs/** 
 /public
+/src/logs/req_logs/req_logs.txt
+/src/logs/error_logs/exceptions.log
