@@ -4,6 +4,21 @@ const pool = require('@/config/dbConfig');
 
 class BranchClientsController {
    // Get all branch clients
+    static async getBranchLastRef(req, res) {
+      try {
+         const [data] = await BranchClientsModel.getLastBranchRef();
+         let lastNum = parseInt(data['b_client_id'].slice(-4));
+         let newRef = data['b_client_id'].replace(lastNum, lastNum + 1);
+         return res.status(200).send({
+            status: true,
+            msg: 'Clients Ref retrieved successfully',
+            data: { lastRefNo: data['b_client_id'], newRefNo: newRef },
+         });
+      } catch (error) {
+         console.error('Error fetching clients:', error);
+         return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
+      }
+   }
    static async approveClientAndCreateProject(req, res) {
       const { client_id, b_client_id, admin_approval } = req.body;
 

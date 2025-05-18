@@ -17,6 +17,19 @@ class BranchClientsModel {
          connPool.release();
       }
    }
+      static async getLastBranchRef() {
+      const query = 'SELECT b_client_ref_no FROM branch_clients ORDER BY b_client_id DESC LIMIT 1';
+      const connPool = await pool.getConnection();
+      try {
+         const [rows] = await connPool.query(query);
+         return rows;
+      } catch (error) {
+         console.error('Error retrieving all clients:', error);
+         throw error;
+      } finally {
+         connPool.release();
+      }
+   }
 }
 
 module.exports = BranchClientsModel;

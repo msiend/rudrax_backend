@@ -1,5 +1,6 @@
 //Hello, this is a Controller for branchClients!
 const BranchClientsModel = require('@/models/entityModels/branchClientsModel');
+const BranchCoreClientsModel = require('@/models/coreEntityModels/branch_clientModel');
 
 class BranchClientsController {
    // Get all branch clients
@@ -34,7 +35,6 @@ class BranchClientsController {
          const {
             b_r_id,
             b_client_name,
-            b_client_ref_no,
             b_client_contact,
             b_client_alt_contact,
             b_client_address,
@@ -48,15 +48,22 @@ class BranchClientsController {
             b_client_commision,
          } = req.body;
 
-         if (!b_r_id || !b_client_name || !b_client_ref_no || !b_client_contact) {
+         if (!b_r_id || !b_client_name || !b_client_contact) {
             return res
                .status(400)
                .send({ status: false, msg: 'Branch ID, Client Name, Reference No, and Contact are required' });
          }
+         let [data] = await BranchCoreClientsModel.getLastBranchRef();
+         let newBranch_Id;
+          if (data) {
+        let lastNum = parseInt(data['b_client_ref_no'].slice(-4));
+         newBranch_Id = data['b_client_ref_no'].replace(lastNum, lastNum + 1);
+      } else { newBranch_Id = 'JGCC_BR0001'; }
+         
          const newId = await BranchClientsModel.create({
             b_r_id,
             b_client_name,
-            b_client_ref_no,
+            newBranch_Id,
             b_client_contact,
             b_client_alt_contact,
             b_client_address,
@@ -77,7 +84,7 @@ class BranchClientsController {
                   b_client_id: newId,
                   b_r_id: b_r_id,
                   b_client_name: b_client_name,
-                  b_client_ref_no: b_client_ref_no,
+                  b_client_ref_no: newBranch_Id,
                   b_client_contact: b_client_contact,
                   b_client_alt_contact: b_client_alt_contact,
                   b_client_address: b_client_address,
@@ -159,18 +166,6 @@ class BranchClientsController {
          return res.status(200).send({ status: true, msg: 'Branch client deleted successfully' });
       } catch (error) {
          console.error('Error deleting branch client:', error);
-         return res.status(500).send({ status: false, msg: 'Internal Server Error' });
-      }
-   }
-
-   // Paginate branch clients
-   static async paginate(req, res) {
-      try {
-         const { page = 1, limit = 10 } = req.query;
-         //   const data = await BranchClientsModel.paginate(parseInt(page), parseInt(limit));
-         return res.status(200).send({ status: true, msg: 'Branch clients retrieved successfully', data });
-      } catch (error) {
-         console.error('Error paginating branch clients:', error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error' });
       }
    }
