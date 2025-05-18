@@ -1,17 +1,17 @@
 const pool = require('@/config/dbConfig');
 
 class BranchAuthModel {
-   constructor(br_a_id, br_r_id, br_email, br_password, br_token, br_isactive) {
+   constructor(br_a_id, br_r_id, br_user_id, br_password, br_token, br_isactive) {
       this.br_a_id = br_a_id;
       this.br_r_id = br_r_id;
-      this.br_email = br_email;
+      this.br_user_id = br_user_id;
       this.br_password = br_password;
       this.br_token = br_token;
       this.br_isactive = br_isactive;
    }
 
    static async findAll() {
-      const query = 'SELECT br_a_id, br_r_id, br_email, br_password FROM branch_auth';
+      const query = 'SELECT br_a_id, br_r_id, br_user_id, br_password FROM branch_auth';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
@@ -24,7 +24,7 @@ class BranchAuthModel {
    }
 
    static async findOne(id) {
-      const query = 'SELECT br_a_id, br_r_id, br_email, br_password FROM branch_auth WHERE br_a_id = ?';
+      const query = 'SELECT br_a_id, br_r_id, br_user_id, br_password FROM branch_auth WHERE br_a_id = ?';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query, [id]);
@@ -36,12 +36,13 @@ class BranchAuthModel {
       }
    }
 
-   static async create(br_r_id, br_email, br_password) {
-      const query = 'INSERT INTO branch_auth (br_r_id, br_email, br_password) VALUES (?, ?, ?)';
+   static async create(br_r_id, br_user_id, br_password) {
+      // const query = 'INSERT INTO branch_auth (br_r_id, br_user_id, br_password) VALUES (?, ?, ?)';
+      const query = ' UPDATE branch_auth SET  br_user_id = ?, br_password = ? WHERE br_r_id = ?';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [br_r_id, br_email, br_password]);
-         return result;
+         const [result] = await connPool.query(query, [br_user_id, br_password, br_r_id]);
+         return result.affectedRows>0;
       } catch (error) {
          console.error('Error creating branch auth record:', error);
       } finally {
@@ -49,11 +50,11 @@ class BranchAuthModel {
       }
    }
 
-   static async update(id, br_r_id, br_email, br_password) {
-      const query = 'UPDATE branch_auth SET br_r_id = ?, br_email = ?, br_password = ? WHERE br_a_id = ?';
+   static async update(id, br_r_id, br_user_id, br_password) {
+      const query = 'UPDATE branch_auth SET br_r_id = ?, br_user_id = ?, br_password = ? WHERE br_a_id = ?';
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [br_r_id, br_email, br_password, id]);
+         const [result] = await connPool.query(query, [br_r_id, br_user_id, br_password, id]);
          return result.affectedRows > 0;
       } catch (error) {
          console.error(`Error updating branch auth record with ID ${id}:`, error);
@@ -61,19 +62,19 @@ class BranchAuthModel {
          connPool.release();
       }
    }
-   static async findByLoginInfo(email) {
+   static async findByLoginInfo(br_user_id) {
       const promisePool = await pool.getConnection();
       const selectUserSQL =
-         'SELECT br_a_id as id, br_email as email, br_password as password FROM branch_auth WHERE br_email = ? LIMIT 0,1';
+         'SELECT br_a_id as id, br_user_id as user_id, br_password as password FROM branch_auth WHERE br_user_id = ? LIMIT 0,1';
       try {
-         const [rows] = await promisePool.query(selectUserSQL, [email]);
+         const [rows] = await promisePool.query(selectUserSQL, [br_user_id]);
          if (rows.length > 0) {
-            const { id, password, email } = rows[0];
-            return { id, password, email };
+            const { id, password, br_user_id } = rows[0];
+            return { id, password, br_user_id };
          }
          return null;
       } catch (error) {
-         console.error(`Error Finding Info  br_admin with email: ${email}:`, error);
+         console.error(`Error Finding Info  br_admin with br_user_id: ${br_user_id}:`, error);
       }
    }
 
@@ -129,7 +130,7 @@ class BranchAuthModel {
    }
    static async getUserByToken(refreshToken) {
       const promisePool = await pool.getConnection();
-      const updateSQL = 'SELECT br_a_id as id, br_email as email FROM branch_auth WHERE br_token = ?';
+      const updateSQL = 'SELECT br_a_id as id, br_user_id as user_id FROM branch_auth WHERE br_token = ?';
       try {
          const [rows] = await promisePool.query(updateSQL, [refreshToken]);
          if (rows.length > 0) {
