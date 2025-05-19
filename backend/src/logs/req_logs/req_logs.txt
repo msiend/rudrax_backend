@@ -5453,3 +5453,9 @@
 20250519	22:07:19	fa4bf660-05a6-4d16-a96c-95570d80ca55	GET	http://127.0.0.1:5173	/api/v1/entity/branch_client/readAll
 20250519	22:08:30	f587e93e-7546-49d9-ab24-b091e8c5640e	POST	http://127.0.0.1:5173	/api/v1/entity/branch_client/create
 20250519	22:09:08	66cdd5c4-cff3-4513-8319-952ed8b3ba4b	GET	http://127.0.0.1:5173	/api/v1/entity/branch_client/readAll
+20250519	22:20:22	d40b5a80-a5ae-43ec-8058-3524265cbf7e	POST	undefined	/api/v1/entity/branch_client/create
+20250519	22:20:24	3fc40a55-ad32-4e14-bc86-bc987d60e815	POST	undefined	/api/v1/entity/branch_client/create
+20250519	22:20:26	5ac7d553-a771-4920-9206-7e4c546949e8	POST	undefined	/api/v1/entity/branch_client/create
+20250519	22:22:49	4a6a6960-161f-4819-ab55-c1eada8330c3	GET	undefined	/api/v1/entity/branch_client/readAll
+20250519	22:34:13	950b5ad9-1f3c-4792-9dec-d929670c9a28	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/10
+20250519	22:40:50	f6020fc8-6714-4d30-80f1-26bfd397292c	GET	undefined	/api/v1/core/material_req/realAll_by_materialId/10
