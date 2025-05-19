@@ -40,7 +40,7 @@ class BranchClientsModel {
    }
 
    static async findAll() {
-      const query = 'SELECT * FROM branch_clients ORDER BY DESC';
+      const query = 'SELECT * FROM branch_clients ORDER BY b_client_id DESC';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);

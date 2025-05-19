@@ -3,7 +3,7 @@ const pool = require('@/config/dbConfig');
 class MaterialItemUpdateModel {
    static async readAll() {
       const query =
-         'SELECT material_requests.*,p.pro_name,p.pro_ref_no,cl.client_name FROM `material_requests` JOIN projects p ON material_requests.mr_project_id=p.pro_id LEFT JOIN clients cl ON cl.client_id =p.pro_client_r_id;';
+         'SELECT material_requests.*,p.pro_name,p.pro_ref_no,cl.client_name FROM `material_requests` JOIN projects p ON material_requests.mr_project_id=p.pro_id LEFT JOIN clients cl ON cl.client_id =p.pro_client_r_id ORDER BY mr_r_id DESC ';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query);

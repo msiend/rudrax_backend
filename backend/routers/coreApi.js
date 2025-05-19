@@ -9,6 +9,7 @@ const ExpenseCoreController = require('@/controllers/coreEntityControllers/expen
 const MaterialCoreController = require('@/controllers/coreEntityControllers/material_reqController');
 const UsersCoreController = require('@/controllers/coreEntityControllers/usersController');
 const BranchClientsCoreController = require('@/controllers/coreEntityControllers/branch_clientController');
+const contractorPaymentCoreController = require('@/controllers/coreEntityControllers/contractorPaymentController');
 
 // [CLIENT]-----------
 coreRouter.get('/core/client/get_lastRef', ClientCoreController.getClientsLastRef);
@@ -50,5 +51,8 @@ coreRouter.delete('/core/users/delete/:role/:id', UsersCoreController.remove);
 
 // [Branch Clients]-----------
 coreRouter.post('/core/branch_client/approve', BranchClientsCoreController.approveClientAndCreateProject);
+
+// [Contaractor payments]-----------
+coreRouter.get('/core/contractorPayment/readAll', contractorPaymentCoreController.findAllByID);
 
 module.exports = coreRouter;
