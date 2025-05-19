@@ -10,6 +10,7 @@ const MaterialCoreController = require('@/controllers/coreEntityControllers/mate
 const UsersCoreController = require('@/controllers/coreEntityControllers/usersController');
 const BranchClientsCoreController = require('@/controllers/coreEntityControllers/branch_clientController');
 const contractorPaymentCoreController = require('@/controllers/coreEntityControllers/contractorPaymentController');
+const projectPhaseCoreController = require('@/controllers/coreEntityControllers/project_phaseController');
 
 // [CLIENT]-----------
 coreRouter.get('/core/client/get_lastRef', ClientCoreController.getClientsLastRef);
@@ -53,6 +54,9 @@ coreRouter.post('/core/branch_client/approve', BranchClientsCoreController.appro
 
 // [Contaractor payments]-----------
 coreRouter.get('/core/contractorPayment/readAll', contractorPaymentCoreController.findAllByID);
+
+// [Project phase]-----------
+coreRouter.post('/core/project_phase/update_status', projectPhaseCoreController.updatePhaseStatus);
 
 
 

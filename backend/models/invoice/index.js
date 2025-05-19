@@ -143,19 +143,5 @@ class InvoiceModel {
          conn.release();
       }
    }
-
-   static async paginate(limit = 10, offset = 0) {
-      const conn = await pool.getConnection();
-      try {
-         const [rows] = await conn.query(`SELECT * FROM invoice ORDER BY created_at DESC LIMIT ? OFFSET ?`, [
-            limit,
-            offset,
-         ]);
-         const [countRes] = await conn.query(`SELECT COUNT(*) as count FROM invoice`);
-         return { rows, total: countRes[0].count };
-      } finally {
-         conn.release();
-      }
-   }
 }
 module.exports = InvoiceModel;
