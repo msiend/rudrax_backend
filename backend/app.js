@@ -19,7 +19,7 @@ app.use(cors());
 ///
 ////
 ///// DEV imports =================
-const { print } = require('@/_dev/route.reader');
+// const { print } = require('@/_dev/route.reader');
 // const testRoute = require('@/routers/test.route.js');
 ////////////////////////////////
 
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-// app.use(requestLogger);
+app.use(requestLogger);
 
 const appRoutes_entity = require('@/routers/applicationApi');
 const appRoutes_core = require('@/routers/coreApi');
@@ -58,8 +58,8 @@ app.use('/api/v1', appRoutes_pagination);
 ///
 ////
 ///// DEV Executions =================
-app._router.stack.forEach(print.bind(null, []));
-app.use(require('express-status-monitor')());
+// app._router.stack.forEach(print.bind(null, []));
+// app.use(require('express-status-monitor')());
 ////////////////////////////////
 
 app.listen(PORT, () => {

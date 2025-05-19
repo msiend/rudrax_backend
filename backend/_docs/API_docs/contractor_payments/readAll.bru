@@ -5,14 +5,16 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}contractorPayment/readAll
-  body: json
+  url: {{URL.Entity}}contractorPayment/readAll?pay_con_id=2
+  body: none
   auth: none
 }
 
+params:query {
+  pay_con_id: 2
+}
+
 body:json {
-  {
-    "pay_con_id":1
   
-  }
+  
 }
