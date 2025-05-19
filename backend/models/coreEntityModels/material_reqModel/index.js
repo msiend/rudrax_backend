@@ -155,7 +155,7 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
-   static async replaceMaterialItemsByRequestId(mr_r_id, mr_project_id,materialItemsData) {
+   static async replaceMaterialItemsByRequestId(mr_r_id, mr_project_id, materialItemsData) {
       const connPool = await pool.getConnection();
 
       try {

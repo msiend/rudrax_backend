@@ -10,6 +10,7 @@ const MaterialCoreController = require('@/controllers/coreEntityControllers/mate
 const UsersCoreController = require('@/controllers/coreEntityControllers/usersController');
 const BranchClientsCoreController = require('@/controllers/coreEntityControllers/branch_clientController');
 const contractorPaymentCoreController = require('@/controllers/coreEntityControllers/contractorPaymentController');
+const projectPhaseCoreController = require('@/controllers/coreEntityControllers/project_phaseController');
 
 // [CLIENT]-----------
 coreRouter.get('/core/client/get_lastRef', ClientCoreController.getClientsLastRef);
@@ -37,8 +38,7 @@ coreRouter.put('/core/material_req/update', MaterialCoreController.updateMateria
 coreRouter.put('/core/material_req/update_by_materialId', MaterialCoreController.updateMaterialItemList);
 coreRouter.get('/core/material_req/status/finance_dep/:mr_item_id', MaterialCoreController.updateFdApproval);
 coreRouter.get('/core/material_req/status/material_dep/:mr_item_id', MaterialCoreController.updateMdApproval);
-coreRouter.get( '/core/material_req/status/material_delivery/:mr_item_id',MaterialCoreController.updateMrDeliveryStatus
-);
+coreRouter.get(   '/core/material_req/status/material_delivery/:mr_item_id',MaterialCoreController.updateMrDeliveryStatus);
 
 // [User]-----------
 coreRouter.post('/core/users/create/:role', UsersCoreController.create);
@@ -54,5 +54,10 @@ coreRouter.post('/core/branch_client/approve', BranchClientsCoreController.appro
 
 // [Contaractor payments]-----------
 coreRouter.get('/core/contractorPayment/readAll', contractorPaymentCoreController.findAllByID);
+
+// [Project phase]-----------
+coreRouter.post('/core/project_phase/update_status', projectPhaseCoreController.updatePhaseStatus);
+
+
 
 module.exports = coreRouter;

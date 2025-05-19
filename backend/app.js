@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-// app.use(requestLogger);
+app.use(requestLogger);
 
 const appRoutes_entity = require('@/routers/applicationApi');
 const appRoutes_core = require('@/routers/coreApi');

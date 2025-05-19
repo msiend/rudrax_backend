@@ -112,7 +112,7 @@ console.log(branchInfo);
 
          return res.status(200).json({
             status: true,
-            message: 'Client/project approved and created successfully.',
+            msg: 'Project approved and created successfully.',
             data: { client_id: finalClientId },
          });
       } catch (err) {
@@ -121,7 +121,7 @@ console.log(branchInfo);
          console.error('Approval failed:', err.message);
          return res.status(500).json({
             status: false,
-            message: 'Internal server error',
+            msg: 'Internal server error',
             error: err.message,
          });
       }

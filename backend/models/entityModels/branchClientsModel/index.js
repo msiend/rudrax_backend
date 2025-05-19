@@ -86,7 +86,7 @@ class BranchClientsModel {
             data.b_client_commision,
             data.b_admin_approval,
          ]);
-         return result.affectedRows > 0;
+         return result.insertId;
       } catch (error) {
          console.error('Error creating branch client:', error);
       } finally {
