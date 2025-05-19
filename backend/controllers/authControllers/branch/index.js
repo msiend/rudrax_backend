@@ -17,7 +17,6 @@ exports.create = async (req, res) => {
    try {
       const { id, user_id, password, cpassword } = req.body;
       console.log(req.body);
-
       const { error } = schema.validate({ id, user_id, password, cpassword });
       if (error) {
          return res.status(400).json({

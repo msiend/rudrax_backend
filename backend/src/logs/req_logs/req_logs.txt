@@ -55,3 +55,10 @@
 20250518	22:50:04	71afdad7-bb80-4c98-a1ab-91b42c0c3c5d	GET	undefined	/api/auth/refresh/branch
 20250518	22:50:04	8559266f-cedc-4d92-bd86-fee62824e575	GET	undefined	/api/auth/refresh/branch
 20250518	22:50:05	02230aac-8bb2-4adb-b315-92ffc892c6df	GET	undefined	/api/auth/refresh/branch
+20250519	10:13:47	821d9689-6fd1-4e3e-9bcd-c84dbed330e9	GET	undefined	/api/v1/entity/contractor/readAll
+20250519	10:13:54	5b88b4ea-63f3-4e79-94b8-50c193d3ed96	GET	undefined	/api/v1/entity/contractor/readOne
+20250519	10:13:58	9f70f71b-b869-49cb-bea4-9b252361b68f	GET	undefined	/api/v1/entity/contractorPayment/readAll
+20250519	10:14:18	20be22fc-d6b0-4489-9354-afbffbe9e041	GET	undefined	/api/v1/entity/contractorPayment/readOne
+20250519	10:14:20	b857f0fa-fd36-49a8-b5b8-17728a55d4eb	GET	undefined	/api/v1/entity/contractorPayment/readOne
+20250519	10:14:29	fe79a295-c658-4810-a08a-6401b0ff1c44	GET	undefined	/api/v1/entity/contractorPayment/readAll
+20250519	10:19:26	f5a7a262-12c5-4ddf-93c5-219abdae94c6	GET	undefined	/api/v1/search?query=a&type=branch_clients&page=2&pageSize=2
