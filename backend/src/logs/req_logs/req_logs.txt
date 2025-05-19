@@ -5330,3 +5330,17 @@
 20250519	10:14:29	fe79a295-c658-4810-a08a-6401b0ff1c44	GET	undefined	/api/v1/entity/contractorPayment/readAll
 20250519	10:19:26	f5a7a262-12c5-4ddf-93c5-219abdae94c6	GET	undefined	/api/v1/search?query=a&type=branch_clients&page=2&pageSize=2
 >>>>>>> c0a403591e7967ba58da709a975fcde84c563506
+20250519	12:30:50	f1186804-8c02-403e-a777-cbff086b7f76	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:30:55	59f84e18-907f-4a61-8508-5cb951b51051	GET	undefined	/api/v1/core/expense/get_expense_details/27
+20250519	12:31:05	5b8bbace-35e2-43ed-bac5-dfdf69f04991	GET	undefined	/api/v1/core/expense/get_expense_details/15
+20250519	12:31:10	ddc362a5-0c13-4cac-9323-1be7c103e366	GET	undefined	/api/v1/core/expense/get_expense_details/17
+20250519	12:31:11	0e24a0d8-7b5c-4fab-a246-4b55aaed041f	GET	undefined	/api/v1/core/expense/get_expense_details/17
+20250519	12:31:21	198dd6e2-be9c-4596-bc22-20f4ab531884	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:31:23	c70a56ec-6ca8-4776-a74d-d4067313ddb8	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:31:24	7a794d49-5b1d-4dbe-a9b5-16837b4a63b4	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:31:24	f63b889d-c198-4181-8d29-98b86ca79e65	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:31:24	9c902e57-2caa-4033-833d-3958b6810f2a	GET	undefined	/api/v1/core/expense/get_expense_details/24
+20250519	12:31:45	0a02b4b7-d0a5-4a5d-8479-802a786ebb31	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250519	12:31:51	1755c180-4cdb-43b6-8753-04b2592ab1b9	GET	http://127.0.0.1:5173	/api/v1/entity/expense/readAll
+20250519	12:31:58	af4725c3-d35d-432a-beb0-e6a8d5095b72	GET	undefined	/api/v1/core/expense/get_expense_details/41
+20250519	18:46:28	0a03c944-accd-4336-b725-d1c792855495	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
