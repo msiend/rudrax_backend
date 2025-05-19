@@ -29,11 +29,11 @@ class VendorCoreController {
       }
       try {
          const financeData = await VendorModels.getVendor_Purcheses_Payments(vendor_id);
-         
+
          return res.status(200).send({
             status: true,
             msg: 'Vendor` Purcheses_Payments retrieved successfully.',
-            data: financeData,
+            data: { payments: financeData[0], purcheses: financeData[1] },
          });
       } catch (error) {
          console.error('Error fetching Vendor Purcheses_Payments:', error);

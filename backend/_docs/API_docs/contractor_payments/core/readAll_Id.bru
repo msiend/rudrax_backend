@@ -1,0 +1,15 @@
+meta {
+  name: readAll_Id
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{URL.Core}}contractorPayment/readAll?pay_con_id=1
+  body: json
+  auth: none
+}
+
+params:query {
+  pay_con_id: 1
+}
