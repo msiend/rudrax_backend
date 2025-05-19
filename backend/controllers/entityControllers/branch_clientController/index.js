@@ -59,7 +59,6 @@ class BranchClientsController {
         let lastNum = parseInt(data['b_client_ref_no'].slice(-4));
          newBranch_Id = data['b_client_ref_no'].replace(lastNum, lastNum + 1);
       } else { newBranch_Id = 'JGCC_BR0001'; }
-         
          const newId = await BranchClientsModel.create({
             b_r_id,
             b_client_name,
