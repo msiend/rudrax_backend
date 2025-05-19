@@ -2,7 +2,7 @@ const contractorPayModel = require('@/models/entityModels/contractorPaymentModel
 
 class contractorPayController {
    static async findAll(req, res) {
-      const { pay_con_id } = req.body;
+      const { pay_con_id } = req.query;
       try {
          const payments = await contractorPayModel.findAll(pay_con_id);
          return res.status(200).send({ status: true, msg: 'Payments retrieved successfully', data: payments });
