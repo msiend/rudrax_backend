@@ -40,7 +40,7 @@ class BranchClientsModel {
    }
 
    static async findAll() {
-      const query = 'SELECT * FROM branch_clients';
+      const query = 'SELECT * FROM branch_clients ORDER BY DESC';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
@@ -72,7 +72,7 @@ class BranchClientsModel {
          const [result] = await connPool.query(query, [
             data.b_r_id,
             data.b_client_name,
-            data.b_client_ref_no,
+            data.newBranch_Id,
             data.b_client_contact,
             data.b_client_alt_contact,
             data.b_client_address,
@@ -136,6 +136,7 @@ class BranchClientsModel {
          connPool.release();
       }
    }
+
 }
 
 module.exports = BranchClientsModel;
