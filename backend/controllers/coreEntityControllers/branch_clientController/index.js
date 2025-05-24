@@ -4,6 +4,22 @@ const pool = require('@/config/dbConfig');
 
 class BranchClientsController {
    // Get all branch clients
+   static async getBranchLastRef(req, res) {
+      try {
+         const [data] = await BranchClientsModel.getLastBranchRef();
+         let lastNum = parseInt(data['b_client_id'].slice(-4));
+         let newRef = data['b_client_id'].replace(lastNum, lastNum + 1);
+         return res.status(200).send({
+            status: true,
+            msg: 'Clients Ref retrieved successfully',
+            data: { lastRefNo: data['b_client_id'], newRefNo: newRef },
+         });
+      } catch (error) {
+         console.error('Error fetching clients:', error);
+         return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });
+      }
+   }
+
    static async approveClientAndCreateProject(req, res) {
       const { client_id, b_client_id, admin_approval } = req.body;
 
@@ -23,6 +39,11 @@ class BranchClientsController {
          const [branchClientRows] = await conn.query(`SELECT * FROM branch_clients WHERE b_client_id = ?`, [
             b_client_id,
          ]);
+         const [branchInfo] = await conn.query(
+            `SELECT bd.b_name FROM branch_clients bc JOIN branch_data bd ON bd.br_id =bc.b_r_id WHERE b_client_id = ?`,
+            [b_client_id]
+         );
+console.log(branchInfo);
 
          if (branchClientRows.length === 0) {
             await conn.release();
@@ -65,8 +86,8 @@ class BranchClientsController {
 
          //  Insert into projects
          await conn.query(
-            `INSERT INTO projects (pro_client_r_id, pro_name, pro_ref_no, pro_housetype, pro_rcctype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment, created_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
+            `INSERT INTO projects (pro_client_r_id, pro_name, pro_ref_no, pro_housetype, pro_rcctype, pro_sitedesc, pro_duration, pro_totalcost, pro_advancepayment, pro_own ,created_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?, NOW())`,
             [
                finalClientId,
                clientData.b_client_name,
@@ -77,18 +98,21 @@ class BranchClientsController {
                clientData.b_client_duration,
                clientData.b_client_totalcost,
                clientData.b_client_advancepayment,
+               branchInfo[0].b_name,
             ]
          );
 
          //  Update approval time
-         await conn.query(`UPDATE branch_clients SET approved_at = NOW(), b_admin_approval=1 WHERE b_client_id = ?`, [b_client_id]);
+         await conn.query(`UPDATE branch_clients SET approved_at = NOW(), b_admin_approval=1 WHERE b_client_id = ?`, [
+            b_client_id,
+         ]);
 
          await conn.commit();
          conn.release();
 
          return res.status(200).json({
             status: true,
-            message: 'Client/project approved and created successfully.',
+            msg: 'Project approved and created successfully.',
             data: { client_id: finalClientId },
          });
       } catch (err) {
@@ -97,7 +121,7 @@ class BranchClientsController {
          console.error('Approval failed:', err.message);
          return res.status(500).json({
             status: false,
-            message: 'Internal server error',
+            msg: 'Internal server error',
             error: err.message,
          });
       }

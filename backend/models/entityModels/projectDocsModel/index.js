@@ -37,11 +37,11 @@ class ProjectDocsModel {
     }
   }
 
-  static async create(pro_r_id, pro_doc_url) {
-    const query = 'INSERT INTO project_docs (pro_r_id, pro_doc_url) VALUES (?, ?)';
+  static async create(pro_r_id, pro_doc_url,pro_doc_type,pro_doc_name) {
+    const query = 'INSERT INTO project_docs (pro_r_id, pro_doc_url,pro_doc_type,pro_doc_name) VALUES (?, ?,?,?)';
     const connPool = await pool.getConnection();
     try {
-      const [result] = await connPool.query(query, [pro_r_id, pro_doc_url]);
+      const [result] = await connPool.query(query, [pro_r_id, pro_doc_url,pro_doc_type,pro_doc_name]);
       return result.insertId;
     } catch (error) {
       console.error('Error creating project document:', error);

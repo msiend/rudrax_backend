@@ -3,7 +3,7 @@ const pool = require('@/config/dbConfig');
 class MaterialItemUpdateModel {
    static async readAll() {
       const query =
-         'SELECT material_requests.*,p.pro_name,p.pro_ref_no,cl.client_name FROM `material_requests` JOIN projects p ON material_requests.mr_project_id=p.pro_id LEFT JOIN clients cl ON cl.client_id =p.pro_client_r_id;';
+         'SELECT material_requests.*,p.pro_name,p.pro_ref_no,cl.client_name FROM `material_requests` JOIN projects p ON material_requests.mr_project_id=p.pro_id LEFT JOIN clients cl ON cl.client_id =p.pro_client_r_id ORDER BY mr_r_id DESC ';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query);
@@ -143,7 +143,7 @@ class MaterialItemUpdateModel {
 
    static async findAll_materialItems_ByMatrialReqId(mr_r_id) {
       const query =
-         'SELECT p.pro_name,p.pro_ref_no,p.pro_client_r_id ,c.client_name FROM `material_requests`JOIN projects p ON p.pro_id = material_requests.mr_project_id JOIN clients c ON c.client_id =p.pro_client_r_id WHERE material_requests.mr_r_id=?;SELECT * FROM material_item_list WHERE mr_r_id=?;';
+         'SELECT p.pro_name,p.pro_ref_no,p.pro_client_r_id ,c.client_name FROM `material_requests`JOIN projects p ON p.pro_id = material_requests.mr_project_id JOIN clients c ON c.client_id =p.pro_client_r_id WHERE material_requests.mr_r_id=?;SELECT ml.*,v.vendor_name FROM material_item_list ml JOIN vendors v ON v.vendor_id=ml.vendor_id WHERE mr_r_id=?';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query, [mr_r_id, mr_r_id]);
@@ -155,7 +155,7 @@ class MaterialItemUpdateModel {
          connPool.release();
       }
    }
-   static async replaceMaterialItemsByRequestId(mr_r_id, mr_project_id,materialItemsData) {
+   static async replaceMaterialItemsByRequestId(mr_r_id, mr_project_id, materialItemsData) {
       const connPool = await pool.getConnection();
 
       try {

@@ -37,7 +37,8 @@ coreRouter.post('/core/project/upload/file/:pro_r_id', uploadProject_Files, asyn
          return res.status(400).json({ status: false, msg: 'File upload failed' });
       }
       const filePath = req.file.path.replace(/\\/g, '/'); 
-      const insertedId = await ProjectDocsModel.create(pro_r_id, filePath);
+      const file_name = req.file.originalname.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z ]/g, '').trim().substring(0, 20);
+      const insertedId = await ProjectDocsModel.create(pro_r_id, filePath,req.query.type||'doc_file',file_name);
       return res.status(200).json({
          status: true,
          msg: 'Project File uploaded and path stored successfully',
@@ -57,7 +58,8 @@ coreRouter.post('/core/project/upload/image/:pro_r_id', uploadProject_Images, as
          return res.status(400).json({ status: false, msg: 'Missing required fields or image' });
       }
       const imagePath = req.file.path.replace(/\\/g, '/');
-      const insertedId = await ProjectDocsModel.create(pro_r_id, imagePath);
+      const file_name = req.file.originalname.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z ]/g, '').trim().substring(0, 20);
+      const insertedId = await ProjectDocsModel.create(pro_r_id, imagePath,req.query.type||'doc_image',file_name);
       return res.status(200).json({
          status: true,
          msg: 'Project Image uploaded and stored successfully',
