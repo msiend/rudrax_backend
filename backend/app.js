@@ -1,5 +1,5 @@
 require('module-alias/register');
-require('dotenv').config({ path: '.env.production' });
+require('dotenv').config({ path: '.env.development' });
 
 const express = require('express');
 const app = express();

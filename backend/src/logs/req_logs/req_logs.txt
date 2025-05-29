@@ -5990,3 +5990,5 @@
 20250529	11:14:57	3f220476-0930-488e-b0b1-c71911bedd8e	POST	undefined	/api/auth/create/super-admin
 20250529	14:24:46	153b8e2f-e43e-4a38-ad76-dbc85215653a	PUT	undefined	/api/v1/entity/client/update
 20250529	14:24:56	1d55c17e-4d0e-487a-a0c2-505e1cb809e0	GET	undefined	/api/v1/entity/client/readAll
+20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
