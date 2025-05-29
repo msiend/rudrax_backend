@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2025 at 10:17 AM
+-- Generation Time: May 29, 2025 at 12:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -88,7 +88,7 @@ INSERT INTO `branch_clients` (`b_client_id`, `b_r_id`, `b_client_name`, `b_clien
 (32, 3, 'Acme Corporation 2563', 'ACME-202369', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:43:26', NULL),
 (33, 3, 'Acme Corporation 2563', 'ACME-202370', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:45:15', NULL),
 (34, 3, 'Acme Corporation 2563', 'ACME-202371', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:46:28', NULL),
-(36, 3, 'Acme Corporation 2563', 'ACME-202372', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:46:53', NULL),
+(36, 3, 'Acme Corporation 2563', 'ACME-202372', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:46:53', '2025-05-24 14:03:38'),
 (37, 3, 'Acme Corporation 2563', 'ACME-202373', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:47:30', '2025-05-19 12:35:40'),
 (38, 3, 'Acme Corporation 2563', 'ACME-202374', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:55:56', '2025-05-19 12:35:02'),
 (39, 3, 'Acme Corporation 2563', 'ACME-202375', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:55:58', '2025-05-19 12:34:00'),
@@ -207,8 +207,8 @@ INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `co
 CREATE TABLE `contractors` (
   `con_id` int(20) NOT NULL,
   `con_name` varchar(200) DEFAULT NULL,
-  `con_contact` int(11) DEFAULT NULL,
-  `con_alt_contact` int(11) DEFAULT NULL,
+  `con_contact` int(20) DEFAULT NULL,
+  `con_alt_contact` int(20) DEFAULT NULL,
   `con_address` varchar(300) DEFAULT NULL,
   `con_email` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -449,8 +449,8 @@ INSERT INTO `invoice_items` (`invoice_item_id`, `inv_item_name`, `inv_item_quant
 CREATE TABLE `labours` (
   `lab_id` int(20) NOT NULL,
   `lab_name` varchar(200) DEFAULT NULL,
-  `lab_contact` int(11) DEFAULT NULL,
-  `lab_alt_contact` int(11) DEFAULT NULL,
+  `lab_contact` int(20) DEFAULT NULL,
+  `lab_alt_contact` int(20) DEFAULT NULL,
   `lab_address` varchar(300) DEFAULT NULL,
   `lab_email` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -674,7 +674,8 @@ INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `
 (24, 50, 'Acme Corporation 2563', 'ACME-202376', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, '[object Object]', '2025-05-19 07:03:07'),
 (25, 51, 'Acme Corporation 2563', 'ACME-202375', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-19 07:04:00'),
 (26, 52, 'Acme Corporation 2563', 'ACME-202374', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-19 07:05:02'),
-(27, 53, 'Acme Corporation 2563', 'ACME-202373', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40');
+(27, 53, 'Acme Corporation 2563', 'ACME-202373', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40'),
+(28, 36, 'Acme Corporation 2563', 'ACME-202372', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, 'Sunrise Branch adsga', '2025-05-24 08:33:38');
 
 -- --------------------------------------------------------
 
@@ -904,16 +905,16 @@ CREATE TABLE `super_admin_auth` (
 --
 
 INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_user_id`, `su_password`, `su_token`, `su_isactive`) VALUES
-(6, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9obkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzM5ODk3MSwiZXhwIjoxNzQ5OTkwOTcxfQ.IzMFEBbQASyFBejmhUT0ODE0YEX0xIHUeznBoGrEUyc', 1),
-(7, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(8, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(9, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(10, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(11, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(12, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(13, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(14, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
-(15, 7, 'john@example.com', '$2a$12$Mk62q8DVTIl/n1.Sdu9V3usv0TSHddj0CT94NXR770T1RLKWTSwYu', NULL, 1),
+(6, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9obkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzM5ODk3MSwiZXhwIjoxNzQ5OTkwOTcxfQ.IzMFEBbQASyFBejmhUT0ODE0YEX0xIHUeznBoGrEUyc', 1),
+(7, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(8, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(9, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(10, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(11, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(12, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(13, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(14, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
+(15, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
 (16, 22, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
@@ -1363,7 +1364,7 @@ ALTER TABLE `phases`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `project_contractor`
