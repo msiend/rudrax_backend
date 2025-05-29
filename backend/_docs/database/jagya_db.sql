@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2025 at 12:37 PM
+-- Generation Time: May 29, 2025 at 01:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,7 +62,7 @@ CREATE TABLE `branch_clients` (
   `b_client_housetype` varchar(100) DEFAULT NULL,
   `b_client_rcctype` varchar(100) DEFAULT NULL,
   `b_client_totalcost` bigint(20) DEFAULT NULL,
-  `b_client_advancepayment` int(11) DEFAULT NULL,
+  `b_client_advancepayment` int(50) DEFAULT NULL,
   `b_client_sitedesc` varchar(300) DEFAULT NULL,
   `b_client_duration` varchar(100) DEFAULT NULL,
   `b_client_commision` int(11) DEFAULT 1,
@@ -207,8 +207,8 @@ INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `co
 CREATE TABLE `contractors` (
   `con_id` int(20) NOT NULL,
   `con_name` varchar(200) DEFAULT NULL,
-  `con_contact` int(20) DEFAULT NULL,
-  `con_alt_contact` int(20) DEFAULT NULL,
+  `con_contact` varchar(20) DEFAULT NULL,
+  `con_alt_contact` varchar(20) DEFAULT NULL,
   `con_address` varchar(300) DEFAULT NULL,
   `con_email` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -218,11 +218,11 @@ CREATE TABLE `contractors` (
 --
 
 INSERT INTO `contractors` (`con_id`, `con_name`, `con_contact`, `con_alt_contact`, `con_address`, `con_email`) VALUES
-(1, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(2, 'Alice Johnson', 2147483647, 2147483647, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(5, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(6, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
-(7, 'Alice Johnson', 555, 555, '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com');
+(1, 'Alice Johnson', '555', '555', '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
+(2, 'Alice Johnson', '2147483647', '2147483647', '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
+(5, 'Alice Johnson', '555', '555', '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
+(6, 'Alice Johnson', '555', '555', '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com'),
+(7, 'Alice Johnson', '555', '555', '123 Main St, Anytown, CA 91234', 'alice.johnson@example.com');
 
 -- --------------------------------------------------------
 
@@ -449,8 +449,8 @@ INSERT INTO `invoice_items` (`invoice_item_id`, `inv_item_name`, `inv_item_quant
 CREATE TABLE `labours` (
   `lab_id` int(20) NOT NULL,
   `lab_name` varchar(200) DEFAULT NULL,
-  `lab_contact` int(20) DEFAULT NULL,
-  `lab_alt_contact` int(20) DEFAULT NULL,
+  `lab_contact` varchar(20) DEFAULT NULL,
+  `lab_alt_contact` varchar(20) DEFAULT NULL,
   `lab_address` varchar(300) DEFAULT NULL,
   `lab_email` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -460,17 +460,17 @@ CREATE TABLE `labours` (
 --
 
 INSERT INTO `labours` (`lab_id`, `lab_name`, `lab_contact`, `lab_alt_contact`, `lab_address`, `lab_email`) VALUES
-(1, 'Quantum Diagnosasdasdftics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(3, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(4, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(5, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(6, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(7, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(8, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(9, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(10, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(11, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(12, 'Quantum Diagnostics Lab', 1, 1, '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com');
+(1, 'Quantum Diagnosasdasdftics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(3, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(4, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(5, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(6, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(7, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(8, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(9, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(10, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(11, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
+(12, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com');
 
 -- --------------------------------------------------------
 
@@ -927,8 +927,8 @@ CREATE TABLE `vendors` (
   `vendor_id` int(20) NOT NULL,
   `vendor_ref_no` varchar(155) DEFAULT NULL,
   `vendor_name` varchar(200) DEFAULT NULL,
-  `vendor_contact` int(11) DEFAULT NULL,
-  `vendor_alt_contact` int(11) DEFAULT NULL,
+  `vendor_contact` varchar(20) DEFAULT NULL,
+  `vendor_alt_contact` varchar(20) DEFAULT NULL,
   `vendor_address` varchar(300) DEFAULT NULL,
   `vendor_email` varchar(80) DEFAULT NULL,
   `vendor_status` varchar(80) DEFAULT 'open'
@@ -939,28 +939,28 @@ CREATE TABLE `vendors` (
 --
 
 INSERT INTO `vendors` (`vendor_id`, `vendor_ref_no`, `vendor_name`, `vendor_contact`, `vendor_alt_contact`, `vendor_address`, `vendor_email`, `vendor_status`) VALUES
-(9, NULL, 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(10, NULL, 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(11, NULL, 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(12, NULL, 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(13, NULL, 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(14, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(16, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(17, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(18, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(19, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(20, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(21, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(22, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(23, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(24, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(25, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(26, 'JGCV0001', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(27, 'JGCV0002', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(28, 'JGCV0003', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(9, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(10, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(11, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(12, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(13, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(14, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(16, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(17, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(18, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(19, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(20, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(21, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(22, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(23, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(24, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(25, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(26, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(27, 'JGCV0002', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(28, 'JGCV0003', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (29, 'JGCV0004', NULL, NULL, NULL, NULL, NULL, NULL),
 (30, 'JGCV0005', NULL, NULL, NULL, NULL, NULL, NULL),
-(31, 'JGCV0006', 'ABC Supplies', 2147483647, 1234567890, '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
+(31, 'JGCV0006', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (32, 'JGCV0007', NULL, NULL, NULL, NULL, NULL, 'open');
 
 -- --------------------------------------------------------
