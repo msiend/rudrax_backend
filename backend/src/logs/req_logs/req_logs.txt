@@ -5992,3 +5992,6 @@
 20250529	14:24:56	1d55c17e-4d0e-487a-a0c2-505e1cb809e0	GET	undefined	/api/v1/entity/client/readAll
 20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
 20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250529	16:52:29	a8e50e69-1899-4901-967a-f6080b78aae2	GET	undefined	/api/v1/api/branch_data?page=3&pageSize=2
+20250529	16:52:36	f9408226-cdae-4c68-88ac-4cd5dd212d56	GET	undefined	/api/v1/api/branch_data?page=4&pageSize=2
+20250529	16:52:40	23ff0f52-b630-434c-901f-f28faa09a919	GET	undefined	/api/v1/api/branch_data?page=2&pageSize=2
