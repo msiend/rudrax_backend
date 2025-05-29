@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2025 at 04:16 PM
+-- Generation Time: May 24, 2025 at 10:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `branch_auth` (
 --
 
 INSERT INTO `branch_auth` (`br_a_id`, `br_r_id`, `br_user_id`, `br_password`, `br_token`, `br_isactive`) VALUES
-(9, 3, 'branch@gmail.com', '$2a$12$D2n7UJoy3raYRO1KllXIquJpFdB.Wk7CFDRIg9Q57z9FjG0Fziynq', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYW5jaEBnbWFpbC5jb20iLCJpYXQiOjE3MzgwNDU4OTQsImV4cCI6MTczODQ3Nzg5NH0.ENMlU0oaKp1h636MPAUdGJOwu6iLyxVEvKoklIywSmI', 1);
+(9, 3, 'deka@example.com', '$2a$12$T1Z8isdBMC/zf.2OQ9rsnOfO65Mif54GxjIiGBMC6BzydBGxycMIy', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDc1ODg3ODEsImV4cCI6MTc0ODAyMDc4MX0.2N4f4zTw0oDW1j31h7pT7yZvyCOslERjY5y1qsyo7vs', 1);
+
 
 -- --------------------------------------------------------
 
@@ -53,10 +54,12 @@ CREATE TABLE `branch_clients` (
   `b_client_id` bigint(20) NOT NULL,
   `b_r_id` int(11) NOT NULL,
   `b_client_name` varchar(200) DEFAULT NULL,
-  `b_client_ref_no` varchar(200) NOT NULL,
+
+  `b_client_ref_no` varchar(200) DEFAULT NULL,
   `b_client_contact` varchar(15) DEFAULT NULL,
   `b_client_alt_contact` varchar(15) DEFAULT NULL,
   `b_client_address` varchar(300) DEFAULT NULL,
+  `b_project_name` varchar(255) DEFAULT NULL,
   `b_client_email` varchar(80) DEFAULT NULL,
   `b_client_housetype` varchar(100) DEFAULT NULL,
   `b_client_rcctype` varchar(100) DEFAULT NULL,
@@ -64,7 +67,7 @@ CREATE TABLE `branch_clients` (
   `b_client_advancepayment` int(11) DEFAULT NULL,
   `b_client_sitedesc` varchar(300) DEFAULT NULL,
   `b_client_duration` varchar(100) DEFAULT NULL,
-  `b_client_commision` int(11) NOT NULL DEFAULT 1,
+  `b_client_commision` int(11) DEFAULT 1,
   `b_admin_approval` tinyint(1) DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `approved_at` varchar(155) DEFAULT NULL
@@ -74,6 +77,8 @@ CREATE TABLE `branch_clients` (
 -- Dumping data for table `branch_clients`
 --
 
+
+
 INSERT INTO `branch_clients` (`b_client_id`, `b_r_id`, `b_client_name`, `b_client_ref_no`, `b_client_contact`, `b_client_alt_contact`, `b_client_address`, `b_client_email`, `b_client_housetype`, `b_client_rcctype`, `b_client_totalcost`, `b_client_advancepayment`, `b_client_sitedesc`, `b_client_duration`, `b_client_commision`, `b_admin_approval`, `created_at`, `approved_at`) VALUES
 (5, 3, 'Acme Corporation', 'ACME-2023-0015', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, NULL, '2025-05-16 11:44:00', '2025-05-16 17:44:04'),
 (8, 3, 'Acme Corporation', 'ACME-2023-00d15', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', '2025-05-16 17:46:37'),
@@ -82,6 +87,7 @@ INSERT INTO `branch_clients` (`b_client_id`, `b_r_id`, `b_client_name`, `b_clien
 (15, 3, 'Acme Corporation', 'ACME-2023-05', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', NULL),
 (18, 3, 'Acme Corporation=======', 'ACME-2023-5', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', NULL),
 (22, 3, 'Acme Corporation', 'ACME-20236', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-16 11:44:00', NULL);
+
 
 -- --------------------------------------------------------
 
@@ -140,12 +146,6 @@ INSERT INTO `clients` (`client_id`, `client_name`, `client_ref_no`, `client_cont
 (39, 'Wave Industries pvt. ltd.', 'JGCC0005', '88008095', NULL, 'Dibrugarh, assam', 'contact@betaind.net'),
 (40, 'Wave Industries pvt. ltd.', 'JGCC0006', '88008095', NULL, 'Dibrugarh, assam', 'contact@betaind.net'),
 (41, 'Wave Industries pvt. ltd.', 'JGCC0007', '88008095', '9401069337', 'Dibrugarh, assam', 'contact@betaind.net'),
-(42, 'Mintu Sharma', 'JGCC0008', '9401069337', '9401069337', 'siwan', 'msi2gmail@gaf.com'),
-(43, 'Wave Industries pvt. ltd.', 'JGCC0009', '88008095', '9401069337', 'Dibrugarh, assam', 'contact@betaind.net'),
-(44, 'Wave Industries pvt. ltd.', 'JGCC00010', '88008095', '9401069337', 'Dibrugarh, assam', 'contact@betaind.net'),
-(45, 'Acme Corporation', 'ACME-2023-00d15', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com'),
-(46, 'Acme Corporation', 'ACME-2023-00d5', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com'),
-(47, 'Acme Corporation', 'ACME-2023-005', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', 'info@acmecorp.com');
 
 -- --------------------------------------------------------
 
@@ -232,7 +232,6 @@ INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pa
 (35, 5, 9, '4574', 'UPI', '748574', 23),
 (36, 1, 9, '78574', 'UPI', '2485', 23),
 (37, 2, 9, '4574', 'UPI', '748574', 23),
-(47, 2, NULL, '30000', 'UPI', 'for arun da ', 27),
 (50, 2, 9, '30000', 'UPI', 'for arun da ', 28),
 (53, 2, 9, '30000', 'UPI', 'for arun da ', 29),
 (56, 2, 9, '30000', 'UPI', 'for arun da ', 30),
@@ -488,10 +487,16 @@ INSERT INTO `material_item_list` (`mr_item_id`, `mr_r_id`, `mr_project_r_id`, `m
 (38, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0),
 (39, 13, 11, 'Cement', '20', NULL, NULL, 0, 0, NULL, 0),
 (40, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0),
-(49, 14, 10, 'asdfasdgadg', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(50, 14, 10, 'asdfasdgadg', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(51, 14, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(52, 14, 10, 'Sandadfgagliajsdglij', '50', '1500', '2025-04-03', 0, 0, 9, 0);
+(75, 14, 10, 'sandy', '50', '1600', '2025-04-03', 0, 0, 10, 0),
+(76, 14, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 10, 0),
+(77, 14, 10, 'Sandad', '50', '1500', '2025-04-03', 0, 0, 10, 0),
+(94, 10, 9, 'Cement 44', '20', '2000', '2025-04-03', 1, 1, 9, 1),
+(95, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
+(96, 10, 9, 'Cement', '20', '2000', '2025-04-03', 0, 1, 9, 0),
+(97, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
+(98, 10, 9, 'Cement', '20', '2000', '2025-04-03', 0, 1, 9, 0),
+(99, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
+
 
 -- --------------------------------------------------------
 
@@ -619,6 +624,7 @@ CREATE TABLE `projects` (
   `pro_duration` varchar(100) DEFAULT NULL,
   `pro_totalcost` bigint(20) DEFAULT NULL,
   `pro_advancepayment` int(11) DEFAULT NULL,
+  `pro_own` varchar(55) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -674,12 +680,14 @@ CREATE TABLE `project_docs` (
   `pro_doc_id` int(11) NOT NULL,
   `pro_r_id` bigint(20) NOT NULL,
   `pro_doc_url` varchar(200) NOT NULL,
+  `pro_doc_name` varchar(155) DEFAULT NULL,
   `pro_doc_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `project_docs`
 --
+
 
 INSERT INTO `project_docs` (`pro_doc_id`, `pro_r_id`, `pro_doc_url`, `pro_doc_type`) VALUES
 (3, 9, 'public/project/files/file-86ca5128-2b99-44c4-8e87-9b029b805b41-1747033432513.pdf', '0'),
@@ -1219,7 +1227,8 @@ ALTER TABLE `branch_auth`
 -- AUTO_INCREMENT for table `branch_clients`
 --
 ALTER TABLE `branch_clients`
-  MODIFY `b_client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `b_client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
 
 --
 -- AUTO_INCREMENT for table `branch_data`
@@ -1231,7 +1240,9 @@ ALTER TABLE `branch_data`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+
 
 --
 -- AUTO_INCREMENT for table `collections`
@@ -1291,7 +1302,8 @@ ALTER TABLE `labours`
 -- AUTO_INCREMENT for table `material_item_list`
 --
 ALTER TABLE `material_item_list`
-  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
 
 --
 -- AUTO_INCREMENT for table `material_requests`
@@ -1327,7 +1339,8 @@ ALTER TABLE `phases`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 
 --
 -- AUTO_INCREMENT for table `project_contractor`
@@ -1340,6 +1353,7 @@ ALTER TABLE `project_contractor`
 --
 ALTER TABLE `project_docs`
   MODIFY `pro_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 
 --
 -- AUTO_INCREMENT for table `project_phase`

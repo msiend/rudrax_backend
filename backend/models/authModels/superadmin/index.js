@@ -12,8 +12,9 @@ class SuperAdminAuthModel {
    static async create(id, user_id, hashpassword) {
       const connPool = await pool.getConnection();
       try {
-         const queryTwo = `UPDATE super_admin_auth SET su_user_id=?, su_password=? WHERE su_r_id=?`;
-         const [result] = await connPool.query(queryTwo, [ user_id, hashpassword, id]);
+         const queryTwo = `UPDATE super_admin_auth SET su_user_id=?, su_password=? WHERE su_r_id = ? `;
+         const [result] = await connPool.query(queryTwo, [user_id, hashpassword, id]);
+
 
          if (result?.affectedRows) {
             return { status: true, result, msg: 'Successfully inserted!' };

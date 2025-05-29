@@ -30,6 +30,8 @@ exports.create = async (req, res) => {
       const salt = bcrypt.genSaltSync(12);
       const hash = bcrypt.hashSync(password, salt);
       const result = await superAdminModel.create(id, user_id, hash);
+      console.log(result);
+      
       if (!result.status) {
          return res.status(500).json({
             status: false,
