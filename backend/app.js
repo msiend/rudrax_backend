@@ -1,4 +1,6 @@
 require('module-alias/register');
+require('dotenv').config({ path: '.env.development' });
+
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -11,10 +13,7 @@ const credentials = require('@/middleware/credentials');
 const jwt_authenticationVerify = require('@/middleware/verifyJWT');
 
 const PORT = process.env.PORT || 3500;
-require('dotenv').config({ path: '.env.development' });
 require('@/config/dbConfig');
-
-app.use(cors());
 
 ///
 ////
@@ -23,6 +22,7 @@ app.use(cors());
 // const testRoute = require('@/routers/test.route.js');
 ////////////////////////////////
 
+app.use(cors());
 app.use(eventlogger);
 app.use(credentials);
 // app.use(cors(corsOptions));

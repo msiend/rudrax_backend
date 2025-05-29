@@ -5965,6 +5965,7 @@
 20250520	01:45:04	22b53a9f-8388-41e1-93d3-555d5d871a29	POST	http://127.0.0.1:5173	/api/v1/core/users/create/super_admin
 20250520	01:45:07	b0ad62ff-14f1-4ff2-a0f4-1e527d203ad3	GET	http://127.0.0.1:5173	/api/v1/core/users/readAll/super_admin
 20250520	01:49:35	86979a8c-9749-49d4-960d-0b4eebece63f	PUT	http://127.0.0.1:5173	/api/v1/core/users/update
+<<<<<<< HEAD
 20250520	21:33:22	7f17dc06-1b97-4889-939c-4b3f6b62d90c	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
 20250520	21:34:21	af94f1cc-519d-4559-a893-c4ce9d2238e4	GET	undefined	/api/v1/api/branch_data?page=3&pageSize=2
 20250520	21:34:30	b7979de9-f8eb-4c10-a813-2543614e8a3e	GET	undefined	/api/v1/api/branch_data?page=3&pageSize=10
@@ -6070,3 +6071,32 @@
 20250529	17:12:10	ab8d319b-c684-4b7a-a650-57b01673f87d	GET	http://127.0.0.1:5173	/api/v1/entity/branch_data/readAll
 20250529	17:12:29	01c95b9d-a143-40af-88df-1899405ccf94	POST	undefined	/api/v1/entity/branch_data/create
 20250529	17:12:33	5b903f44-8f82-4707-beb6-d770c3d83bc3	GET	http://127.0.0.1:5173	/api/v1/entity/branch_data/readAll
+=======
+20250524	14:03:20	ef3750ea-4f46-413b-9701-09ccb031e9dc	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
+20250524	14:03:22	99470663-e1ee-46a7-9ea8-2bf9f7f7e615	GET	http://127.0.0.1:5173	/api/v1/entity/branch_data/readAll
+20250524	14:03:24	f3ccaadf-3188-4cd4-a2ca-d79c4e260674	GET	http://127.0.0.1:5173	/api/v1/entity/branch_client/readAll
+20250524	14:03:34	cb74c0e4-04a7-4dbc-a7a0-e94c7f81b9cb	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250524	14:03:38	f174afd6-8b2c-4f66-90dc-9dd50024c956	POST	http://127.0.0.1:5173	/api/v1/core/branch_client/approve
+20250524	14:03:43	99abf8cb-1bcb-454f-a619-586e9d54e1c1	GET	http://127.0.0.1:5173	/api/v1/core/users/readAll/super_admin
+20250524	14:03:44	dd90a955-96f5-4d49-b87c-063ee424dd19	GET	http://127.0.0.1:5173	/api/v1/entity/phase/readAll
+20250524	14:03:48	32778dae-aa0a-49f1-af8d-a28d8eae9e0d	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250524	14:03:49	0565f0e9-374d-4aa6-8034-d6265267149c	GET	http://127.0.0.1:5173	/api/v1/entity/vendor/readAll
+20250524	14:03:50	9ef2cfd2-55ad-42be-8ac6-e02ae2304fb9	GET	http://127.0.0.1:5173	/api/v1/entity/client/readAll
+20250524	14:03:51	0470100f-1611-4a52-ad98-004170465e1d	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250524	14:03:53	daa4ad50-2d69-4c52-8c41-760df5624f1c	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
+20250524	14:03:57	eee7e83c-7ac5-4849-bb7b-cc4a06422079	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
+20250524	14:03:59	1d8f5e20-6865-402f-b458-657ba408ca48	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
+20250524	14:04:02	016d8a34-8fa2-4ad7-aa58-83ad3a5d2bef	GET	http://127.0.0.1:5173	/api/v1/entity/material_req/readAll
+20250529	11:06:03	54e96eba-473b-4865-8e7b-2c0689617a32	GET	undefined	/api/v1/core/users/readAll/super_admin
+20250529	11:06:32	b90d5d19-1c09-4354-b0cc-46b5b598eb79	POST	undefined	/api/auth/create/super-admin
+20250529	11:09:08	4470675c-3d57-42b8-a1a7-68eb85fdaf8d	POST	undefined	/api/auth/create/super-admin
+20250529	11:11:19	a547dd4f-ab6b-49b1-b09e-85575ad6c4bf	POST	undefined	/api/auth/create/super-admin
+20250529	11:11:25	f6872d35-101c-403a-bb6e-eeafd36f1ced	POST	undefined	/api/auth/create/super-admin
+20250529	11:12:35	a177ac64-f309-4a18-a273-01db7f9ff8b8	POST	undefined	/api/auth/create/super-admin
+20250529	11:14:15	fdedf84e-8078-49a2-ba2e-9ec4ae447a90	POST	undefined	/api/auth/create/super-admin
+20250529	11:14:57	3f220476-0930-488e-b0b1-c71911bedd8e	POST	undefined	/api/auth/create/super-admin
+20250529	14:24:46	153b8e2f-e43e-4a38-ad76-dbc85215653a	PUT	undefined	/api/v1/entity/client/update
+20250529	14:24:56	1d55c17e-4d0e-487a-a0c2-505e1cb809e0	GET	undefined	/api/v1/entity/client/readAll
+20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
+>>>>>>> 605e531b9457e06757c0f150a399cba711206b36
