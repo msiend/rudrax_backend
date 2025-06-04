@@ -6100,3 +6100,20 @@
 20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
 20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
 >>>>>>> 605e531b9457e06757c0f150a399cba711206b36
+20250604	13:56:37	c83bcd12-6dda-48e3-a163-51dc8b6b2c57	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:56:44	2cb4c141-d29b-49f9-9842-ca7089857b9d	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:56:53	6e2fece1-6012-474f-b56f-eca781960514	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:57:05	37dd895a-c5e4-4bf3-8d3c-1cc30671fc63	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:57:16	ae041d31-b737-4a50-9282-8a587dae5487	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:58:37	081ecfeb-a5ff-4f3b-a9ee-f5e700494da9	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:58:49	15e8179a-d80b-4487-8c4a-6315e3d0ff90	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:59:00	621f9389-bad0-4ae5-b661-817c616a0953	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	13:59:34	5ba7aeb2-1871-4a06-a199-3068e2c46b8a	GET	undefined	/api/v1/core/users/readAll/super_admin
+20250604	14:00:03	a1ac1888-2fb1-448c-b754-33a382e1291b	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	14:00:13	1bf47794-c469-49cb-bc0a-bbf6cc2a92ab	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	14:00:23	b1642cd7-24ef-459c-81f2-4d7023b7aa5b	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	14:00:41	b8ae82e1-be7d-42e1-b1c3-b079392ae5cb	POST	undefined	/api/v1/core/super-admin/create/credentials
+20250604	14:01:02	9c34fd86-bac4-4a78-bc1c-fcfe0b3389e5	POST	undefined	/api/v1/core/users/create/super_admin
+20250604	14:01:26	af3cac47-e452-49d3-b9ed-7c0c09065d32	POST	undefined	/api/v1/core/super-admin/create/credentials
+20250604	14:01:34	b588b294-35b6-4f79-a030-03ffe3d9f9b5	POST	http://127.0.0.1:5173	/api/v1/core/super-admin/login
+20250604	14:01:35	f6b54f37-f69d-4d4c-94eb-2aac37452c56	GET	http://127.0.0.1:5173	/api/v1/entity/project/readAll
