@@ -6099,3 +6099,6 @@
 20250529	14:24:56	1d55c17e-4d0e-487a-a0c2-505e1cb809e0	GET	undefined	/api/v1/entity/client/readAll
 20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
 20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250605	14:54:21	b47fb793-db97-434c-865e-1148b2de7d45	GET	undefined	/public/project/files/file-441d2c5b-2e89-4954-a4b3-442c83547333-1747119848623.pdf
+20250605	14:54:24	63434c36-f8ca-488d-9c2b-e2b0def5d3a0	GET	undefined	/public/project/files/file-441d2c5b-2e89-4954-a4b3-442c83547333-1747119848623.pdf
+20250605	14:54:26	69c9fd8f-4b3a-49e7-af68-272b68bf909e	GET	undefined	/public/project/files/file-441d2c5b-2e89-4954-a4b3-442c83547333-1747119848623.pdf
