@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2025 at 01:00 PM
+-- Generation Time: Jun 05, 2025 at 11:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -497,30 +497,10 @@ CREATE TABLE `material_item_list` (
 --
 
 INSERT INTO `material_item_list` (`mr_item_id`, `mr_r_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
-(15, 9, 9, 'Cement', '20', '2000', '2025-04-03', 1, 1, 9, 1),
-(16, 9, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(17, 9, 10, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(18, 9, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(19, 9, 11, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(20, 9, 11, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
-(21, 9, 12, 'Cement', '20', '2000', '2025-04-03', 0, 0, 9, 0),
-(22, 9, 12, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0),
 (37, 13, 11, 'Cement', '20', NULL, NULL, 0, 0, NULL, 0),
 (38, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0),
 (39, 13, 11, 'Cement', '20', NULL, NULL, 0, 0, NULL, 0),
-(40, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0),
-(74, 12, 9, 'Cement', '200', '2000', NULL, NULL, 1, 9, NULL),
-(75, 14, 10, 'sandy', '50', '1600', '2025-04-03', 0, 0, 10, 0),
-(76, 14, 10, 'Sand', '50', '1500', '2025-04-03', 0, 0, 10, 0),
-(77, 14, 10, 'Sandad', '50', '1500', '2025-04-03', 0, 0, 10, 0),
-(94, 10, 9, 'Cement 44', '20', '2000', '2025-04-03', 1, 1, 9, 1),
-(95, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
-(96, 10, 9, 'Cement', '20', '2000', '2025-04-03', 0, 1, 9, 0),
-(97, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
-(98, 10, 9, 'Cement', '20', '2000', '2025-04-03', 0, 1, 9, 0),
-(99, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 1, 9, 0),
-(100, 10, 9, 'Cement', '20', '2000', '2025-04-03', 0, 1, 9, 0),
-(101, 10, 9, 'Sand', '50', '1500', '2025-04-03', 0, 0, 9, 0);
+(40, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -939,11 +919,6 @@ CREATE TABLE `vendors` (
 --
 
 INSERT INTO `vendors` (`vendor_id`, `vendor_ref_no`, `vendor_name`, `vendor_contact`, `vendor_alt_contact`, `vendor_address`, `vendor_email`, `vendor_status`) VALUES
-(9, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(10, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(11, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(12, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
-(13, NULL, 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (14, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (16, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
 (17, 'JGCV0001', 'ABC Supplies', '2147483647', '1234567890', '123 Supply St, City, Country', 'contact@abcsupplies.com', 'open'),
@@ -984,42 +959,10 @@ CREATE TABLE `vendor_payments` (
 --
 
 INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay_amount`, `pay_mode`, `pay_note`, `pay_exp_id`) VALUES
-(25, 12, 11, '4574', NULL, '748574', 20),
-(26, 13, 11, '4574', NULL, '748574', 20),
 (27, 14, 11, '4574', NULL, '748574', 20),
-(28, 13, 11, '4574', NULL, '748574', 21),
-(29, 12, 11, '4574', NULL, '748574', 21),
 (30, 14, 11, '4574', NULL, '748574', 21),
-(37, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 31),
-(38, 11, 9, '20000', 'UPI', 'for item purchase', 31),
-(39, 11, 9, '20000', 'UPI', 'for item purchase', 32),
-(40, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 32),
-(41, 11, 9, '20000', 'UPI', 'for item purchase', 35),
-(42, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 35),
-(43, 11, 9, '20000', 'UPI', 'for item purchase', 36),
-(44, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 36),
-(45, 11, 9, '20000', NULL, 'for item purchase', NULL),
-(46, 10, 9, '50000', NULL, 'fo 3 truck red soil', NULL),
-(47, 11, 9, '20000', NULL, 'for item purchase', NULL),
-(48, 10, 9, '50000', NULL, 'fo 3 truck red soil', NULL),
-(51, 11, 9, '20000', NULL, 'for item purchase', NULL),
-(52, 10, 9, '50000', NULL, 'fo 3 truck red soil', NULL),
-(138, 11, 10, '5000', NULL, 'nafdgadfg', 24),
-(139, 11, 10, '500', NULL, 'sdasdfa', 24),
-(140, 10, 10, '10000', NULL, 'nafdgadfg', 25),
-(141, 11, 9, '20000', NULL, 'for item purchase', 9),
-(142, 10, 9, '50000', NULL, 'fo 3 truck red soil', 9),
 (143, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 9),
-(150, 11, 9, '20000', NULL, 'for item purchase', 10),
-(151, 10, 9, '50000', NULL, 'fo 3 truck red soil', 10),
 (152, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 10),
-(166, 11, 9, '20000', 'UPI', 'for item purchase', 37),
-(167, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 37),
-(171, 9, NULL, '5000', NULL, 'Payment for materials supplied for PRJ1001', NULL),
-(172, 11, 9, '20000', 'UPI', 'for item purchase', 39),
-(173, 10, 9, '50000', 'UPI', 'fo 3 truck red soil', 39),
-(174, 11, 9, '20000', NULL, 'for item purchase', 11),
-(175, 10, 9, '50000', NULL, 'fo 3 truck red soil', 11),
 (176, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 11);
 
 --
