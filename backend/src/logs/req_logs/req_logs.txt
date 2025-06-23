@@ -6104,3 +6104,4 @@
 20250623	19:13:39	0272bd6b-c76f-445e-b887-be17dd1b0d19	GET	undefined	/api/v1/core/dashboard/financial-overview
 20250623	19:14:19	59aa421f-3e9e-44e9-a1e2-464332d846b5	GET	undefined	/api/v1/core/dashboard/projects-overview
 20250623	19:14:28	5d5f4554-8c58-475b-b9a5-7a0476ce2c7d	GET	undefined	/api/v1/core/dashboard/recent-activities
+20250623	19:16:27	7b3282c7-5cdb-4be7-90c6-60a67a1e33ff	GET	undefined	/api/v1/core/dashboard/projects-overview

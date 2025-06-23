@@ -69,5 +69,4 @@ coreRouter.get('/core/dashboard/projects-overview', AnalyticsCoreController.getP
 coreRouter.get('/core/dashboard/financial-overview', AnalyticsCoreController.getFinancialOverview);
 coreRouter.get('/core/dashboard/recent-activities', AnalyticsCoreController.getRecentActivities);
 
-
 module.exports = coreRouter;
