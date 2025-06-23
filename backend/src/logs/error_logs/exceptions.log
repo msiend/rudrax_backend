@@ -1474,3 +1474,133 @@ Error: Access denied for user 'reynrel01'@'localhost' (using password: YES)
   ],
   [Symbol(level)]: 'error'
 }
+2025-06-23 19:10:14 [ERROR] uncaughtException: print is not defined
+ReferenceError: print is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:61:27)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at node:internal/main/run_main_module:36:49
+ReferenceError: print is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:61:27)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at node:internal/main/run_main_module:36:49
+{
+  error: ReferenceError: print is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\jagya_const\backend\app.js:61:27)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+      at node:internal/main/run_main_module:36:49,
+  exception: true,
+  date: 'Mon Jun 23 2025 19:10:14 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9372,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\jagya_const\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\jagya_const\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 106807296,
+      heapTotal: 69672960,
+      heapUsed: 49206984,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 200209.265 },
+  trace: [
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\jagya_const\\backend\\app.js',
+      function: null,
+      line: 61,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 170,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 36,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

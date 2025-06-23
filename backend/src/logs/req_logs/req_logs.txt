@@ -6099,3 +6099,8 @@
 20250529	14:24:56	1d55c17e-4d0e-487a-a0c2-505e1cb809e0	GET	undefined	/api/v1/entity/client/readAll
 20250529	16:44:25	9d51af69-37b1-4bd1-8855-9101b55d457e	GET	undefined	/api/v1/core/project/get_project_detail/9
 20250529	16:45:57	ad7a0ab3-f0f2-4cb7-af7a-56ce6a7ad850	GET	undefined	/api/v1/core/project/get_project_detail/9
+20250623	19:12:19	cd10a9b5-9e47-4140-b3ef-6e35e3b63e4d	GET	undefined	/api/v1/core/dashboard/summary
+20250623	19:13:02	c4766e44-42d5-4113-a692-95152259cef3	GET	undefined	/api/v1/core/dashboard/projects-overview
+20250623	19:13:39	0272bd6b-c76f-445e-b887-be17dd1b0d19	GET	undefined	/api/v1/core/dashboard/financial-overview
+20250623	19:14:19	59aa421f-3e9e-44e9-a1e2-464332d846b5	GET	undefined	/api/v1/core/dashboard/projects-overview
+20250623	19:14:28	5d5f4554-8c58-475b-b9a5-7a0476ce2c7d	GET	undefined	/api/v1/core/dashboard/recent-activities
