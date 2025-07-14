@@ -101,20 +101,6 @@ class VendorsController {
       }
    }
 
-   static async paginate(req, res) {
-      try {
-         const { page = 1, limit = 10 } = req.query;
-         const offset = (page - 1) * limit;
-         const vendors = await VendorsModel.findAll();
-         res.status(200).send({
-            status: true,
-            msg: 'Vendors retrieved successfully',
-            data: { page, limit, records: vendors.slice(offset, offset + parseInt(limit)) },
-         });
-      } catch (error) {
-         res.status(500).send({ status: false, msg: 'Failed to paginate vendors', data: null });
-      }
-   }
 }
 
 module.exports = VendorsController;

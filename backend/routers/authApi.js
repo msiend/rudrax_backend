@@ -2,16 +2,10 @@ require('module-alias/register');
 
 const express = require('express');
 const authRouter = express.Router();
-const superAdminControllers = require('@/controllers/authControllers/superadmin');
-const superviserControllers = require('@/controllers/authControllers/superviser');
-const financeControllers = require('@/controllers/authControllers/finance');
-const branchControllers = require('@/controllers/authControllers/branch');
+const adminControllers = require('@/controllers/authControllers/admin');
 
 const roleControllerMap = {
-   'super-admin': superAdminControllers,
-   'superviser': superviserControllers,
-   'finance': financeControllers,
-   'branch': branchControllers,
+   'admin': adminControllers,
 };
 Object.entries(roleControllerMap).forEach(([role, controller]) => {
    authRouter.post(`/core/${role}/create/credentials`, controller.create);

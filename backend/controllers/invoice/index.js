@@ -1,4 +1,6 @@
 const InvoiceModel = require('@/models/invoice');
+const InvoiceConfigDetails =require('@/config/invoice.cofig')
+
 
 const InvoiceController = {
    async create(req, res) {
@@ -72,17 +74,14 @@ const InvoiceController = {
       }
    },
 
-   //    async paginate(req, res) {
-   //       try {
-   //          const limit = parseInt(req.query.limit) || 10;
-   //          const offset = parseInt(req.query.offset) || 0;
-   //          const data = await InvoiceModel.paginate(limit, offset);
-   //          res.status(200).send({ status: true, msg: 'Paginated data fetched', data });
-   //       } catch (err) {
-   //          console.error('Error in pagination:', err);
-   //          res.status(500).send({ status: false, msg: 'Server error', data: null });
-   //       }
-   //    },
+   async getInvoiceConfigDetails(req, res) {
+      try {
+         res.json({ status:true,  msg: 'Invoice item deleted successfully', data: InvoiceConfigDetails});
+      } catch (err) {
+         res.status(500).json({status:true, msg: 'Error deleting invoice item', error: err });
+      }
+   },
+
 };
 
 module.exports = InvoiceController;

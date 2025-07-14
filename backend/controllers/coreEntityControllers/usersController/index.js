@@ -1,7 +1,6 @@
 const _UserModel = require('@/models/coreEntityModels/usersModel');
 
 class _UserController {
-  // Create User (already provided)
   static async create(req, res) {
     const { role } = req.params;
     const { ...userInfo } = req.body;
@@ -22,7 +21,6 @@ class _UserController {
     }
   }
 
-  // Get All Users (already provided)
   static async findAll(req, res) {
     const { role } = req.params;
     try {
@@ -42,7 +40,6 @@ class _UserController {
     }
   }
 
-  // Get Single User
   static async findOne(req, res) {
     const { role, id } = req.params;
     try {
@@ -69,13 +66,11 @@ class _UserController {
     }
   }
 
-  // Update User
   static async update(req, res) {
     const { role, id } = req.params;
     const updates = req.body;
     
     try {
-      // Remove sensitive fields that shouldn't be updated here
       delete updates.password;
       delete updates.r_id;
 
@@ -95,7 +90,6 @@ class _UserController {
     }
   }
 
-  // Update Password
   static async updatePassword(req, res) {
     const { role, id } = req.params;
     const { password } = req.body;
@@ -117,7 +111,6 @@ class _UserController {
     }
   }
 
-  // Toggle User Status
   static async toggleStatus(req, res) {
     const { role, id } = req.params;
     const { status } = req.body;
@@ -141,7 +134,6 @@ class _UserController {
     }
   }
 
-  // Delete User
   static async remove(req, res) {
     const { role, id } = req.params;
     
@@ -162,7 +154,6 @@ class _UserController {
     }
   }
 
-  // Get User Profile (combines auth and info)
   static async getProfile(req, res) {
     const { role, id } = req.params;
     
@@ -176,7 +167,6 @@ class _UserController {
         });
       }
       
-      // Remove sensitive data before sending
       const { password, token, ...profileData } = data;
       res.status(200).json({
         status: true,

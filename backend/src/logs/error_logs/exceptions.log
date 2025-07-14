@@ -1604,3 +1604,449 @@ ReferenceError: print is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-07-01 12:17:08 [ERROR] uncaughtException: Cannot find module 'Z:\Visual_Codes\rudrax\backend\models\authMclsodels\admin'
+Require stack:
+- Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js
+- Z:\Visual_Codes\rudrax\backend\routers\authApi.js
+- Z:\Visual_Codes\rudrax\backend\app.js
+Error: Cannot find module 'Z:\Visual_Codes\rudrax\backend\models\authMclsodels\admin'
+Require stack:
+- Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js
+- Z:\Visual_Codes\rudrax\backend\routers\authApi.js
+- Z:\Visual_Codes\rudrax\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\rudrax\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js:5:25)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+Error: Cannot find module 'Z:\Visual_Codes\rudrax\backend\models\authMclsodels\admin'
+Require stack:
+- Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js
+- Z:\Visual_Codes\rudrax\backend\routers\authApi.js
+- Z:\Visual_Codes\rudrax\backend\app.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+    at Module._resolveFilename (Z:\Visual_Codes\rudrax\backend\node_modules\module-alias\index.js:49:29)
+    at Function._load (node:internal/modules/cjs/loader:1075:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js:5:25)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+{
+  error: Error: Cannot find module 'Z:\Visual_Codes\rudrax\backend\models\authMclsodels\admin'
+  Require stack:
+  - Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js
+  - Z:\Visual_Codes\rudrax\backend\routers\authApi.js
+  - Z:\Visual_Codes\rudrax\backend\app.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at Module._resolveFilename (Z:\Visual_Codes\rudrax\backend\node_modules\module-alias\index.js:49:29)
+      at Function._load (node:internal/modules/cjs/loader:1075:27)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\controllers\authControllers\admin\index.js:5:25)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'Z:\\Visual_Codes\\rudrax\\backend\\controllers\\authControllers\\admin\\index.js',
+      'Z:\\Visual_Codes\\rudrax\\backend\\routers\\authApi.js',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ]
+  },
+  exception: true,
+  date: 'Tue Jul 01 2025 12:17:08 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9100,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 105160704,
+      heapTotal: 68624384,
+      heapUsed: 47570360,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 51277.093 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: null,
+      line: 1249,
+      method: null,
+      native: false
+    },
+    {
+      column: 29,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\node_modules\\module-alias\\index.js',
+      function: 'Module._resolveFilename',
+      line: 49,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1075,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 25,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\controllers\\authControllers\\admin\\index.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-01 12:18:18 [ERROR] uncaughtException: aminControllers is not defined
+ReferenceError: aminControllers is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20)
+ReferenceError: aminControllers is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20)
+{
+  error: ReferenceError: aminControllers is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20),
+  exception: true,
+  date: 'Tue Jul 01 2025 12:18:18 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 3788,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 107290624,
+      heapTotal: 69410816,
+      heapUsed: 48123120,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 51346.75 },
+  trace: [
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\authApi.js',
+      function: null,
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\app.js',
+      function: null,
+      line: 43,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-01 12:26:39 [ERROR] uncaughtException: aminControllers is not defined
+ReferenceError: aminControllers is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20)
+ReferenceError: aminControllers is not defined
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20)
+{
+  error: ReferenceError: aminControllers is not defined
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\authApi.js:8:13)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:43:20),
+  exception: true,
+  date: 'Tue Jul 01 2025 12:26:39 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 3336,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 104931328,
+      heapTotal: 68886528,
+      heapUsed: 47679408,
+      external: 2318336,
+      arrayBuffers: 21664
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 51848.14 },
+  trace: [
+    {
+      column: 13,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\authApi.js',
+      function: null,
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\app.js',
+      function: null,
+      line: 43,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

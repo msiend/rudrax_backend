@@ -1,7 +1,7 @@
 const AnalyticsCoreModel = require('@/models/coreEntityModels/analyticsModel');
 
 class AnalyticsCoreController {
-   static async getDashboardSummary(req, res) {
+   static async getDashboard_Overview(req, res) {
       try {
          const [
             totalProjects,
