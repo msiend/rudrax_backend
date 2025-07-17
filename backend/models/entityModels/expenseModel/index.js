@@ -1,15 +1,29 @@
-
 const pool = require('@/config/dbConfig');
 
 class ExpenseModel {
-   constructor(exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_entity, exp_project_ref) {
+   constructor(
+      exp_type,
+      exp_name,
+      exp_amount,
+      exp_mode,
+      exp_status,
+      exp_attachment_url,
+      exp_remark,
+      exp_paid_by,
+      exp_date,
+      exp_category,
+      exp_project_ref
+   ) {
+      this.exp_type = exp_type;
       this.exp_name = exp_name;
       this.exp_amount = exp_amount;
       this.exp_mode = exp_mode;
+      this.exp_status = exp_status;
+      this.exp_attachment_url = exp_attachment_url;
       this.exp_remark = exp_remark;
+      this.exp_paid_by = exp_paid_by;
       this.exp_date = exp_date;
       this.exp_category = exp_category;
-      this.exp_entity = exp_entity;
       this.exp_project_ref = exp_project_ref;
    }
 
@@ -44,24 +58,50 @@ class ExpenseModel {
    }
 
    // Create a new expense
-   static async create(exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) {
-      const query = `INSERT INTO expenses (exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) 
-                     VALUES (?, ?, ?, ?, ?, ?, ?)`;
+   static async create(
+      exp_type,
+      exp_name,
+      exp_amount,
+      exp_mode,
+      exp_status,
+      exp_attachment_url,
+      exp_remark,
+      exp_paid_by,
+      exp_date,
+      exp_category,
+      exp_project_ref
+   ) {
+      const query = `
+         INSERT INTO expenses (
+            exp_type, exp_name, exp_amount, exp_mode, exp_status, 
+            exp_attachment_url, exp_remark, exp_paid_by, 
+            exp_date, exp_category, exp_project_ref
+         ) 
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref]);
+         const [result] = await connPool.query(query, [
+            exp_type,
+            exp_name,
+            exp_amount,
+            exp_mode,
+            exp_status,
+            exp_attachment_url,
+            exp_remark,
+            exp_paid_by,
+            exp_date,
+            exp_category,
+            exp_project_ref
+         ]);
          if (result.affectedRows > 0) {
             return {
-               exp_id: result.insertId,
-               exp_name,
-               exp_amount,
-               exp_mode,
-               exp_remark,
-               exp_date,
-               exp_category,
-               exp_project_ref,
+               status: true,
+               msg: 'Expense created successfully.',
+               exp_id: result.insertId
             };
          }
+         return { status: false, msg: 'Failed to create expense.' };
       } catch (error) {
          console.error('Error creating expense:', error);
          throw error;
@@ -71,14 +111,57 @@ class ExpenseModel {
    }
 
    // Update an existing expense
-   static async update(exp_id, exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref) {
-      const query = `UPDATE expenses 
-                     SET exp_name = ?, exp_amount = ?, exp_mode = ?, exp_remark = ?, exp_date = ?, exp_category = ?,  exp_project_ref = ?
-                     WHERE exp_id = ?`;
+   static async update(
+      exp_id,
+      exp_type,
+      exp_name,
+      exp_amount,
+      exp_mode,
+      exp_status,
+      exp_attachment_url,
+      exp_remark,
+      exp_paid_by,
+      exp_date,
+      exp_category,
+      exp_project_ref
+   ) {
+      const query = `
+         UPDATE expenses SET
+            exp_type = ?,
+            exp_name = ?,
+            exp_amount = ?,
+            exp_mode = ?,
+            exp_status = ?,
+            exp_attachment_url = ?,
+            exp_remark = ?,
+            exp_paid_by = ?,
+            exp_date = ?,
+            exp_category = ?,
+            exp_project_ref = ?
+         WHERE exp_id = ?
+      `;
       const connPool = await pool.getConnection();
       try {
-         const [result] = await connPool.query(query, [exp_name, exp_amount, exp_mode, exp_remark, exp_date, exp_category, exp_project_ref, exp_id]);
-         return result.affectedRows > 0;
+         const [result] = await connPool.query(query, [
+            exp_type,
+            exp_name,
+            exp_amount,
+            exp_mode,
+            exp_status,
+            exp_attachment_url,
+            exp_remark,
+            exp_paid_by,
+            exp_date,
+            exp_category,
+            exp_project_ref,
+            exp_id
+         ]);
+         return {
+            status: result.affectedRows > 0,
+            msg: result.affectedRows > 0
+               ? 'Expense updated successfully.'
+               : 'No expense updated.'
+         };
       } catch (error) {
          console.error(`Error updating expense with ID ${exp_id}:`, error);
          throw error;
@@ -93,7 +176,12 @@ class ExpenseModel {
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [exp_id]);
-         return result.affectedRows > 0;
+         return {
+            status: result.affectedRows > 0,
+            msg: result.affectedRows > 0
+               ? 'Expense deleted successfully.'
+               : 'No expense deleted.'
+         };
       } catch (error) {
          console.error(`Error deleting expense with ID ${exp_id}:`, error);
          throw error;
@@ -102,31 +190,7 @@ class ExpenseModel {
       }
    }
 
-   // Paginated fetch of expenses
-   static async paginate(page = 1, limit = 10) {
-      const offset = (page - 1) * limit;
-      const query = `SELECT * FROM expenses ORDER BY exp_date DESC LIMIT ? OFFSET ?`;
-      const countQuery = `SELECT COUNT(*) AS total FROM expenses`;
-      
-      const connPool = await pool.getConnection();
-      try {
-         const [[{ total }]] = await connPool.query(countQuery);
-         const [rows] = await connPool.query(query, [limit, offset]);
 
-         return {
-            totalRecords: total,
-            totalPages: Math.ceil(total / limit),
-            currentPage: page,
-            pageSize: limit,
-            data: rows,
-         };
-      } catch (error) {
-         console.error('Error fetching paginated expenses:', error);
-         throw error;
-      } finally {
-         connPool.release();
-      }
-   }
 }
 
 module.exports = ExpenseModel;

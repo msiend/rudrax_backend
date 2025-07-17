@@ -1,4 +1,4 @@
-const ProjectSubphaseModel = require('@/models/entityModels/project_subphaseModel');
+const ProjectSubphaseModel = require('@/models/entityModels/project_phase_taskModel');
 
 const ProjectSubphaseController = {
   async findAll(req, res) {

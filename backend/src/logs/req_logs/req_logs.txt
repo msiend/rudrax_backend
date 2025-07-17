@@ -6202,3 +6202,13 @@
 20250717	10:35:18	5b0eb806-a8ab-4a76-8b6e-69e4f98b2284	POST	undefined	/api/v1/core/site_inspection/upload/images/3
 20250717	10:36:33	5b0ddf08-e331-4218-8914-5e14fba96f2b	DELETE	undefined	/api/v1/core/site_inspection/delete/images/4
 20250717	10:36:55	da170776-57ba-47eb-976d-45b87dd7458c	DELETE	undefined	/api/v1/core/site_inspection/delete/images/4
+20250717	11:10:40	83e9dbfe-14e6-4593-8141-9f77a78422af	GET	undefined	/api/v1/invoice/4
+20250717	11:23:10	50cc6fbd-b948-47dc-8ea2-b96223e942d7	POST	undefined	/api/v1/entity/expense/create
+20250717	11:31:22	6cc9a647-d33e-4123-ad78-7ffee7160403	GET	undefined	/api/v1/entity/expense/readAll
+20250717	11:31:33	217129f4-c105-4a0f-88f6-4ecc9d478b6c	POST	undefined	/api/v1/entity/expense/create
+20250717	11:32:17	128356ac-a845-4be3-bd45-2f979116e5a0	POST	undefined	/api/v1/entity/expense/create
+20250717	11:32:25	fd833c6f-a4e3-42d3-9859-f1f00c37744c	GET	undefined	/api/v1/entity/expense/readAll
+20250717	11:32:32	b11166a5-9069-4f73-8722-487d6907a8d0	GET	undefined	/api/v1/entity/expense/readOne
+20250717	11:32:48	ab3ed1b1-b2f2-4386-9e84-51998fef9e54	PUT	undefined	/api/v1/entity/expense/update
+20250717	11:32:54	b8b8130a-caae-407d-8b4e-84923c8381f0	PUT	undefined	/api/v1/entity/expense/update
+20250717	11:32:59	aefe13f5-8e40-4162-98c0-6d942c3f89b6	DELETE	undefined	/api/v1/entity/expense/remove
