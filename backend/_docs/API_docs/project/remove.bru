@@ -1,0 +1,23 @@
+{
+  "type": "http-request",
+  "name": "Delete Project",
+  "createdAt": "2025-07-16T22:31:52.983918",
+  "updatedAt": "2025-07-16T22:31:52.983922",
+  "request": {
+    "method": "POST",
+    "url": "{{baseUrl}}/api/projects/remove",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "enabled": true
+      }
+    ],
+    "body": {
+      "mode": "json",
+      "json": {
+        "pro_id": "1"
+      }
+    }
+  }
+}

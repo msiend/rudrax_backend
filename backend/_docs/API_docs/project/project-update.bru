@@ -1,28 +1,40 @@
 meta {
   name: project-update
   type: http
-  seq: 4
+  seq: 3
 }
 
 put {
-  url: {{URL.Entity}}project/update
+  url: 127.0.0.1:3500/api/v1/entity/project/update
   body: json
   auth: bearer
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyX2lkIjo2LCJlbWFpbCI6Im1zaUBnbWFpbC5jb20iLCJyb2xlcyI6NTE5MH0sImlhdCI6MTc0MjYzMDY4OSwiZXhwIjoxNzQ1MjIyNjg5fQ.qZAJmn_1Oy-7QqDbS96IdFvVsakMBnJAXCK4etq7FeY
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 }
 
 body:json {
    {
-      "pro_id":42,
-      "pro_client_r_id": "38",
-      "pro_name": "Lakeview Resort 4555",
-      "pro_housetype": "Bungalow Resort",
-      "pro_sitedesc": "Scenic lakefront, hilly terrain.",
-      "pro_duration": "15 months",
-      "pro_totalcost": 1800000.00,
-      "pro_advancepayment": 540000.00
+      "pro_id": 48,
+      "pro_client_r_id": "36",
+      "pro_name": "My Project",
+      "newProjectRef": "ACME-202396",
+      "pro_sitedesc": "Site description here",
+      "pro_type": "Residential",
+      "pro_worktype": "New Construction",
+      "pro_category": "Category A",
+      "pro_sitelocation": "Location XYZ",
+      "pro_sitearea": "1000 sq ft",
+      "pro_sitedirection": "North-East48888",
+      "pro_duration": "6 months",
+      "pro_recs_space": "Parking, Garden",
+      "pro_recs_smention": "Extra space requirements",
+      "pro_totalcost": "2500000",
+      "pro_advancepayment": "500000"
     }
+}
+
+assert {
+  ~pro_id: isNumber
 }

@@ -3,6 +3,7 @@ const express = require('express');
 const coreRouter = express.Router();
 const createFileUploadMiddleware = require('../middleware/fileUploader');
 const ProjectDocsModel = require('@/models/entityModels/projectDocsModel');
+const site_inspectionDocsModel = require('@/models/entityModels/site_inspectionDocsModel');
 const fs = require('fs');
 const path = require('path');
 
@@ -97,7 +98,7 @@ coreRouter.delete('/core/project/file/delete/:pro_doc_id', async (req, res) => {
 
 
 // [Site- Inspection]-----------
-coreRouter.post('/core/site-inspection/upload/images/:si_id', uploadSiteInspection_Images, async (req, res) => {
+coreRouter.post('/core/site_inspection/upload/images/:si_id', uploadSiteInspection_Images, async (req, res) => {
    try {
       const { si_id } = req.params;
       if (!si_id) {
@@ -108,30 +109,32 @@ coreRouter.post('/core/site-inspection/upload/images/:si_id', uploadSiteInspecti
       }
       const filePath = req.file.path.replace(/\\/g, '/'); 
       const file_name = req.file.originalname.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z ]/g, '').trim().substring(0, 20);
-      const insertedId = await ProjectDocsModel.create(si_id, filePath,req.query.type||'doc_file',file_name);
+      const insertedId = await site_inspectionDocsModel.create(si_id, filePath,req.query.type||'doc_file',file_name);
       return res.status(200).json({
          status: true,
          msg: 'Site Inspection File uploaded and path stored successfully',
          filePath,
+         file_name,
          insertedId,
+         file_type:req.query.type||'site_image'
       });
    } catch (error) {
       console.error('Error uploading project file:', error);
       return res.status(500).json({ status: false, msg: 'Internal Server Error' });
    }
 });
-coreRouter.delete('/core/site-inspection/delete/images/:si_id', async (req, res) => {
+coreRouter.delete('/core/site_inspection/delete/images/:si_doc_id', async (req, res) => {
    try {
-      const { si_id } = req.params;
+      const { si_doc_id } = req.params;
       let deleted;
-      if (!si_id) {return res.status(400).json({ status: false, msg: 'Missing si_id' });}
-      const filePath = await ProjectDocsModel.findOne(si_id);
+      if (!si_doc_id) {return res.status(400).json({ status: false, msg: 'Missing si_doc_id' });}
+      const filePath = await site_inspectionDocsModel.findOne(si_doc_id);
       if (!filePath) {
          return res.status(404).json({ status: false, msg: 'Document not found' });
       }
-      const resolvedPath = path.resolve(filePath.pro_doc_url);
+      const resolvedPath = path.resolve(filePath.si_doc_url);
       if (fs.existsSync(resolvedPath)) {fs.unlinkSync(resolvedPath);
-         deleted = await ProjectDocsModel.remove(si_id);
+         deleted = await site_inspectionDocsModel.remove(si_doc_id);
       }
       if (deleted) {return res.status(200).json({status: true,msg: 'Project document and file deleted successfully',filePath,});
       } else {

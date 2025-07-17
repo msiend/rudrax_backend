@@ -9,7 +9,7 @@ class ProjectDocsModel {
   }
 
   static async findAll(si_r_id) {
-    const query = 'SELECT si_doc_id, si_r_id, si_doc_url FROM project_docs WHERE si_r_id = ?';
+    const query = 'SELECT si_doc_id, si_r_id, si_doc_url FROM site_inspection_docs WHERE si_r_id = ?';
     const connPool = await pool.getConnection();
     try {
       const [rows] = await connPool.query(query, [si_r_id]);
@@ -23,7 +23,7 @@ class ProjectDocsModel {
   }
 
   static async findOne(si_doc_id) {
-    const query = 'SELECT si_doc_id, si_r_id, si_doc_url FROM project_docs WHERE si_doc_id = ?';
+    const query = 'SELECT si_doc_id, si_r_id, si_doc_url FROM site_inspection_docs WHERE si_doc_id = ?';
   
     const connPool = await pool.getConnection();
     try {
@@ -38,7 +38,7 @@ class ProjectDocsModel {
   }
 
   static async create(si_r_id, si_doc_url,si_doc_type,si_doc_name) {
-    const query = 'INSERT INTO project_docs (si_r_id, si_doc_url,si_doc_type,si_doc_name) VALUES (?, ?,?,?)';
+    const query = 'INSERT INTO site_inspection_docs (si_r_id, si_doc_url,si_doc_type,si_doc_name) VALUES (?, ?,?,?)';
     const connPool = await pool.getConnection();
     try {
       const [result] = await connPool.query(query, [si_r_id, si_doc_url,si_doc_type,si_doc_name]);
@@ -52,7 +52,7 @@ class ProjectDocsModel {
   }
 
   static async update(id, si_r_id, si_doc_url) {
-    const query = 'UPDATE project_docs SET si_r_id = ?, si_doc_url = ? WHERE si_doc_id = ?';
+    const query = 'UPDATE site_inspection_docs SET si_r_id = ?, si_doc_url = ? WHERE si_doc_id = ?';
     const connPool = await pool.getConnection();
     try {
       const [result] = await connPool.query(query, [si_r_id, si_doc_url, id]);
@@ -66,7 +66,7 @@ class ProjectDocsModel {
   }
 
   static async remove(si_doc_id) {
-    const query = 'DELETE FROM project_docs WHERE si_doc_id = ?';
+    const query = 'DELETE FROM site_inspection_docs WHERE si_doc_id = ?';
     const connPool = await pool.getConnection();
     try {
       const [result] = await connPool.query(query, [si_doc_id]);

@@ -48,38 +48,35 @@ class SiteInspectionsController {
 
    static async create(req, res) {
       try {
-         const { project_id, si_date, si_location, si_type, status } = req.body;
-
-         const result = await SiteInspectionModel.create(project_id, si_date, si_location, si_type, status);
-
+         const { pro_id, si_date, si_location, si_type, status } = req.body;
+         const result = await SiteInspectionModel.create(pro_id, si_date, si_location, si_type, status);
          if (!result.status) {
             return res.status(500).json({
                status: false,
                msg: 'Something went wrong!',
-               errMsg: result?.error,
+               data: result?.error,
             });
          }
-
          res.status(201).send({
             status: true,
             msg: 'Site inspection created successfully',
-            data: result,
+            data: { insertedID: result.id, pro_id, si_date, si_location, si_type, status },
          });
       } catch (error) {
          console.error(error);
          res.status(500).send({
             status: false,
             msg: 'Failed to create site inspection',
-            error,
+            data: error,
          });
       }
    }
 
    static async update(req, res) {
       try {
-         const { si_id, project_id, si_date, si_location, si_type, status } = req.body;
+         const { si_id, pro_id, si_date, si_location, si_type, status } = req.body;
 
-         const result = await SiteInspectionModel.update(si_id, project_id, si_date, si_location, si_type, status);
+         const result = await SiteInspectionModel.update(si_id, pro_id, si_date, si_location, si_type, status);
 
          if (!result?.status) {
             return res.status(404).send({
@@ -94,7 +91,7 @@ class SiteInspectionsController {
             msg: 'Site inspection updated successfully',
             data: {
                si_id,
-               project_id,
+               pro_id,
                si_date,
                si_location,
                si_type,

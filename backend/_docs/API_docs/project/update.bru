@@ -1,0 +1,39 @@
+{
+  "type": "http-request",
+  "name": "Update Project",
+  "createdAt": "2025-07-16T22:31:52.983402",
+  "updatedAt": "2025-07-16T22:31:52.983406",
+  "request": {
+    "method": "POST",
+    "url": "{{baseUrl}}/api/projects/update",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "enabled": true
+      }
+    ],
+    "body": {
+      "mode": "json",
+      "json": {
+        "pro_id": "1",
+        "pro_client_r_id": "2",
+        "pro_name": "Updated Project",
+        "pro_ref_no": "REF-002",
+        "pro_sitedesc": "Updated site description",
+        "pro_type": "Commercial",
+        "pro_worktype": "Renovation",
+        "pro_category": "Category B",
+        "pro_sitelocation": "New Location",
+        "pro_sitearea": "2000 sq ft",
+        "pro_sitedirection": "South-West",
+        "pro_duration": "8 months",
+        "pro_recs_space": "Parking, Gym",
+        "pro_recs_smention": "Updated special requirements",
+        "pro_totalcost": "4000000",
+        "pro_advancepayment": "800000",
+        "pro_own": "New Owner"
+      }
+    }
+  }
+}

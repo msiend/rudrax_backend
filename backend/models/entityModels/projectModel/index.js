@@ -16,8 +16,7 @@ class ProjectModel {
       pro_recs_space,
       pro_recs_smention,
       pro_totalcost,
-      pro_advancepayment,
-      pro_own
+      pro_advancepayment
    ) {
       this.pro_client_r_id = pro_client_r_id;
       this.pro_name = pro_name;
@@ -34,7 +33,6 @@ class ProjectModel {
       this.pro_recs_smention = pro_recs_smention;
       this.pro_totalcost = pro_totalcost;
       this.pro_advancepayment = pro_advancepayment;
-      this.pro_own = pro_own;
    }
 
    static async create(
@@ -52,8 +50,7 @@ class ProjectModel {
       pro_recs_space,
       pro_recs_smention,
       pro_totalcost,
-      pro_advancepayment,
-      pro_own
+      pro_advancepayment
    ) {
       const connPool = await pool.getConnection();
       const insertSQL = `
@@ -72,9 +69,8 @@ class ProjectModel {
         pro_recs_space,
         pro_recs_smention,
         pro_totalcost,
-        pro_advancepayment,
-        pro_own
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        pro_advancepayment
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     `;
       try {
          const [result] = await connPool.query(insertSQL, [
@@ -93,7 +89,6 @@ class ProjectModel {
             pro_recs_smention,
             pro_totalcost,
             pro_advancepayment,
-            pro_own,
          ]);
          return { status: true, insertId: result.insertId, msg: 'Project created successfully' };
       } catch (error) {
@@ -136,7 +131,6 @@ class ProjectModel {
       pro_id,
       pro_client_r_id,
       pro_name,
-      pro_ref_no,
       pro_sitedesc,
       pro_type,
       pro_worktype,
@@ -148,8 +142,7 @@ class ProjectModel {
       pro_recs_space,
       pro_recs_smention,
       pro_totalcost,
-      pro_advancepayment,
-      pro_own
+      pro_advancepayment
    ) {
       const connPool = await pool.getConnection();
       const updateSQL = `
@@ -157,7 +150,6 @@ class ProjectModel {
       SET
         pro_client_r_id = ?,
         pro_name = ?,
-        pro_ref_no = ?,
         pro_sitedesc = ?,
         pro_type = ?,
         pro_worktype = ?,
@@ -169,15 +161,13 @@ class ProjectModel {
         pro_recs_space = ?,
         pro_recs_smention = ?,
         pro_totalcost = ?,
-        pro_advancepayment = ?,
-        pro_own = ?
+        pro_advancepayment = ?
       WHERE pro_id = ?
     `;
       try {
          const [result] = await connPool.query(updateSQL, [
             pro_client_r_id,
             pro_name,
-            pro_ref_no,
             pro_sitedesc,
             pro_type,
             pro_worktype,
@@ -190,7 +180,6 @@ class ProjectModel {
             pro_recs_smention,
             pro_totalcost,
             pro_advancepayment,
-            pro_own,
             pro_id,
          ]);
          if (result.affectedRows > 0) {

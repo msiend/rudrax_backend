@@ -1,0 +1,38 @@
+{
+  "type": "http-request",
+  "name": "Create Project",
+  "createdAt": "2025-07-16T22:31:52.982872",
+  "updatedAt": "2025-07-16T22:31:52.982883",
+  "request": {
+    "method": "POST",
+    "url": "{{baseUrl}}/api/projects/create",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "enabled": true
+      }
+    ],
+    "body": {
+      "mode": "json",
+      "json": {
+        "pro_client_r_id": "1",
+        "pro_name": "My Project",
+        "pro_ref_no": "REF-001",
+        "pro_sitedesc": "Site description here",
+        "pro_type": "Residential",
+        "pro_worktype": "New Construction",
+        "pro_category": "Category A",
+        "pro_sitelocation": "Location XYZ",
+        "pro_sitearea": "1000 sq ft",
+        "pro_sitedirection": "North-East",
+        "pro_duration": "6 months",
+        "pro_recs_space": "Parking, Garden",
+        "pro_recs_smention": "Extra space requirements",
+        "pro_totalcost": "2500000",
+        "pro_advancepayment": "500000",
+        "pro_own": "Owner Name"
+      }
+    }
+  }
+}
