@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2025 at 05:48 PM
+-- Generation Time: Jul 19, 2025 at 07:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -137,32 +137,8 @@ CREATE TABLE `contractor_payments` (
 --
 
 INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pay_amount`, `pay_mode`, `pay_note`, `pay_exp_id`) VALUES
-(29, 1, 9, '78574', NULL, '2485', 20),
-(30, 5, 9, '4574', NULL, '748574', 20),
-(31, 2, 9, '4574', NULL, '748574', 20),
-(32, 1, 9, '78574', NULL, '2485', 21),
-(33, 2, 9, '4574', NULL, '748574', 21),
-(34, 5, 9, '4574', NULL, '748574', 21),
-(35, 5, 9, '4574', 'UPI', '748574', 23),
-(36, 1, 9, '78574', 'UPI', '2485', 23),
-(37, 2, 9, '4574', 'UPI', '748574', 23),
-(50, 2, 9, '30000', 'UPI', 'for arun da ', 28),
-(53, 2, 9, '30000', 'UPI', 'for arun da ', 29),
-(56, 2, 9, '30000', 'UPI', 'for arun da ', 30),
-(57, 2, 9, '30000', 'UPI', 'for arun da ', 31),
-(58, 2, 9, '30000', 'UPI', 'for arun da ', 32),
-(61, 2, 9, '30000', 'UPI', 'for arun da ', 35),
-(62, 2, 9, '30000', 'UPI', 'for arun da ', 36),
-(63, 2, 9, '30000', NULL, 'for arun da ', NULL),
-(64, 2, 9, '30000', NULL, 'for arun da ', NULL),
-(66, 2, 9, '30000', NULL, 'for arun da ', NULL),
 (99, 5, 11, '500', NULL, 'asdasdf', 24),
-(100, 2, 10, '10000', NULL, 'adfgasdg', 25),
-(101, 2, 9, '30000', NULL, 'for arun da ', 9),
-(104, 2, 9, '30000', NULL, 'for arun da ', 10),
-(111, 2, 9, '30000', 'UPI', 'for arun da ', 37),
-(114, 2, 9, '30000', 'UPI', 'for arun da ', 39),
-(115, 2, 9, '30000', NULL, 'for arun da ', 11);
+(100, 2, 10, '10000', NULL, 'adfgasdg', 25);
 
 -- --------------------------------------------------------
 
@@ -172,84 +148,66 @@ INSERT INTO `contractor_payments` (`pay_id`, `pay_con_id`, `pay_project_id`, `pa
 
 CREATE TABLE `expenses` (
   `exp_id` int(155) NOT NULL,
+  `exp_type` enum('personal','firm','project') NOT NULL DEFAULT 'firm',
   `exp_name` varchar(255) DEFAULT NULL,
   `exp_amount` varchar(55) DEFAULT NULL,
-  `exp_mode` varchar(55) DEFAULT NULL,
-  `exp_remark` varchar(255) DEFAULT NULL,
+  `exp_mode` varchar(50) DEFAULT NULL,
+  `exp_status` enum('paid','unpaid','pending') DEFAULT 'paid',
+  `exp_attachment_url` varchar(255) DEFAULT NULL,
+  `exp_remark` text DEFAULT NULL,
+  `exp_paid_by` varchar(100) DEFAULT NULL,
   `exp_date` varchar(11) DEFAULT NULL,
-  `exp_category` varchar(155) DEFAULT NULL,
-  `exp_project_ref` varchar(155) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `exp_category` varchar(100) DEFAULT NULL,
+  `exp_project_ref` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `expenses`
 --
 
-INSERT INTO `expenses` (`exp_id`, `exp_name`, `exp_amount`, `exp_mode`, `exp_remark`, `exp_date`, `exp_category`, `exp_project_ref`, `created_at`) VALUES
-(2, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
-(3, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
-(4, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'JGCP0005', '2025-03-24 11:54:40'),
-(5, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'PRJ1001', '2025-03-24 11:54:40'),
-(6, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:31:50'),
-(7, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:33:24'),
-(9, NULL, NULL, NULL, NULL, NULL, 'Project', NULL, '2025-03-29 13:37:59'),
-(10, NULL, NULL, NULL, NULL, NULL, 'Project', NULL, '2025-03-29 13:38:41'),
-(11, 'march expense kkl', '20000', 'Cash', 'Bob da record 785', '2025-04-25', 'Project', NULL, '2025-03-29 13:41:36'),
-(12, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:42:03'),
-(13, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:42:04'),
-(14, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 13:44:03'),
-(15, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 14:54:47'),
-(16, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-03-29 14:56:15'),
-(17, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 04:56:02'),
-(18, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:18'),
-(19, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:08:35'),
-(20, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:09:19'),
-(21, 'name sd', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-04-03 05:19:37'),
-(22, 'new dhoni expense', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-05-08 05:02:51'),
-(23, 'new dhoni expense', '63452', 'UPI', 'dfdrvds', '2025-03-16', 'Project', NULL, '2025-05-08 05:04:00'),
-(24, NULL, NULL, NULL, NULL, NULL, 'Project', NULL, '2025-05-10 14:30:46'),
-(25, NULL, NULL, NULL, NULL, NULL, 'Project', NULL, '2025-05-10 14:33:51'),
-(26, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:34:45'),
-(27, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:36:10'),
-(28, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:37:30'),
-(29, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:38:33'),
-(30, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:41:00'),
-(31, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:42:37'),
-(32, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 14:43:22'),
-(33, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 15:05:30'),
-(34, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 15:05:37'),
-(35, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 15:06:15'),
-(36, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-10 15:07:06'),
-(37, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-11 08:05:36'),
-(38, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', '2025-05-11 08:05:36'),
-(39, 'march expense 1', '20000', 'UPI', 'Bob da record', '2025-04-25', 'Project', NULL, '2025-05-11 08:06:52'),
-(40, 'Material Purchase', '2500', 'Credit Card', 'Purchase of cement and bricks', '2023-10-26', 'Construction Materials', 'Supplier A', '2025-05-11 08:06:52');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `expense_item`
---
-
-CREATE TABLE `expense_item` (
-  `exp_item_id` int(20) NOT NULL,
-  `exp_item_name` varchar(255) DEFAULT NULL,
-  `exp_item_quantity` varchar(255) DEFAULT NULL,
-  `exp_item_rate` varchar(255) DEFAULT NULL,
-  `exp_ref_id` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `expense_item`
---
-
-INSERT INTO `expense_item` (`exp_item_id`, `exp_item_name`, `exp_item_quantity`, `exp_item_rate`, `exp_ref_id`) VALUES
-(2, 'Cement Bags', '100', '10.5', 2),
-(3, 'Cement Bags', '100', '10.5', 2),
-(4, 'Cement Bags', '100', '10.5', 2),
-(5, 'Cement Bags', '100', '10.5', 2),
-(6, 'Cement Bags', '100', '10.5', 2);
+INSERT INTO `expenses` (`exp_id`, `exp_type`, `exp_name`, `exp_amount`, `exp_mode`, `exp_status`, `exp_attachment_url`, `exp_remark`, `exp_paid_by`, `exp_date`, `exp_category`, `exp_project_ref`, `created_at`, `updated_at`) VALUES
+(2, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-03-24 11:54:40', '2025-07-17 05:45:28'),
+(3, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-03-24 11:54:40', '2025-07-17 05:45:28'),
+(4, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-03-24 11:54:40', '2025-07-17 05:45:28'),
+(5, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-03-24 11:54:40', '2025-07-17 05:45:28'),
+(6, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 13:31:50', '2025-07-17 05:45:28'),
+(7, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 13:33:24', '2025-07-17 05:45:28'),
+(9, 'firm', NULL, NULL, NULL, 'paid', NULL, NULL, NULL, NULL, 'Project', NULL, '2025-03-29 13:37:59', '2025-07-17 05:45:28'),
+(10, 'firm', NULL, NULL, NULL, 'paid', NULL, NULL, NULL, NULL, 'Project', NULL, '2025-03-29 13:38:41', '2025-07-17 05:45:28'),
+(11, 'firm', 'march expense kkl', '20000', 'Cash', 'paid', NULL, 'Bob da record 785', NULL, '2025-04-25', 'Project', NULL, '2025-03-29 13:41:36', '2025-07-17 05:45:28'),
+(12, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 13:42:03', '2025-07-17 05:45:28'),
+(13, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 13:42:04', '2025-07-17 05:45:28'),
+(14, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 13:44:03', '2025-07-17 05:45:28'),
+(15, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 14:54:47', '2025-07-17 05:45:28'),
+(16, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-03-29 14:56:15', '2025-07-17 05:45:28'),
+(17, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-04-03 04:56:02', '2025-07-17 05:45:28'),
+(18, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-04-03 05:08:18', '2025-07-17 05:45:28'),
+(19, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-04-03 05:08:35', '2025-07-17 05:45:28'),
+(20, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-04-03 05:09:19', '2025-07-17 05:45:28'),
+(21, 'firm', 'name sd', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-04-03 05:19:37', '2025-07-17 05:45:28'),
+(22, 'firm', 'new dhoni expense', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-05-08 05:02:51', '2025-07-17 05:45:28'),
+(23, 'firm', 'new dhoni expense', '63452', 'UPI', 'paid', NULL, 'dfdrvds', NULL, '2025-03-16', 'Project', NULL, '2025-05-08 05:04:00', '2025-07-17 05:45:28'),
+(24, 'firm', NULL, NULL, NULL, 'paid', NULL, NULL, NULL, NULL, 'Project', NULL, '2025-05-10 14:30:46', '2025-07-17 05:45:28'),
+(25, 'firm', NULL, NULL, NULL, 'paid', NULL, NULL, NULL, NULL, 'Project', NULL, '2025-05-10 14:33:51', '2025-07-17 05:45:28'),
+(26, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:34:45', '2025-07-17 05:45:28'),
+(27, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:36:10', '2025-07-17 05:45:28'),
+(28, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:37:30', '2025-07-17 05:45:28'),
+(29, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:38:33', '2025-07-17 05:45:28'),
+(30, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:41:00', '2025-07-17 05:45:28'),
+(31, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:42:37', '2025-07-17 05:45:28'),
+(32, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 14:43:22', '2025-07-17 05:45:28'),
+(33, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 15:05:30', '2025-07-17 05:45:28'),
+(34, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 15:05:37', '2025-07-17 05:45:28'),
+(35, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 15:06:15', '2025-07-17 05:45:28'),
+(36, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-10 15:07:06', '2025-07-17 05:45:28'),
+(37, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-11 08:05:36', '2025-07-17 05:45:28'),
+(38, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-05-11 08:05:36', '2025-07-17 05:45:28'),
+(39, 'firm', 'march expense 1', '20000', 'UPI', 'paid', NULL, 'Bob da record', NULL, '2025-04-25', 'Project', NULL, '2025-05-11 08:06:52', '2025-07-17 05:45:28'),
+(40, 'firm', 'Material Purchase', '2500', 'Credit Card', 'paid', NULL, 'Purchase of cement and bricks', NULL, '2023-10-26', 'Construction Materials', 0, '2025-05-11 08:06:52', '2025-07-17 05:45:28'),
+(41, '', '15000', 'cash', 'Purchased 100 bags of cement', '', 'Material', NULL, '101', NULL, NULL, NULL, '2025-07-17 05:53:10', '2025-07-17 05:53:10'),
+(43, 'project', 'Cement Purchase', '15000', 'cash', 'paid', '/uploads/receipts/cement-bill.jpg', 'Purchased 100 bags of cement', 'Site Supervisor', '2025-07-15', 'Material', 101, '2025-07-17 06:02:17', '2025-07-17 06:02:17');
 
 -- --------------------------------------------------------
 
@@ -386,6 +344,38 @@ INSERT INTO `phases` (`phase_id`, `phase_name`, `phase_alt_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `phase_task`
+--
+
+CREATE TABLE `phase_task` (
+  `phase_task_id` int(11) NOT NULL,
+  `phase_task_name` varchar(100) DEFAULT NULL,
+  `phase_task_alt_name` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `phase_task`
+--
+
+INSERT INTO `phase_task` (`phase_task_id`, `phase_task_name`, `phase_task_alt_name`) VALUES
+(2, 'Phase 2', 'sub_phase_alt_name 1kldrjkgscmigv'),
+(3, 'Phase 1', 'sub_phase_alt_name 1'),
+(4, 'Phase 1', 'sub_phase_alt_name 1'),
+(5, 'Phase 1', 'sub_phase_alt_name 1'),
+(6, 'Phase 1', 'sub_phase_alt_name 1'),
+(7, 'Phase 1', 'sub_phase_alt_name 1'),
+(8, 'Phase 1', 'sub_phase_alt_name 1'),
+(9, 'Phase 1', 'sub_phase_alt_name 1'),
+(10, 'Phase 1', 'sub_phase_alt_name 1'),
+(11, 'Phase 1', 'sub_phase_alt_name 1'),
+(12, 'Phase 1', 'sub_phase_alt_name 1'),
+(13, 'Phase 1', 'sub_phase_alt_name 1'),
+(14, 'Phase 1', 'sub_phase_alt_name 1'),
+(15, 'Phase 1', 'sub_phase_alt_name 1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `projects`
 --
 
@@ -416,7 +406,6 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `pro_sitedesc`, `pro_type`, `pro_worktype`, `pro_category`, `pro_sitelocation`, `pro_sitearea`, `pro_sitedirection`, `pro_duration`, `pro_recs_space`, `pro_recs_smention`, `pro_totalcost`, `pro_advancepayment`, `pro_own`, `created_at`, `updated_at`) VALUES
-(9, 35, 'Lakeview Resort', 'JGCP0002', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
 (10, 35, 'Lakeview Resort', 'JGCP0003', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
 (11, 35, 'Lakeview Resort', 'JGCP0004', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
 (12, 35, 'Lakeview Resort', 'JGCP0005', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
@@ -433,8 +422,22 @@ INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `
 (24, 50, 'Acme Corporation 2563', 'ACME-202376', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, '[object Object]', '2025-05-19 07:03:07', '2025-07-14 18:40:09'),
 (25, 51, 'Acme Corporation 2563', 'ACME-202375', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-19 07:04:00', '2025-07-14 18:40:09'),
 (26, 52, 'Acme Corporation 2563', 'ACME-202374', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-19 07:05:02', '2025-07-14 18:40:09'),
-(27, 53, 'Acme Corporation 2563', 'ACME-202373', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40', '2025-07-14 18:40:09'),
-(28, 36, 'Acme Corporation 2563', 'ACME-202372', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-24 08:33:38', '2025-07-14 18:40:09');
+(27, 53, 'Acme Corporation 2563', 'ACME-202371', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40', '2025-07-17 09:51:27'),
+(28, 36, 'Acme Corporation 2563', 'ACME-202382', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-24 08:33:38', '2025-07-17 09:53:43'),
+(32, 36, 'My Project', 'ACME-202383', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:21:51', '2025-07-17 09:54:19'),
+(36, 36, 'My Project', 'ACME-202384', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:24:22', '2025-07-17 09:54:22'),
+(37, 36, 'My Project', 'ACME-202385', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:24:26', '2025-07-17 09:54:26'),
+(38, 36, 'My Project', 'ACME-202386', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:25:25', '2025-07-17 09:55:25'),
+(39, 36, 'My Project', 'ACME-202387', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:32:22', '2025-07-17 10:02:22'),
+(40, 36, 'My Project', 'ACME-202388', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:32:24', '2025-07-17 10:02:24'),
+(41, 36, 'My Project', 'ACME-202389', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:32:24', '2025-07-17 10:02:24'),
+(42, 36, 'My Project', 'ACME-202390', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:32:25', '2025-07-17 10:02:25'),
+(43, 36, 'My Project', 'ACME-202391', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:32:52', '2025-07-17 10:02:52'),
+(44, 36, 'My Project', 'ACME-202392', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:34:44', '2025-07-17 10:04:44'),
+(45, 36, 'My Project', 'ACME-202393', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:35:13', '2025-07-17 10:05:13'),
+(46, 36, 'My Project', 'ACME-202394', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:35:32', '2025-07-17 10:05:32'),
+(47, 36, 'My Project', 'ACME-202395', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:35:45', '2025-07-17 10:05:45'),
+(48, 36, 'My Project', 'ACME-202396', 'Site description here', 'Residential', 'New Construction', 'Category A', 'Location XYZ', '1000 sq ft', 'North-East48888', '6 months', 'Parking, Garden', 'Extra space requirements', 2500000, 500000, NULL, '2025-07-17 04:39:27', '2025-07-17 10:15:38');
 
 -- --------------------------------------------------------
 
@@ -450,14 +453,6 @@ CREATE TABLE `project_contractor` (
   `pro_sub_phase` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_contractor`
---
-
-INSERT INTO `project_contractor` (`pro_con_id`, `pro_id`, `con_id`, `pro_phase`, `pro_sub_phase`) VALUES
-(3, 9, 5, 'Phase 1', 'Subphase A'),
-(4, 9, 5, 'Phase 1', 'Subphase A');
-
 -- --------------------------------------------------------
 
 --
@@ -472,20 +467,6 @@ CREATE TABLE `project_docs` (
   `pro_doc_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `project_docs`
---
-
-INSERT INTO `project_docs` (`pro_doc_id`, `pro_r_id`, `pro_doc_url`, `pro_doc_name`, `pro_doc_type`) VALUES
-(3, 9, 'public/project/files/file-86ca5128-2b99-44c4-8e87-9b029b805b41-1747033432513.pdf', NULL, '0'),
-(7, 9, 'public/project/files/file-f0aa20a7-4a43-4a85-b32b-2adb1369d79f-1747034744129.pdf', NULL, NULL),
-(8, 9, 'public/project/files/file-6f2e0810-4d9b-4ee8-a087-303faea57edc-1747034744280.pdf', NULL, NULL),
-(9, 9, 'public/project/files/file-7c36bbaa-867b-4294-971b-48277fe7897a-1747034744352.pdf', NULL, NULL),
-(10, 9, 'public/project/files/file-470b5035-2187-43b5-afe4-0c24e0a0df7f-1747034744493.pdf', NULL, NULL),
-(11, 9, 'public/project/files/file-bb095eba-bb46-4011-b883-6708e6f05339-1747034744592.pdf', NULL, NULL),
-(13, 9, 'public/project/images/image-34a17113-af97-4cc2-a081-60dab46dfa57-1747035464281.jpg', NULL, NULL),
-(14, 9, 'public/project/images/image-3ede4f51-4719-43b8-8303-c066bfda3732-1747631257823.jpg', 'WhatsApp Image  at', 'doc_image');
-
 -- --------------------------------------------------------
 
 --
@@ -496,29 +477,33 @@ CREATE TABLE `project_phase` (
   `pro_phase_id` int(20) NOT NULL,
   `phase_id` int(155) NOT NULL,
   `pro_id` bigint(20) NOT NULL,
-  `pro_phase_status` varchar(255) NOT NULL,
-  `pro_phase_deadline` varchar(255) NOT NULL,
+  `pro_phase_status` varchar(255) DEFAULT NULL,
+  `pro_phase_deadline` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project_phase`
---
-
-INSERT INTO `project_phase` (`pro_phase_id`, `phase_id`, `pro_id`, `pro_phase_status`, `pro_phase_deadline`, `created_at`) VALUES
-(5, 3, 9, 'In-progsress', '2025-06-30', '2025-05-09 16:09:11'),
-(6, 3, 9, 'Completed', '2025-06-30', '2025-05-09 17:03:06'),
-(7, 3, 9, 'Not Started', '2025-06-30', '2025-05-09 17:03:15'),
-(8, 3, 9, 'Not Started', '2025-06-30', '2025-05-10 14:03:34'),
-(9, 3, 9, 'Not Started', '2025-06-30', '2025-05-11 08:05:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project_site_queries`
+-- Table structure for table `project_phase_task`
 --
 
-CREATE TABLE `project_site_queries` (
+CREATE TABLE `project_phase_task` (
+  `pro_subphase_id` int(20) NOT NULL,
+  `pro_id` bigint(20) NOT NULL,
+  `pro_phase` int(20) DEFAULT NULL,
+  `pro_subphase` varchar(255) DEFAULT NULL,
+  `deadline` varchar(155) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_queries`
+--
+
+CREATE TABLE `project_queries` (
   `q_id` bigint(20) NOT NULL,
   `q_title` varchar(255) NOT NULL,
   `q_desc` varchar(255) DEFAULT NULL,
@@ -537,44 +522,26 @@ CREATE TABLE `project_site_queries` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project_subphase`
---
-
-CREATE TABLE `project_subphase` (
-  `pro_subphase_id` int(20) NOT NULL,
-  `pro_id` bigint(20) NOT NULL,
-  `pro_phase` int(20) DEFAULT NULL,
-  `pro_subphase` varchar(255) DEFAULT NULL,
-  `deadline` varchar(155) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `project_subphase`
---
-
-INSERT INTO `project_subphase` (`pro_subphase_id`, `pro_id`, `pro_phase`, `pro_subphase`, `deadline`, `created_at`) VALUES
-(2, 9, 6, 'Subphase A', '2025-07-15', '2025-05-09 17:03:37'),
-(3, 9, 6, 'Subphase A', '2025-07-15', '2025-05-09 17:03:37'),
-(4, 9, 7, 'Subphase A', '2025-07-15', '2025-05-09 17:03:40'),
-(5, 9, 7, 'Subphase A', '2025-07-15', '2025-05-11 08:05:36');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `site_inspections`
 --
 
 CREATE TABLE `site_inspections` (
   `si_id` bigint(20) NOT NULL,
-  `project_id` bigint(20) NOT NULL,
-  `si_date` datetime NOT NULL,
-  `si_location` datetime NOT NULL,
+  `project_id` bigint(20) DEFAULT NULL,
+  `si_date` varchar(155) DEFAULT NULL,
+  `si_location` varchar(255) DEFAULT NULL,
   `si_type` varchar(50) DEFAULT NULL,
   `status` varchar(30) DEFAULT 'pending',
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `site_inspections`
+--
+
+INSERT INTO `site_inspections` (`si_id`, `project_id`, `si_date`, `si_location`, `si_type`, `status`, `created_at`, `updated_at`) VALUES
+(3, 48, NULL, NULL, NULL, 'approved', '2025-07-17 10:22:21', '2025-07-17 10:22:21');
 
 -- --------------------------------------------------------
 
@@ -590,37 +557,15 @@ CREATE TABLE `site_inspection_docs` (
   `si_doc_type` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `sub_phases`
+-- Dumping data for table `site_inspection_docs`
 --
 
-CREATE TABLE `sub_phases` (
-  `sub_phase_id` int(11) NOT NULL,
-  `sub_phase_name` varchar(100) DEFAULT NULL,
-  `sub_phase_alt_name` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sub_phases`
---
-
-INSERT INTO `sub_phases` (`sub_phase_id`, `sub_phase_name`, `sub_phase_alt_name`) VALUES
-(2, 'Phase 2', 'sub_phase_alt_name 1kldrjkgscmigv'),
-(3, 'Phase 1', 'sub_phase_alt_name 1'),
-(4, 'Phase 1', 'sub_phase_alt_name 1'),
-(5, 'Phase 1', 'sub_phase_alt_name 1'),
-(6, 'Phase 1', 'sub_phase_alt_name 1'),
-(7, 'Phase 1', 'sub_phase_alt_name 1'),
-(8, 'Phase 1', 'sub_phase_alt_name 1'),
-(9, 'Phase 1', 'sub_phase_alt_name 1'),
-(10, 'Phase 1', 'sub_phase_alt_name 1'),
-(11, 'Phase 1', 'sub_phase_alt_name 1'),
-(12, 'Phase 1', 'sub_phase_alt_name 1'),
-(13, 'Phase 1', 'sub_phase_alt_name 1'),
-(14, 'Phase 1', 'sub_phase_alt_name 1'),
-(15, 'Phase 1', 'sub_phase_alt_name 1');
+INSERT INTO `site_inspection_docs` (`si_doc_id`, `si_r_id`, `si_doc_url`, `si_doc_name`, `si_doc_type`) VALUES
+(1, 3, 'public/SiteInspection/image-189fc5d0-f4d6-4e79-8d3c-4907f4f445ff-1752728576742.jpg', '', 'doc_file'),
+(2, 3, 'public/SiteInspection/image-1080e2b8-96e8-4f95-974d-ab1f47f946b4-1752728635918.jpg', '', 'doc_file'),
+(3, 3, 'public/SiteInspection/image-450905e4-e0ae-41dc-8451-1874aaa2f50e-1752728648532.jpg', '', 'doc_file'),
+(5, 3, 'public/SiteInspection/image-c97fbd05-2e65-4aaf-937d-50931a84cee9-1752728718112.jpg', '', 'doc_file');
 
 -- --------------------------------------------------------
 
@@ -785,10 +730,7 @@ CREATE TABLE `vendor_payments` (
 
 INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay_amount`, `pay_mode`, `pay_note`, `pay_exp_id`) VALUES
 (27, 14, 11, '4574', NULL, '748574', 20),
-(30, 14, 11, '4574', NULL, '748574', 21),
-(143, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 9),
-(152, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 10),
-(176, NULL, 9, '50000', NULL, 'fo 3 truck red soil', 11);
+(30, 14, 11, '4574', NULL, '748574', 21);
 
 --
 -- Indexes for dumped tables
@@ -829,13 +771,6 @@ ALTER TABLE `expenses`
   ADD PRIMARY KEY (`exp_id`);
 
 --
--- Indexes for table `expense_item`
---
-ALTER TABLE `expense_item`
-  ADD PRIMARY KEY (`exp_item_id`),
-  ADD KEY `exp_ref_id` (`exp_ref_id`);
-
---
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
@@ -869,6 +804,12 @@ ALTER TABLE `phases`
   ADD PRIMARY KEY (`phase_id`);
 
 --
+-- Indexes for table `phase_task`
+--
+ALTER TABLE `phase_task`
+  ADD PRIMARY KEY (`phase_task_id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
@@ -900,17 +841,17 @@ ALTER TABLE `project_phase`
   ADD KEY `phase_id` (`phase_id`);
 
 --
--- Indexes for table `project_site_queries`
+-- Indexes for table `project_phase_task`
 --
-ALTER TABLE `project_site_queries`
-  ADD PRIMARY KEY (`q_id`);
-
---
--- Indexes for table `project_subphase`
---
-ALTER TABLE `project_subphase`
+ALTER TABLE `project_phase_task`
   ADD PRIMARY KEY (`pro_subphase_id`),
   ADD KEY `pro_phase` (`pro_phase`);
+
+--
+-- Indexes for table `project_queries`
+--
+ALTER TABLE `project_queries`
+  ADD PRIMARY KEY (`q_id`);
 
 --
 -- Indexes for table `site_inspections`
@@ -925,12 +866,6 @@ ALTER TABLE `site_inspections`
 ALTER TABLE `site_inspection_docs`
   ADD PRIMARY KEY (`si_doc_id`),
   ADD KEY `si_r_id` (`si_r_id`);
-
---
--- Indexes for table `sub_phases`
---
-ALTER TABLE `sub_phases`
-  ADD PRIMARY KEY (`sub_phase_id`);
 
 --
 -- Indexes for table `super_admin`
@@ -1005,13 +940,7 @@ ALTER TABLE `contractor_payments`
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
---
--- AUTO_INCREMENT for table `expense_item`
---
-ALTER TABLE `expense_item`
-  MODIFY `exp_item_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `exp_id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -1044,10 +973,16 @@ ALTER TABLE `phases`
   MODIFY `phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `phase_task`
+--
+ALTER TABLE `phase_task`
+  MODIFY `phase_task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `pro_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `project_contractor`
@@ -1059,7 +994,7 @@ ALTER TABLE `project_contractor`
 -- AUTO_INCREMENT for table `project_docs`
 --
 ALTER TABLE `project_docs`
-  MODIFY `pro_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `pro_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `project_phase`
@@ -1068,34 +1003,28 @@ ALTER TABLE `project_phase`
   MODIFY `pro_phase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `project_site_queries`
+-- AUTO_INCREMENT for table `project_phase_task`
 --
-ALTER TABLE `project_site_queries`
-  MODIFY `q_id` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `project_phase_task`
+  MODIFY `pro_subphase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `project_subphase`
+-- AUTO_INCREMENT for table `project_queries`
 --
-ALTER TABLE `project_subphase`
-  MODIFY `pro_subphase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `project_queries`
+  MODIFY `q_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `site_inspections`
 --
 ALTER TABLE `site_inspections`
-  MODIFY `si_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `si_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `site_inspection_docs`
 --
 ALTER TABLE `site_inspection_docs`
-  MODIFY `si_doc_id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `sub_phases`
---
-ALTER TABLE `sub_phases`
-  MODIFY `sub_phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `si_doc_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `super_admin`
@@ -1146,12 +1075,6 @@ ALTER TABLE `contractor_payments`
   ADD CONSTRAINT `contractor_payments_ibfk_3` FOREIGN KEY (`pay_exp_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `expense_item`
---
-ALTER TABLE `expense_item`
-  ADD CONSTRAINT `expense_item_ibfk_1` FOREIGN KEY (`exp_ref_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `notification_recipients`
 --
 ALTER TABLE `notification_recipients`
@@ -1184,10 +1107,10 @@ ALTER TABLE `project_phase`
   ADD CONSTRAINT `project_phase_ibfk_2` FOREIGN KEY (`phase_id`) REFERENCES `phases` (`phase_id`);
 
 --
--- Constraints for table `project_subphase`
+-- Constraints for table `project_phase_task`
 --
-ALTER TABLE `project_subphase`
-  ADD CONSTRAINT `project_subphase_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `project_phase` (`pro_phase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `project_phase_task`
+  ADD CONSTRAINT `project_phase_task_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `project_phase` (`pro_phase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `site_inspections`
