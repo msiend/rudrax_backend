@@ -47,22 +47,44 @@ class ProjectSiteQueryController {
 
    static async create(req, res) {
       try {
-         const { q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date, q_remarks } = req.body;
+         const { q_title, q_desc, q_type, q_category, q_raised_by, q_status, approved_by, approved_date, q_remarks } =
+            req.body;
 
-         const result = await ProjectSiteQueryModel.create( q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date, q_remarks);
+         const result = await ProjectSiteQueryModel.create(
+            q_title,
+            q_desc,
+            q_type,
+            q_category,
+            q_raised_by,
+            q_status,
+            approved_by,
+            approved_date,
+            q_remarks
+         );
 
          if (!result.status) {
             return res.status(500).json({
                status: false,
                msg: 'Something went wrong!',
-               error: result?.error,
+               data: result?.error,
             });
          }
 
          res.status(201).send({
             status: true,
             msg: 'Query created successfully',
-            data: result,
+            data: {
+               q_id:result.insertId,
+               q_title,
+               q_desc,
+               q_type,
+               q_category,
+               q_raised_by,
+               q_status,
+               approved_by,
+               approved_date,
+               q_remarks
+            },
          });
       } catch (error) {
          console.error(error);
