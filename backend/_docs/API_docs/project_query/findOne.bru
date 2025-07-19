@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}project_phase_task/readOne
+  url: {{URL.Entity}}query/readOne
   body: json
   auth: bearer
 }
@@ -16,7 +16,7 @@ auth:bearer {
 
 body:json {
   {
-     "pt_id": 7
+      "q_id": 1
   }
 }
 

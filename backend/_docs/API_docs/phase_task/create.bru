@@ -5,14 +5,14 @@ meta {
 }
 
 post {
-  url: {{URL.Entity}}subPhase/create
+  url: {{URL.Entity}}phase_task/create
   body: json
   auth: none
 }
 
 body:json {
   {
-    "sub_phase_name":"Phase 1",
-    "sub_phase_alt_name":"sub_phase_alt_name 1"
+    "phase_task_name":"Phase 1",
+    "phase_task_alt_name":"sub_phase_alt_name 1"
   }
 }

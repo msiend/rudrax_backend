@@ -5,7 +5,7 @@ meta {
 }
 
 put {
-  url: {{URL.Entity}}project_subphase/update
+  url: {{URL.Entity}}project_phase_task/update
   body: json
   auth: bearer
 }
@@ -16,13 +16,13 @@ auth:bearer {
 
 body:json {
   {
-        "pro_subphase_id": 1,
-        "pro_id": 9,
-        "pro_phase": 5,
-        "pro_subphase": "Subphase adsasdA",
-        "deadline": "2025-07-15",
-        "created_at": "2025-05-09T16:11:57.000Z"
-      }
+    "pt_id": 7,
+    "pro_id": 15,
+    "pro_phase": 3,
+    "pro_phase_task": 3,
+    "deadline": "2024-07-25",
+    "pt_status": "Completed"
+  }
 }
 
 assert {

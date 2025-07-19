@@ -1,11 +1,11 @@
 meta {
-  name: findOne
+  name: delete
   type: http
-  seq: 3
+  seq: 5
 }
 
-get {
-  url: {{URL.Entity}}project_phase_task/readOne
+delete {
+  url: {{URL.Entity}}query/remove
   body: json
   auth: bearer
 }
@@ -16,7 +16,7 @@ auth:bearer {
 
 body:json {
   {
-     "pt_id": 7
+    "q_id": 1
   }
 }
 

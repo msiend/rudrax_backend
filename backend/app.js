@@ -58,7 +58,7 @@ app.use('/api/v1', appRoutes_pagination);
 ///
 ////
 ///// DEV Executions =================
-// app._router.stack.forEach(print.bind(null, []));
+app._router.stack.forEach(print.bind(null, []));
 // app.use(require('express-status-monitor')());
 ////////////////////////////////
 

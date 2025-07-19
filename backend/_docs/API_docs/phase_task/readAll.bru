@@ -5,14 +5,7 @@ meta {
 }
 
 get {
-  url: {{URL.Entity}}subPhase/readAll
-  body: json
+  url: {{URL.Entity}}phase_task/readAll
+  body: none
   auth: none
-}
-
-body:json {
-  {
-    "sub_phase_name":"Phase 1",
-    "sub_phase_alt_name":"sub_phase_alt_name 1"
-  }
 }

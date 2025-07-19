@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{URL.Entity}}project_subphase/create
+  url: {{URL.Entity}}project_phase_task/create
   body: json
   auth: bearer
 }
@@ -16,10 +16,11 @@ auth:bearer {
 
 body:json {
   {
-    "pro_id": 9,
-    "pro_phase_id": 7,
-    "pro_subphase": "Subphase A",
-    "deadline": "2025-07-15"
+      "pro_id": "15",
+      "pro_phase": "3",
+      "pro_phase_task": "3",
+      "deadline": "2024-07-25",
+      "pt_status": "Completed"  
   }
 }
 

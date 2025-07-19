@@ -1,0 +1,36 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}query/update
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+   {
+      "q_id": 1,
+      "q_title": "Clarification on API Endpointasdfasd",
+      "q_desc": "Need clarification on the correct API endpoint for user authentication module.",
+      "q_type": "Technical",
+      "q_category": "Backend Development",
+      "q_raised_by": 0,
+      "q_date": "2025-07-19T06:57:51.000Z",
+      "q_status": "Open",
+      "approved_by": null,
+      "approved_date": null,
+      "q_remarks": null
+    
+    }
+}
+
+assert {
+  ~status: isTrue
+}
