@@ -11,30 +11,30 @@ post {
 }
 
 params:path {
-  role: super_admin
+  role: users
 }
 
 body:json {
   {
-    "su_name": "Mintu Sharma",
-    "su_email": "admin.sharma@example.com",
-    "su_contact": "9876500000",
-    "su_alt_contact": "8765400000",
-    "su_address": "Super Admin HQ, Guwahati"
-  }
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "email": "alice.smith@example.com",
+      "phone": "123-456-7890",
+      "role": "Developer",
+      "department": "Engineering"
+    }
 }
 
 docs {
-  ### Branch
+  ### Users
   ```
-   {
-      "b_name": "Guwahati Central Branch",
-      "b_location": "GS Road, Guwahati",
-      "b_head": "Mr. R. K. Sharma",
-      "b_contact_number": "9864012345",
-      "b_alt_number": "8011223344",
-      "b_email": "guwahati.central@example.com",
-      "b_commision": 0.025
+  {
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "email": "alice.smith@example.com",
+      "phone": "123-456-7890",
+      "role": "Developer",
+      "department": "Engineering"
     }
   ```
   ### Super_Admin
@@ -47,30 +47,6 @@ docs {
       "su_address": "Super Admin HQ, Guwahati"
     }
   ```
-  ### Supervisor
-  ```
-   {
-      "sup_name": "Rajesh Sharma",
-      "sup_email": "rajesh.sharma@example.com",
-      "sup_contact": "9876543210",
-      "sup_alt_contact": "8765432109",
-      "sup_address": "A-102, Green Valley Apartments, Guwahati"
-    }
-  ```
-  ### Finance
-  ```
-  {
-      "fd_name": "Acme Food Distributors",
-      "fd_contact": "9876543210",
-      "fd_alt_contact": "8765432109",
-      "fd_address": "123 Main Street, Anytown, USA",
-      "fd_email": "info@acmefood.com"
-    }
-  ```
-  
-  
-  
-  
   
   
   

@@ -1,11 +1,11 @@
 meta {
-  name: site-inspection-update
+  name: create
   type: http
-  seq: 4
+  seq: 1
 }
 
-put {
-  url: 127.0.0.1:3500/api/v1/entity/site_inspection/update
+post {
+  url: 127.0.0.1:3500/api/v1/entity/site_inspection/create
   body: json
   auth: bearer
 }
@@ -16,15 +16,15 @@ auth:bearer {
 
 body:json {
   {
-    "si_id": 4,
     "pro_id": 48,
-    "si_date": "2025-07-17",
+    "si_asign_id": "3",
     "si_location": "Engineer A",
+    "si_date": "2025-07-17",
     "si_type": "Site ready",
-    "status": "panding"
+    "status": "approved"
   }
 }
 
 assert {
-  ~si_id: isNumber
+  ~project_id: isNumber
 }

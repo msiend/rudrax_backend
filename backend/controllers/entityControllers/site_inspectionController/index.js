@@ -48,8 +48,8 @@ class SiteInspectionsController {
 
    static async create(req, res) {
       try {
-         const { pro_id, si_date, si_location, si_type, status } = req.body;
-         const result = await SiteInspectionModel.create(pro_id, si_date, si_location, si_type, status);
+         const { pro_id,si_asign_id, si_date, si_location, si_type, status } = req.body;
+         const result = await SiteInspectionModel.create(pro_id,si_asign_id, si_date, si_location, si_type, status);
          if (!result.status) {
             return res.status(500).json({
                status: false,
@@ -60,7 +60,7 @@ class SiteInspectionsController {
          res.status(201).send({
             status: true,
             msg: 'Site inspection created successfully',
-            data: { insertedID: result.id, pro_id, si_date, si_location, si_type, status },
+            data: { insertedID: result.id, pro_id,si_asign_id, si_date, si_location, si_type, status },
          });
       } catch (error) {
          console.error(error);
@@ -74,9 +74,9 @@ class SiteInspectionsController {
 
    static async update(req, res) {
       try {
-         const { si_id, pro_id, si_date, si_location, si_type, status } = req.body;
+         const { si_id, pro_id,si_asign_id, si_date, si_location, si_type, status } = req.body;
 
-         const result = await SiteInspectionModel.update(si_id, pro_id, si_date, si_location, si_type, status);
+         const result = await SiteInspectionModel.update(si_id, pro_id,si_asign_id, si_date, si_location, si_type, status);
 
          if (!result?.status) {
             return res.status(404).send({
@@ -92,6 +92,7 @@ class SiteInspectionsController {
             data: {
                si_id,
                pro_id,
+               si_asign_id,
                si_date,
                si_location,
                si_type,

@@ -6212,3 +6212,16 @@
 20250717	11:32:48	ab3ed1b1-b2f2-4386-9e84-51998fef9e54	PUT	undefined	/api/v1/entity/expense/update
 20250717	11:32:54	b8b8130a-caae-407d-8b4e-84923c8381f0	PUT	undefined	/api/v1/entity/expense/update
 20250717	11:32:59	aefe13f5-8e40-4162-98c0-6d942c3f89b6	DELETE	undefined	/api/v1/entity/expense/remove
+20250719	11:28:53	6eeb752c-c26f-4287-8dc8-923af3bc19da	POST	undefined	/api/v1/core/users/create
+20250719	11:29:03	95b2eff6-4713-4d92-a581-a23d9fcf9746	POST	undefined	/api/v1/core/users/create/users
+20250719	11:29:05	650ae0a2-cb2f-49ed-a167-65ede59aed9d	POST	undefined	/api/v1/core/users/create/user
+20250719	11:30:09	b9ed969f-f55b-47bd-94d3-c91ec185eefb	POST	undefined	/api/v1/core/users/create/user
+20250719	11:30:27	f240f438-4515-40b2-a098-7041e698e25e	POST	undefined	/api/v1/core/users/create/users
+20250719	11:31:06	80db595c-4081-437e-8756-3148995e21e9	POST	undefined	/api/v1/core/users/create/users
+20250719	11:31:24	7642f7c1-0552-4fa1-8f59-eb5e13e3e438	GET	undefined	/api/v1/core/users/readAll/super_admin
+20250719	11:38:27	6e822421-cea4-4b0a-9f72-884fefb95acf	POST	undefined	/api/v1/entity/site_inspection/create
+20250719	11:38:45	9adc7986-d1bc-46e7-b47f-a3463957fa38	GET	undefined	/api/v1/core/users/readAll/users
+20250719	11:40:37	4e949895-5e18-4249-b81b-564e49f8d514	GET	undefined	/api/v1/core/users/readAll/users
+20250719	11:40:49	ec7dbd26-240f-4a10-b251-45690296cb45	POST	undefined	/api/v1/entity/site_inspection/create
+20250719	11:42:44	6ec41263-6c7f-40be-b27e-8b6024d9fa9a	POST	undefined	/api/v1/entity/site_inspection/create
+20250719	11:42:49	66b725bb-04e2-4072-a8ac-3c9a9e3c490f	GET	undefined	/api/v1/entity/site_inspection/readAll
