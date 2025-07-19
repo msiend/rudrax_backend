@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2025 at 11:14 AM
+-- Generation Time: Jul 14, 2025 at 05:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,117 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jagya_db`
+-- Database: `rudrax_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `branch_auth`
---
-
-CREATE TABLE `branch_auth` (
-  `br_a_id` int(11) NOT NULL,
-  `br_r_id` int(11) NOT NULL,
-  `br_user_id` varchar(255) NOT NULL,
-  `br_password` varchar(255) NOT NULL,
-  `br_token` varchar(255) DEFAULT NULL,
-  `br_isactive` int(2) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `branch_auth`
---
-
-INSERT INTO `branch_auth` (`br_a_id`, `br_r_id`, `br_user_id`, `br_password`, `br_token`, `br_isactive`) VALUES
-(9, 3, 'deka@example.com', '$2a$12$T1Z8isdBMC/zf.2OQ9rsnOfO65Mif54GxjIiGBMC6BzydBGxycMIy', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDc1ODg3ODEsImV4cCI6MTc0ODAyMDc4MX0.2N4f4zTw0oDW1j31h7pT7yZvyCOslERjY5y1qsyo7vs', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `branch_clients`
---
-
-CREATE TABLE `branch_clients` (
-  `b_client_id` bigint(20) NOT NULL,
-  `b_r_id` int(11) NOT NULL,
-  `b_client_name` varchar(200) DEFAULT NULL,
-  `b_client_ref_no` varchar(200) DEFAULT NULL,
-  `b_client_contact` varchar(15) DEFAULT NULL,
-  `b_client_alt_contact` varchar(15) DEFAULT NULL,
-  `b_client_address` varchar(300) DEFAULT NULL,
-  `b_project_name` varchar(255) DEFAULT NULL,
-  `b_client_email` varchar(80) DEFAULT NULL,
-  `b_client_housetype` varchar(100) DEFAULT NULL,
-  `b_client_rcctype` varchar(100) DEFAULT NULL,
-  `b_client_totalcost` bigint(20) DEFAULT NULL,
-  `b_client_advancepayment` int(50) DEFAULT NULL,
-  `b_client_sitedesc` varchar(300) DEFAULT NULL,
-  `b_client_duration` varchar(100) DEFAULT NULL,
-  `b_client_commision` int(11) DEFAULT 1,
-  `b_admin_approval` tinyint(1) DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `approved_at` varchar(155) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `branch_clients`
---
-
-INSERT INTO `branch_clients` (`b_client_id`, `b_r_id`, `b_client_name`, `b_client_ref_no`, `b_client_contact`, `b_client_alt_contact`, `b_client_address`, `b_project_name`, `b_client_email`, `b_client_housetype`, `b_client_rcctype`, `b_client_totalcost`, `b_client_advancepayment`, `b_client_sitedesc`, `b_client_duration`, `b_client_commision`, `b_admin_approval`, `created_at`, `approved_at`) VALUES
-(5, 3, 'Acme Corporation', 'ACME-2023-0015', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, NULL, '2025-05-16 11:44:00', '2025-05-16 17:44:04'),
-(8, 3, 'Acme Corporation', 'ACME-2023-00d15', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', '2025-05-16 17:46:37'),
-(11, 3, 'Acme Corporation', 'ACME-2023-00d5', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', '2025-05-16 17:53:22'),
-(13, 3, 'Acme Corporation', 'ACME-2023-005', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', '2025-05-16 17:54:03'),
-(15, 3, 'Acme Corporation', 'ACME-2023-05', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', NULL),
-(18, 3, 'Acme Corporation=======', 'ACME-2023-5', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-16 11:44:00', NULL),
-(22, 3, 'Acme Corporation', 'ACME-20236', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-16 11:44:00', NULL),
-(27, 3, 'Acme Corporation 2563', 'ACME-202367', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:18:28', NULL),
-(30, 3, 'Acme Corporation 2563', 'ACME-202368', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:26:26', NULL),
-(32, 3, 'Acme Corporation 2563', 'ACME-202369', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:43:26', NULL),
-(33, 3, 'Acme Corporation 2563', 'ACME-202370', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:45:15', NULL),
-(34, 3, 'Acme Corporation 2563', 'ACME-202371', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-18 16:46:28', NULL),
-(36, 3, 'Acme Corporation 2563', 'ACME-202372', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:46:53', '2025-05-24 14:03:38'),
-(37, 3, 'Acme Corporation 2563', 'ACME-202373', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:47:30', '2025-05-19 12:35:40'),
-(38, 3, 'Acme Corporation 2563', 'ACME-202374', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:55:56', '2025-05-19 12:35:02'),
-(39, 3, 'Acme Corporation 2563', 'ACME-202375', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:55:58', '2025-05-19 12:34:00'),
-(40, 3, 'Acme Corporation 2563', 'ACME-202376', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 1, '2025-05-18 16:55:59', '2025-05-19 12:33:07'),
-(41, 3, 'Acme Corporation 2563', 'ACME-202377', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:29:40', NULL),
-(42, 3, 'Acme Corporation 2563', 'ACME-202378', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:30:57', NULL),
-(43, 3, 'Acme Corporation 2563', 'ACME-202379', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:33:08', NULL),
-(44, 3, 'Mintu Sharma', 'ACME-202380', '9401069337', '', 'siwan', NULL, 'm@gamail.com', 'G+1', NULL, 5000, 500, 'noadfa', 'aasdgasdf', 0, 0, '2025-05-19 16:38:30', NULL),
-(45, 3, 'Acme Corporation 2563', 'ACME-202381', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:50:22', NULL),
-(46, 3, 'Acme Corporation 2563', 'ACME-202382', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:50:24', NULL),
-(47, 3, 'Acme Corporation 2563', 'ACME-202383', '555-100-1001', '555-200-2001', '100 Industry Lane, Anytown', NULL, 'info@acmecorp.com', 'Warehouse', 'Pre-engineered Steel', 500000, 150000, 'Large open area, flat terrain.', '6 months', 0, 0, '2025-05-19 16:50:26', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `branch_data`
---
-
-CREATE TABLE `branch_data` (
-  `br_id` int(11) NOT NULL,
-  `b_name` varchar(200) DEFAULT NULL,
-  `b_location` varchar(300) DEFAULT NULL,
-  `b_head` varchar(100) DEFAULT NULL,
-  `b_contact_number` varchar(15) DEFAULT NULL,
-  `b_alt_number` varchar(15) DEFAULT NULL,
-  `b_email` varchar(80) DEFAULT NULL,
-  `b_commision` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `branch_data`
---
-
-INSERT INTO `branch_data` (`br_id`, `b_name`, `b_location`, `b_head`, `b_contact_number`, `b_alt_number`, `b_email`, `b_commision`) VALUES
-(3, 'Sunrise Branch adsga', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(4, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(5, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(6, 'Dispur Branch', 'Dispur Secretariat, Guwahati', 'Ms. P. Devi', '9435056789', NULL, 'dispur.branch@sample.net', 0),
-(7, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0),
-(8, 'Sunrise Branch 44', 'New York, NY', 'John Doe', '212-555-1234', '917-555-5678', 'sunrise@example.com', 0);
 
 -- --------------------------------------------------------
 
@@ -181,22 +72,23 @@ CREATE TABLE `collections` (
   `col_mode` varchar(55) DEFAULT NULL,
   `col_remark` varchar(255) DEFAULT NULL,
   `col_date` varchar(20) DEFAULT NULL,
-  `col_project_id` varchar(55) NOT NULL
+  `col_project_id` varchar(55) NOT NULL,
+  `col_project_phase` varchar(155) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `collections`
 --
 
-INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `col_date`, `col_project_id`) VALUES
-(2, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005'),
-(3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005'),
-(4, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(5, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(7, '5000', 'upi', '', '2025-04-06', '35'),
-(8, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001'),
-(9, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001');
+INSERT INTO `collections` (`col_id`, `col_amount`, `col_mode`, `col_remark`, `col_date`, `col_project_id`, `col_project_phase`) VALUES
+(2, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005', NULL),
+(3, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'JGCP0005', NULL),
+(4, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001', NULL),
+(5, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001', NULL),
+(6, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001', NULL),
+(7, '5000', 'upi', '', '2025-04-06', '35', NULL),
+(8, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001', NULL),
+(9, '1500', 'Bank Transfer', 'Advance payment for materials', '2023-10-26', 'PRJ1001', NULL);
 
 -- --------------------------------------------------------
 
@@ -362,36 +254,6 @@ INSERT INTO `expense_item` (`exp_item_id`, `exp_item_name`, `exp_item_quantity`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `finance_dep`
---
-
-CREATE TABLE `finance_dep` (
-  `fd_id` int(11) NOT NULL,
-  `fd_name` varchar(100) NOT NULL,
-  `fd_contact` varchar(13) NOT NULL,
-  `fd_alt_contact` varchar(13) DEFAULT NULL,
-  `fd_address` varchar(300) DEFAULT NULL,
-  `fd_email` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `finance_dep_auth`
---
-
-CREATE TABLE `finance_dep_auth` (
-  `fd_a_id` int(11) NOT NULL,
-  `fd_r_id` int(11) NOT NULL,
-  `fd_user_id` varchar(100) DEFAULT NULL,
-  `fd_password` varchar(255) NOT NULL,
-  `fd_token` varchar(455) NOT NULL,
-  `fd_isactive` int(2) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `invoice`
 --
 
@@ -439,96 +301,6 @@ CREATE TABLE `invoice_items` (
 INSERT INTO `invoice_items` (`invoice_item_id`, `inv_item_name`, `inv_item_quantity`, `inv_item_rate`, `inv_item_amount`, `invoice_id`) VALUES
 (0, 'Steel Rod', '10', '100', '1000', 1),
 (0, 'Cement Bag', '20', '200', '4000', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `labours`
---
-
-CREATE TABLE `labours` (
-  `lab_id` int(20) NOT NULL,
-  `lab_name` varchar(200) DEFAULT NULL,
-  `lab_contact` varchar(20) DEFAULT NULL,
-  `lab_alt_contact` varchar(20) DEFAULT NULL,
-  `lab_address` varchar(300) DEFAULT NULL,
-  `lab_email` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `labours`
---
-
-INSERT INTO `labours` (`lab_id`, `lab_name`, `lab_contact`, `lab_alt_contact`, `lab_address`, `lab_email`) VALUES
-(1, 'Quantum Diagnosasdasdftics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(3, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(4, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(5, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(6, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(7, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(8, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(9, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(10, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(11, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com'),
-(12, 'Quantum Diagnostics Lab', '1', '1', '123 Innovation Drive, Anytown, CA 91234, USA', 'info@quantumdiagnosticslab.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `material_item_list`
---
-
-CREATE TABLE `material_item_list` (
-  `mr_item_id` bigint(20) NOT NULL,
-  `mr_r_id` bigint(20) DEFAULT NULL,
-  `mr_project_r_id` bigint(20) NOT NULL,
-  `mr_item_name` varchar(255) DEFAULT NULL,
-  `mr_item_quantity` varchar(55) DEFAULT NULL,
-  `mr_item_amount` varchar(55) DEFAULT NULL,
-  `mr_item_date` varchar(20) DEFAULT NULL,
-  `md_approval` tinyint(1) DEFAULT 0,
-  `fd_approval` tinyint(1) DEFAULT 0,
-  `vendor_id` int(155) DEFAULT NULL,
-  `mr_delivery_status` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `material_item_list`
---
-
-INSERT INTO `material_item_list` (`mr_item_id`, `mr_r_id`, `mr_project_r_id`, `mr_item_name`, `mr_item_quantity`, `mr_item_amount`, `mr_item_date`, `md_approval`, `fd_approval`, `vendor_id`, `mr_delivery_status`) VALUES
-(37, 13, 11, 'Cement', '20', NULL, NULL, 0, 0, NULL, 0),
-(38, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0),
-(39, 13, 11, 'Cement', '20', NULL, NULL, 0, 0, NULL, 0),
-(40, 13, 11, 'atta', '20', NULL, NULL, 0, 0, NULL, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `material_requests`
---
-
-CREATE TABLE `material_requests` (
-  `mr_r_id` bigint(20) NOT NULL,
-  `material_ref_no` varchar(55) DEFAULT NULL,
-  `mr_project_id` bigint(20) DEFAULT NULL,
-  `mr_phase` varchar(155) DEFAULT NULL,
-  `mr_date` varchar(55) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `material_requests`
---
-
-INSERT INTO `material_requests` (`mr_r_id`, `material_ref_no`, `mr_project_id`, `mr_phase`, `mr_date`, `created_at`) VALUES
-(1, 'JGCMRQ0001', 12, 'installment', '<date>', '2025-04-05 13:13:06'),
-(9, NULL, 9, 'Phase 1', '2025-04-03', '2025-04-06 13:42:03'),
-(10, 'JGCMRQ0001', 9, 'Phase 1', '2025-04-03', '2025-04-06 13:48:40'),
-(11, 'JGCMRQ0002', 9, 'Phase 1', '2025-04-03', '2025-04-06 13:49:59'),
-(12, 'JGCMRQ0003', 9, 'Phase 1', '2025-04-03', '2025-04-08 02:04:00'),
-(13, 'JGCMRQ0004', 11, 'Phase 1', '2025-04-03', '2025-05-11 08:05:36'),
-(14, 'JGCMRQ0005', 11, 'Phase 1', '2025-04-03', '2025-05-11 08:06:53');
 
 -- --------------------------------------------------------
 
@@ -622,40 +394,47 @@ CREATE TABLE `projects` (
   `pro_client_r_id` bigint(20) NOT NULL,
   `pro_name` varchar(200) DEFAULT NULL,
   `pro_ref_no` varchar(200) NOT NULL,
-  `pro_housetype` varchar(100) DEFAULT NULL,
-  `pro_rcctype` varchar(100) DEFAULT NULL,
   `pro_sitedesc` varchar(300) DEFAULT NULL,
+  `pro_type` varchar(155) DEFAULT NULL,
+  `pro_worktype` varchar(155) DEFAULT NULL,
+  `pro_category` varchar(50) DEFAULT NULL,
+  `pro_sitelocation` varchar(155) DEFAULT NULL,
+  `pro_sitearea` varchar(155) DEFAULT NULL,
+  `pro_sitedirection` varchar(155) DEFAULT NULL,
   `pro_duration` varchar(100) DEFAULT NULL,
+  `pro_recs_space` varchar(155) DEFAULT NULL,
+  `pro_recs_smention` varchar(455) DEFAULT NULL,
   `pro_totalcost` bigint(20) DEFAULT NULL,
   `pro_advancepayment` int(11) DEFAULT NULL,
   `pro_own` varchar(55) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `pro_housetype`, `pro_rcctype`, `pro_sitedesc`, `pro_duration`, `pro_totalcost`, `pro_advancepayment`, `pro_own`, `created_at`) VALUES
-(9, 35, 'Lakeview Resort', 'JGCP0002', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(10, 35, 'Lakeview Resort', 'JGCP0003', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(11, 35, 'Lakeview Resort', 'JGCP0004', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(12, 35, 'Lakeview Resort', 'JGCP0005', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(13, 35, 'Lakeview Resort', 'JGCP0006', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(14, 35, 'Lakeview Resort', 'JGCP0007', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(15, 35, 'Lakeview Resort', 'JGCP0008', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(16, 35, 'Lakeview Resort', 'JGCP0009', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(18, 35, 'Lakeview Resort', 'JGCP00011', 'Bungalow Resort', 'Timber and Stone', 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-04-05 13:13:56'),
-(19, 38, 'Lakeview Resort', 'JGCP00012', 'Bungalow Resort', NULL, 'Scenic lakefront, hilly terrain.', '15 months', 1800000, 540000, NULL, '2025-05-11 08:05:36'),
-(20, 35, 'Acme Corporation', 'ACME-2023-0015', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-16 12:14:04'),
-(21, 45, 'Acme Corporation', 'ACME-2023-00d15', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-16 12:16:37'),
-(22, 46, 'Acme Corporation', 'ACME-2023-00d5', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-16 12:23:22'),
-(23, 47, 'Acme Corporation', 'ACME-2023-005', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-16 12:24:03'),
-(24, 50, 'Acme Corporation 2563', 'ACME-202376', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, '[object Object]', '2025-05-19 07:03:07'),
-(25, 51, 'Acme Corporation 2563', 'ACME-202375', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-19 07:04:00'),
-(26, 52, 'Acme Corporation 2563', 'ACME-202374', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, NULL, '2025-05-19 07:05:02'),
-(27, 53, 'Acme Corporation 2563', 'ACME-202373', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40'),
-(28, 36, 'Acme Corporation 2563', 'ACME-202372', 'Warehouse', 'Pre-engineered Steel', 'Large open area, flat terrain.', '6 months', 500000, 150000, 'Sunrise Branch adsga', '2025-05-24 08:33:38');
+INSERT INTO `projects` (`pro_id`, `pro_client_r_id`, `pro_name`, `pro_ref_no`, `pro_sitedesc`, `pro_type`, `pro_worktype`, `pro_category`, `pro_sitelocation`, `pro_sitearea`, `pro_sitedirection`, `pro_duration`, `pro_recs_space`, `pro_recs_smention`, `pro_totalcost`, `pro_advancepayment`, `pro_own`, `created_at`, `updated_at`) VALUES
+(9, 35, 'Lakeview Resort', 'JGCP0002', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(10, 35, 'Lakeview Resort', 'JGCP0003', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(11, 35, 'Lakeview Resort', 'JGCP0004', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(12, 35, 'Lakeview Resort', 'JGCP0005', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(13, 35, 'Lakeview Resort', 'JGCP0006', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(14, 35, 'Lakeview Resort', 'JGCP0007', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(15, 35, 'Lakeview Resort', 'JGCP0008', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(16, 35, 'Lakeview Resort', 'JGCP0009', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(18, 35, 'Lakeview Resort', 'JGCP00011', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-04-05 13:13:56', '2025-07-14 18:40:09'),
+(19, 38, 'Lakeview Resort', 'JGCP00012', 'Scenic lakefront, hilly terrain.', NULL, NULL, '0', '0', '0', '0', '15 months', NULL, NULL, 1800000, 540000, NULL, '2025-05-11 08:05:36', '2025-07-14 18:40:09'),
+(20, 35, 'Acme Corporation', 'ACME-2023-0015', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-16 12:14:04', '2025-07-14 18:40:09'),
+(21, 45, 'Acme Corporation', 'ACME-2023-00d15', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-16 12:16:37', '2025-07-14 18:40:09'),
+(22, 46, 'Acme Corporation', 'ACME-2023-00d5', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-16 12:23:22', '2025-07-14 18:40:09'),
+(23, 47, 'Acme Corporation', 'ACME-2023-005', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-16 12:24:03', '2025-07-14 18:40:09'),
+(24, 50, 'Acme Corporation 2563', 'ACME-202376', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, '[object Object]', '2025-05-19 07:03:07', '2025-07-14 18:40:09'),
+(25, 51, 'Acme Corporation 2563', 'ACME-202375', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-19 07:04:00', '2025-07-14 18:40:09'),
+(26, 52, 'Acme Corporation 2563', 'ACME-202374', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, NULL, '2025-05-19 07:05:02', '2025-07-14 18:40:09'),
+(27, 53, 'Acme Corporation 2563', 'ACME-202373', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-19 07:05:40', '2025-07-14 18:40:09'),
+(28, 36, 'Acme Corporation 2563', 'ACME-202372', 'Large open area, flat terrain.', NULL, NULL, '0', '0', '0', '0', '6 months', NULL, NULL, 500000, 150000, 'Sunrise Branch adsga', '2025-05-24 08:33:38', '2025-07-14 18:40:09');
 
 -- --------------------------------------------------------
 
@@ -736,6 +515,28 @@ INSERT INTO `project_phase` (`pro_phase_id`, `phase_id`, `pro_id`, `pro_phase_st
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `project_site_queries`
+--
+
+CREATE TABLE `project_site_queries` (
+  `q_id` bigint(20) NOT NULL,
+  `q_title` varchar(255) NOT NULL,
+  `q_desc` varchar(255) DEFAULT NULL,
+  `q_type` varchar(255) DEFAULT NULL,
+  `q_category` varchar(255) DEFAULT NULL,
+  `q_raised_by` bigint(20) NOT NULL,
+  `q_date` datetime DEFAULT current_timestamp(),
+  `q_status` varchar(50) DEFAULT 'open',
+  `approved_by` bigint(20) DEFAULT NULL,
+  `approved_date` datetime DEFAULT NULL,
+  `q_remarks` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `project_subphase`
 --
 
@@ -757,6 +558,37 @@ INSERT INTO `project_subphase` (`pro_subphase_id`, `pro_id`, `pro_phase`, `pro_s
 (3, 9, 6, 'Subphase A', '2025-07-15', '2025-05-09 17:03:37'),
 (4, 9, 7, 'Subphase A', '2025-07-15', '2025-05-09 17:03:40'),
 (5, 9, 7, 'Subphase A', '2025-07-15', '2025-05-11 08:05:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_inspections`
+--
+
+CREATE TABLE `site_inspections` (
+  `si_id` bigint(20) NOT NULL,
+  `project_id` bigint(20) NOT NULL,
+  `si_date` datetime NOT NULL,
+  `si_location` datetime NOT NULL,
+  `si_type` varchar(50) DEFAULT NULL,
+  `status` varchar(30) DEFAULT 'pending',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_inspection_docs`
+--
+
+CREATE TABLE `site_inspection_docs` (
+  `si_doc_id` bigint(20) NOT NULL,
+  `si_r_id` bigint(20) NOT NULL,
+  `si_doc_url` varchar(500) NOT NULL,
+  `si_doc_name` varchar(255) DEFAULT NULL,
+  `si_doc_type` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -789,49 +621,6 @@ INSERT INTO `sub_phases` (`sub_phase_id`, `sub_phase_name`, `sub_phase_alt_name`
 (13, 'Phase 1', 'sub_phase_alt_name 1'),
 (14, 'Phase 1', 'sub_phase_alt_name 1'),
 (15, 'Phase 1', 'sub_phase_alt_name 1');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `superviser`
---
-
-CREATE TABLE `superviser` (
-  `sup_id` int(11) NOT NULL,
-  `sup_name` varchar(100) NOT NULL,
-  `sup_email` varchar(155) DEFAULT NULL,
-  `sup_contact` varchar(13) NOT NULL,
-  `sup_alt_contact` varchar(13) DEFAULT NULL,
-  `sup_address` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `superviser`
---
-
-INSERT INTO `superviser` (`sup_id`, `sup_name`, `sup_email`, `sup_contact`, `sup_alt_contact`, `sup_address`) VALUES
-(1, 'Acme Supplies', NULL, '9401069337', '789456123', '123 Main St, Anytown, CA 91234'),
-(3, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(4, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(5, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(6, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(7, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234'),
-(8, 'Supervise Supplies', NULL, '555-123-4567', '555-987-6543', '123 Main St, Anytown, CA 91234');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `superviser_auth`
---
-
-CREATE TABLE `superviser_auth` (
-  `sup_a_id` int(11) NOT NULL,
-  `sup_r_id` int(11) NOT NULL,
-  `sup_user_id` varchar(100) NOT NULL,
-  `sup_password` varchar(300) NOT NULL,
-  `sup_token` varchar(300) DEFAULT NULL,
-  `sup_isactive` int(2) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -896,6 +685,42 @@ INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_user_id`, `su_password
 (14, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
 (15, 7, 'deka@example.com', '$2a$12$aIwIqfY2u58c2U846bxcHeGw1qfMq1AaLGuBYNjhVtLVr.7N3QNkm', NULL, 1),
 (16, 22, NULL, NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `role` varchar(50) DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_auth`
+--
+
+CREATE TABLE `user_auth` (
+  `u_a_id` bigint(20) NOT NULL,
+  `u_r_id` bigint(20) NOT NULL,
+  `u_user_id` bigint(20) NOT NULL,
+  `u_password` varchar(255) NOT NULL,
+  `u_token` varchar(255) DEFAULT NULL,
+  `u_role` varchar(55) DEFAULT NULL,
+  `u_isactive` tinyint(1) DEFAULT 1,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -970,28 +795,6 @@ INSERT INTO `vendor_payments` (`pay_id`, `pay_vendor_id`, `pay_project_id`, `pay
 --
 
 --
--- Indexes for table `branch_auth`
---
-ALTER TABLE `branch_auth`
-  ADD PRIMARY KEY (`br_a_id`),
-  ADD UNIQUE KEY `br_email` (`br_user_id`),
-  ADD KEY `br_r_id` (`br_r_id`);
-
---
--- Indexes for table `branch_clients`
---
-ALTER TABLE `branch_clients`
-  ADD PRIMARY KEY (`b_client_id`),
-  ADD UNIQUE KEY `un_client_refno` (`b_client_ref_no`),
-  ADD KEY `b_r_id` (`b_r_id`);
-
---
--- Indexes for table `branch_data`
---
-ALTER TABLE `branch_data`
-  ADD PRIMARY KEY (`br_id`);
-
---
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
@@ -1033,45 +836,10 @@ ALTER TABLE `expense_item`
   ADD KEY `exp_ref_id` (`exp_ref_id`);
 
 --
--- Indexes for table `finance_dep`
---
-ALTER TABLE `finance_dep`
-  ADD PRIMARY KEY (`fd_id`);
-
---
--- Indexes for table `finance_dep_auth`
---
-ALTER TABLE `finance_dep_auth`
-  ADD PRIMARY KEY (`fd_a_id`),
-  ADD UNIQUE KEY `un_fd_mail` (`fd_user_id`),
-  ADD KEY `fd_r_id` (`fd_r_id`);
-
---
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
   ADD PRIMARY KEY (`invoice_id`);
-
---
--- Indexes for table `labours`
---
-ALTER TABLE `labours`
-  ADD PRIMARY KEY (`lab_id`);
-
---
--- Indexes for table `material_item_list`
---
-ALTER TABLE `material_item_list`
-  ADD PRIMARY KEY (`mr_item_id`),
-  ADD KEY `material_item_list_ibfk_1` (`mr_project_r_id`),
-  ADD KEY `vendor_id` (`vendor_id`);
-
---
--- Indexes for table `material_requests`
---
-ALTER TABLE `material_requests`
-  ADD PRIMARY KEY (`mr_r_id`),
-  ADD KEY `mr_project_id` (`mr_project_id`);
 
 --
 -- Indexes for table `notifications`
@@ -1132,6 +900,12 @@ ALTER TABLE `project_phase`
   ADD KEY `phase_id` (`phase_id`);
 
 --
+-- Indexes for table `project_site_queries`
+--
+ALTER TABLE `project_site_queries`
+  ADD PRIMARY KEY (`q_id`);
+
+--
 -- Indexes for table `project_subphase`
 --
 ALTER TABLE `project_subphase`
@@ -1139,23 +913,24 @@ ALTER TABLE `project_subphase`
   ADD KEY `pro_phase` (`pro_phase`);
 
 --
+-- Indexes for table `site_inspections`
+--
+ALTER TABLE `site_inspections`
+  ADD PRIMARY KEY (`si_id`),
+  ADD KEY `project_id` (`project_id`);
+
+--
+-- Indexes for table `site_inspection_docs`
+--
+ALTER TABLE `site_inspection_docs`
+  ADD PRIMARY KEY (`si_doc_id`),
+  ADD KEY `si_r_id` (`si_r_id`);
+
+--
 -- Indexes for table `sub_phases`
 --
 ALTER TABLE `sub_phases`
   ADD PRIMARY KEY (`sub_phase_id`);
-
---
--- Indexes for table `superviser`
---
-ALTER TABLE `superviser`
-  ADD PRIMARY KEY (`sup_id`);
-
---
--- Indexes for table `superviser_auth`
---
-ALTER TABLE `superviser_auth`
-  ADD PRIMARY KEY (`sup_a_id`),
-  ADD KEY `sup_r_id` (`sup_r_id`);
 
 --
 -- Indexes for table `super_admin`
@@ -1169,6 +944,19 @@ ALTER TABLE `super_admin`
 ALTER TABLE `super_admin_auth`
   ADD PRIMARY KEY (`su_a_id`),
   ADD KEY `su_r_id` (`su_r_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `user_auth`
+--
+ALTER TABLE `user_auth`
+  ADD PRIMARY KEY (`u_a_id`);
 
 --
 -- Indexes for table `vendors`
@@ -1188,24 +976,6 @@ ALTER TABLE `vendor_payments`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `branch_auth`
---
-ALTER TABLE `branch_auth`
-  MODIFY `br_a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `branch_clients`
---
-ALTER TABLE `branch_clients`
-  MODIFY `b_client_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT for table `branch_data`
---
-ALTER TABLE `branch_data`
-  MODIFY `br_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `clients`
@@ -1244,40 +1014,10 @@ ALTER TABLE `expense_item`
   MODIFY `exp_item_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `finance_dep`
---
-ALTER TABLE `finance_dep`
-  MODIFY `fd_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `finance_dep_auth`
---
-ALTER TABLE `finance_dep_auth`
-  MODIFY `fd_a_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
   MODIFY `invoice_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `labours`
---
-ALTER TABLE `labours`
-  MODIFY `lab_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `material_item_list`
---
-ALTER TABLE `material_item_list`
-  MODIFY `mr_item_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
-
---
--- AUTO_INCREMENT for table `material_requests`
---
-ALTER TABLE `material_requests`
-  MODIFY `mr_r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -1328,28 +1068,34 @@ ALTER TABLE `project_phase`
   MODIFY `pro_phase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `project_site_queries`
+--
+ALTER TABLE `project_site_queries`
+  MODIFY `q_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `project_subphase`
 --
 ALTER TABLE `project_subphase`
   MODIFY `pro_subphase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `site_inspections`
+--
+ALTER TABLE `site_inspections`
+  MODIFY `si_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `site_inspection_docs`
+--
+ALTER TABLE `site_inspection_docs`
+  MODIFY `si_doc_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sub_phases`
 --
 ALTER TABLE `sub_phases`
   MODIFY `sub_phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `superviser`
---
-ALTER TABLE `superviser`
-  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `superviser_auth`
---
-ALTER TABLE `superviser_auth`
-  MODIFY `sup_a_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `super_admin`
@@ -1362,6 +1108,18 @@ ALTER TABLE `super_admin`
 --
 ALTER TABLE `super_admin_auth`
   MODIFY `su_a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_auth`
+--
+ALTER TABLE `user_auth`
+  MODIFY `u_a_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vendors`
@@ -1380,18 +1138,6 @@ ALTER TABLE `vendor_payments`
 --
 
 --
--- Constraints for table `branch_auth`
---
-ALTER TABLE `branch_auth`
-  ADD CONSTRAINT `branch_auth_ibfk_1` FOREIGN KEY (`br_r_id`) REFERENCES `branch_data` (`br_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `branch_clients`
---
-ALTER TABLE `branch_clients`
-  ADD CONSTRAINT `branch_clients_ibfk_1` FOREIGN KEY (`b_r_id`) REFERENCES `branch_data` (`br_id`) ON DELETE CASCADE;
-
---
 -- Constraints for table `contractor_payments`
 --
 ALTER TABLE `contractor_payments`
@@ -1404,25 +1150,6 @@ ALTER TABLE `contractor_payments`
 --
 ALTER TABLE `expense_item`
   ADD CONSTRAINT `expense_item_ibfk_1` FOREIGN KEY (`exp_ref_id`) REFERENCES `expenses` (`exp_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `finance_dep_auth`
---
-ALTER TABLE `finance_dep_auth`
-  ADD CONSTRAINT `finance_dep_auth_ibfk_1` FOREIGN KEY (`fd_r_id`) REFERENCES `finance_dep` (`fd_id`);
-
---
--- Constraints for table `material_item_list`
---
-ALTER TABLE `material_item_list`
-  ADD CONSTRAINT `material_item_list_ibfk_1` FOREIGN KEY (`mr_project_r_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `material_item_list_ibfk_2` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`vendor_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `material_requests`
---
-ALTER TABLE `material_requests`
-  ADD CONSTRAINT `material_requests_ibfk_1` FOREIGN KEY (`mr_project_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `notification_recipients`
@@ -1463,10 +1190,16 @@ ALTER TABLE `project_subphase`
   ADD CONSTRAINT `project_subphase_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `project_phase` (`pro_phase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `superviser_auth`
+-- Constraints for table `site_inspections`
 --
-ALTER TABLE `superviser_auth`
-  ADD CONSTRAINT `superviser_auth_ibfk_1` FOREIGN KEY (`sup_r_id`) REFERENCES `superviser` (`sup_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `site_inspections`
+  ADD CONSTRAINT `site_inspections_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`pro_id`);
+
+--
+-- Constraints for table `site_inspection_docs`
+--
+ALTER TABLE `site_inspection_docs`
+  ADD CONSTRAINT `site_inspection_docs_ibfk_1` FOREIGN KEY (`si_r_id`) REFERENCES `site_inspections` (`si_id`);
 
 --
 -- Constraints for table `super_admin_auth`
