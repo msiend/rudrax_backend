@@ -1,11 +1,11 @@
 meta {
-  name: project-delete
+  name: site-inspection-readOne
   type: http
-  seq: 4
+  seq: 3
 }
 
-delete {
-  url: 127.0.0.1:3500/api/v1/entity/project/remove
+get {
+  url: 127.0.0.1:3500/api/v1/entity/site_inspection/readOne
   body: json
   auth: bearer
 }
@@ -16,6 +16,6 @@ auth:bearer {
 
 body:json {
   {
-    "pro_id":9
+    "si_id":4
   }
 }

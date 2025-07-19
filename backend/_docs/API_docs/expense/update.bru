@@ -11,15 +11,18 @@ put {
 }
 
 body:json {
-   {
-      "exp_id": 1,
-      "exp_name": "Material Purchase ok",
-      "exp_amount": 2500,
-      "exp_mode": "Credit Card",
-      "exp_remark": "Purchase of cement and bricks",
-      "exp_date": "2023-10-26",
-      "exp_category": "Construction Materials",
-      "exp_entity": "Supplier A",
-      "exp_project_ref": "PRJ1001"
-    }
+    {
+        "exp_id": 42,
+        "exp_type": "project",
+        "exp_name": "Cement Purchase",
+        "exp_amount": "15000",
+        "exp_mode": "cash",
+        "exp_status": "paid",
+        "exp_attachment_url": "/uploads/receipts/cement-bill.jpg",
+        "exp_remark": "Purchased 100 bags of cement",
+        "exp_paid_by": "Site Supervisor",
+        "exp_date": "2025-07-15",
+        "exp_category": "Material42",
+        "exp_project_ref": 101
+      }
 }

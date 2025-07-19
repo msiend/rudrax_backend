@@ -1,0 +1,19 @@
+meta {
+  name: sing_image delete
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{URL.Core}}site_inspection/delete/images/:si_doc_id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  si_doc_id: 4
+}
+
+body:multipart-form {
+  image: @file()
+}

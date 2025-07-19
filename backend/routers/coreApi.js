@@ -21,9 +21,7 @@ coreRouter.get('/core/vendor/get_lastRef', VendorCoreController.getVendorLastRef
 coreRouter.get('/core/vendor/get_vendor_payment_purchase', VendorCoreController.getVendor_Purch_Payment);
 
 // [EXPENSES]-----------
-coreRouter.post('/core/expense/create', ExpenseCoreController.add_Expense_and_dist);
-coreRouter.get('/core/expense/get_expense_details/:exp_id', ExpenseCoreController.getExpenseDetails);
-coreRouter.put('/core/expense/update', ExpenseCoreController.updateExpense);
+coreRouter.get('/core/expense/get_expense/:exp_id', ExpenseCoreController.findWithAllDate);
 
 // [PROJECTS]-----------
 coreRouter.get('/core/project/get_project_detail/:pro_id', ProjectCoreController.getFullProject_OtherDetails_);

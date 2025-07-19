@@ -1,5 +1,5 @@
 // Hello, this is a Controller for projectDocs!
-const siteInspectionDocsModel = require('@/models/entityModels/siteInspectionDocsModel');
+const siteInspectionDocsModel = require('@/models/entityModels/site_inspectionDocsModel');
 
 class siteInspectionDocsController {
    // Get all project documents

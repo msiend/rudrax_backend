@@ -13,7 +13,7 @@ class ProjectSiteQueryModel {
    static async create(q_title, q_desc, q_type, q_category, q_raised_by, q_status) {
       const connPool = await pool.getConnection();
       const insertSQL = `
-      INSERT INTO project_site_queries 
+      INSERT INTO project_queries 
       (q_title, q_desc, q_type, q_category, q_raised_by, q_status)
       VALUES (?, ?, ?, ?, ?, ?);
     `;
@@ -32,7 +32,7 @@ class ProjectSiteQueryModel {
    static async update(q_id, q_title, q_desc, q_type, q_category, q_status, approved_by, approved_date, q_remarks) {
       const connPool = await pool.getConnection();
       const updateSQL = `
-      UPDATE project_site_queries
+      UPDATE project_queries
       SET q_title = ?, q_desc = ?, q_type = ?, q_category = ?, 
           q_status = ?, approved_by = ?, approved_date = ?, q_remarks = ?
       WHERE q_id = ?;
@@ -65,7 +65,7 @@ class ProjectSiteQueryModel {
    static async findById(q_id) {
       const connPool = await pool.getConnection();
       const selectSQL = `
-      SELECT * FROM project_site_queries WHERE q_id = ? LIMIT 0,1;
+      SELECT * FROM project_queries WHERE q_id = ? LIMIT 0,1;
     `;
 
       try {
@@ -84,7 +84,7 @@ class ProjectSiteQueryModel {
 
    static async findAll() {
       const connPool = await pool.getConnection();
-      const selectSQL = `SELECT * FROM project_site_queries;`;
+      const selectSQL = `SELECT * FROM project_queries;`;
 
       try {
          const [rows] = await connPool.query(selectSQL);
@@ -99,7 +99,7 @@ class ProjectSiteQueryModel {
 
    static async remove(q_id) {
       const connPool = await pool.getConnection();
-      const deleteSQL = `DELETE FROM project_site_queries WHERE q_id = ?;`;
+      const deleteSQL = `DELETE FROM project_queries WHERE q_id = ?;`;
 
       try {
          const [result] = await connPool.query(deleteSQL, [q_id]);
