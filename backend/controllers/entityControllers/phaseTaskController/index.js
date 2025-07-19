@@ -1,5 +1,5 @@
 //Hello, this is a Controller for subPhase!
-const SubPhasesModel = require('@/models/entityModels/subPhaseModel');
+const SubPhasesModel = require('@/models/entityModels/phaseTaskModel');
 
 class SubPhasesController {
    constructor() {

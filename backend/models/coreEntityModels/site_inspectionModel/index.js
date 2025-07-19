@@ -1,1 +1,0 @@
-//Hello, this is a Model for site_inspection!
