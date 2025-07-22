@@ -5,15 +5,20 @@ meta {
 }
 
 put {
-  url: {{URL.Entity}}phase/update
+  url: {{URL.Entity}}project_emp/update
   body: json
   auth: none
 }
 
 body:json {
-  {
-    "id":"2",
-    "phase_name":"Phase 2",
-    "phase_alt_name":"sub_phase_ascmigv"
-  }
+   {
+      "pemp_id": 3,
+      "pemp_project_id": 10,
+      "pemp_user_id": 3,
+      "pemp_assigned_date": null,
+      "pemp_assigned_by": "AdminUseradased",
+      "pemp_status": "Completed",
+      "created_at": null,
+      "updated_at": null
+    }
 }

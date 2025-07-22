@@ -60,7 +60,7 @@ class SiteInspectionsController {
          res.status(201).send({
             status: true,
             msg: 'Site inspection created successfully',
-            data: { insertedID: result.id, pro_id,si_asign_id, si_date, si_location, si_type, status },
+            data: { si_id: result.id, pro_id,si_asign_id, si_date, si_location, si_type, status },
          });
       } catch (error) {
          console.error(error);

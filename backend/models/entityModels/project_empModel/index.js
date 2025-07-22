@@ -2,7 +2,7 @@ const pool = require('@/config/dbConfig');
 
 class ProjectEmployeeModel {
    static async findAll() {
-      const query = 'SELECT * FROM project_employee';
+      const query = 'SELECT * FROM project_emp';
       const conn = await pool.getConnection();
       try {
          const [rows] = await conn.query(query);
@@ -16,7 +16,7 @@ class ProjectEmployeeModel {
    }
 
    static async findOne(pemp_id) {
-      const query = 'SELECT * FROM project_employee WHERE pemp_id = ?';
+      const query = 'SELECT * FROM project_emp WHERE pemp_id = ?';
       const conn = await pool.getConnection();
       try {
          const [rows] = await conn.query(query, [pemp_id]);
@@ -31,21 +31,31 @@ class ProjectEmployeeModel {
 
    static async create(data) {
       const query = `
-         INSERT INTO project_employee 
-         (pemp_project_id, pemp_user_id, pemp_assigned_date, pemp_assigned_by, pemp_status, created_at, updated_at) 
-         VALUES (?, ?, ?, ?, ?, ?, ?)`;
+         INSERT INTO project_emp 
+         (pemp_project_id, pemp_user_id, pemp_assigned_by, pemp_status) 
+         VALUES (?, ?, ?, ?)`;
       const conn = await pool.getConnection();
       try {
          const [result] = await conn.query(query, [
             data.pemp_project_id,
             data.pemp_user_id,
-            data.pemp_assigned_date,
             data.pemp_assigned_by,
             data.pemp_status,
-            data.created_at,
-            data.updated_at,
          ]);
-         return { status: result.affectedRows > 0, insertId: result.insertId };
+         if (result.affectedRows > 0) {
+            return {
+               status: result.affectedRows > 0,
+               data: {
+                  pemp_id: result.insertId,
+                  pemp_project_id: data.pemp_project_id,
+                  pemp_user_id: data.pemp_user_id,
+                  pemp_assigned_by: data.pemp_assigned_by,
+                  pemp_status: data.pemp_status,
+               },
+            };
+         } else {
+            return { status: result.affectedRows > 0 };
+         }
       } catch (error) {
          console.error('Error creating project employee:', error);
          throw error;
@@ -56,8 +66,8 @@ class ProjectEmployeeModel {
 
    static async update(pemp_id, data) {
       const query = `
-         UPDATE project_employee 
-         SET pemp_project_id = ?, pemp_user_id = ?, pemp_assigned_date = ?, pemp_assigned_by = ?, pemp_status = ?, updated_at = ? 
+         UPDATE project_emp 
+         SET pemp_project_id = ?, pemp_user_id = ?, pemp_assigned_date = ?, pemp_assigned_by = ?, pemp_status = ?
          WHERE pemp_id = ?`;
       const conn = await pool.getConnection();
       try {
@@ -67,7 +77,6 @@ class ProjectEmployeeModel {
             data.pemp_assigned_date,
             data.pemp_assigned_by,
             data.pemp_status,
-            data.updated_at,
             pemp_id,
          ]);
          return {
@@ -83,7 +92,7 @@ class ProjectEmployeeModel {
    }
 
    static async remove(pemp_id) {
-      const query = 'DELETE FROM project_employee WHERE pemp_id = ?';
+      const query = 'DELETE FROM project_emp WHERE pemp_id = ?';
       const conn = await pool.getConnection();
       try {
          const [result] = await conn.query(query, [pemp_id]);

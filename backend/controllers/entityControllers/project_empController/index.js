@@ -23,9 +23,16 @@ class ProjectEmployeeController {
 
    static async create(req, res) {
       try {
-         const result = await ProjectEmployeeModel.create(req.body);
-         if (!result.status) throw new Error();
-         res.status(201).json({ status: true, msg: 'Employee assigned', data: result });
+         const dataArray = req.body;
+         if (!Array.isArray(dataArray) || dataArray.length === 0) {
+            return res.status(400).json({ status: false, msg: 'Invalid input data', data: null });
+         }
+         const results = [];
+         for (const data of dataArray) {
+            const result = await ProjectEmployeeModel.create(data);
+            results.push(result.data);
+         }
+         res.status(201).json({ status: true, msg: 'Employee assigned', data: results });
       } catch (err) {
          res.status(500).json({ status: false, msg: 'Creation failed', error: err.message });
       }

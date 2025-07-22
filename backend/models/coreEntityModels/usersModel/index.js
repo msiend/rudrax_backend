@@ -3,20 +3,6 @@ const pool = require('@/config/dbConfig');
 class _UserModel {
    static getTableConfig(role) {
       const configs = {
-         branch: {
-            auth: 'branch_auth',
-            info: 'branch_data',
-            prefix: 'br',
-            idField: 'br_a_id',
-            relationField: 'br_r_id',
-         },
-         supervisor: {
-            auth: 'superviser_auth',
-            info: 'superviser',
-            prefix: 'sup',
-            idField: 'sup_a_id',
-            relationField: 'sup_r_id',
-         },
          super_admin: {
             auth: 'super_admin_auth',
             info: 'super_admin',
@@ -24,12 +10,12 @@ class _UserModel {
             idField: 'su_a_id',
             relationField: 'su_r_id',
          },
-         finance: {
-            auth: 'finance_dep_auth',
-            info: 'finance_dep',
-            prefix: 'fd',
-            idField: 'fd_a_id',
-            relationField: 'fd_r_id',
+         users: {
+            auth: 'user_auth',
+            info: 'users',
+            prefix: 'u',
+            idField: 'u_a_id',
+            relationField: 'u_r_id',
          },
       };
       return configs[role];
@@ -78,9 +64,9 @@ class _UserModel {
          await conn.commit();
          return {
             auth_id: authResult.insertId,
-            [prefix+"_id"]: infoResult.insertId,
+            [prefix + '_id']: infoResult.insertId,
             ...userInfo,
-            [prefix+"_user_id"]:_user_id,
+            [prefix + '_user_id']: _user_id,
          };
       } catch (error) {
          await conn.rollback();
@@ -96,15 +82,12 @@ class _UserModel {
 
       try {
          let query = `SELECT ${prefix}_a_id,${prefix}_user_id ,`;
-
          // Join with info table if it exists
          if (info) {
             query += ` i.* FROM ${auth} a LEFT JOIN ${info} i ON a.${relationField} = i.${prefix}_id`;
          } else {
             query += `FROM ${auth} a`;
          }
-         console.log(query);
-
          const [rows] = await conn.query(query);
          return rows;
       } finally {
