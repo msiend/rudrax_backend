@@ -1,0 +1,17 @@
+meta {
+  name: delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{URL.Entity}}project_task_emp/remove
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ptemp_id": "7"
+  }
+}

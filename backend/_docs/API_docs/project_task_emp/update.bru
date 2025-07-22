@@ -1,0 +1,24 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}project_task_emp/update
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "ptemp_id": 7,
+      "ptemp_pt_id": 8,
+      "ptemp_user_id": 3,
+      "ptemp_assigned_date": null,
+      "ptemp_assigned_by": "AdminUser42",
+      "ptemp_status": "Completed",
+      "created_at": "2025-07-22T05:34:58.000Z",
+      "updated_at": "2025-07-22T05:34:58.000Z"
+    }
+}
