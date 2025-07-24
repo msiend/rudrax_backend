@@ -6438,3 +6438,9 @@
 20250724	14:05:00	8d580543-90ee-44db-b9e0-433dadb056dc	PUT	undefined	/api/v1/invoice/config/update-multi
 20250724	14:05:46	a09aad1e-c6ad-4523-85f1-3fc32aff0229	PUT	undefined	/api/v1/invoice/config/update-multi
 20250724	14:06:54	8866a079-015c-4394-b231-4bc56c1d6950	PUT	undefined	/api/v1/invoice/config/update-multi
+20250724	14:15:10	35dd6640-0ff2-45e8-87b0-1cf66de74695	POST	undefined	/api/v1/entity/file_manager/create
+20250724	14:15:23	b5498735-0724-415e-9c00-36cf0b97dd40	GET	undefined	/api/v1/entity/projectDocs/readOne
+20250724	14:15:33	3bb86e7f-1f02-4527-be0a-3c21978d95d4	GET	undefined	/api/v1/entity/file_manager/readOne
+20250724	14:16:13	2000a974-4e24-4ad2-93a7-67914a5d26f2	GET	undefined	/api/v1/entity/file_manager/readAll
+20250724	14:24:14	25030210-a0fe-4512-8b1d-7b554790a8c0	GET	undefined	/api/v1/entity/file_manager/readAll
+20250724	14:24:19	2dd26b3a-a2f2-4ae6-853e-cf679a818aee	GET	undefined	/api/v1/entity/file_manager/readAll

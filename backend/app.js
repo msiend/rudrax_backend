@@ -40,6 +40,7 @@ const appRoutes_notification = require('@/routers/notificationApi');
 const appRoutes_invoice = require('@/routers/invoiceApi');
 const appRoutes_search = require('@/routers/searchApi');
 const appRoutes_pagination = require('@/routers/paginationApi');
+const appRoutes_file_manager = require('@/routers/file_managerApi');
 const authRoutes = require('@/routers/authApi');
 
 ////// auth routes
@@ -54,6 +55,7 @@ app.use('/api/v1/notification', appRoutes_notification);
 app.use('/api/v1/invoice', appRoutes_invoice);
 app.use('/api/v1', appRoutes_search);
 app.use('/api/v1', appRoutes_pagination);
+app.use('/api/v1/fs', appRoutes_file_manager);
 
 ///
 ////
