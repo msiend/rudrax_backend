@@ -2050,3 +2050,885 @@ ReferenceError: aminControllers is not defined
   ],
   [Symbol(level)]: 'error'
 }
+2025-07-24 13:18:43 [ERROR] uncaughtException: Unexpected token ','
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+     },
+      ^
+  
+  SyntaxError: Unexpected token ','
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Thu Jul 24 2025 13:18:43 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 11444,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111751168,
+      heapTotal: 68829184,
+      heapUsed: 41874680,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 3684.171 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-24 13:18:46 [ERROR] uncaughtException: Unexpected token ','
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+   },
+    ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:15
+     },
+      ^
+  
+  SyntaxError: Unexpected token ','
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Thu Jul 24 2025 13:18:46 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 11960,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 112455680,
+      heapTotal: 69296128,
+      heapUsed: 42340904,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 3686.734 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-24 13:27:31 [ERROR] uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:6:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:6:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+{
+  error: Error: Route.get() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+      at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:6:8)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12),
+  exception: true,
+  date: 'Thu Jul 24 2025 13:27:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9300,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111423488,
+      heapTotal: 68362240,
+      heapUsed: 41860864,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 4212.359 },
+  trace: [
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as get]',
+      line: 216,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'proto.<computed> [as get]',
+      line: 521,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-24 13:37:31 [ERROR] uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:7:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:7:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+{
+  error: Error: Route.get() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\route.js:216:15)
+      at proto.<computed> [as get] (Z:\Visual_Codes\rudrax\backend\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:7:8)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12),
+  exception: true,
+  date: 'Thu Jul 24 2025 13:37:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5688,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111259648,
+      heapTotal: 68247552,
+      heapUsed: 42234464,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 4811.703 },
+  trace: [
+    {
+      column: 15,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as get]',
+      line: 216,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\node_modules\\express\\lib\\router\\index.js',
+      function: 'proto.<computed> [as get]',
+      line: 521,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 7,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-24 13:52:42 [ERROR] uncaughtException: router.Post is not a function
+TypeError: router.Post is not a function
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:8:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:40:27)
+TypeError: router.Post is not a function
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:8:8)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:40:27)
+{
+  error: TypeError: router.Post is not a function
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:8:8)
+      at Module._compile (node:internal/modules/cjs/loader:1546:14)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\app.js:40:27),
+  exception: true,
+  date: 'Thu Jul 24 2025 13:52:42 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6796,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 110907392,
+      heapTotal: 68100096,
+      heapUsed: 41517920,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 5722.906 },
+  trace: [
+    {
+      column: 8,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 8,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1546,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\app.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-07-24 14:02:31 [ERROR] uncaughtException: Unexpected token '.'
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:123
+                              , data: updated? {Object.keys:value}:null
+                                                      ^
+
+SyntaxError: Unexpected token '.'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:123
+                              , data: updated? {Object.keys:value}:null
+                                                      ^
+
+SyntaxError: Unexpected token '.'
+    at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+    at Module._compile (node:internal/modules/cjs/loader:1491:20)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:141:16)
+    at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27)
+{
+  error: Z:\Visual_Codes\rudrax\backend\controllers\invoice\index.js:123
+                                , data: updated? {Object.keys:value}:null
+                                                        ^
+  
+  SyntaxError: Unexpected token '.'
+      at wrapSafe (node:internal/modules/cjs/loader:1469:18)
+      at Module._compile (node:internal/modules/cjs/loader:1491:20)
+      at Object..js (node:internal/modules/cjs/loader:1689:10)
+      at Module.load (node:internal/modules/cjs/loader:1318:32)
+      at Function._load (node:internal/modules/cjs/loader:1128:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)
+      at Module.require (node:internal/modules/cjs/loader:1340:12)
+      at require (node:internal/modules/helpers:141:16)
+      at Object.<anonymous> (Z:\Visual_Codes\rudrax\backend\routers\invoiceApi.js:4:27),
+  exception: true,
+  date: 'Thu Jul 24 2025 14:02:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 12604,
+    uid: null,
+    gid: null,
+    cwd: 'Z:\\Visual_Codes\\rudrax\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'Z:\\Visual_Codes\\rudrax\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 111751168,
+      heapTotal: 68624384,
+      heapUsed: 41868616,
+      external: 2318335,
+      arrayBuffers: 21663
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 6312.203 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1469,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1491,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1689,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1318,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1128,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 315,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 218,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1340,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 141,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'Z:\\Visual_Codes\\rudrax\\backend\\routers\\invoiceApi.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

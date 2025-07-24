@@ -1,0 +1,25 @@
+meta {
+  name: updateconfig
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{URL}}/api/v1/invoice/config/update
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "invoice_prefix": "INV-",
+    "authorize_signatory_url": "https://example.com/signatures/signatory1.png",
+    "logo_url": "https://example.com/logos/company_logo.png",
+    "firm_address_line_one": "123 Business Road",
+    "firm_address_line_two": "Suite 400",
+    "firm_address_line_three": "Cityville, State, 1234saefe5",
+    "terms_condition_one": "All invoices are due within 30 days of receipt.",
+    "terms_condition_two": "Late payments may incur a 5% monthly fee.",
+    "created_at": "2025-07-24 14:00:00"
+  }
+}
