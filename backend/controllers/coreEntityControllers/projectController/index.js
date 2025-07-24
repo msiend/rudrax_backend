@@ -28,29 +28,34 @@ class projectCoreController {
                         pro_id: phase.pro_id,
                         pro_phase_status: phase.pro_phase_status,
                         pro_phase_deadline: phase.pro_phase_deadline,
-                        created_at: phase.created_at,
-                        subphases: [],
+                        created_at: phase.pro_phase_created_at,
+                        phase_name: phase.phase_name,
+                        phase_alt_name: phase.phase_alt_name,
+                        phaseTask: [],
                      };
 
-                     if (phase.pro_subphase_id) {
-                        newPhase.subphases.push({
-                           pro_subphase_id: phase.pro_subphase_id,
-                           pro_phase: phase.pro_phase,
-                           pro_subphase: phase.pro_subphase,
-                           deadline: phase.deadline,
+                     if (phase.pt_id) {
+                        newPhase.phaseTask.push({
+                           pt_id: phase.pt_id,
+                           pro_phase_task: phase.pro_phase_task,
+                           pro_phase: phase.phase_task_name,
+                           pro_subphase: phase.phase_task_alt_name,
+                           deadline: phase.task_deadline,
+                           pt_status: phase.pt_status,
+                           created_at: phase.task_created_at,
                         });
                      }
 
-                     newPhase.phase_name = phase.phase_name;
-                     newPhase.phase_alt_name = phase.phase_alt_name;
-
                      acc.push(newPhase);
-                  } else if (phase.pro_subphase_id) {
-                     existingPhase.subphases.push({
-                        pro_subphase_id: phase.pro_subphase_id,
-                        pro_phase: phase.pro_phase,
-                        pro_subphase: phase.pro_subphase,
-                        deadline: phase.deadline,
+                  } else if (phase.pt_id) {
+                     existingPhase.phaseTask.push({
+                        pt_id: phase.pt_id,
+                        pro_phase_task: phase.pro_phase_task,
+                        pro_phase: phase.phase_task_name,
+                        pro_subphase: phase.phase_task_alt_name,
+                        deadline: phase.task_deadline,
+                        pt_status: phase.pt_status,
+                        created_at: phase.task_created_at,
                      });
                   }
 
