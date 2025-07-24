@@ -1,4 +1,4 @@
-const fileManagerModel = require('@/models/entityModels/file_managerModel');
+const fileManagerModel = require('@/models/file_manager');
 
 class FileManagerController {
 
