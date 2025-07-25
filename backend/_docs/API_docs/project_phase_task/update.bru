@@ -1,0 +1,30 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}project_phase_task/update
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pt_id": 7,
+    "pro_id": 15,
+    "pro_phase": 3,
+    "pro_phase_task": 3,
+    "deadline": "2024-07-25",
+    "pt_status": "Completed"
+  }
+}
+
+assert {
+  ~status: isTrue
+}

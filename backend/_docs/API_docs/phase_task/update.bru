@@ -1,0 +1,19 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}phase_task/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id":"2",
+    "phase_task_name":"Phase 2",
+    "phase_task_alt_name":"sub_phase_alt_name 1kldrjkgscmigv"
+  }
+}

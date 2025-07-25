@@ -1,0 +1,32 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Entity}}query/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "q_title": "Clarification on API Endpoint",
+    "q_desc": "Need clarification on the correct API endpoint for user authentication module.",
+    "q_type": "Technical",
+    "q_category": "Backend Development",
+    "q_raised_by": "9",
+    "q_date": "2024-07-10",
+    "q_status": "Open",
+    "q_remarks": "Waiting for lead developer's input."
+  }
+}
+
+assert {
+  ~status: isTrue
+}

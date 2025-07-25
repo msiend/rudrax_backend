@@ -3,12 +3,19 @@ const pool = require('@/config/dbConfig');
 class _UserModel {
    static getTableConfig(role) {
       const configs = {
-         users: {
-            auth: 'user_auth',
-            info: 'users',
-            prefix: 'u',
-            idField: 'u_a_id',
-            relationField: 'u_r_id',
+         branch: {
+            auth: 'branch_auth',
+            info: 'branch_data',
+            prefix: 'br',
+            idField: 'br_a_id',
+            relationField: 'br_r_id',
+         },
+         supervisor: {
+            auth: 'superviser_auth',
+            info: 'superviser',
+            prefix: 'sup',
+            idField: 'sup_a_id',
+            relationField: 'sup_r_id',
          },
          super_admin: {
             auth: 'super_admin_auth',
@@ -16,6 +23,13 @@ class _UserModel {
             prefix: 'su',
             idField: 'su_a_id',
             relationField: 'su_r_id',
+         },
+         finance: {
+            auth: 'finance_dep_auth',
+            info: 'finance_dep',
+            prefix: 'fd',
+            idField: 'fd_a_id',
+            relationField: 'fd_r_id',
          },
       };
       return configs[role];
@@ -27,6 +41,8 @@ class _UserModel {
 
       try {
          await conn.beginTransaction();
+
+         // 1. First insert into info table (if data exists)
          let _user_id = userInfo.user_id ? userInfo.user_id : null;
 
          let infoInsertId = null;
@@ -43,6 +59,8 @@ class _UserModel {
             ]);
             infoInsertId = infoResult.insertId;
          }
+
+         // 2. Then insert into auth table
          const authColumns = [relationField, `${prefix}_user_id`].join(', ');
 
          console.log(authColumns);
@@ -78,6 +96,8 @@ class _UserModel {
 
       try {
          let query = `SELECT ${prefix}_a_id,${prefix}_user_id ,`;
+
+         // Join with info table if it exists
          if (info) {
             query += ` i.* FROM ${auth} a LEFT JOIN ${info} i ON a.${relationField} = i.${prefix}_id`;
          } else {
@@ -115,6 +135,8 @@ class _UserModel {
 
       try {
          await conn.beginTransaction();
+
+         // Separate auth and info updates
          const authUpdates = {};
          const infoUpdates = {};
 
@@ -128,6 +150,8 @@ class _UserModel {
 
          let authAffected = 0;
          let infoAffected = 0;
+
+         // Update auth table if needed
          if (Object.keys(authUpdates).length > 0) {
             const authSet = Object.keys(authUpdates)
                .map((col) => `${col} = ?`)
@@ -138,6 +162,8 @@ class _UserModel {
             ]);
             authAffected = authResult.affectedRows;
          }
+
+         // Update info table if needed
          if (info && Object.keys(infoUpdates).length > 0) {
             const infoSet = Object.keys(infoUpdates)
                .map((col) => `${col} = ?`)
@@ -159,6 +185,8 @@ class _UserModel {
       }
    }
 
+   // Other methods (updatePassword, toggleStatus, remove) remain similar to your original
+   // but updated to use the new table config system
    static async updatePassword(role, id, password) {
       const { auth, idField, prefix } = _UserModel.getTableConfig(role);
       const conn = await pool.getConnection();

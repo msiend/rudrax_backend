@@ -47,9 +47,9 @@ class ProjectSiteQueryController {
 
    static async create(req, res) {
       try {
-         const { q_title, q_desc, q_type, q_category, q_raised_by, q_status } = req.body;
+         const { q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date, q_remarks } = req.body;
 
-         const result = await ProjectSiteQueryModel.create(q_title, q_desc, q_type, q_category, q_raised_by, q_status);
+         const result = await ProjectSiteQueryModel.create( q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date, q_remarks);
 
          if (!result.status) {
             return res.status(500).json({
@@ -127,7 +127,8 @@ class ProjectSiteQueryController {
    static async remove(req, res) {
       try {
          const { q_id } = req.body;
-         const result = await ProjectSiteQueryModel.delete(q_id);
+         const result = await ProjectSiteQueryModel.remove(q_id);
+
          if (!result?.status) {
             return res.status(404).send({
                status: false,
@@ -145,32 +146,6 @@ class ProjectSiteQueryController {
          res.status(500).send({
             status: false,
             msg: 'Failed to delete query',
-            data: null,
-         });
-      }
-   }
-
-   static async paginate(req, res) {
-      try {
-         const { page = 1, limit = 10 } = req.query;
-         const offset = (page - 1) * limit;
-
-         const queries = await ProjectSiteQueryModel.findAll();
-
-         res.status(200).send({
-            status: true,
-            msg: 'Queries retrieved successfully',
-            data: {
-               page,
-               limit,
-               records: queries.slice(offset, offset + parseInt(limit)),
-            },
-         });
-      } catch (error) {
-         console.error(error);
-         res.status(500).send({
-            status: false,
-            msg: 'Failed to paginate queries',
             data: null,
          });
       }

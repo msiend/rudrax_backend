@@ -1,0 +1,25 @@
+meta {
+  name: delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{URL.Entity}}project_phase_task/remove
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "pt_id": 7
+  }
+}
+
+assert {
+  ~status: isTrue
+}

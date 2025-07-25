@@ -10,16 +10,16 @@ class ProjectSiteQueryModel {
       this.q_status = q_status;
    }
 
-   static async create(q_title, q_desc, q_type, q_category, q_raised_by, q_status) {
+   static async create( q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date,q_remarks ) {
       const connPool = await pool.getConnection();
       const insertSQL = `
       INSERT INTO project_queries 
-      (q_title, q_desc, q_type, q_category, q_raised_by, q_status)
-      VALUES (?, ?, ?, ?, ?, ?);
+      (q_title, q_desc, q_type, q_category, q_raised_by, q_status,q_remarks)
+      VALUES (?, ?, ?, ?, ?, ?,?);
     `;
 
       try {
-         const [result] = await connPool.query(insertSQL, [q_title, q_desc, q_type, q_category, q_raised_by, q_status]);
+         const [result] = await connPool.query(insertSQL, [q_title, q_desc, q_type, q_category, q_raised_by, q_status,q_remarks]);
          return { status: true, insertId: result.insertId, msg: 'Query created successfully!' };
       } catch (error) {
          console.error('Error creating project site query:', error);

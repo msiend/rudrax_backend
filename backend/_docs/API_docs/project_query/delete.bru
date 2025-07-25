@@ -1,0 +1,25 @@
+meta {
+  name: delete
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{URL.Entity}}query/remove
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+    "q_id": 1
+  }
+}
+
+assert {
+  ~status: isTrue
+}

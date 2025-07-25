@@ -1,0 +1,25 @@
+meta {
+  name: findOne
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL.Entity}}project_phase_task/readOne
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+     "pt_id": 7
+  }
+}
+
+assert {
+  ~status: isTrue
+}

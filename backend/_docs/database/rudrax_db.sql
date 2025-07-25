@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2025 at 07:11 AM
+-- Generation Time: Jul 19, 2025 at 09:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -344,21 +344,21 @@ INSERT INTO `phases` (`phase_id`, `phase_name`, `phase_alt_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phase_task`
+-- Table structure for table `phase_tasks`
 --
 
-CREATE TABLE `phase_task` (
+CREATE TABLE `phase_tasks` (
   `phase_task_id` int(11) NOT NULL,
   `phase_task_name` varchar(100) DEFAULT NULL,
   `phase_task_alt_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `phase_task`
+-- Dumping data for table `phase_tasks`
 --
 
-INSERT INTO `phase_task` (`phase_task_id`, `phase_task_name`, `phase_task_alt_name`) VALUES
-(2, 'Phase 2', 'sub_phase_alt_name 1kldrjkgscmigv'),
+INSERT INTO `phase_tasks` (`phase_task_id`, `phase_task_name`, `phase_task_alt_name`) VALUES
+(2, NULL, NULL),
 (3, 'Phase 1', 'sub_phase_alt_name 1'),
 (4, 'Phase 1', 'sub_phase_alt_name 1'),
 (5, 'Phase 1', 'sub_phase_alt_name 1'),
@@ -371,7 +371,9 @@ INSERT INTO `phase_task` (`phase_task_id`, `phase_task_name`, `phase_task_alt_na
 (12, 'Phase 1', 'sub_phase_alt_name 1'),
 (13, 'Phase 1', 'sub_phase_alt_name 1'),
 (14, 'Phase 1', 'sub_phase_alt_name 1'),
-(15, 'Phase 1', 'sub_phase_alt_name 1');
+(15, 'Phase 1', 'sub_phase_alt_name 1'),
+(17, 'Phase 1', 'sub_phase_alt_name 1'),
+(18, 'Phase 1', 'sub_phase_alt_name 1');
 
 -- --------------------------------------------------------
 
@@ -470,6 +472,23 @@ CREATE TABLE `project_docs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `project_emp`
+--
+
+CREATE TABLE `project_emp` (
+  `pemp_id` bigint(20) NOT NULL,
+  `pemp_project_id` bigint(20) NOT NULL,
+  `pemp_user_id` bigint(20) NOT NULL,
+  `pemp_assigned_date` datetime DEFAULT current_timestamp(),
+  `pemp_assigned_by` varchar(50) DEFAULT NULL,
+  `pemp_status` varchar(50) DEFAULT 'active',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `project_phase`
 --
 
@@ -489,13 +508,21 @@ CREATE TABLE `project_phase` (
 --
 
 CREATE TABLE `project_phase_task` (
-  `pro_subphase_id` int(20) NOT NULL,
+  `pt_id` int(20) NOT NULL,
   `pro_id` bigint(20) NOT NULL,
   `pro_phase` int(20) DEFAULT NULL,
-  `pro_subphase` varchar(255) DEFAULT NULL,
+  `pro_phase_task` int(20) DEFAULT NULL,
   `deadline` varchar(155) DEFAULT NULL,
+  `pt_status` varchar(155) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `project_phase_task`
+--
+
+INSERT INTO `project_phase_task` (`pt_id`, `pro_id`, `pro_phase`, `pro_phase_task`, `deadline`, `pt_status`, `created_at`) VALUES
+(8, 15, 3, 3, '2024-07-25', 'Completed', '2025-07-19 06:49:30');
 
 -- --------------------------------------------------------
 
@@ -519,6 +546,15 @@ CREATE TABLE `project_queries` (
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `project_queries`
+--
+
+INSERT INTO `project_queries` (`q_id`, `q_title`, `q_desc`, `q_type`, `q_category`, `q_raised_by`, `q_date`, `q_status`, `approved_by`, `approved_date`, `q_remarks`, `created_at`, `updated_at`) VALUES
+(2, 'Clarification on API Endpoint', 'Need clarification on the correct API endpoint for user authentication module.', 'Technical', 'Backend Development', 0, '2025-07-19 12:28:52', 'Open', NULL, NULL, NULL, '2025-07-19 12:28:52', '2025-07-19 12:28:52'),
+(3, 'Clarification on API Endpoint', 'Need clarification on the correct API endpoint for user authentication module.', 'Technical', 'Backend Development', 0, '2025-07-19 12:28:52', 'Open', NULL, NULL, NULL, '2025-07-19 12:28:52', '2025-07-19 12:28:52'),
+(4, 'Clarification on API Endpoint', 'Need clarification on the correct API endpoint for user authentication module.', 'Technical', 'Backend Development', 0, '2025-07-19 12:33:28', 'Open', NULL, NULL, 'Waiting for lead developer\'s input.', '2025-07-19 12:33:28', '2025-07-19 12:33:28');
+
 -- --------------------------------------------------------
 
 --
@@ -528,6 +564,7 @@ CREATE TABLE `project_queries` (
 CREATE TABLE `site_inspections` (
   `si_id` bigint(20) NOT NULL,
   `project_id` bigint(20) DEFAULT NULL,
+  `si_asign_id` bigint(20) DEFAULT NULL,
   `si_date` varchar(155) DEFAULT NULL,
   `si_location` varchar(255) DEFAULT NULL,
   `si_type` varchar(50) DEFAULT NULL,
@@ -540,8 +577,9 @@ CREATE TABLE `site_inspections` (
 -- Dumping data for table `site_inspections`
 --
 
-INSERT INTO `site_inspections` (`si_id`, `project_id`, `si_date`, `si_location`, `si_type`, `status`, `created_at`, `updated_at`) VALUES
-(3, 48, NULL, NULL, NULL, 'approved', '2025-07-17 10:22:21', '2025-07-17 10:22:21');
+INSERT INTO `site_inspections` (`si_id`, `project_id`, `si_asign_id`, `si_date`, `si_location`, `si_type`, `status`, `created_at`, `updated_at`) VALUES
+(3, 48, NULL, NULL, NULL, NULL, 'approved', '2025-07-17 10:22:21', '2025-07-17 10:22:21'),
+(7, 48, 3, '2025-07-17', 'Engineer A', 'Site ready', 'approved', '2025-07-19 11:42:44', '2025-07-19 11:42:44');
 
 -- --------------------------------------------------------
 
@@ -638,7 +676,7 @@ INSERT INTO `super_admin_auth` (`su_a_id`, `su_r_id`, `su_user_id`, `su_password
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) NOT NULL,
+  `u_id` bigint(20) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `email` varchar(150) DEFAULT NULL,
@@ -649,6 +687,13 @@ CREATE TABLE `users` (
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `phone`, `role`, `department`, `created_at`, `updated_at`) VALUES
+(3, 'Alice', 'Smith', 'alice.smith@example.com', '123-456-7890', 'Developer', 'Engineering', '2025-07-19 11:31:06', '2025-07-19 11:31:06');
+
 -- --------------------------------------------------------
 
 --
@@ -657,8 +702,8 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_auth` (
   `u_a_id` bigint(20) NOT NULL,
-  `u_r_id` bigint(20) NOT NULL,
-  `u_user_id` bigint(20) NOT NULL,
+  `u_r_id` bigint(20) DEFAULT NULL,
+  `u_user_id` bigint(20) DEFAULT NULL,
   `u_password` varchar(255) NOT NULL,
   `u_token` varchar(255) DEFAULT NULL,
   `u_role` varchar(55) DEFAULT NULL,
@@ -666,6 +711,13 @@ CREATE TABLE `user_auth` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_auth`
+--
+
+INSERT INTO `user_auth` (`u_a_id`, `u_r_id`, `u_user_id`, `u_password`, `u_token`, `u_role`, `u_isactive`, `created_at`, `updated_at`) VALUES
+(1, 3, NULL, '', NULL, NULL, 1, '2025-07-19 11:31:06', '2025-07-19 11:31:06');
 
 -- --------------------------------------------------------
 
@@ -804,9 +856,9 @@ ALTER TABLE `phases`
   ADD PRIMARY KEY (`phase_id`);
 
 --
--- Indexes for table `phase_task`
+-- Indexes for table `phase_tasks`
 --
-ALTER TABLE `phase_task`
+ALTER TABLE `phase_tasks`
   ADD PRIMARY KEY (`phase_task_id`);
 
 --
@@ -833,6 +885,14 @@ ALTER TABLE `project_docs`
   ADD KEY `cl_r_id` (`pro_r_id`);
 
 --
+-- Indexes for table `project_emp`
+--
+ALTER TABLE `project_emp`
+  ADD PRIMARY KEY (`pemp_id`),
+  ADD KEY `pemp_project_id` (`pemp_project_id`),
+  ADD KEY `pemp_user_id` (`pemp_user_id`);
+
+--
 -- Indexes for table `project_phase`
 --
 ALTER TABLE `project_phase`
@@ -844,8 +904,10 @@ ALTER TABLE `project_phase`
 -- Indexes for table `project_phase_task`
 --
 ALTER TABLE `project_phase_task`
-  ADD PRIMARY KEY (`pro_subphase_id`),
-  ADD KEY `pro_phase` (`pro_phase`);
+  ADD PRIMARY KEY (`pt_id`),
+  ADD KEY `pro_phase` (`pro_phase`),
+  ADD KEY `pro_id` (`pro_id`),
+  ADD KEY `pro_phase_task` (`pro_phase_task`);
 
 --
 -- Indexes for table `project_queries`
@@ -858,7 +920,8 @@ ALTER TABLE `project_queries`
 --
 ALTER TABLE `site_inspections`
   ADD PRIMARY KEY (`si_id`),
-  ADD KEY `project_id` (`project_id`);
+  ADD KEY `project_id` (`project_id`),
+  ADD KEY `site_inspections_ibfk_1` (`si_asign_id`);
 
 --
 -- Indexes for table `site_inspection_docs`
@@ -884,7 +947,7 @@ ALTER TABLE `super_admin_auth`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`u_id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -973,10 +1036,10 @@ ALTER TABLE `phases`
   MODIFY `phase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `phase_task`
+-- AUTO_INCREMENT for table `phase_tasks`
 --
-ALTER TABLE `phase_task`
-  MODIFY `phase_task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `phase_tasks`
+  MODIFY `phase_task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -997,6 +1060,12 @@ ALTER TABLE `project_docs`
   MODIFY `pro_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `project_emp`
+--
+ALTER TABLE `project_emp`
+  MODIFY `pemp_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `project_phase`
 --
 ALTER TABLE `project_phase`
@@ -1006,19 +1075,19 @@ ALTER TABLE `project_phase`
 -- AUTO_INCREMENT for table `project_phase_task`
 --
 ALTER TABLE `project_phase_task`
-  MODIFY `pro_subphase_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pt_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `project_queries`
 --
 ALTER TABLE `project_queries`
-  MODIFY `q_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `q_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `site_inspections`
 --
 ALTER TABLE `site_inspections`
-  MODIFY `si_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `si_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `site_inspection_docs`
@@ -1042,13 +1111,13 @@ ALTER TABLE `super_admin_auth`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `u_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_auth`
 --
 ALTER TABLE `user_auth`
-  MODIFY `u_a_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `u_a_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `vendors`
@@ -1100,6 +1169,13 @@ ALTER TABLE `project_docs`
   ADD CONSTRAINT `project_docs_ibfk_1` FOREIGN KEY (`pro_r_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `project_emp`
+--
+ALTER TABLE `project_emp`
+  ADD CONSTRAINT `project_emp_ibfk_1` FOREIGN KEY (`pemp_project_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `project_emp_ibfk_2` FOREIGN KEY (`pemp_user_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `project_phase`
 --
 ALTER TABLE `project_phase`
@@ -1110,13 +1186,15 @@ ALTER TABLE `project_phase`
 -- Constraints for table `project_phase_task`
 --
 ALTER TABLE `project_phase_task`
-  ADD CONSTRAINT `project_phase_task_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `project_phase` (`pro_phase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `project_phase_task_ibfk_1` FOREIGN KEY (`pro_phase`) REFERENCES `phases` (`phase_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `project_phase_task_ibfk_2` FOREIGN KEY (`pro_id`) REFERENCES `projects` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `project_phase_task_ibfk_3` FOREIGN KEY (`pro_phase_task`) REFERENCES `phase_tasks` (`phase_task_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `site_inspections`
 --
 ALTER TABLE `site_inspections`
-  ADD CONSTRAINT `site_inspections_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`pro_id`);
+  ADD CONSTRAINT `site_inspections_ibfk_1` FOREIGN KEY (`si_asign_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `site_inspection_docs`

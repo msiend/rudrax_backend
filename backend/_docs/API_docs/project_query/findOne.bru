@@ -1,0 +1,25 @@
+meta {
+  name: findOne
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL.Entity}}query/readOne
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: <your_token_here>
+}
+
+body:json {
+  {
+      "q_id": 1
+  }
+}
+
+assert {
+  ~status: isTrue
+}
