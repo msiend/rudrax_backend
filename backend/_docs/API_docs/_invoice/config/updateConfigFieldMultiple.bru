@@ -1,0 +1,18 @@
+meta {
+  name: updateConfigFieldMultiple
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{URL}}/api/v1/invoice/config/update-multi
+  body: json
+  auth: bearer
+}
+
+body:json {
+  {
+    "terms_condition_three": "/updated/sign.png",
+    "terms_condition_four": "Updated address line 441"
+  }
+}

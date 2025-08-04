@@ -9,6 +9,7 @@ const ExpenseCoreController = require('@/controllers/coreEntityControllers/expen
 const UsersCoreController = require('@/controllers/coreEntityControllers/usersController');
 const contractorPaymentCoreController = require('@/controllers/coreEntityControllers/contractorPaymentController');
 const projectPhaseCoreController = require('@/controllers/coreEntityControllers/project_phaseController');
+const Project_task_empController = require('@/controllers/coreEntityControllers/project_task_empController');
 const AnalyticsCoreController = require('@/controllers/coreEntityControllers/analyticsController');
 
 // [CLIENT]-----------
@@ -26,6 +27,12 @@ coreRouter.get('/core/expense/get_expense/:exp_id', ExpenseCoreController.findWi
 // [PROJECTS]-----------
 coreRouter.get('/core/project/get_project_detail/:pro_id', ProjectCoreController.getFullProject_OtherDetails_);
 
+// [PROJECTS TASK EMP]-----------
+coreRouter.post('/core/project_task_emp/update-status', Project_task_empController.updateStatus);
+coreRouter.post('/core/project_task_emp/getAllByProject', Project_task_empController.getAllByProjectId);
+coreRouter.post('/core/project_task_emp/getAllByPhase', Project_task_empController.getAllByPhaseId);
+coreRouter.post('/core/project_task_emp/getAllByPhaseTask', Project_task_empController.getAllByPhaseTaskId);
+coreRouter.post('/core/project_task_emp/getAllByUser', Project_task_empController.getAllByUserId);
 
 // [User]-----------
 coreRouter.post('/core/users/create/:role', UsersCoreController.create);
@@ -35,7 +42,6 @@ coreRouter.put('/core/users/update/:role/:id', UsersCoreController.update);
 coreRouter.put('/core/users/updatePassword/:role/:id', UsersCoreController.updatePassword);
 coreRouter.put('/core/users/toggleStatus/:role/:id', UsersCoreController.toggleStatus);
 coreRouter.delete('/core/users/delete/:role/:id', UsersCoreController.remove);
-
 
 // [Contaractor payments]-----------
 coreRouter.get('/core/contractorPayment/readAll', contractorPaymentCoreController.findAllByID);

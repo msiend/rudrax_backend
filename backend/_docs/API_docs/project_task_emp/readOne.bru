@@ -1,0 +1,17 @@
+meta {
+  name: readOne
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL.Entity}}project_task_emp/readOne
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ptemp_id": "7"
+  }
+}

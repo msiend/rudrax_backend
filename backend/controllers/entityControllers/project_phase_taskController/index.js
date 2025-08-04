@@ -25,7 +25,7 @@ const ProjectTaskController = {
    async create(req, res) {
       try {
          const insertId = await ProjectTaskModel.create(req.body);
-         res.status(201).send({ status: true, msg: 'Task created successfully.', data: { insertId, ...req.body} });
+         res.status(201).send({ status: true, msg: 'Task created successfully.', data: { pt_id:insertId, ...req.body} });
       } catch (err) {
          console.error('Error creating task:', err);
          res.status(500).send({ status: false, msg: 'Error creating task.', data: null });

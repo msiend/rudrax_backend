@@ -1,0 +1,21 @@
+meta {
+  name: updateConfigField
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL}}/api/v1/invoice/config/update-field/:field
+  body: json
+  auth: bearer
+}
+
+params:path {
+  field: invoice_prefix
+}
+
+body:json {
+  {
+    "value": "NEWPREFIX-001"
+  }
+}
