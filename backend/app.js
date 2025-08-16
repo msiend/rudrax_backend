@@ -55,7 +55,7 @@ app.use('/api/v1/notification', appRoutes_notification);
 app.use('/api/v1/invoice', appRoutes_invoice);
 app.use('/api/v1', appRoutes_search);
 app.use('/api/v1', appRoutes_pagination);
-app.use('/api/v1/fs', appRoutes_file_manager);
+app.use('/api/v1/file_manager', appRoutes_file_manager);
 
 ///
 ////

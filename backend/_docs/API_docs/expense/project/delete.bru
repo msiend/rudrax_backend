@@ -1,0 +1,17 @@
+meta {
+  name: delete
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{URL.Entity}}expense_project/remove
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "exp_id": 42
+  }
+}

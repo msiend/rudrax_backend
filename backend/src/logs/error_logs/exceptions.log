@@ -7001,3 +7001,373 @@ Error: listen EADDRINUSE: address already in use :::3500
   ],
   [Symbol(level)]: 'error'
 }
+2025-08-06 11:23:03 [ERROR] uncaughtException: (no error message)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+{
+  error: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7) {
+    code: 'ECONNREFUSED',
+    fatal: true,
+    [errors]: [
+      Error: connect ECONNREFUSED ::1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '::1',
+        port: 3306
+      },
+      Error: connect ECONNREFUSED 127.0.0.1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '127.0.0.1',
+        port: 3306
+      }
+    ]
+  },
+  exception: true,
+  date: 'Wed Aug 06 2025 11:23:03 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9892,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 105553920,
+      heapTotal: 69947392,
+      heapUsed: 36840016,
+      external: 2458544,
+      arrayBuffers: 19095
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 90472.453 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:net',
+      function: 'internalConnectMultiple',
+      line: 1134,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'afterConnectMultiple',
+      line: 1715,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-08-06 11:23:18 [ERROR] uncaughtException: Access denied for user ''@'localhost' (using password: YES)
+Error: Access denied for user ''@'localhost' (using password: YES)
+    at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+    at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+    at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+Error: Access denied for user ''@'localhost' (using password: YES)
+    at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+    at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+    at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+{
+  error: Error: Access denied for user ''@'localhost' (using password: YES)
+      at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_ACCESS_DENIED_ERROR',
+    errno: 1045,
+    sqlState: '28000',
+    sqlMessage: "Access denied for user ''@'localhost' (using password: YES)",
+    sql: undefined
+  },
+  exception: true,
+  date: 'Wed Aug 06 2025 11:23:18 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10472,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 108601344,
+      heapTotal: 72847360,
+      heapUsed: 41799184,
+      external: 2472180,
+      arrayBuffers: 32731
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 90487.109 },
+  trace: [
+    {
+      column: 17,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\packets\\packet.js',
+      function: 'Packet.asError',
+      line: 740,
+      method: 'asError',
+      native: false
+    },
+    {
+      column: 26,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\commands\\command.js',
+      function: 'ClientHandshake.execute',
+      line: 29,
+      method: 'execute',
+      native: false
+    },
+    {
+      column: 34,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: 'PoolConnection.handlePacket',
+      line: 475,
+      method: 'handlePacket',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: 'PacketParser.onPacket',
+      line: 93,
+      method: 'onPacket',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\packet_parser.js',
+      function: 'PacketParser.executeStart',
+      line: 75,
+      method: 'executeStart',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: null,
+      line: 100,
+      method: null,
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'Socket.emit',
+      line: 518,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/streams/readable',
+      function: 'addChunk',
+      line: 561,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/streams/readable',
+      function: 'readableAddChunkPushByteMode',
+      line: 512,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/streams/readable',
+      function: 'Readable.push',
+      line: 392,
+      method: 'push',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-08-16 11:23:06 [ERROR] uncaughtException: Unknown database 'rudrax_db'
+Error: Unknown database 'rudrax_db'
+    at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+    at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+    at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+Error: Unknown database 'rudrax_db'
+    at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+    at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+    at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+{
+  error: Error: Unknown database 'rudrax_db'
+      at Packet.asError (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at ClientHandshake.execute (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at PoolConnection.handlePacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (D:\windows_msi\codebase\rudrax_backend\backend\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_DB_ERROR',
+    errno: 1049,
+    sqlState: '42000',
+    sqlMessage: "Unknown database 'rudrax_db'",
+    sql: undefined
+  },
+  exception: true,
+  date: 'Sat Aug 16 2025 11:23:06 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6756,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 108998656,
+      heapTotal: 72003584,
+      heapUsed: 42254168,
+      external: 2471129,
+      arrayBuffers: 31680
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 3968.718 },
+  trace: [
+    {
+      column: 17,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\packets\\packet.js',
+      function: 'Packet.asError',
+      line: 740,
+      method: 'asError',
+      native: false
+    },
+    {
+      column: 26,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\commands\\command.js',
+      function: 'ClientHandshake.execute',
+      line: 29,
+      method: 'execute',
+      native: false
+    },
+    {
+      column: 34,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: 'PoolConnection.handlePacket',
+      line: 475,
+      method: 'handlePacket',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: 'PacketParser.onPacket',
+      line: 93,
+      method: 'onPacket',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\packet_parser.js',
+      function: 'PacketParser.executeStart',
+      line: 75,
+      method: 'executeStart',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\node_modules\\mysql2\\lib\\base\\connection.js',
+      function: null,
+      line: 100,
+      method: null,
+      native: false
+    },
+    {
+      column: 28,
+      file: 'node:events',
+      function: 'Socket.emit',
+      line: 518,
+      method: 'emit',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/streams/readable',
+      function: 'addChunk',
+      line: 561,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/streams/readable',
+      function: 'readableAddChunkPushByteMode',
+      line: 512,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/streams/readable',
+      function: 'Readable.push',
+      line: 392,
+      method: 'push',
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

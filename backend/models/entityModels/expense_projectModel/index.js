@@ -27,15 +27,15 @@ class ExpenseModel {
       this.exp_project_ref = exp_project_ref;
    }
 
-   // Get all expenses
+   // Get all expense_project
    static async findAll() {
-      const query = 'SELECT * FROM expenses ORDER BY exp_date DESC';
+      const query = 'SELECT * FROM expense_project ORDER BY exp_date DESC';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
          return rows;
       } catch (error) {
-         console.error('Error retrieving all expenses:', error);
+         console.error('Error retrieving all expense_project:', error);
          throw error;
       } finally {
          connPool.release();
@@ -44,7 +44,7 @@ class ExpenseModel {
 
    // Get a single expense by ID
    static async findOne(exp_id) {
-      const query = 'SELECT * FROM expenses WHERE exp_id = ?';
+      const query = 'SELECT * FROM expense_project WHERE exp_id = ?';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query, [exp_id]);
@@ -72,7 +72,7 @@ class ExpenseModel {
       exp_project_ref
    ) {
       const query = `
-         INSERT INTO expenses (
+         INSERT INTO expense_project (
             exp_type, exp_name, exp_amount, exp_mode, exp_status, 
             exp_attachment_url, exp_remark, exp_paid_by, 
             exp_date, exp_category, exp_project_ref
@@ -126,7 +126,7 @@ class ExpenseModel {
       exp_project_ref
    ) {
       const query = `
-         UPDATE expenses SET
+         UPDATE expense_project SET
             exp_type = ?,
             exp_name = ?,
             exp_amount = ?,
@@ -172,7 +172,7 @@ class ExpenseModel {
 
    // Delete an expense
    static async remove(exp_id) {
-      const query = 'DELETE FROM expenses WHERE exp_id = ?';
+      const query = 'DELETE FROM expense_project WHERE exp_id = ?';
       const connPool = await pool.getConnection();
       try {
          const [result] = await connPool.query(query, [exp_id]);

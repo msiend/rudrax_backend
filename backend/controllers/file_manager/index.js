@@ -4,7 +4,6 @@ class FileManagerController {
    static async findAll(req, res) {
       try {
          const { fs_r_id } = req.body;
-
          if (!fs_r_id) {
             return res.status(400).json({
                status: false,
@@ -31,7 +30,6 @@ class FileManagerController {
    static async findOne(req, res) {
       try {
          const { fs_doc_id, fs_r_id } = req.body;
-
          if (!fs_doc_id || !fs_r_id) {
             return res.status(400).json({
                status: false,

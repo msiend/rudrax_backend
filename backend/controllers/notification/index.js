@@ -130,7 +130,7 @@ class NotificationController {
     static async sendToUsers(req, res) {
         try {
             // Check permission ( super_admin or supervisor)
-            if (!['super_admin', 'supervisor'].includes(req.user.role)) {
+            if (!['user', 'admin'].includes(req.user.role)) {
                 return res.status(403).json({
                     success: false,
                     message: 'Permission denied'

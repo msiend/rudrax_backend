@@ -1,5 +1,5 @@
 const ClientsModel = require('@/models/coreEntityModels/clientModel');
-const expenseModel = require('@/models/entityModels/expenseModel');
+const expenseModel = require('@/models/entityModels/expense_normalModel');
 const expenseCoreModel = require('@/models/coreEntityModels/expenseModel');
 const vendorPaymentModel = require('@/models/entityModels/vendorPaymentModel');
 const contractorPaymentModel = require('@/models/entityModels/contractorPaymentModel');

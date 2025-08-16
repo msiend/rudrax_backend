@@ -1,4 +1,4 @@
-const expenseModel = require('@/models/entityModels/expenseModel');
+const expenseModel = require('@/models/entityModels/expense_projectModel');
 
 class ExpenseController {
    // Fetch all expenses
