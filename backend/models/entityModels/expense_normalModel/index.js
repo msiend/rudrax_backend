@@ -11,8 +11,7 @@ class ExpenseModel {
       exp_remark,
       exp_paid_by,
       exp_date,
-      exp_category,
-      exp_project_ref
+      exp_category
    ) {
       this.exp_type = exp_type;
       this.exp_name = exp_name;
@@ -24,7 +23,6 @@ class ExpenseModel {
       this.exp_paid_by = exp_paid_by;
       this.exp_date = exp_date;
       this.exp_category = exp_category;
-      this.exp_project_ref = exp_project_ref;
    }
 
    // Get all expense_normal
@@ -68,16 +66,15 @@ class ExpenseModel {
       exp_remark,
       exp_paid_by,
       exp_date,
-      exp_category,
-      exp_project_ref
+      exp_category
    ) {
       const query = `
          INSERT INTO expense_normal (
             exp_type, exp_name, exp_amount, exp_mode, exp_status, 
             exp_attachment_url, exp_remark, exp_paid_by, 
-            exp_date, exp_category, exp_project_ref
+            exp_date, exp_category
          ) 
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `;
       const connPool = await pool.getConnection();
       try {
@@ -91,8 +88,7 @@ class ExpenseModel {
             exp_remark,
             exp_paid_by,
             exp_date,
-            exp_category,
-            exp_project_ref
+            exp_category
          ]);
          if (result.affectedRows > 0) {
             return {
@@ -122,8 +118,7 @@ class ExpenseModel {
       exp_remark,
       exp_paid_by,
       exp_date,
-      exp_category,
-      exp_project_ref
+      exp_category
    ) {
       const query = `
          UPDATE expense_normal SET
@@ -136,8 +131,7 @@ class ExpenseModel {
             exp_remark = ?,
             exp_paid_by = ?,
             exp_date = ?,
-            exp_category = ?,
-            exp_project_ref = ?
+            exp_category = ?
          WHERE exp_id = ?
       `;
       const connPool = await pool.getConnection();
@@ -153,7 +147,6 @@ class ExpenseModel {
             exp_paid_by,
             exp_date,
             exp_category,
-            exp_project_ref,
             exp_id
          ]);
          return {

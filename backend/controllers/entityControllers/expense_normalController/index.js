@@ -40,8 +40,7 @@ class ExpenseController {
          exp_remark,
          exp_paid_by,
          exp_date,
-         exp_category,
-         exp_project_ref,
+         exp_category
       } = req.body;
 
       if (!exp_type || !exp_amount || !exp_mode || !exp_date ) {
@@ -59,8 +58,7 @@ class ExpenseController {
             exp_remark,
             exp_paid_by,
             exp_date,
-            exp_category,
-            exp_project_ref
+            exp_category
          );
          return res
             .status(201)
@@ -78,8 +76,7 @@ class ExpenseController {
                   exp_remark,
                   exp_paid_by,
                   exp_date,
-                  exp_category,
-                  exp_project_ref,
+                  exp_category
                },
             });
       } catch (error) {
@@ -101,8 +98,7 @@ class ExpenseController {
          exp_remark,
          exp_paid_by,
          exp_date,
-         exp_category,
-         exp_project_ref,
+         exp_category
       } = req.body;
 
       if (!exp_id || !exp_type || !exp_name || !exp_amount || !exp_mode || !exp_date ) {
@@ -121,9 +117,7 @@ class ExpenseController {
             exp_remark,
             exp_paid_by,
             exp_date,
-            exp_category,
-            exp_project_ref
-         );
+            exp_category         );
 
          if (!result.status) {
             return res.status(404).send({ status: false, msg: 'Expense not found', data: null });
@@ -139,8 +133,8 @@ class ExpenseController {
             exp_remark,
             exp_paid_by,
             exp_date,
-            exp_category,
-            exp_project_ref} });
+            exp_category
+            } });
       } catch (error) {
          console.error(`Error updating expense with ID ${exp_id}:`, error);
          return res.status(500).send({ status: false, msg: 'Internal Server Error', data: null });

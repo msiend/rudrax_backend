@@ -11,7 +11,7 @@ class ExpenseModel {
       this.exp_project_ref = exp_project_ref;
    }
    static async findAllWithAll_Date() {
-      const query = 'SELECT * FROM expenses ORDER BY exp_date DESC ';
+      const query = 'SELECT * FROM expense_normal ORDER BY exp_date DESC; SELECT * FROM expense_project ORDER BY exp_date DESC ; ';
       const connPool = await pool.getConnection();
       try {
          const [rows] = await connPool.query(query);
