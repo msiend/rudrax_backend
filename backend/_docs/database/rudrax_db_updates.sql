@@ -23,3 +23,8 @@ ALTER TABLE `expense_normal` CHANGE `exp_status` `exp_status` VARCHAR(155) CHARA
 ALTER TABLE `file_manager` CHANGE `fs_doc_id` `fs_doc_id` BIGINT NOT NULL AUTO_INCREMENT, ADD PRIMARY KEY (`fs_doc_id`); 
 
 ALTER TABLE `expense_normal` CHANGE `exp_status` `exp_status` VARCHAR(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
+
+ALTER TABLE `site_inspections` ADD `si_asign_by` VARCHAR(155) NOT NULL AFTER `si_asign_id`; 
+ALTER TABLE `site_inspections` ADD `si_feedback` VARCHAR(155) NOT NULL AFTER `si_type`; 
+ALTER TABLE `site_inspections` CHANGE `si_asign_by` `si_asign_by` VARCHAR(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
+ALTER TABLE `site_inspections` CHANGE `si_feedback` `si_feedback` VARCHAR(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 

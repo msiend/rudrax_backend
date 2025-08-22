@@ -7371,3 +7371,155 @@ Error: Unknown database 'rudrax_db'
   ],
   [Symbol(level)]: 'error'
 }
+2025-08-22 10:34:44 [ERROR] uncaughtException: (no error message)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+{
+  error: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7) {
+    code: 'ECONNREFUSED',
+    fatal: true,
+    [errors]: [
+      Error: connect ECONNREFUSED ::1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '::1',
+        port: 3306
+      },
+      Error: connect ECONNREFUSED 127.0.0.1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '127.0.0.1',
+        port: 3306
+      }
+    ]
+  },
+  exception: true,
+  date: 'Fri Aug 22 2025 10:34:44 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 10712,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 109731840,
+      heapTotal: 71798784,
+      heapUsed: 40980064,
+      external: 2458544,
+      arrayBuffers: 19095
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 59596.078 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:net',
+      function: 'internalConnectMultiple',
+      line: 1134,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'afterConnectMultiple',
+      line: 1715,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}
+2025-08-22 10:48:59 [ERROR] uncaughtException: (no error message)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+{
+  error: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7) {
+    code: 'ECONNREFUSED',
+    fatal: true,
+    [errors]: [
+      Error: connect ECONNREFUSED ::1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '::1',
+        port: 3306
+      },
+      Error: connect ECONNREFUSED 127.0.0.1:3306
+          at createConnectionError (node:net:1678:14)
+          at afterConnectMultiple (node:net:1708:16) {
+        errno: -4078,
+        code: 'ECONNREFUSED',
+        syscall: 'connect',
+        address: '127.0.0.1',
+        port: 3306
+      }
+    ]
+  },
+  exception: true,
+  date: 'Fri Aug 22 2025 10:48:59 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 12136,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\windows_msi\\codebase\\rudrax_backend\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\windows_msi\\codebase\\rudrax_backend\\backend\\app.js'
+    ],
+    memoryUsage: {
+      rss: 104742912,
+      heapTotal: 72265728,
+      heapUsed: 41629600,
+      external: 2458545,
+      arrayBuffers: 19096
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 60451.328 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:net',
+      function: 'internalConnectMultiple',
+      line: 1134,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'afterConnectMultiple',
+      line: 1715,
+      method: null,
+      native: false
+    }
+  ],
+  [Symbol(level)]: 'error'
+}

@@ -1,0 +1,19 @@
+meta {
+  name: multi_image
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL.Core}}site_inspection/upload/images/:si_id
+  body: multipartForm
+  auth: inherit
+}
+
+params:path {
+  si_id: 9
+}
+
+body:multipart-form {
+  image: @file(C:\Users\user\Pictures\SIKA TOP SEAL 107 APPLICATION APPLIED.png|C:\Users\user\Pictures\Top seal 107 IN.png)
+}
