@@ -38,3 +38,30 @@ ALTER TABLE `project_queries` ADD FOREIGN KEY (`phase_task_id`) REFERENCES `proj
 ALTER TABLE `project_queries` CHANGE `q_date` `q_date` VARCHAR(55) NULL DEFAULT NULL; 
 ALTER TABLE `project_queries` ADD `project_id` BIGINT NULL DEFAULT NULL AFTER `q_status`; 
 ALTER TABLE `project_queries` CHANGE `approved_date` `approved_date` VARCHAR(155) NULL DEFAULT NULL; 
+	
+CREATE TABLE `query_docs` (
+ `q_doc_id` bigint NOT NULL AUTO_INCREMENT,
+ `q_r_id` bigint NOT NULL,
+ `q_doc_url` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+ `q_doc_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+ `q_doc_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+ PRIMARY KEY (`q_doc_id`),
+ KEY `si_r_id` (`q_r_id`)
+);
+
+ALTER TABLE `query_docs` CHANGE `q_r_id` `q_r_id` BIGINT NULL DEFAULT NULL, CHANGE `q_doc_url` `q_doc_url` VARCHAR(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
+ALTER TABLE `query_docs` ADD FOREIGN KEY (`q_r_id`) REFERENCES `project_queries`(`q_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+	CREATE TABLE `query_emp` (
+ `qemp_id` int NOT NULL AUTO_INCREMENT,
+ `qemp_q_id` int DEFAULT NULL,
+ `qemp_user_id` bigint DEFAULT NULL,
+ `qemp_assigned_date` datetime DEFAULT CURRENT_TIMESTAMP,
+ `qemp_assigned_by` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+ `qemp_status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'pending',
+ `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY (`qemp_id`),
+ KEY `qemp_pt_id` (`qemp_q_id`)
+) 

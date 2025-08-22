@@ -4,6 +4,7 @@ const coreRouter = express.Router();
 const createFileUploadMiddleware = require('../middleware/fileUploader');
 const ProjectDocsModel = require('@/models/entityModels/projectDocsModel');
 const site_inspectionDocsModel = require('@/models/entityModels/site_inspectionDocsModel');
+const queryDocsModel = require('@/models/entityModels/queryDocsModel');
 const file_managerDocsModel = require('@/models/file_manager');
 const fs = require('fs');
 const path = require('path');
@@ -24,13 +25,24 @@ const uploadProject_Images = createFileUploadMiddleware({
    uploadPath: 'public/project/images',
 });
 
-
 const uploadSiteInspection_Images = createFileUploadMiddleware({
    fieldName: 'image',
    allowedMimeTypes: ['image/jpeg', 'image/png'],
    uploadPath: 'public/SiteInspection',
 });
 
+const uploadSiteInspection_Multi_Images = createFileUploadMiddleware({
+   maxCount: 5,
+   fieldName: 'image',
+   allowedMimeTypes: ['image/jpeg', 'image/png'],
+   uploadPath: 'public/SiteInspection',
+});
+
+const uploadQuery_Images = createFileUploadMiddleware({
+   fieldName: 'image',
+   allowedMimeTypes: ['image/jpeg', 'image/png'],
+   uploadPath: 'public/Query',
+});
 
 const FS_File_System_Images = createFileUploadMiddleware({
    fieldName: 'image',
@@ -47,9 +59,6 @@ const FS_File_System_Files = createFileUploadMiddleware({
    ],
    uploadPath: 'public/file_manager/files',
 });
-
-
-
 
 // [PROJECTS]-----------
 coreRouter.post('/core/project/upload/file/:pro_r_id', uploadProject_Files, async (req, res) => {
@@ -167,34 +176,38 @@ coreRouter.post('/core/site_inspection/upload/image/:si_id', uploadSiteInspectio
    }
 });
 
-/**  @multi image uploader in not completed  */ 
-coreRouter.post('/core/site_inspection/upload/images/:si_id', uploadSiteInspection_Images, async (req, res) => {
+coreRouter.post('/core/site_inspection/upload/images/:si_id', uploadSiteInspection_Multi_Images, async (req, res) => {
    try {
       const { si_id } = req.params;
       if (!si_id) {
          return res.status(400).json({ status: false, msg: 'Missing si_id' });
       }
-      if (!req.file) {
+      if (!req.files || req.files.length === 0) {
          return res.status(400).json({ status: false, msg: 'File upload failed' });
       }
-      const filePath = req.file.path.replace(/\\/g, '/');
-      const file_name = req.file.originalname
-         .replace(/\.[^/.]+$/, '')
-         .replace(/[^a-zA-Z ]/g, '')
-         .trim()
-         .substring(0, 20);
-      const insertedId = await site_inspectionDocsModel.create(
-         si_id,
-         filePath,
-         req.query.type || 'doc_file',
-         file_name
-      );
+      const results = [];
+      for (const file of req.files) {
+         const filePath = file.path.replace(/\\/g, '/');
+         const file_name = file.originalname
+            .replace(/\.[^/.]+$/, '')
+            .replace(/[^a-zA-Z ]/g, '')
+            .trim()
+            .substring(0, 20);
+
+         const insertedId = await site_inspectionDocsModel.create(
+            si_id,
+            filePath,
+            req.query.type || 'doc_file',
+            file_name
+         );
+
+         results.push({ filePath, file_name, si_doc_id:insertedId });
+      }
+
       return res.status(200).json({
          status: true,
-         msg: 'Site Inspection File uploaded and path stored successfully',
-         filePath,
-         file_name,
-         insertedId,
+         msg: 'Site Inspection Files uploaded and stored successfully',
+         files: results,
          file_type: req.query.type || 'site_image',
       });
    } catch (error) {
@@ -226,6 +239,58 @@ coreRouter.delete('/core/site_inspection/delete/image/:si_doc_id', async (req, r
       }
    } catch (error) {
       console.error('Error deleting project document:', error);
+      return res.status(500).json({ status: false, msg: 'Internal Server Error' });
+   }
+});
+
+// [QUERIES]-----------
+coreRouter.post('/core/query/upload/image/:q_r_id', uploadQuery_Images, async (req, res) => {
+   try {
+      const { q_r_id } = req.params;
+      if (!q_r_id || !req.file) {
+         return res.status(400).json({ status: false, msg: 'Missing required fields or image in Query' });
+      }
+      const imagePath = req.file.path.replace(/\\/g, '/');
+      const file_name = req.file.originalname
+         .replace(/\.[^/.]+$/, '')
+         .replace(/[^a-zA-Z ]/g, '')
+         .trim()
+         .substring(0, 20);
+      const insertedId = await queryDocsModel.create(q_r_id, imagePath, req.query.type || 'doc_image', file_name);
+      return res.status(200).json({
+         status: true,
+         msg: 'Query Image uploaded and stored successfully',
+         imagePath,
+         q_doc_id: insertedId,
+      });
+   } catch (error) {
+      console.error('Error uploading Query image:', error);
+      return res.status(500).json({ status: false, msg: 'Internal Server Error' });
+   }
+});
+coreRouter.delete('/core/query/delete/:q_doc_id', async (req, res) => {
+   try {
+      const { q_doc_id } = req.params;
+      let deleted;
+      if (!q_doc_id) {
+         return res.status(400).json({ status: false, msg: 'Missing Query q_doc_id' });
+      }
+      const filePath = await queryDocsModel.findOne(q_doc_id);
+      if (!filePath) {
+         return res.status(404).json({ status: false, msg: 'Query Document not found' });
+      }
+      const resolvedPath = path.resolve(filePath.q_doc_url);
+      if (fs.existsSync(resolvedPath)) {
+         fs.unlinkSync(resolvedPath);
+         deleted = await queryDocsModel.remove(q_doc_id);
+      }
+      if (deleted) {
+         return res.status(200).json({ status: true, msg: 'Query document and file deleted successfully', filePath });
+      } else {
+         return res.status(404).json({ status: false, msg: 'Query Document not found or already deleted' });
+      }
+   } catch (error) {
+      console.error('Error deleting query document:', error);
       return res.status(500).json({ status: false, msg: 'Internal Server Error' });
    }
 });

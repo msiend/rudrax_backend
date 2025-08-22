@@ -1,0 +1,22 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{URL.Entity}}query_emp/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "qemp_id": 1,
+    "qemp_q_id": "10",
+    "qemp_user_id": "3",
+    "qemp_assigned_date": null,
+    "qemp_assigned_by": "AdminUser",
+    "qemp_status": "Completed"
+  }
+}

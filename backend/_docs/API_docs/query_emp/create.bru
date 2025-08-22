@@ -1,0 +1,34 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL.Entity}}query_emp/create
+  body: json
+  auth: none
+}
+
+body:json {
+  [
+    {
+      "qemp_q_id": "10",
+      "qemp_user_id": "3",
+      "qemp_assigned_by": "AdminUser",
+      "qemp_status": "Completed"
+    },
+     {
+      "qemp_q_id": "10",
+      "qemp_user_id": "3",
+      "qemp_assigned_by": "AdminUser",
+      "qemp_status": "Completed"
+    },
+     {
+      "qemp_q_id": "10",
+      "qemp_user_id": "3",
+      "qemp_assigned_by": "AdminUser",
+      "qemp_status": "Completed"
+    }
+  ]
+}

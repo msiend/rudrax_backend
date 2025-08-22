@@ -5,13 +5,13 @@ meta {
 }
 
 delete {
-  url: {{URL.Core}}site_inspection/delete/image/:si_doc_id
+  url: {{URL.Core}}query/delete/:q_doc_id
   body: none
   auth: inherit
 }
 
 params:path {
-  si_doc_id: 11
+  q_doc_id: 3
 }
 
 body:multipart-form {
