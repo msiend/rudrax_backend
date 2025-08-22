@@ -43,21 +43,23 @@ class SiteInspectionModel {
          connPool.release();
       }
    }
-   static async create(project_id, si_asign_id, si_date, si_location, si_type, status) {
+   static async create(project_id, si_asign_id,si_asign_by, si_date, si_location, si_type,si_feedback, status ) {
       const connPool = await pool.getConnection();
       const insertSQL = `
       INSERT INTO site_inspections 
-        (project_id,si_asign_id, si_date, si_location, si_type, status) 
-      VALUES (?, ?, ?, ?, ?, ?);
+        (project_id, si_asign_id,si_asign_by, si_date, si_location, si_type,si_feedback, status) 
+      VALUES (?, ?, ?, ?, ?, ?,?,?);
     `;
 
       try {
          const [result] = await connPool.query(insertSQL, [
             project_id,
             si_asign_id,
+            si_asign_by,
             si_date,
             si_location,
             si_type,
+            si_feedback,
             status,
          ]);
 
@@ -74,21 +76,19 @@ class SiteInspectionModel {
       }
    }
 
-   static async update(si_id, project_id, si_asign_id, si_date, si_location, si_type, status) {
+   static async update(si_id, project_id, si_asign_id,si_asign_by, si_date, si_location, si_type,si_feedback, status) {
       const connPool = await pool.getConnection();
-      const updateSQL = `
-      UPDATE site_inspections
-      SET project_id = ?,si_asign_id = ?, si_date = ?, si_location = ?, si_type = ?, status = ?
-      WHERE si_id = ?;
+      const updateSQL = `UPDATE site_inspections SET project_id = ?,si_asign_id = ?,si_asign_by=?, si_date = ?, si_location = ?, si_type = ?,si_feedback=?, status = ? WHERE si_id = ?;
     `;
-
       try {
          const [result] = await connPool.query(updateSQL, [
             project_id,
             si_asign_id,
+            si_asign_by,
             si_date,
             si_location,
             si_type,
+            si_feedback,
             status,
             si_id,
          ]);

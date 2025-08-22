@@ -1,7 +1,7 @@
 const pool = require('@/config/dbConfig');
 
 class ProjectSiteQueryModel {
-   constructor(q_title, q_desc, q_type, q_category, q_raised_by, q_status) {
+   constructor( q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id ) {
       this.q_title = q_title;
       this.q_desc = q_desc;
       this.q_type = q_type;
@@ -10,16 +10,16 @@ class ProjectSiteQueryModel {
       this.q_status = q_status;
    }
 
-   static async create( q_title, q_desc, q_type, q_category,q_raised_by, q_status, approved_by, approved_date,q_remarks ) {
+   static async create(  q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id  ) {
       const connPool = await pool.getConnection();
       const insertSQL = `
       INSERT INTO project_queries 
-      (q_title, q_desc, q_type, q_category, q_raised_by, q_status,q_remarks)
-      VALUES (?, ?, ?, ?, ?, ?,?);
+      ( q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id )
+      VALUES (?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?);
     `;
 
       try {
-         const [result] = await connPool.query(insertSQL, [q_title, q_desc, q_type, q_category, q_raised_by, q_status,q_remarks]);
+         const [result] = await connPool.query(insertSQL, [ q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id ]);
          return { status: true, insertId: result.insertId, msg: 'Query created successfully!' };
       } catch (error) {
          console.error('Error creating project site query:', error);
@@ -29,25 +29,17 @@ class ProjectSiteQueryModel {
       }
    }
 
-   static async update(q_id, q_title, q_desc, q_type, q_category, q_status, approved_by, approved_date, q_remarks) {
+   static async update(q_id,  q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id ) {
       const connPool = await pool.getConnection();
       const updateSQL = `
       UPDATE project_queries
-      SET q_title = ?, q_desc = ?, q_type = ?, q_category = ?, 
-          q_status = ?, approved_by = ?, approved_date = ?, q_remarks = ?
+      SET q_title =?, q_desc=?, q_type=?, q_category=?, q_raised_by=?,q_date=?, q_status=?, approved_by=?, approved_date=?, q_remarks=?,project_id=?,phase_id=?,phase_task_id=? 
       WHERE q_id = ?;
     `;
 
       try {
          const [result] = await connPool.query(updateSQL, [
-            q_title,
-            q_desc,
-            q_type,
-            q_category,
-            q_status,
-            approved_by,
-            approved_date,
-            q_remarks,
+            q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id ,
             q_id,
          ]);
          if (result.affectedRows > 0) {

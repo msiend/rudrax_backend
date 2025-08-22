@@ -47,7 +47,7 @@ class ProjectSiteQueryController {
 
    static async create(req, res) {
       try {
-         const { q_title, q_desc, q_type, q_category, q_raised_by, q_status, approved_by, approved_date, q_remarks } =
+         const { q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id } =
             req.body;
 
          const result = await ProjectSiteQueryModel.create(
@@ -56,10 +56,13 @@ class ProjectSiteQueryController {
             q_type,
             q_category,
             q_raised_by,
+            q_date,
             q_status,
             approved_by,
             approved_date,
-            q_remarks
+            q_remarks,
+            project_id,phase_id,
+            phase_task_id
          );
 
          if (!result.status) {
@@ -75,15 +78,7 @@ class ProjectSiteQueryController {
             msg: 'Query created successfully',
             data: {
                q_id:result.insertId,
-               q_title,
-               q_desc,
-               q_type,
-               q_category,
-               q_raised_by,
-               q_status,
-               approved_by,
-               approved_date,
-               q_remarks
+               q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id 
             },
          });
       } catch (error) {
@@ -98,20 +93,10 @@ class ProjectSiteQueryController {
 
    static async update(req, res) {
       try {
-         const { q_id, q_title, q_desc, q_type, q_category, q_status, approved_by, approved_date, q_remarks } =
+         const { q_id,  q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id  } =
             req.body;
 
-         const result = await ProjectSiteQueryModel.update(
-            q_id,
-            q_title,
-            q_desc,
-            q_type,
-            q_category,
-            q_status,
-            approved_by,
-            approved_date,
-            q_remarks
-         );
+         const result = await ProjectSiteQueryModel.update(q_id, q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id);
 
          if (!result?.status) {
             return res.status(404).send({
@@ -124,17 +109,7 @@ class ProjectSiteQueryController {
          res.status(200).send({
             status: true,
             msg: 'Query updated successfully',
-            data: {
-               q_id,
-               q_title,
-               q_desc,
-               q_type,
-               q_category,
-               q_status,
-               approved_by,
-               approved_date,
-               q_remarks,
-            },
+            data: {q_id,  q_title, q_desc, q_type, q_category, q_raised_by,q_date, q_status, approved_by, approved_date, q_remarks,project_id,phase_id,phase_task_id},
          });
       } catch (error) {
          console.error(error);

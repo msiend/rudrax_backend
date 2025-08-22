@@ -28,3 +28,13 @@ ALTER TABLE `site_inspections` ADD `si_asign_by` VARCHAR(155) NOT NULL AFTER `si
 ALTER TABLE `site_inspections` ADD `si_feedback` VARCHAR(155) NOT NULL AFTER `si_type`; 
 ALTER TABLE `site_inspections` CHANGE `si_asign_by` `si_asign_by` VARCHAR(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
 ALTER TABLE `site_inspections` CHANGE `si_feedback` `si_feedback` VARCHAR(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
+
+
+ALTER TABLE `project_queries` CHANGE `q_title` `q_title` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
+ALTER TABLE `project_queries` CHANGE `q_raised_by` `q_raised_by` BIGINT NULL DEFAULT NULL; 
+ALTER TABLE `project_queries` ADD `phase_id` INT NULL DEFAULT NULL AFTER `q_status`, ADD `phase_task_id` INT NULL DEFAULT NULL AFTER `phase_id`; 
+ALTER TABLE `project_queries` ADD FOREIGN KEY (`phase_id`) REFERENCES `project_phase`(`pro_phase_id`) ON DELETE SET NULL ON UPDATE CASCADE; 
+ALTER TABLE `project_queries` ADD FOREIGN KEY (`phase_task_id`) REFERENCES `project_phase_task`(`pt_id`) ON DELETE SET NULL ON UPDATE CASCADE; 
+ALTER TABLE `project_queries` CHANGE `q_date` `q_date` VARCHAR(55) NULL DEFAULT NULL; 
+ALTER TABLE `project_queries` ADD `project_id` BIGINT NULL DEFAULT NULL AFTER `q_status`; 
+ALTER TABLE `project_queries` CHANGE `approved_date` `approved_date` VARCHAR(155) NULL DEFAULT NULL; 
